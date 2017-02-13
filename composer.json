@@ -1,0 +1,23 @@
+{
+  "name": "miaoxing/user",
+  "description": "Miaoxing User Plugin",
+  "keywords": [
+    "miaoxing", "user"
+  ],
+  "license": "MIT",
+  "require": {
+    "miaoxing/app": "dev-master@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "Miaoxing\\User\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MiaoxingTest\\User\\": "tests"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

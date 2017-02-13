@@ -1,0 +1,35 @@
+.user-list-group {
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+
+.user-list-group .list-group-item {
+  display: none;
+}
+
+.empty-user-item-message {
+  display: block;
+}
+
+.user-list-group .list-group-item:hover .media-actions {
+  display: block;
+}
+
+.media-actions {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  font-size: 28px;
+  line-height: 0;
+  display: none;
+}
+
+.media-actions a:hover {
+  text-decoration: none;
+  color: #dd5a43 !important;
+}
+
+.empty-user-message {
+  padding: 5px 10px;
+  text-align: center;
+}
