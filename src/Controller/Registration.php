@@ -5,7 +5,8 @@ namespace Miaoxing\User\Controller;
 use miaoxing\plugin\BaseController;
 use Miaoxing\User\Mailer\Register;
 use Miaoxing\User\Middleware\CheckNotLogin;
-use Miaoxing\Plugin\Middleware\CheckVerified;
+use Miaoxing\User\Middleware\CheckNotVerified;
+use Miaoxing\User\Middleware\CheckVerified;
 
 class Registration extends BaseController
 {
@@ -32,6 +33,14 @@ class Registration extends BaseController
                 'confirm',
                 'verify',
             ],
+        ]);
+
+        $this->middleware(CheckNotVerified::className(), [
+            'only' => [
+                'editEmail',
+                'updateEmail',
+                'resendEmail',
+            ]
         ]);
     }
 
