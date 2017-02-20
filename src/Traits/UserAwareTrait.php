@@ -19,7 +19,7 @@ trait UserAwareTrait
      */
     public function getUser()
     {
-        $this->user || $this->user = wei()->user()->findOrInitById($this[$this->userIdColumn]);
+        $this->user || $this->user = wei()->user()->findOrInitById($this['user_id']);
 
         return $this->user;
     }
