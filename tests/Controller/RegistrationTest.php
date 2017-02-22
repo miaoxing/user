@@ -1,6 +1,6 @@
 <?php
 
-namespace Miaoxing\User\Controller;
+namespace MiaoxingTest\User\Controller;
 
 use Miaoxing\Plugin\Test\BaseControllerTestCase;
 use Miaoxing\User\Mailer\Register;
