@@ -6,7 +6,7 @@ use Miaoxing\User\Middleware\CheckNotLogin;
 use Miaoxing\Plugin\Service\User;
 use Miaoxing\Plugin\Middleware\CheckRedirectUrl;
 use Miaoxing\Plugin\Middleware\LoadAppConfig;
-use Miaoxing\Wechat\Middleware\WechatOnly;
+use Miaoxing\User\Middleware\CheckIfEnableRegister;
 use Wei\Request;
 
 class Users extends \miaoxing\plugin\BaseController
@@ -34,10 +34,9 @@ class Users extends \miaoxing\plugin\BaseController
             'only' => ['sendVerifyCode'],
         ]);
 
-        $this->middleware(WechatOnly::className(), [
+        $this->middleware(CheckIfEnableRegister::className(), [
             'only' => [
                 'register',
-                'login',
                 'create',
                 'sendVerifyCode',
             ],
@@ -153,6 +152,9 @@ class Users extends \miaoxing\plugin\BaseController
 
             return $this->ret($ret);
         } else {
+            if (!$this->setting('user.enableLogin', true)) {
+                return $this->err($this->setting('user.disableLoginTips', '登录功能未启用'));
+            }
             $headerTitle = '登录';
 
             return get_defined_vars();
