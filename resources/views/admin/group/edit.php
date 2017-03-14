@@ -16,7 +16,8 @@
 <div class="row">
   <div class="col-xs-12">
     <!-- PAGE CONTENT BEGINS -->
-    <form id="record-form" class="form-horizontal" action="<?= $url('admin/group/' . ($group->isNew() ? 'create' : 'update')) ?>" method="post" role="form">
+    <form id="record-form" class="form-horizontal"
+      action="<?= $url('admin/group/' . ($group->isNew() ? 'create' : 'update')) ?>" method="post" role="form">
       <div class="form-group">
         <label class="col-lg-2 control-label" for="name">
           <span class="text-warning">*</span>

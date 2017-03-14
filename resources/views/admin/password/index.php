@@ -9,16 +9,17 @@
 <div class="row">
   <div class="col-xs-12">
     <!-- PAGE CONTENT BEGINS -->
-    <form class="js-password-form form-horizontal" action="<?= $url('admin/password/update') ?>" method="post" role="form">
+    <form class="js-password-form form-horizontal" action="<?= $url('admin/password/update') ?>"
+      method="post" role="form">
 
       <div class="form-group">
-        <label class="col-lg-2 control-label" for="oldPassword">
+        <label class="col-lg-2 control-label" for="old-password">
           <span class="text-warning">*</span>
           旧密码
         </label>
 
         <div class="col-lg-4">
-          <input type="password" class="form-control" name="oldPassword" id="oldPassword">
+          <input type="password" class="form-control" name="oldPassword" id="old-password">
         </div>
 
       </div>
@@ -36,13 +37,13 @@
       </div>
 
       <div class="form-group">
-        <label class="col-lg-2 control-label" for="passwordConfirm">
+        <label class="col-lg-2 control-label" for="password-confirm">
           <span class="text-warning">*</span>
           重复密码
         </label>
 
         <div class="col-lg-4">
-          <input type="password" class="form-control" name="passwordConfirm" id="passwordConfirm">
+          <input type="password" class="form-control" name="passwordConfirm" id="password-confirm">
         </div>
       </div>
 

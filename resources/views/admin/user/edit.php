@@ -16,7 +16,8 @@
 <div class="row">
   <div class="col-xs-12">
     <!-- PAGE CONTENT BEGINS -->
-    <form id="record-form" class="form-horizontal" action="<?= $url('admin/user/' . ($user->getFormAction())) ?>" method="post" role="form">
+    <form id="record-form" class="form-horizontal" action="<?= $url('admin/user/' . ($user->getFormAction())) ?>"
+      method="post" role="form">
 
       <div class="form-group">
         <label class="col-lg-2 control-label" for="username">
@@ -26,7 +27,7 @@
 
         <div class="col-lg-4">
           <?php if ($user->isNew()) : ?>
-            <input type="text" class="form-control" name="username" id="username">
+            <input type="text" class="form-control" name="username">
           <?php else : ?>
             <p class="form-control-static" id="username"></p>
           <?php endif; ?>
@@ -34,13 +35,13 @@
       </div>
 
       <div class="form-group">
-        <label class="col-lg-2 control-label" for="groupId">
+        <label class="col-lg-2 control-label" for="group-id">
           <span class="text-warning">*</span>
           用户组
         </label>
 
         <div class="col-lg-4">
-          <select id="groupId" name="groupId" class="form-control">
+          <select id="group-id" name="groupId" class="form-control">
           </select>
         </div>
       </div>
@@ -74,13 +75,13 @@
       </div>
 
       <div class="form-group">
-        <label class="col-lg-2 control-label" for="passwordAgain">
+        <label class="col-lg-2 control-label" for="password-again">
           <span class="text-warning">*</span>
           重复密码
         </label>
 
         <div class="col-lg-4">
-          <input type="password" class="form-control" name="passwordAgain" id="passwordAgain">
+          <input type="password" class="form-control" name="passwordAgain" id="password-again">
         </div>
       </div>
 
@@ -110,7 +111,7 @@
 <?= $block('js') ?>
 <script>
   require(['form'], function (form) {
-    form.toOptions($('#groupId'), <?= json_encode(wei()->group()->desc('sort')->fetchAll()) ?>, 'id', 'name');
+    form.toOptions($('#group-id'), <?= json_encode(wei()->group()->desc('sort')->fetchAll()) ?>, 'id', 'name');
 
     $('#record-form')
       .loadJSON(<?= $user->toJson() ?>)

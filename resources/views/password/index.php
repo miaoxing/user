@@ -1,15 +1,16 @@
 <?php $view->layout() ?>
 
-<form class="form" method="post" id="resetPasswordForm">
+<form class="form" method="post" id="reset-password-form">
   <div class="form-legend text-right">
     <a href="<?= $url->query('password/reset') ?>">忘记旧密码?</a>
   </div>
 
   <div class="form-group">
-    <label for="oldPassword" class="control-label">旧密码</label>
+    <label for="old-password" class="control-label">旧密码</label>
 
     <div class="col-control">
-      <input type="password" class="form-control" id="oldPassword" name="oldPassword" placeholder="请输入旧密码" value="<?= $e($req['oldPassword']) ?>">
+      <input type="password" class="form-control" id="old-password" name="oldPassword" placeholder="请输入旧密码"
+        value="<?= $e($req['oldPassword']) ?>">
     </div>
   </div>
 
@@ -22,11 +23,11 @@
   </div>
 
   <div class="form-group">
-    <label for="passwordConfirm" class="control-label"></label>
+    <label for="password-confirm" class="control-label"></label>
 
     <div class="col-control">
-      <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm"
-             placeholder="请再次输入密码">
+      <input type="password" class="form-control" id="password-confirm" name="passwordConfirm"
+        placeholder="请再次输入密码">
     </div>
   </div>
 
@@ -38,7 +39,7 @@
 <?= $block('js') ?>
 <script>
   require(['jquery-form'], function () {
-    $('#resetPasswordForm').ajaxForm({
+    $('#reset-password-form').ajaxForm({
       url: $.url('password/update'),
       dataType: 'json',
       success: function (ret) {

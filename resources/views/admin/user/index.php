@@ -21,20 +21,20 @@
       <form class="js-user-form form-horizontal filter-form" role="form">
         <div class="well form-well m-b">
           <div class="form-group form-group-sm">
-            <label class="col-md-1 control-label" for="isValid">状态：</label>
+            <label class="col-md-1 control-label" for="is-valid">状态：</label>
 
             <div class="col-md-3">
-              <select name="isValid" id="isValid" class="form-control">
+              <select name="isValid" id="is-valid" class="form-control">
                 <option value="" selected>全部状态</option>
                 <option value="1">已关注</option>
                 <option value="0">未关注</option>
               </select>
             </div>
 
-            <label class="col-md-1 control-label" for="nickName">分组：</label>
+            <label class="col-md-1 control-label" for="group-id">分组：</label>
 
             <div class="col-md-3">
-              <select name="groupId" id="groupId" class="form-control">
+              <select name="groupId" id="group-id" class="form-control">
                 <option value="">全部分组</option>
                 <option value="0"><?= $setting('user.titleDefaultGroup') ?: '未分组' ?></option>
               </select>
@@ -53,10 +53,10 @@
           </div>
 
           <div class="form-group form-group-sm">
-            <label class="col-md-1 control-label" for="nickName">昵称：</label>
+            <label class="col-md-1 control-label" for="nick-name">昵称：</label>
 
             <div class="col-md-3">
-              <input type="text" class="form-control" id="nickName" name="nickName">
+              <input type="text" class="form-control" id="nick-name" name="nickName">
             </div>
 
             <label class="col-md-1 control-label" for="name">姓名：</label>
@@ -91,15 +91,15 @@
       <table id="record-table" class="record-table table table-bordered table-hover">
         <thead>
         <tr>
-          <th style="width:50px;"></th>
+          <th class="t-3"></th>
           <th>用户</th>
-          <th style="width: 80px">姓名</th>
-          <th style="width: 110px">手机</th>
-          <th style="width: 130px">地区</th>
-          <th style="width: 50px">积分</th>
-          <th style="width: 240px">来源</th>
-          <th style="width: 70px">是否关注</th>
-          <th style="width: 150px">注册时间</th>
+          <th class="t-4">姓名</th>
+          <th class="t-4">手机</th>
+          <th class="t-8">地区</th>
+          <th class="t-3">积分</th>
+          <th class="t-4">来源</th>
+          <th class="t-3">是否关注</th>
+          <th class="t-10">注册时间</th>
         </tr>
         </thead>
         <tbody>
@@ -113,7 +113,7 @@
           </label>
 
           <div class="form-group">
-            <select id="toGroupId" class="form-control input-sm" disabled>
+            <select id="to-group-id" class="form-control input-sm" disabled>
               <option>移动到分组</option>
               <option value="0"><?= $setting('user.titleDefaultGroup') ?: '未分组' ?></option>
             </select>
@@ -121,13 +121,13 @@
 
           <?php if ($plugin->isInstalled('coupon')) : ?>
             <div class="form-group">
-              <a id="user-sendCoupon" class="btn btn-info pull-right" href="javascript:void(0);">发放优惠券</a>
+              <a id="user-send-coupon" class="btn btn-info pull-right" href="javascript:void(0);">发放优惠券</a>
             </div>
           <?php endif ?>
 
           <?php if ($plugin->isInstalled('score')) : ?>
             <div class="form-group">
-              <a id="user-sendScore" class="btn btn-info pull-right" href="javascript:void(0);">赠送积分</a>
+              <a id="user-send-score" class="btn btn-info pull-right" href="javascript:void(0);">赠送积分</a>
             </div>
           <?php endif ?>
         </form>
@@ -145,8 +145,8 @@
 <?= $block('js') ?>
 <script>
   require(['form', 'assets/admin/user', 'dataTable', 'template', 'jquery-deparam'], function (form) {
-    form.toOptions($('#groupId'), <?= json_encode(wei()->group()->desc('sort')->fetchAll()) ?>, 'id', 'name');
-    form.toOptions($('#toGroupId'), <?= json_encode(wei()->group()->desc('sort')->fetchAll()) ?>, 'id', 'name');
+    form.toOptions($('#group-id'), <?= json_encode(wei()->group()->desc('sort')->fetchAll()) ?>, 'id', 'name');
+    form.toOptions($('#to-group-id'), <?= json_encode(wei()->group()->desc('sort')->fetchAll()) ?>, 'id', 'name');
 
     $('.js-user-form')
       .loadParams()

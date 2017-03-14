@@ -7,7 +7,7 @@
 
 <div class="tab-content">
   <div class="tab-pane fade in active" id="tab-mobile">
-    <form class="form" method="post" id="resetPasswordFormByMobile">
+    <form class="form" method="post" id="reset-password-form-by-mobile">
       <div class="form-group">
         <label for="username" class="control-label">
           用户名
@@ -15,7 +15,7 @@
         </label>
 
         <div class="col-control">
-          <input type="text" id="username" name="username" class="form-control" placeholder="请输入用户名">
+          <input type="text" name="username" class="form-control" placeholder="请输入用户名">
         </div>
       </div>
 
@@ -30,17 +30,18 @@
         </div>
       </div>
 
-      <div class="form-group" id="getVerifyCodeGroup">
-        <label for="verifyCode" class="control-label">
+      <div class="form-group" id="get-verify-code-group">
+        <label for="verify-code" class="control-label">
           验证码
           <span class="text-warning">*</span>
         </label>
 
         <div class="col-control">
           <div class="input-group">
-            <input type="tel" class="form-control" id="verifyCode" name="verifyCode" placeholder="请输入验证码">
+            <input type="tel" class="form-control" id="verify-code" name="verifyCode" placeholder="请输入验证码">
                 <span class="input-group-btn border-left">
-                    <button type="button" class="js-verify-code-send text-primary btn btn-default form-link" id="getVerifyCode">获取验证码
+                    <button type="button" class="js-verify-code-send text-primary btn btn-default form-link"
+                      id="get-verify-code">获取验证码
                     </button>
                 </span>
           </div>
@@ -72,7 +73,7 @@
   </div>
 
   <div class="tab-pane fade in" id="tab-email">
-    <form class="form" method="post" id="resetPasswordFormByEmail">
+    <form class="form" method="post" id="reset-password-form-by-email">
       <div class="form-group">
         <label for="username" class="control-label">
           用户名
@@ -80,7 +81,7 @@
         </label>
 
         <div class="col-control">
-          <input type="text" id="username" name="username" class="form-control" placeholder="请输入用户名">
+          <input type="text" name="username" class="form-control" placeholder="请输入用户名">
         </div>
       </div>
 
@@ -105,7 +106,7 @@
 <script>
   require(['jquery-form', 'assets/bsTab', 'plugins/verify-code/js/verify-code'], function () {
     // 手机找回
-    $('#resetPasswordFormByMobile').ajaxForm({
+    $('#reset-password-form-by-mobile').ajaxForm({
       url: $.url('password/create-reset-by-mobile'),
       loading: true,
       dataType: 'json',
@@ -122,7 +123,7 @@
     });
 
     // 邮箱找回
-    $('#resetPasswordFormByEmail').ajaxForm({
+    $('#reset-password-form-by-email').ajaxForm({
       url: $.url('password/create-reset-by-email'),
       loading: true,
       dataType: 'json',

@@ -7,7 +7,7 @@ class UserLogs extends \miaoxing\plugin\BaseController
     public function indexAction($req)
     {
         switch ($req['_format']) {
-            case 'json' :
+            case 'json':
                 $userLogs = wei()->userLog()->curApp();
 
                 // 分页
@@ -43,7 +43,7 @@ class UserLogs extends \miaoxing\plugin\BaseController
                     'records' => $userLogs->count(),
                 ]);
 
-            default :
+            default:
                 return get_defined_vars();
         }
     }

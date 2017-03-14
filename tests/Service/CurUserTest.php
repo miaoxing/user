@@ -30,7 +30,8 @@ class CurUserTest extends \Miaoxing\Plugin\Test\BaseTestCase
         $this->assertEquals('nickName2', $curUser['nickName']);
 
         $query = wei()->db->getLastQuery();
-        $this->assertEquals('UPDATE user SET id = ?, nickName = ?, updateUser = ?, updateTime = ? WHERE id = ?', $query);
+        $sql = 'UPDATE user SET id = ?, nickName = ?, updateUser = ?, updateTime = ? WHERE id = ?';
+        $this->assertEquals($sql, $query);
     }
 
     public function testLoginByRecordAndSave()
@@ -46,7 +47,8 @@ class CurUserTest extends \Miaoxing\Plugin\Test\BaseTestCase
         $this->assertEquals('nickName2', $curUser['nickName']);
 
         $query = wei()->db->getLastQuery();
-        $this->assertEquals('UPDATE user SET nickName = ?, updateTime = ?, updateUser = ?, id = ? WHERE id = ?', $query);
+        $sql = 'UPDATE user SET nickName = ?, updateTime = ?, updateUser = ?, id = ? WHERE id = ?';
+        $this->assertEquals($sql, $query);
     }
 
     public function testCurUserToArray()

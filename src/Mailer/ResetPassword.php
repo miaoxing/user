@@ -12,6 +12,7 @@ class ResetPassword extends \Miaoxing\Mail\Base
      */
     public function prepare()
     {
+        // @codingStandardsIgnoreStart
         $this->Subject = '重置密码';
 
         $this->addAddress($this->user['email']);
@@ -29,5 +30,6 @@ class ResetPassword extends \Miaoxing\Mail\Base
         ]);
 
         $this->Body = $this->view->render('user:mailers/resetPassword.php', get_defined_vars());
+        // @codingStandardsIgnoreEnd
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace plugins\user\docs {
+
     /**
      * @property    \Miaoxing\Plugin\Service\CurUser $curUser 当前用户
      *
@@ -26,6 +27,7 @@ namespace plugins\user\docs {
 }
 
 namespace {
+
     /**
      * @return \plugins\user\docs\AutoComplete
      */

@@ -8,7 +8,9 @@
 
 <p>请点击以下链接操作：</p>
 
-<p style="word-wrap:break-word;word-break:break-all;"><a href="<?= $resetUrl ?>" target="_blank"><?= $resetUrl ?></a></p>
+<p style="word-wrap:break-word;word-break:break-all;">
+  <a href="<?= $resetUrl ?>" target="_blank"><?= $resetUrl ?></a>
+</p>
 
 <p>&nbsp;</p>
 

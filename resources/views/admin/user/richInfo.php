@@ -1,37 +1,16 @@
 <?php
-
 $canShow = wei()->can->can('admin/user/show');
 ?>
 
 <?= $block('css') ?>
-<style type="text/css">
-  .user-popover .popover {
-    margin-left: 0;
-  }
-
-  .user-popover-info {
-    width: 200px;
-  }
-
-  .user-popover-info > div {
-    padding-bottom: 6px;
-  }
-
-  .user-popover-info > div:last-child {
-    padding-bottom: 0;
-  }
-
-  .update-group {
-    height: 24px;
-    line-height: 24px;
-  }
-</style>
+<link rel="stylesheet" href="<?= $asset('plugins/user/css/admin/rich-info.css') ?>">
 <?= $block->end() ?>
 
 <?= $block('html') ?>
 <script id="user-info-tpl" type="text/html">
   <div class="media user-media">
-    <span class="media-left <?= $canShow ? 'user-popover' : '' ?> user-popover-<%= guid = $.guid++ %>" data-container=".user-popover-<%= guid %>" data-id="<%= id %>">
+    <span class="media-left <?= $canShow ? 'user-popover' : '' ?> user-popover-<%= guid = $.guid++ %>"
+      data-container=".user-popover-<%= guid %>" data-id="<%= id %>">
       <a href="<?= $canShow ? "<%= $.url('admin/message/user', {userId: id}) %>" : 'javascript:;' ?>" target="_blank">
         <img class="media-object" src="<%= headImg || '<?= $asset('assets/images/head/default-light.jpg') ?>' %>">
       </a>

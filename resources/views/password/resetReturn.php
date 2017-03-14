@@ -1,6 +1,6 @@
 <?php $view->layout() ?>
 
-<form class="form" method="post" id="resetPasswordForm">
+<form class="form" method="post" id="reset-password-form">
   <div class="form-legend">
     &nbsp
   </div>
@@ -13,11 +13,11 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="passwordConfirm" class="control-label"></label>
+    <label for="password-confirm" class="control-label"></label>
 
     <div class="col-control">
-      <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm"
-             placeholder="请再次输入密码">
+      <input type="password" class="form-control" id="password-confirm" name="passwordConfirm"
+        placeholder="请再次输入密码">
     </div>
     <input type="hidden" name="userId" value="<?= $userId ?>">
   </div>
@@ -27,20 +27,21 @@
 </form>
 
 <?= $block('js') ?>
-  <script>
-    require(['jquery-form'], function () {
-      $('#resetPasswordForm').ajaxForm({
-        url: $.url('password/reset-update?nonce=<?= $nonce ?>&timestamp=<?= $timestamp ?>&userId=<?= $userId ?>&sign=<?= $sign ?>'),
-        loading: true,
-        dataType: 'json',
-        success: function (ret) {
-          $.msg(ret, function () {
-            if (ret.code > 0) {
-              window.location = $.req('next') || $.url('users');
-            }
-          });
-        }
-      });
+<script>
+  require(['jquery-form'], function () {
+    var param = 'nonce=<?= $nonce ?>&timestamp=<?= $timestamp ?>&userId=<?= $userId ?>&sign=<?= $sign ?>';
+    $('#reset-password-form').ajaxForm({
+      url: $.url('password/reset-update?' + param),
+      loading: true,
+      dataType: 'json',
+      success: function (ret) {
+        $.msg(ret, function () {
+          if (ret.code > 0) {
+            window.location = $.req('next') || $.url('users');
+          }
+        });
+      }
     });
-  </script>
+  });
+</script>
 <?= $block->end() ?>

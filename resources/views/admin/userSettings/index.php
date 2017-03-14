@@ -8,15 +8,17 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <form action="<?= $url('admin/user-settings/update') ?>" class="js-setting-form form-horizontal" method="post" role="form">
+    <form action="<?= $url('admin/user-settings/update') ?>" class="js-setting-form form-horizontal" method="post"
+      role="form">
       <div class="form-group">
-        <label class="col-lg-2 control-label" for="bgImage">
+        <label class="col-lg-2 control-label" for="bg-image">
           个人中心背景图
         </label>
 
         <div class="col-lg-4">
           <div class="input-group">
-            <input type="text" class="js-bg-image form-control" id="bgImage" name="settings[user.bgImage]" value="<?= $e($bgImage) ?>">
+            <input type="text" class="js-bg-image form-control" id="bg-image" name="settings[user.bgImage]"
+              value="<?= $e($bgImage) ?>">
             <span class="input-group-btn">
                 <button id="select-thumb" class="btn btn-white" type="button">
                   <i class="fa fa-picture-o"></i>
@@ -26,7 +28,7 @@
           </div>
         </div>
 
-        <label class="col-lg-6 help-text" for="bgImage">
+        <label class="col-lg-6 help-text" for="bg-image">
           推荐尺寸640*240,留空使用默认图片
         </label>
       </div>

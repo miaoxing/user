@@ -20,7 +20,7 @@
 
             <label class="col-md-1 control-label" for="actionName">操作名称：</label>
             <div class="col-md-3">
-              <input type="text" class="form-control" name="actionName" id="actionName">
+              <input type="text" class="form-control" name="actionName" id="action-name">
             </div>
 
             <label class="col-md-1 control-label" for="confirm">确认状态：</label>
@@ -44,7 +44,7 @@
           <th>更改前</th>
           <th>更改后</th>
           <th>确认时间</th>
-          <th style="width: 120px">操作</th>
+          <th class="t-12">操作</th>
         </tr>
         </thead>
         <tbody></tbody>

@@ -41,7 +41,8 @@ $view->layout('admin:admin/layout-light.php')
           验证码
         </label>
         <div class="input-group">
-          <input type="text" class="form-control" id="captcha" name="captcha" placeholder="请输入验证码" data-rule-required="true">
+          <input type="text" class="form-control" id="captcha" name="captcha" placeholder="请输入验证码"
+            data-rule-required="true">
             <span class="input-group-addon p-a-0">
               <img class="js-captcha" src="<?= $url('captcha') ?>">
             </span>
@@ -51,7 +52,7 @@ $view->layout('admin:admin/layout-light.php')
       <?php if ($agreementArticleId) : ?>
         <div class="checkbox">
           <label>
-            <input name="agreement" type="checkbox" value="1"> 同意<a class="js-agreement" href="javascript:;">《服务协议》</a>
+            <input name="agreement" type="checkbox" value="1"> 同意<a class="js-agreement" href="javascript:">《服务协议》</a>
           </label>
         </div>
       <?php endif ?>

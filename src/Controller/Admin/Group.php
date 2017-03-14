@@ -73,7 +73,7 @@ class Group extends \miaoxing\plugin\BaseController
 
         $group = wei()->group()->findOrInitById($req['id']);
         $group['name'] = $req['name'];
-        if($req['sort']) {
+        if ($req['sort']) {
             $group['sort'] = $req['sort'];
         }
 

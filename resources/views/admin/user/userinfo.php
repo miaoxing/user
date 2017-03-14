@@ -40,7 +40,7 @@
           <div class="checkbox">
             <label class="js-tips" title="认证后可以使用手机号码登录">
               <input type="hidden" name="isMobileVerified" value="0">
-              <input type="checkbox" class="isMobileVerified" name="isMobileVerified" value="1"> 认证
+              <input type="checkbox" class="is-mobile-verified" name="isMobileVerified" value="1"> 认证
             </label>
           </div>
         </div>
@@ -70,7 +70,7 @@
           <div class="checkbox">
             <label class="js-tips" title="锁定后,不会被同步为外部的地区,如微信的资料">
               <input type="hidden" name="isRegionLocked" value="0">
-              <input type="checkbox" class="isRegionLocked" name="isRegionLocked" value="1"> 锁定
+              <input type="checkbox" class="is-region-locked" name="isRegionLocked" value="1"> 锁定
             </label>
           </div>
         </div>

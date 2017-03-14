@@ -26,7 +26,7 @@
 
 .media-actions a:hover {
   text-decoration: none;
-  color: #dd5a43 !important;
+  color: #dd5a43;
 }
 
 .empty-user-message {

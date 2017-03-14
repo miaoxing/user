@@ -8,7 +8,9 @@
 
 <p>请点击以下链接激活帐号：</p>
 
-<p style="word-wrap:break-word;word-break:break-all;"><a href="<?= $verifyUrl ?>" target="_blank"><?= $verifyUrl ?></a></p>
+<p style="word-wrap:break-word;word-break:break-all;">
+  <a href="<?= $verifyUrl ?>" target="_blank"><?= $verifyUrl ?></a>
+</p>
 
 <p>&nbsp;</p>
 

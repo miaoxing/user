@@ -1,5 +1,9 @@
 <?php $view->layout() ?>
 
+<?= $block('css') ?>
+<link rel="stylesheet" href="<?= $asset('plugins/admin/css/filter.css') ?>"/>
+<?= $block->end() ?>
+
 <div class="page-header">
   <h1>
     用户管理
@@ -12,32 +16,30 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <div class="well form-well">
-      <form class="form-inline" id="search-form">
-        <div class="form-group">
-          &nbsp;&nbsp;
-          <label class="control-label" for="startTime">时间范围</label>
-          <input type="text" class="form-control text-center" id="startTime" name="startTime" style="width: 150px"
-                 value="<?= $req['startTime'] ?>">
-          ~
-          <input type="text" class="form-control text-center" id="endTime" name="endTime" style="width: 150px"
-                 value="<?= $req['endTime'] ?>">
-        </div>
-        <div class="form-group">
-          <a class="btn btn-primary" id="ref-query" href="javascript:;">查询</a>
-        </div>
-        <a class="js-export-csv btn btn-white pull-right"  href="javascript:;">导出</a>
-      </form>
-    </div>
-
     <div class="table-responsive">
+      <form class="form-horizontal filter-form form-inline" id="search-form">
+        <div class="well form-well">
+          <div class="form-group">
+            <label class="control-label" for="start-time">时间范围：</label>
+
+            <input type="text" class="form-control text-center input-small" id="start-time" name="startTime"
+              value="<?= $req['startTime'] ?>">
+            ~
+            <input type="text" class="form-control text-center input-small" id="end-time" name="endTime"
+              value="<?= $req['endTime'] ?>">
+          <button class="btn btn-primary" type="button" id="ref-query">查询</button>
+          <button class="js-export-csv btn btn-white" type="button">导出</button>
+          </div>
+        </div>
+      </form>
+
       <table id="record-table" class="js-user-ref-table record-table table table-bordered table-hover">
         <thead>
         <tr>
           <th>场景编号</th>
           <th>来源名称</th>
           <th>数量</th>
-          <th style="width: 290px">所属用户</th>
+          <th class="t-12">所属用户</th>
         </tr>
         </thead>
         <tbody>
@@ -88,14 +90,15 @@
       ]
     });
 
-    $('#startTime, #endTime').rangeDateTimePicker({
+    $('#start-time, #end-time').rangeDateTimePicker({
       showSecond: true,
       dateFormat: 'yy-mm-dd',
       timeFormat: 'HH:mm:ss'
     });
 
     $('#ref-query').click(function () {
-      window.location.href = $.url('admin/user/ref?startTime=' + $('#startTime').val() + '&endTime=' + $('#endTime').val() + '&accountId=' + $('#accountId').val());
+      window.location.href = $.url('admin/user/ref?startTime=' + $('#start-time').val() + '&endTime='
+      + $('#end-time').val() + '&accountId=' + $('#accountId').val());
     });
 
     $('.js-export-csv').click(function () {
