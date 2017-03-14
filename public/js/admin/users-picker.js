@@ -1,11 +1,13 @@
+/* global Bloodhound */
 define([
-  'css!comps/typeahead.js-bootstrap3.less/typeahead',
   'template',
+  'css!comps/typeahead.js-bootstrap3.less/typeahead',
   'comps/typeahead.js/dist/typeahead.bundle.min'
-], function () {
+], function (template) {
   template.helper('$', $);
 
   var UsersPicker = function () {
+    // do nothing.
   };
 
   $.extend(UsersPicker.prototype, {
@@ -22,21 +24,21 @@ define([
 
     init: function(options) {
       $.extend(this, options);
-      var self = this;
-      var $typeAhead = self.$el.find('.user-typeahead');
-      $typeAhead.attr("placeholder", self.placeholder);
+      var that = this;
+      var $typeAhead = that.$el.find('.user-typeahead');
+      $typeAhead.attr('placeholder', that.placeholder);
 
-      self.$el.append('<div class="clearfix"></div><ul class="list-group user-list-group list-unstyled"></ul>');
+      that.$el.append('<div class="clearfix"></div><ul class="list-group user-list-group list-unstyled"></ul>');
 
       // 屏蔽用户信息鼠标点击事件
-      self.$el.on('click', '.user-media', function (e) {
+      that.$el.on('click', '.user-media', function () {
         return false;
       });
 
       // 显示用户
-      for (var i in self.users) {
-        self.addUser(self.users[i]);
-      }
+      $.each(that.users, function(key, value) {
+        that.addUser(value);
+      });
 
       // 初始化搜索建议引擎
       var bestUsers = new Bloodhound({
@@ -45,10 +47,11 @@ define([
         },
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         remote: {
-          url: $.url($.appendUrl(self.url, self.searchKey + '=%QUERY'), {rows: self.rows}),
+          url: $.url($.appendUrl(that.url, that.searchKey + '=%QUERY'), {rows: that.rows}),
           ajax: {
             global: false,
             success: function () {
+              // do nothing.
             }
           },
           filter: function (result) {
@@ -67,8 +70,8 @@ define([
           empty: '<div class="empty-user-message">没有找到相关用户</div>',
           suggestion: template.compile($('#user-info-tpl').html())
         }
-      }).on('typeahead:selected', function (event, suggestion, name) {
-        self.addUser(suggestion);
+      }).on('typeahead:selected', function (event, suggestion) {
+        that.addUser(suggestion);
       });
 
       // 删除商品
@@ -80,8 +83,11 @@ define([
     },
 
     addUser: function (user) {
-      if(this.$el.find('.user-list-group:first').children('.list-group-item').length >= this.maxItems) {
-        $.msg({code:-1, message:'超过限定个数'});
+      if (this.$el.find('.user-list-group:first').children('.list-group-item').length >= this.maxItems) {
+        $.msg({
+          code:-1,
+          message:'超过限定个数'
+        });
         return;
       }
 
