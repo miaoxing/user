@@ -28,7 +28,7 @@ class UserLogs extends \miaoxing\plugin\BaseController
                     }
                 }
 
-                $data = array();
+                $data = [];
                 foreach ($userLogs as $userLog) {
                     $data[] = $userLog->toArray() + [
                             'user' => $userLog->getUser()->toArray(),
@@ -58,7 +58,7 @@ class UserLogs extends \miaoxing\plugin\BaseController
 
         $userLog->save([
             'confirmUser' => $this->curUser['id'],
-            'confirmTime' => date('Y-m-d H:i:s')
+            'confirmTime' => date('Y-m-d H:i:s'),
         ]);
 
         return $this->suc();

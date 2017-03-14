@@ -27,12 +27,12 @@ class Group extends \miaoxing\plugin\BaseController
 
                 $data = $groups->findAll()->toArray();
 
-                return $this->json('读取列表成功', 1, array(
+                return $this->json('读取列表成功', 1, [
                     'data' => $data,
                     'page' => $req['page'],
                     'rows' => $req['rows'],
                     'records' => $groups->count(),
-                ));
+                ]);
 
             default:
                 return get_defined_vars();
@@ -61,11 +61,11 @@ class Group extends \miaoxing\plugin\BaseController
         $validator = wei()->validate([
             'data' => $req,
             'rules' => [
-                'name' => []
+                'name' => [],
             ],
             'names' => [
-                'name' => '名称'
-            ]
+                'name' => '名称',
+            ],
         ]);
         if (!$validator->isValid()) {
             return $this->err($validator->getFirstMessage());
