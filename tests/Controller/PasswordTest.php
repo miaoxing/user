@@ -253,7 +253,7 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
     public function testSendMail($req, $ret)
     {
         wei()->curUser->logout();
-        $mock = $this->getServiceMock('mailer', ['send']);
+        $mock = $this->getServiceMock('mail', ['send']);
         $mock->expects($this->once())
             ->method('send')
             ->willReturn([
