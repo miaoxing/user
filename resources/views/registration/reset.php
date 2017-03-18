@@ -11,7 +11,7 @@ $view->layout('admin:admin/layout-light.php')
 
 <div class="page-body row">
   <div class="col-xs-12">
-    <form class="js-forget-form" role="form" method="post" action="<?= $url('registration/reset-update') ?>">
+    <form class="js-forget-form" role="form" method="post">
       <div class="form-group">
         <label for="password">
           新密码
@@ -40,14 +40,14 @@ $view->layout('admin:admin/layout-light.php')
 <script>
   require(['form'], function (form) {
     var param = 'nonce=<?= $nonce ?>&timestamp=<?= $timestamp ?>&userId=<?= $userId ?>&sign=<?= $sign ?>';
-    $('#reset-password-form').ajaxForm({
-      url: $.url('password/reset-update?' + param),
+    $('.js-forget-form').ajaxForm({
+      url: $.url('registration/reset-update?' + param),
       loading: true,
       dataType: 'json',
       success: function (ret) {
         $.msg(ret, function () {
           if (ret.code > 0) {
-            window.location = $.req('next') || $.url('users');
+            window.location = $.url('admin/login');
           }
         });
       }

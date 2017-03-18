@@ -168,7 +168,7 @@ class Password extends \miaoxing\plugin\BaseController
     public function resetReturnAction($req)
     {
         if (!wei()->ua->isWeChat()) {
-            return wei()->response->redirect(wei()->url->full('admin/registration/reset'));
+            return wei()->response->redirect(wei()->url->full('registration/reset'));
         }
 
         $headerTitle = '重置密码';
