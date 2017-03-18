@@ -44,7 +44,7 @@ class Registration extends BaseController
                 'resendEmail',
                 'createResetByEmail',
                 'resetUpdate',
-            ]
+            ],
         ]);
     }
 
