@@ -5,7 +5,7 @@ namespace Miaoxing\User\Service;
 use miaoxing\plugin\BaseService;
 use Miaoxing\User\Mailer\ResetPassword;
 
-class Password extends BaseService
+class UserPassword extends BaseService
 {
     public function createResetByEmail($req)
     {

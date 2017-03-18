@@ -155,7 +155,7 @@ class Password extends \miaoxing\plugin\BaseController
      */
     public function createResetByEmailAction($req)
     {
-        $ret = wei()->password->createResetByEmail($req);
+        $ret = wei()->userPassword->createResetByEmail($req);
 
         return $this->ret($ret);
     }
@@ -191,7 +191,7 @@ class Password extends \miaoxing\plugin\BaseController
      */
     public function resetUpdateAction($req)
     {
-        $ret = wei()->password->resetPassword($req);
+        $ret = wei()->userPassword->resetPassword($req);
 
         return $this->ret($ret);
     }

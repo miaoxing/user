@@ -20,7 +20,7 @@ namespace plugins\user\docs {
      * @method      \Miaoxing\User\Service\UserLog|\Miaoxing\User\Service\UserLog[] userLog() 用户操作日志
      *
      * @property    \Miaoxing\User\Service\UserVerify $userVerify 用户校验
-     * @property    \Miaoxing\User\Service\Password $password 密码设置
+     * @property    \Miaoxing\User\Service\UserPassword $userPassword 密码设置
      */
     class AutoComplete
     {
