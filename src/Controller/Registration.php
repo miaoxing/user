@@ -13,6 +13,8 @@ class Registration extends BaseController
     protected $guestPages = [
         'registration/register',
         'registration/create',
+        'registration/forget',
+        'registration/reset',
         'registration/verify',
     ];
 
@@ -21,7 +23,7 @@ class Registration extends BaseController
         parent::__construct($options);
 
         $this->middleware(CheckNotLogin::className(), [
-            'only' => ['register', 'create'],
+            'only' => ['register', 'create', 'forget', 'reset'],
             'redirect' => 'admin',
         ]);
 
@@ -40,6 +42,8 @@ class Registration extends BaseController
                 'editEmail',
                 'updateEmail',
                 'resendEmail',
+                'createResetByEmail',
+                'resetUpdate',
             ]
         ]);
     }
@@ -49,6 +53,58 @@ class Registration extends BaseController
         $agreementArticleId = $this->setting('user.agreementArticleId');
 
         return get_defined_vars();
+    }
+
+    public function forgetAction($req)
+    {
+        return get_defined_vars();
+    }
+
+    public function createResetByEmailAction($req)
+    {
+        $ret = wei()->captcha->check($req['captcha']);
+        if ($ret['code'] !== 1) {
+            $ret['captchaErr'] = true;
+
+            return $this->ret($ret);
+        }
+
+        $ret = wei()->password->createResetByEmail($req);
+
+        return $this->ret($ret);
+    }
+
+    /**
+     * 重置密码页面
+     * @param $req
+     * @return array
+     */
+    public function resetAction($req)
+    {
+        $headerTitle = '重置密码';
+        $ret = wei()->userVerify->verify($req, false);
+        if ($ret['code'] < 0) {
+            return $this->err($ret['message']);
+        }
+
+        $userId = wei()->e($req['userId']);
+        $nonce = wei()->e($req['nonce']);
+        $timestamp = wei()->e($req['timestamp']);
+        $sign = wei()->e($req['sign']);
+
+        return get_defined_vars();
+    }
+
+    /**
+     * 重置密码更新数据库
+     * @param $req
+     * @return \Wei\Response
+     */
+    public function resetUpdateAction($req)
+    {
+        $ret = wei()->password->resetPassword($req);
+
+        return $this->ret($ret);
     }
 
     public function createAction($req)

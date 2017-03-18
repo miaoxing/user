@@ -75,17 +75,6 @@
   <div class="tab-pane fade in" id="tab-email">
     <form class="form" method="post" id="reset-password-form-by-email">
       <div class="form-group">
-        <label for="username" class="control-label">
-          用户名
-          <span class="text-warning">*</span>
-        </label>
-
-        <div class="col-control">
-          <input type="text" name="username" class="form-control" placeholder="请输入用户名">
-        </div>
-      </div>
-
-      <div class="form-group">
         <label for="email" class="control-label">
           邮箱
           <span class="text-warning">*</span>

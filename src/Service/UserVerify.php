@@ -24,7 +24,12 @@ class UserVerify extends BaseService
         ];
     }
 
-    public function verify($data)
+    /**
+     * @param $data
+     * @param bool $isOnly 是否已访问过
+     * @return array
+     */
+    public function verify($data, $isOnly = true)
     {
         // 1. 超时判断
         $timestamp = isset($data['timestamp']) ? $data['timestamp'] : 0;
@@ -48,7 +53,7 @@ class UserVerify extends BaseService
         }
 
         // 4. 验证码链接是否被用过
-        if (!wei()->cache->add('user:verify:' . $sign, true, static::EXPIRE)) {
+        if ($isOnly && !wei()->cache->add('user:verify:' . $sign, true, static::EXPIRE)) {
             return ['code' => -4, 'message' => '链接被访问过'];
         }
 

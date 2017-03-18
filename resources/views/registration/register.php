@@ -66,7 +66,7 @@ $view->layout('admin:admin/layout-light.php')
 
     <hr>
     <div class="m-t text-center">
-      已有账号，点击<a href="<?= $url('admin/login') ?>">登录</a>
+      已有账号，点击<a href="<?= $url('admin/login') ?>">登录</a>，<a href="<?= $url('registration/forget') ?>">忘记密码</a>
     </div>
   </div>
 </div>
