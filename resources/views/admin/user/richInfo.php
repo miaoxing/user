@@ -1,5 +1,5 @@
 <?php
-$canShow = wei()->can->can('admin/user/show');
+$canShow = $curUser->can('admin/user/show');
 ?>
 
 <?= $block('css') ?>
