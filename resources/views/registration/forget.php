@@ -32,6 +32,11 @@ $view->layout('admin:admin/layout-light.php')
         </div>
       </div>
 
+      <div class="form-group">
+        <div class="js-ret-message text-center">
+        </div>
+      </div>
+
       <div class="clearfix form-group m-t-md">
         <button class="btn btn-primary btn-block btn-lg" type="submit">
           发送验证到邮箱
@@ -47,12 +52,12 @@ $view->layout('admin:admin/layout-light.php')
 
 <?= $block('js') ?>
 <script>
-  require(['form'], function (form) {
+  require(['form', 'plugins/user/js/users'], function (form, users) {
     $('.js-forget-form').ajaxForm({
       loading: true,
       dataType: 'json',
       success: function (ret) {
-        $.msg(ret, function () {
+        users.pageMsg(ret, function () {
           if (typeof ret.captchaErr != 'undefined' && ret.captchaErr === true) {
             $captcha.attr('src', src + '?t=' + new Date());
           }

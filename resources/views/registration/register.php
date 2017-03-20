@@ -57,6 +57,11 @@ $view->layout('admin:admin/layout-light.php')
         </div>
       <?php endif ?>
 
+      <div class="form-group">
+        <div class="js-ret-message text-center">
+        </div>
+      </div>
+
       <div class="clearfix form-group m-t-md">
         <button class="btn btn-primary btn-block btn-lg" type="submit">
           注册
@@ -93,12 +98,12 @@ $view->layout('admin:admin/layout-light.php')
 
 <?= $block('js') ?>
 <script>
-  require(['form'], function (form) {
+  require(['form', 'plugins/user/js/users'], function (form, users) {
     $('.js-register-form').ajaxForm({
       loading: true,
       dataType: 'json',
       success: function (ret) {
-        $.msg(ret, function () {
+        users.pageMsg(ret, function () {
           if (typeof ret.captchaErr != 'undefined' && ret.captchaErr === true) {
             changeCaptcha();
           }
