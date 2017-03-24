@@ -59,6 +59,7 @@ $view->layout('admin:admin/layout-light.php')
 
       <div class="form-group">
         <div class="js-ret-message text-center">
+          &nbsp;
         </div>
       </div>
 
