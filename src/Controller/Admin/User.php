@@ -94,7 +94,6 @@ class User extends \miaoxing\plugin\BaseController
                 $this->event->trigger('preAdminUserListFind', [$req, $users]);
 
                 $data = [];
-                $score = wei()->score;
                 foreach ($users->findAll() as $user) {
                     $weChatQrcode = wei()->weChatQrcode()->where('sceneId=?', $user['source'])->find();
                     $source = '';
@@ -102,7 +101,6 @@ class User extends \miaoxing\plugin\BaseController
                         $source = $weChatQrcode->getUser();
                     }
 
-                    $user['score'] = $score->getScore($user);
                     $data[] = $user->toArray() + [
                             'sourceUser' => $source ? $source->toArray() : '',
                             'group' => $user->getGroup(),
