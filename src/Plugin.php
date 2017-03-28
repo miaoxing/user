@@ -20,7 +20,7 @@ class Plugin extends \miaoxing\plugin\BasePlugin
         $subCategories['user'] = [
             'parentId' => 'user',
             'name' => '用户',
-            'icon' => 'fa fa-user'
+            'icon' => 'fa fa-user',
         ];
 
         $navs[] = [
@@ -66,13 +66,13 @@ class Plugin extends \miaoxing\plugin\BasePlugin
         $links[] = [
             'typeId' => 'user',
             'name' => '个人中心',
-            'url' => 'users/index'
+            'url' => 'users/index',
         ];
 
         $links[] = [
             'typeId' => 'user',
             'name' => '个人信息',
-            'url' => 'users/info'
+            'url' => 'users/info',
         ];
     }
 
@@ -83,8 +83,8 @@ class Plugin extends \miaoxing\plugin\BasePlugin
             'supports' => [
                 'type',
                 'icons',
-                'bg-color'
-            ]
+                'bg-color',
+            ],
         ];
     }
 }
