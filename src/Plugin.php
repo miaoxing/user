@@ -42,19 +42,6 @@ class Plugin extends \miaoxing\plugin\BasePlugin
             'name' => '来源统计',
         ];
 
-        $subCategories['user-log'] = [
-            'parentId' => 'user',
-            'name' => '日志',
-            'icon' => 'fa fa-bars',
-            'sort' => 0,
-        ];
-
-        $navs[] = [
-            'parentId' => 'user-log',
-            'url' => 'admin/user-logs',
-            'name' => '操作日志',
-        ];
-
         $subCategories['user-setting'] = [
             'parentId' => 'user',
             'name' => '设置',
