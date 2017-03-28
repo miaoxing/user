@@ -16,9 +16,6 @@ namespace plugins\user\docs {
      *
      * @method      \Miaoxing\User\Service\UserProfile|\Miaoxing\User\Service\UserProfile[] userProfile() 用户详细信息
      *
-     * @property    \Miaoxing\User\Service\UserLog $userLog
-     * @method      \Miaoxing\User\Service\UserLog|\Miaoxing\User\Service\UserLog[] userLog() 用户操作日志
-     *
      * @property    \Miaoxing\User\Service\UserVerify $userVerify 用户校验
      * @property    \Miaoxing\User\Service\UserPassword $userPassword 密码设置
      */
