@@ -148,6 +148,15 @@ class Users extends \miaoxing\plugin\BaseController
     public function loginAction(Request $req)
     {
         if ($req->isPost()) {
+            if (wei()->setting('user.enableLoginCaptcha')) {
+                $ret = wei()->captcha->check($req['captcha']);
+                if ($ret['code'] !== 1) {
+                    $ret['captchaErr'] = true;
+
+                    return $this->ret($ret);
+                }
+            }
+
             $ret = $this->curUser->login($req);
 
             return $this->ret($ret);
