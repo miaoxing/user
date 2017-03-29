@@ -23,7 +23,7 @@ class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
             ]);
 
         // 删除已存在的用户供注册
-        wei()->user()->destroy(['username' => 'test2']);
+        wei()->user()->destroy(['email' => 'test2@test.com']);
     }
 
     public function providerForRegisterByEmail()
@@ -61,29 +61,6 @@ class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
             [
                 [
                     'email' => 'test@example.com',
-                    // 输入不合法用户名
-                    'username' => '0123',
-                ],
-                [
-                    'code' => -7,
-                    'message' => '用户名不能以数字开头',
-                ],
-            ],
-            [
-                [
-                    'email' => 'test@example.com',
-                    // 输入已存在用户名
-                    'username' => 'test',
-                ],
-                [
-                    'code' => -7,
-                    'message' => '用户名已存在',
-                ],
-            ],
-            [
-                [
-                    'email' => 'test@example.com',
-                    'username' => 'example',
                     // 未输入密码
                 ],
                 [
@@ -94,7 +71,6 @@ class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
             [
                 [
                     'email' => 'test@example.com',
-                    'username' => 'example',
                     'password' => '123456',
                     // 未确认密码不相等密码
                     'passwordConfirm' => 'abcdef',
@@ -150,27 +126,6 @@ class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
     {
         return [
             [
-                [
-                    'mobile' => '15989130452',
-                    'verifyCode' => '123456',
-                    'password' => 'admina',
-                    'passwordConfirm' => 'admina',
-                ], [
-                'code' => -7,
-                'message' => '用户名不能为空',
-                ],
-            ], [
-                [
-                    'username' => 'mi',
-                    'mobile' => '15989130452',
-                    'verifyCode' => '123456',
-                    'password' => 'admina',
-                    'passwordConfirm' => 'admina',
-                ], [
-                    'code' => -7,
-                    'message' => '用户名的长度必须在3和30之间',
-                ],
-            ], [
                 [
                     'username' => 'miaomiao',
                     'mobile' => '15989130452',

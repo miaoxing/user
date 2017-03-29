@@ -33,49 +33,20 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
         return [
             [
                 [
-                    'username' => 'notexists',
-                    'email' => 'not-exists@qq.com',
-                ], [
-                'code' => -1,
-                'message' => '用户名不存在',
+                    'email' => '',
                 ],
-            ], [
                 [
-                    'username' => 'notexists',
-                ], [
                     'code' => -1,
                     'message' => '请输入邮箱',
                 ],
-            ], [
+            ],
+            [
                 [
-                    'email' => 'notexists@qq.com',
-                ], [
-                    'code' => -1,
-                    'message' => '请输入用户名',
-                ],
-            ], [
-                [
-                    'username' => 'no',
-                    'email' => 'notexists@qq.com',
-                ], [
-                    'code' => -1,
-                    'message' => '请输入3-30字符以内的用户名',
-                ],
-            ], [
-                [
-                    'username' => 'notexists',
                     'email' => 'notexists',
-                ], [
+                ],
+                [
                     'code' => -1,
                     'message' => '请输入正确的邮箱格式',
-                ],
-            ], [
-                [
-                    'username' => 'miaostar',
-                    'email' => 'abcdef@qq.com',
-                ], [
-                    'code' => -1,
-                    'message' => '邮箱跟用户名不属于同一个用户',
                 ],
             ],
         ];
@@ -110,94 +81,111 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
                     'verifyCode' => '123456',
                     'password' => 'admina',
                     'passwordConfirm' => 'admina',
-                ], [
-                'code' => -1,
-                'message' => '请输入用户名',
                 ],
-            ], [
+                [
+                    'code' => -1,
+                    'message' => '请输入用户名',
+                ],
+            ],
+            [
                 [
                     'username' => 'mi',
                     'mobile' => '15989130451',
                     'verifyCode' => '123456',
                     'password' => 'admina',
                     'passwordConfirm' => 'admina',
-                ], [
+                ],
+                [
                     'code' => -1,
                     'message' => '请输入3-30字符以内的用户名',
                 ],
-            ], [
+            ],
+            [
                 [
                     'username' => 'miaostar',
                     'verifyCode' => '123456',
                     'password' => 'admina',
                     'passwordConfirm' => 'admina',
-                ], [
+                ],
+                [
                     'code' => -1,
                     'message' => '请输入手机号码',
                 ],
-            ], [
+            ],
+            [
                 [
                     'username' => 'miaostar',
                     'mobile' => '15989130451',
                     'password' => 'admina',
                     'passwordConfirm' => 'admina',
-                ], [
+                ],
+                [
                     'code' => -1,
                     'message' => '请输入验证码',
                 ],
-            ], [
+            ],
+            [
                 [
                     'username' => 'miaostar',
                     'mobile' => '15989130451',
                     'verifyCode' => '123456',
                     'password' => 'adminad',
                     'passwordConfirm' => 'admina',
-                ], [
+                ],
+                [
                     'code' => -1,
                     'message' => '两次输入的密码不相等',
                 ],
-            ], [
+            ],
+            [
                 [
                     'username' => 'miao',
                     'mobile' => '15989130451',
                     'verifyCode' => '123456',
                     'password' => 'admina',
                     'passwordConfirm' => 'admina',
-                ], [
+                ],
+                [
                     'code' => -1,
                     'message' => '用户名不存在',
                 ],
-            ], [
+            ],
+            [
                 [
                     'username' => 'miaostar',
                     'mobile' => '15989130452',
                     'verifyCode' => '123456',
                     'password' => 'admina',
                     'passwordConfirm' => 'admina',
-                ], [
+                ],
+                [
                     'code' => -1,
                     'message' => '手机号码跟用户名不属于同一个用户',
                 ],
-            ], [
+            ],
+            [
                 [
                     'username' => 'miaostar',
                     'mobile' => '15989130451',
                     'verifyCode' => '1234567',
                     'password' => 'admina',
                     'passwordConfirm' => 'admina',
-                ], [
+                ],
+                [
                     'code' => -2,
                     'message' => '验证码不正确,请重新获取',
                     'verifyCodeErr' => true,
                 ],
-            ], [
+            ],
+            [
                 [
                     'username' => 'miaostar',
                     'mobile' => '15989130451',
                     'verifyCode' => '123456',
                     'password' => 'admina',
                     'passwordConfirm' => 'admina',
-                ], [
+                ],
+                [
                     'code' => 1,
                     'message' => '操作成功',
                 ],
@@ -238,9 +226,10 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
                 [
                     'username' => 'miaostar',
                     'email' => '790449591@qq.com',
-                ], [
-                'code' => 1,
-                'message' => '发送成功',
+                ],
+                [
+                    'code' => 1,
+                    'message' => '发送成功',
                 ],
             ],
         ];
@@ -289,27 +278,32 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
                     'userId' => $userId,
                     'nonce' => $nonce,
                     'sign' => $sign,
-                ], [
-                'code' => -1,
-                'message' => '链接超时无效',
                 ],
-            ], [
+                [
+                    'code' => -1,
+                    'message' => '链接超时无效',
+                ],
+            ],
+            [
                 [
                     'timestamp' => $timestamp,
                     'userId' => $userId . '001000100001000001',
                     'nonce' => $nonce,
                     'sign' => $sign,
-                ], [
+                ],
+                [
                     'code' => -1,
                     'message' => '用户不存在',
                 ],
-            ], [
+            ],
+            [
                 [
                     'timestamp' => $timestamp,
                     'userId' => $userId,
                     'nonce' => $nonce,
                     'sign' => md5($sign),
-                ], [
+                ],
+                [
                     'code' => -1,
                     'message' => '链接验证无效',
                 ],

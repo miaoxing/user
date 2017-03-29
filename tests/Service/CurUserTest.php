@@ -30,7 +30,8 @@ class CurUserTest extends \Miaoxing\Plugin\Test\BaseTestCase
         $this->assertEquals('nickName2', $curUser['nickName']);
 
         $query = wei()->db->getLastQuery();
-        $sql = 'UPDATE user SET id = ?, nickName = ?, updateUser = ?, updateTime = ? WHERE id = ?';
+        $sql = 'UPDATE user SET id = ?, nickName = ?, extAttr = ?, updateUser = ?, updateTime = ?, department = ? ';
+        $sql .= 'WHERE id = ?';
         $this->assertEquals($sql, $query);
     }
 

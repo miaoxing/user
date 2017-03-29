@@ -16,6 +16,10 @@ class RegistrationTest extends BaseControllerTestCase
         'editEmail' => 302,
         'resendEmail' => 302,
         'updateEmail' => 302,
+        'forget' => 302,
+        'createResetByEmail' => 302,
+        'reset' => 302,
+        'resetUpdate' => 302,
     ];
 
     /**
