@@ -51,7 +51,7 @@ class RegistrationTest extends BaseControllerTestCase
         $mail->expects($this->once())
             ->method('send')
             ->with(Register::className(), [
-                'user' => wei()->curUser
+                'user' => wei()->curUser,
             ])
             ->willReturn([
                 'code' => 1,
@@ -95,7 +95,7 @@ class RegistrationTest extends BaseControllerTestCase
         $mail->expects($this->once())
             ->method('send')
             ->with(Register::className(), [
-                'user' => wei()->curUser
+                'user' => wei()->curUser,
             ])
             ->willReturn([
                 'code' => 1,
