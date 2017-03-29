@@ -9,7 +9,7 @@
   </div>
 
   <h1>
-    用户组管理
+    分组管理
     <small>
       <i class="fa fa-angle-double-right"></i>
       用户组列表
@@ -50,7 +50,7 @@
       <i class="fa fa-edit bigger-130"></i>
     </a>
 
-    <a class="text-danger delete-record" data-id="<%= id %>" title="删除" href="javascript:;">
+    <a class="text-danger delete-record" data-id="<%= id %>" title="删除" href="javascript:">
       <i class="fa fa-trash-o bigger-130"></i>
     </a>
   </div>

@@ -6,11 +6,7 @@
 
 <div class="page-header">
   <h1>
-    用户管理
-    <small>
-      <i class="fa fa-angle-double-right"></i>
-      来源统计
-    </small>
+    来源统计
   </h1>
 </div>
 

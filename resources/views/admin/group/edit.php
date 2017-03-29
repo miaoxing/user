@@ -4,7 +4,7 @@
   <a class="btn btn-default pull-right" href="<?= $url('admin/group/index') ?>">返回列表</a>
 
   <h1>
-    用户组管理
+    分组管理
     <small>
       <i class="fa fa-angle-double-right"></i>
       <?= $action == 'add' ? '添加' : '编辑' ?>用户组
