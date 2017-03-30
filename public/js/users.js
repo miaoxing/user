@@ -1,16 +1,20 @@
-define(function () {
+define(['plugins/app/js/validator'], function () {
   var User = function () {
     // do nothing.
   };
 
   var DELAY = 2000;
+  var ENTER_KEY = 13;
 
   $.extend(User.prototype, {
     loginAction: function () {
-      var enterKey = 13;  // 回车
-      $('.js-login-form')
+      var $form = $('.js-login-form');
+      $form
         .ajaxForm({
           dataType: 'json',
+          beforeSubmit: function (arr, $form) {
+            return $form.valid();
+          },
           success: function (ret) {
             if (ret.code === 1) {
               window.location = ($.req('next') === '' ? $.url('admin') : $.req('next'));
@@ -19,12 +23,14 @@ define(function () {
             }
           }
         })
-        .find('input').keyup(function (e) {
-          if (e.which === enterKey) {
-            return;
-          }
-          $('.error-message').html('');
-        });
+        .validate();
+
+      $form.find('input').keyup(function (e) {
+        if (e.which === ENTER_KEY) {
+          return;
+        }
+        $('.error-message').html('');
+      });
     },
 
     // 展示页面内的提示信息

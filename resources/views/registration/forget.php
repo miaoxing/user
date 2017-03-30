@@ -16,7 +16,7 @@ $view->layout('admin:admin/layout-light.php')
         <label for="email">
           邮箱
         </label>
-        <input type="text" class="form-control" id="email" name="email">
+        <input type="email" class="form-control" id="email" name="email" required>
       </div>
 
       <div class="form-group">
@@ -24,8 +24,7 @@ $view->layout('admin:admin/layout-light.php')
           验证码
         </label>
         <div class="input-group">
-          <input type="text" class="form-control" id="captcha" name="captcha" placeholder="请输入验证码"
-            data-rule-required="true">
+          <input type="text" class="form-control" id="captcha" name="captcha" placeholder="请输入验证码" required>
             <span class="input-group-addon p-a-0">
               <img class="js-captcha" src="<?= $url('captcha') ?>">
             </span>
@@ -52,22 +51,27 @@ $view->layout('admin:admin/layout-light.php')
 
 <?= $block('js') ?>
 <script>
-  require(['form', 'plugins/user/js/users'], function (form, users) {
-    $('.js-forget-form').ajaxForm({
-      loading: true,
-      dataType: 'json',
-      success: function (ret) {
-        users.pageMsg(ret, function () {
-          if (typeof ret.captchaErr != 'undefined' && ret.captchaErr === true) {
-            $captcha.attr('src', src + '?t=' + new Date());
-          }
+  require(['form', 'plugins/user/js/users', 'plugins/app/js/validator'], function (form, users) {
+    $('.js-forget-form')
+      .ajaxForm({
+        loading: true,
+        dataType: 'json',
+        beforeSubmit: function (arr, $form) {
+          return $form.valid();
+        },
+        success: function (ret) {
+          users.pageMsg(ret, function () {
+            if (typeof ret.captchaErr != 'undefined' && ret.captchaErr === true) {
+              $captcha.attr('src', src + '?t=' + new Date());
+            }
 
-          if (ret.code == 1) {
-            window.location = $.url('admin/login');
-          }
-        });
-      }
-    });
+            if (ret.code == 1) {
+              window.location = $.url('admin/login');
+            }
+          });
+        }
+      })
+      .validate();
 
     var $captcha = $('.js-captcha');
     var src = $captcha.attr('src');

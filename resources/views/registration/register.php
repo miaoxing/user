@@ -19,21 +19,23 @@ $view->layout('admin:admin/layout-light.php')
         <label for="email">
           邮箱
         </label>
-        <input type="text" class="form-control" id="email" name="email">
+        <input type="email" class="form-control" id="email" name="email" required>
       </div>
 
       <div class="form-group">
         <label for="password">
           密码
         </label>
-        <input type="password" class="form-control" id="password" name="password">
+        <input type="password" class="form-control" id="password" name="password" required>
+        <div class="help-block with-errors"></div>
       </div>
 
       <div class="form-group">
         <label for="password-confirm">
           确认密码
         </label>
-        <input type="password" class="form-control" id="password-confirm" name="passwordConfirm">
+        <input type="password" class="form-control" id="password-confirm" name="passwordConfirm" required
+          data-rule-equalto="#password">
       </div>
 
       <div class="form-group">
@@ -41,19 +43,21 @@ $view->layout('admin:admin/layout-light.php')
           验证码
         </label>
         <div class="input-group">
-          <input type="text" class="form-control" id="captcha" name="captcha" placeholder="请输入验证码"
-            data-rule-required="true">
-            <span class="input-group-addon p-a-0">
-              <img class="js-captcha" src="<?= $url('captcha') ?>">
-            </span>
+          <input type="text" class="form-control" id="captcha" name="captcha" placeholder="请输入验证码" required>
+          <span class="input-group-addon p-a-0">
+            <img class="js-captcha" src="<?= $url('captcha') ?>">
+          </span>
         </div>
+        <div class="help-block with-errors"></div>
       </div>
 
       <?php if ($agreementArticleId) : ?>
-        <div class="checkbox">
-          <label>
-            <input name="agreement" type="checkbox" value="1"> 同意<a class="js-agreement" href="javascript:">《服务协议》</a>
-          </label>
+        <div class="form-group">
+          <div class="checkbox">
+            <label>
+              <input name="agreement" type="checkbox" value="1" required> 同意<a class="js-agreement" href="javascript:">《服务协议》</a>
+            </label>
+          </div>
         </div>
       <?php endif ?>
 
@@ -99,22 +103,26 @@ $view->layout('admin:admin/layout-light.php')
 
 <?= $block('js') ?>
 <script>
-  require(['form', 'plugins/user/js/users'], function (form, users) {
-    $('.js-register-form').ajaxForm({
-      loading: true,
-      dataType: 'json',
-      success: function (ret) {
-        users.pageMsg(ret, function () {
-          if (typeof ret.captchaErr != 'undefined' && ret.captchaErr === true) {
-            changeCaptcha();
-          }
+  require(['form', 'plugins/user/js/users', 'plugins/app/js/validator'], function (form, users) {
+    $('.js-register-form')
+      .ajaxForm({
+        loading: true,
+        dataType: 'json',
+        beforeSubmit: function (arr, $form) {
+          return $form.valid();
+        },
+        success: function (ret) {
+          users.pageMsg(ret, function () {
+            if (typeof ret.captchaErr != 'undefined' && ret.captchaErr === true) {
+              changeCaptcha();
+            }
 
-          if (ret.code == 1) {
-            window.location = $.url('registration/confirm');
-          }
-        });
-      }
-    });
+            if (ret.code == 1) {
+              window.location = $.url('registration/confirm');
+            }
+          });
+        }
+      }).validate();
 
     var $captcha = $('.js-captcha');
     $captcha.click(changeCaptcha);
