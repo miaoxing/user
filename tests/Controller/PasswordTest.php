@@ -11,7 +11,7 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
             ->findOrInit(['username' => 'miaostar'])
             ->setPlainPassword('admina')
             ->save([
-                'mobile' => '15989130451'
+                'mobile' => '15989130451',
             ]);
     }
 
