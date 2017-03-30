@@ -55,7 +55,8 @@ $view->layout('admin:admin/layout-light.php')
         <div class="form-group">
           <div class="checkbox">
             <label>
-              <input name="agreement" type="checkbox" value="1" required> 同意<a class="js-agreement" href="javascript:">《服务协议》</a>
+              <input name="agreement" type="checkbox" value="1" required>
+              同意<a class="js-agreement" href="javascript:">《服务协议》</a>
             </label>
           </div>
         </div>
