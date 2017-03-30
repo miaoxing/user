@@ -4,6 +4,17 @@ namespace MiaoxingTest\User\Controller;
 
 class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
 {
+    public static function setupBeforeClass()
+    {
+        // 创建用户供测试用户名和邮箱已存在
+        $user = wei()->user()
+            ->findOrInit(['username' => 'miaostar'])
+            ->setPlainPassword('admina')
+            ->save([
+                'mobile' => '15989130451'
+            ]);
+    }
+
     /**
      * 不管是否可以登陆，都可以访问忘记密码页面
      */
