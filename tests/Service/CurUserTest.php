@@ -95,7 +95,13 @@ class CurUserTest extends \Miaoxing\Plugin\Test\BaseTestCase
     {
         $session = $this->getServiceMock('session', ['offsetGet']);
 
-        $session->expects($this->exactly(4))
+        if (version_compare(PHP_VERSION, '7.0.0') >= 0) {
+            $count = 2;
+        } else {
+            $count = 4;
+        }
+
+        $session->expects($this->exactly($count))
             ->method('offsetGet')
             ->with('user')
             ->willReturn([
