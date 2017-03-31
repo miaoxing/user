@@ -196,10 +196,7 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
                     'password' => 'admina',
                     'passwordConfirm' => 'admina',
                 ],
-                [
-                    'code' => 1,
-                    'message' => '操作成功',
-                ],
+                wei()->ret->suc(),
             ],
         ];
     }
