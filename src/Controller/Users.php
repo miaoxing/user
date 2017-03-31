@@ -111,7 +111,7 @@ class Users extends \miaoxing\plugin\BaseController
      *
      * @return array
      */
-    public function infoAction($req)
+    public function editAction($req)
     {
         $user = $this->curUser;
 
