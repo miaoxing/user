@@ -95,16 +95,21 @@ class CurUserTest extends \Miaoxing\Plugin\Test\BaseTestCase
     {
         $session = $this->getServiceMock('session', ['offsetGet']);
 
-        $session->expects($this->exactly(4))
+        if (version_compare(PHP_VERSION, '7.0.0') >= 0) {
+            $count = 6;
+        } else {
+            $count = 4;
+        }
+
+        $session->expects($this->exactly($count))
             ->method('offsetGet')
             ->with('user')
             ->willReturn([
                 'id' => '1',
                 'nickName' => 'nickName',
             ]);
-        wei()->curUser->session = $session;
 
-        // 各触发2次offsetGet
+        // 各触发n次offsetGet
         $this->assertEquals('1', wei()->curUser['id']);
         $this->assertEquals('nickName', wei()->curUser['nickName']);
     }
