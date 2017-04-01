@@ -220,11 +220,13 @@ class User extends \miaoxing\plugin\BaseController
 
         $group = wei()->group()->findOrInitById($req['groupId']);
 
+        // 后台管理员在用户列表修改分组触发的事件
         $ret = wei()->event->until('adminGroupMove', [$req['ids'], $group]);
         if ($ret) {
             return $this->ret($ret);
         }
 
+        // 修改分组触发的事件
         $ret = wei()->event->until('groupMove', [$req['ids'], $group]);
         if ($ret) {
             return $this->ret($ret);
