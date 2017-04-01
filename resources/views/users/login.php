@@ -28,16 +28,16 @@
     </div>
 
     <?php if (wei()->setting('user.enableLoginCaptcha')) : ?>
-    <div class="form-group">
-      <label for="captcha" class="control-label">验证码</label>
+      <div class="form-group">
+        <label for="captcha" class="control-label">验证码</label>
 
-      <div class="input-group">
-        <input type="text" class="form-control" id="captcha" name="captcha" placeholder="输入验证码">
+        <div class="input-group">
+          <input type="text" class="form-control" id="captcha" name="captcha" placeholder="输入验证码">
         <span class="input-group-addon p-l-0 p-r-0 p-b-0 login-captcha">
           <img class="js-captcha" src="<?= $url('captcha') ?>">
         </span>
+        </div>
       </div>
-    </div>
     <?php endif ?>
   </div>
   <div class="form-footer">
@@ -55,18 +55,25 @@
         $.msg(ret, function () {
           if (ret.code === 1) {
             window.location = $.req('next') || $.url('users');
+          } else {
+            if (typeof $captcha != 'undefined') {
+              $captcha.attr('src', src + '?t=' + new Date());
+            }
           }
         });
       }
     });
 
-    var $captcha = $('.js-captcha');
-    $captcha.click(changeCaptcha);
+    <?php if (wei()->setting('user.enableLoginCaptcha')) : ?>
+      var $captcha = $('.js-captcha');
+      $captcha.click(changeCaptcha);
 
-    var src = $captcha.attr('src');
-    function changeCaptcha () {
-      $captcha.attr('src', src + '?t=' + new Date());
-    }
+      var src = $captcha.attr('src');
+
+      function changeCaptcha() {
+        $captcha.attr('src', src + '?t=' + new Date());
+      }
+    <?php endif ?>
   });
 </script>
 <?= $block->end() ?>
