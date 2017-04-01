@@ -219,6 +219,12 @@ class User extends \miaoxing\plugin\BaseController
         }
 
         $group = wei()->group()->findOrInitById($req['groupId']);
+
+        $ret = wei()->event->until('adminGroupMove', [$req['ids'], $group]);
+        if ($ret) {
+            return $this->ret($ret);
+        }
+
         $ret = wei()->event->until('groupMove', [$req['ids'], $group]);
         if ($ret) {
             return $this->ret($ret);
