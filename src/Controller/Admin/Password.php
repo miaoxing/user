@@ -20,6 +20,7 @@ class Password extends BaseController
     public function updateAction($req)
     {
         $ret = $this->curUser->updatePassword($req);
+
         return $ret;
     }
 }
