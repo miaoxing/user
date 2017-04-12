@@ -8,6 +8,15 @@ $canShow = $curUser->can('admin/user/show');
 
 <?= $block('html') ?>
 <script id="user-info-tpl" type="text/html">
+  <%
+  if (name && nickName && name != nickName) {
+    var displayName = name + '(' + nickName + ')';
+  } else if (name) {
+    var displayName = name;
+  } else {
+    var displayName = nickName;
+  }
+  %>
   <div class="media user-media">
     <span class="media-left <?= $canShow ? 'user-popover' : '' ?> user-popover-<%= guid = $.guid++ %>"
       data-container=".user-popover-<%= guid %>" data-id="<%= id %>">
@@ -18,14 +27,9 @@ $canShow = $curUser->can('admin/user/show');
 
     <div class="media-body text-left">
       <h4 class="media-heading">
-        <a href="<?= $canShow ? "<%= $.url('admin/message/user', {userId: id}) %>" : 'javascript:;' ?>">
-          <% if (name && nickName && name != nickName) { %>
-            <%= name %>(<%= nickName %>)
-          <% } else if (name) { %>
-            <%= name %>
-          <% } else if (nickName) { %>
-            <%= nickName %>
-          <% } %>
+        <a href="<?= $canShow ? "<%= $.url('admin/message/user', {userId: id}) %>" : 'javascript:;' ?>"
+          title="<%= displayName %>">
+          <%= displayName %>
         </a>
       </h4>
       <span class="media-content text-muted" title="<%= tip %>">
