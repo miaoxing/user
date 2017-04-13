@@ -32,8 +32,13 @@ class UserPassword extends BaseService
             return ['code' => -1, 'message' => $validator->getFirstMessage()];
         }
 
-        // Step2 邮箱发送验证码
-        $user['email'] = $req['email'];
+        // Step2 查找是否存在该用户
+        $user = wei()->user()->find(['email' => $req['email']]);
+        if (!$user) {
+            return ['code' => -1, 'message' => '不存在该用户'];
+        }
+
+        // Step3 邮箱发送验证码
         $ret = wei()->mail->send(ResetPassword::className(), [
             'user' => $user,
         ]);
