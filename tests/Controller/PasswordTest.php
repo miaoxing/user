@@ -12,6 +12,7 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
             ->setPlainPassword('admina')
             ->save([
                 'mobile' => '15989130451',
+                'email' => '790449591@qq.com',
             ]);
     }
 
