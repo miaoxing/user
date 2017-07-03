@@ -2,7 +2,7 @@
 
 <ul class="list list-indented">
   <li class="list-item-link">
-    <a href="<?= $url('users/info') ?>" class="list-item">
+    <a href="<?= $url('users/edit') ?>" class="list-item">
       <h4 class="list-heading">
         个人资料
       </h4>

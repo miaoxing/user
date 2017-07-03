@@ -72,7 +72,7 @@ class Plugin extends \miaoxing\plugin\BasePlugin
         $links[] = [
             'typeId' => 'user',
             'name' => '个人信息',
-            'url' => 'users/info',
+            'url' => 'users/edit',
         ];
     }
 
