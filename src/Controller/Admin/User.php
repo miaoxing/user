@@ -103,6 +103,7 @@ class User extends \miaoxing\plugin\BaseController
 
                     $data[] = $user->toArray() + [
                             'sourceUser' => $source ? $source->toArray() : '',
+                            'wechat_qrcode' => $weChatQrcode,
                             'group' => $user->getGroup(),
                         ];
                 }

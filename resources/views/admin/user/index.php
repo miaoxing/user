@@ -194,13 +194,15 @@
           data: 'sourceUser',
           sClass: 'text-center',
           render: function (data, type, full) {
-            if (full.source == '-1') {
+            if (data !== '') {
+              return template.render('user-info-tpl',data);
+            } else if (full.wechat_qrcode) {
+              return full.wechat_qrcode.name;
+            } else if (full.source == '-1') {
               return '后台创建';
+            } else {
+              return full.source == '' ? '-' : full.source;
             }
-            if (!data) {
-              return '直接关注';
-            }
-            return template.render('user-info-tpl',data);
           }
         },
         {
