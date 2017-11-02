@@ -73,6 +73,10 @@ class Users extends \miaoxing\plugin\BaseController
             return $this->err('请输入手机号码');
         }
 
+        if ($this->curUser['mobile'] == $req['mobile'] && $this->curUser->isStatus(User::STATUS_MOBILE_VERIFIED)) {
+            return $this->err('您已绑定了该手机号码');
+        }
+
         $user = wei()->user()->withStatus(User::STATUS_MOBILE_VERIFIED)->find(['mobile' => $req['mobile']]);
         if ($user) {
             return $this->err('该手机号码已经注册，请重新输入');
