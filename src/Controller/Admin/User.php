@@ -85,6 +85,10 @@ class User extends \miaoxing\plugin\BaseController
                     );
                 }
 
+                if ($req['filter_empty'] && in_array($req['filter_empty'], $users->getFields())) {
+                    $users->andWhere($req['filter_empty'] . " != ''");
+                }
+
                 // 导出用户限制
                 if ($req['format'] == 'csv' && $users->count() > 10000) {
                     return $this->err('导出用户数超过1W，请联系开发人员后台导出！');
