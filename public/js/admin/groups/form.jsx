@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {InputGroup, Table, Form, Well, Col, Checkbox, Radio, FormGroup, FormControl, ControlLabel, Button, HelpBlock} from 'react-bootstrap';
 
+import jqueryFrom from 'jquery-form';
+import jqueryPopulate from 'jquery-populate';
+
 class GroupForm extends React.Component {
   componentDidMount() {
-    Promise.all([;
-      import(/* webpackChunkName:"jquery-populate" */ 'vendor/miaoxing/app/public/libs/jquery.populate/jquery.populate'),;
-      import(/* webpackChunkName:"jquery-form" */ 'comps/jquery-form/jquery.form');
-    ]).then(() => {
+    Promise.all([jqueryPopulate, jqueryFrom]).then(() => {
       $(ReactDOM.findDOMNode(this))
         .populate(wei.group)
         .ajaxForm({
