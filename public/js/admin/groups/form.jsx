@@ -12,7 +12,7 @@ class GroupForm extends React.Component {
       $(ReactDOM.findDOMNode(this))
         .populate(wei.group)
         .ajaxForm({
-          url: $.url('admin/group/update'),
+          url: $.url('admin/groups/update'),
           dataType: 'json',
           beforeSubmit: function (arr, $form) {
             return $form.valid();
@@ -20,7 +20,7 @@ class GroupForm extends React.Component {
           success: function (ret) {
             $.msg(ret, function () {
               if (ret.code === 1) {
-                window.location = $.url('admin/group');
+                window.location = $.url('admin/groups');
               }
             });
           }
@@ -60,7 +60,7 @@ class GroupForm extends React.Component {
               {' '}提交
             </Button>
             &nbsp; &nbsp; &nbsp;
-            <Button componentClass="a" href={$.url('admin/group')}>
+            <Button componentClass="a" href={$.url('admin/groups')}>
               <i className="fa fa-undo bigger-110"/>
               {' '}返回列表
             </Button>

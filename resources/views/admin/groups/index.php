@@ -5,7 +5,7 @@
     <a class="btn btn-white" id="sync-from-wechat">
       <i class="fa fa-refresh"></i> 从微信同步分组
     </a>
-    <a class="btn btn-success" href="<?= $url('admin/group/new') ?>">添加用户组</a>
+    <a class="btn btn-success" href="<?= $url('admin/groups/new') ?>">添加用户组</a>
   </div>
 
   <h1>
@@ -46,7 +46,7 @@
 
 <script id="table-actions" type="text/html">
   <div class="action-buttons">
-    <a href="<%= $.url('admin/group/edit', {id: id}) %>" title="编辑">
+    <a href="<%= $.url('admin/groups/%s/edit', id) %>" title="编辑">
       <i class="fa fa-edit bigger-130"></i>
     </a>
 
@@ -61,7 +61,7 @@
   require(['form', 'dataTable', 'jquery-deparam'], function () {
     var recordTable = $('#record-table').dataTable({
       ajax: {
-        url: $.queryUrl('admin/group.json')
+        url: $.queryUrl('admin/groups.json')
       },
       columns: [
         {
@@ -92,7 +92,7 @@
     recordTable.on('click', 'a.delete-record', function () {
       var $this = $(this);
       $.confirm('删除后将无法还原,确认删除?', function () {
-        $.post($.url('admin/group/destroy', {id: $this.data('id')}), function () {
+        $.post($.url('admin/groups/destroy', {id: $this.data('id')}), function () {
           recordTable.fnDraw(false);
         }, 'json');
       });

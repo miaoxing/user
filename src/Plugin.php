@@ -32,7 +32,7 @@ class Plugin extends \miaoxing\plugin\BasePlugin
 
         $navs[] = [
             'parentId' => 'user',
-            'url' => 'admin/group/index',
+            'url' => 'admin/groups',
             'name' => '分组管理',
         ];
 

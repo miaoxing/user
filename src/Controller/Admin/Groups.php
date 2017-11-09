@@ -2,7 +2,7 @@
 
 namespace Miaoxing\User\Controller\Admin;
 
-class Group extends \miaoxing\plugin\BaseController
+class Groups extends \miaoxing\plugin\BaseController
 {
     protected $controllerName = '用户分组管理';
 
