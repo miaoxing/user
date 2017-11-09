@@ -1,22 +1,11 @@
 <?php $view->layout() ?>
 
-<div class="page-header">
-  <div class="pull-right">
-    <a class="btn btn-white" id="sync-from-wechat">
-      <i class="fa fa-refresh"></i> 从微信同步分组
-    </a>
-    <a class="btn btn-success" href="<?= $url('admin/groups/new') ?>">添加用户组</a>
-  </div>
-
-  <h1>
-    分组管理
-    <small>
-      <i class="fa fa-angle-double-right"></i>
-      用户组列表
-    </small>
-  </h1>
-</div>
-<!-- /.page-header -->
+<?= $block('header-actions') ?>
+<a class="btn btn-white" id="sync-from-wechat">
+  <i class="fa fa-refresh"></i> 从微信同步分组
+</a>
+<a class="btn btn-success" href="<?= $url('admin/groups/new') ?>">添加用户组</a>
+<?= $block->end() ?>
 
 <div class="row">
   <div class="col-xs-12">
