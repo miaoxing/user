@@ -4,15 +4,19 @@ import {InputGroup, Table, Form, Well, Col, Checkbox, Radio, FormGroup, FormCont
 
 import jqueryFrom from 'jquery-form';
 import jqueryPopulate from 'jquery-populate';
+import validator from 'validator';
 
 class GroupForm extends React.Component {
   componentDidMount() {
-    Promise.all([jqueryPopulate, jqueryFrom]).then(() => {
+    Promise.all([jqueryPopulate, jqueryFrom, validator]).then(() => {
       $(ReactDOM.findDOMNode(this))
         .populate(wei.group)
         .ajaxForm({
           url: $.url('admin/group/update'),
           dataType: 'json',
+          beforeSubmit: function (arr, $form) {
+            return $form.valid();
+          },
           success: function (ret) {
             $.msg(ret, function () {
               if (ret.code === 1) {
@@ -20,7 +24,8 @@ class GroupForm extends React.Component {
               }
             });
           }
-        });
+        })
+        .validate();
     });
   }
 
@@ -33,7 +38,7 @@ class GroupForm extends React.Component {
             名称
           </Col>
           <Col sm={4}>
-            <FormControl type="text" name="name" />
+            <FormControl type="text" name="name" required />
           </Col>
         </FormGroup>
 
@@ -42,21 +47,21 @@ class GroupForm extends React.Component {
             顺序
           </Col>
           <Col sm={4}>
-            <FormControl type="number" name="sort" />
+            <FormControl type="number" name="sort"/>
           </Col>
         </FormGroup>
 
-        <input type="hidden" id="id" name="id" />
+        <input type="hidden" id="id" name="id"/>
 
         <FormGroup className="clearfix form-actions">
           <Col smOffset={2}>
             <Button bsStyle="primary" type="submit">
-              <i className="fa fa-check bigger-110" />
+              <i className="fa fa-check bigger-110"/>
               {' '}提交
             </Button>
             &nbsp; &nbsp; &nbsp;
             <Button componentClass="a" href={$.url('admin/group')}>
-              <i className="fa fa-undo bigger-110" />
+              <i className="fa fa-undo bigger-110"/>
               {' '}返回列表
             </Button>
           </Col>
