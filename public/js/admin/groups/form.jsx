@@ -5,6 +5,7 @@ import {InputGroup, Table, Form, Well, Col, Checkbox, Radio, FormGroup, FormCont
 import jqueryFrom from 'jquery-form';
 import jqueryPopulate from 'jquery-populate';
 import validator from 'validator';
+import FormAction from 'FormAction.jsx';
 
 class GroupForm extends React.Component {
   componentDidMount() {
@@ -53,19 +54,7 @@ class GroupForm extends React.Component {
 
         <input type="hidden" id="id" name="id"/>
 
-        <FormGroup className="clearfix form-actions">
-          <Col smOffset={2}>
-            <Button bsStyle="primary" type="submit">
-              <i className="fa fa-check bigger-110"/>
-              {' '}提交
-            </Button>
-            &nbsp; &nbsp; &nbsp;
-            <Button componentClass="a" href={$.url('admin/groups')}>
-              <i className="fa fa-undo bigger-110"/>
-              {' '}返回列表
-            </Button>
-          </Col>
-        </FormGroup>
+        <FormAction url={$.url('admin/groups')} />
       </Form>
     )
   }
