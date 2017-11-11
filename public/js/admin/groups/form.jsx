@@ -5,7 +5,7 @@ import {InputGroup, Table, Form, Well, Col, Checkbox, Radio, FormGroup, FormCont
 import jqueryFrom from 'jquery-form';
 import jqueryPopulate from 'jquery-populate';
 import validator from 'validator';
-import FormAction from 'FormAction.jsx';
+import {FormAction} from 'components';
 
 class GroupForm extends React.Component {
   componentDidMount() {
