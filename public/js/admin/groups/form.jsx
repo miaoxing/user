@@ -5,7 +5,7 @@ import {InputGroup, Table, Form, Well, Col, Checkbox, Radio, FormGroup, FormCont
 import jqueryFrom from 'jquery-form';
 import jqueryPopulate from 'jquery-populate';
 import validator from 'validator';
-import {FormAction} from 'components';
+import {FormRow, FormAction} from 'components';
 
 class GroupForm extends React.Component {
   componentDidMount() {
@@ -33,24 +33,9 @@ class GroupForm extends React.Component {
   render() {
     return (
       <Form horizontal method="post">
-        <FormGroup controlId="name">
-          <Col componentClass={ControlLabel} sm={2}>
-            <span className="text-warning">*</span>{' '}
-            名称
-          </Col>
-          <Col sm={4}>
-            <FormControl type="text" name="name" required />
-          </Col>
-        </FormGroup>
+        <FormRow label="名称" name="name" required />
 
-        <FormGroup controlId="sort">
-          <Col componentClass={ControlLabel} sm={2}>
-            顺序
-          </Col>
-          <Col sm={4}>
-            <FormControl type="number" name="sort"/>
-          </Col>
-        </FormGroup>
+        <FormRow label="顺序" name="sort" type="number" />
 
         <input type="hidden" id="id" name="id"/>
 
