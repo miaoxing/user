@@ -7,21 +7,26 @@ import jQueryForm from 'jquery-form';
 import jQueryDeparam from 'jquery-deparam';
 import dataTable from 'data-table';
 
+const loader = Promise.all([jQueryDeparam, dataTable]);
+
 class GroupIndex extends React.Component {
   componentDidMount() {
-    Promise.all([asyncForm, jQueryForm, jQueryDeparam, dataTable]).then(() => {
+    loader.then(() => {
       var $table = $('.js-group-table').dataTable({
         ajax: {
           url: $.queryUrl('admin/groups.json')
         },
         columns: [
           {
+            title: '名称',
             data: 'name'
           },
           {
+            title: '顺序',
             data: 'sort'
           },
           {
+            title: '状态',
             data: 'wechatId',
             render: function (data, type, full) {
               if (data > 0) {
@@ -31,6 +36,7 @@ class GroupIndex extends React.Component {
             }
           },
           {
+            title: '操作',
             data: 'id',
             createdCell: (td, val) => {
               ReactDOM.render(<span>
@@ -75,20 +81,7 @@ class GroupIndex extends React.Component {
   render() {
     return (
       <div className="table-responsive">
-        <Table bordered hover className="js-group-table table-center">
-          <thead>
-          <tr>
-            <th>名称</th>
-            <th>顺序</th>
-            <th>状态</th>
-            <th>操作</th>
-          </tr>
-          </thead>
-          <tbody>
-          </tbody>
-          <tfoot>
-          </tfoot>
-        </Table>
+        <Table bordered hover className="js-group-table table-center" />
       </div>
     )
   }

@@ -12,6 +12,4 @@ $wei->page->addActionJs('index');
 <a class="btn btn-success" href="<?= $url('admin/groups/new') ?>">添加用户组</a>
 <?= $block->end() ?>
 
-<div class="row">
-  <div class="col-xs-12" id="root"></div>
-</div>
+<div id="root"></div>
