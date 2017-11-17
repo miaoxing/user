@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {InputGroup, Table, Form, Well, Row, Col, Checkbox, Radio, FormGroup, FormControl, ControlLabel, Button, HelpBlock} from 'react-bootstrap';
+import {Table, Form, Row, Col, FormGroup, Button} from 'react-bootstrap';
 
 import jqueryFrom from 'jquery-form';
 import jqueryPopulate from 'jquery-populate';
@@ -12,16 +12,14 @@ const loader = Promise.all([jqueryPopulate, jqueryFrom, validator]);
 class GroupForm extends React.Component {
   componentDidMount() {
     loader.then(() => {
-      $('js-groups-form')
+      $('.js-groups-form')
         .populate(wei.group)
         .ajaxForm({
           url: $.url('admin/groups/update'),
           dataType: 'json',
-          beforeSubmit: function (arr, $form) {
-            return $form.valid();
-          },
-          success: function (ret) {
-            $.msg(ret, function () {
+          beforeSubmit: (arr, $form) => $form.valid(),
+          success: (ret) => {
+            $.msg(ret, () => {
               if (ret.code === 1) {
                 window.location = $.url('admin/groups');
               }
@@ -45,7 +43,7 @@ class GroupForm extends React.Component {
 
               <FormRow label="顺序" name="sort" type="number" />
 
-              <input type="hidden" id="id" name="id"/>
+              <input type="hidden" id="id" name="id" />
 
               <FormAction url={$.url('admin/groups')} />
             </Form>
