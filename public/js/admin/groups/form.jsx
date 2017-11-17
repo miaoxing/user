@@ -5,7 +5,7 @@ import {Table, Form, Row, Col, FormGroup, Button} from 'react-bootstrap';
 import jqueryFrom from 'jquery-form';
 import jqueryPopulate from 'jquery-populate';
 import validator from 'validator';
-import {Content, PageHeader, FormRow, FormAction} from 'components';
+import {Page, PageHeader, FormRow, FormAction} from 'components';
 
 const loader = Promise.all([jqueryPopulate, jqueryFrom, validator]);
 
@@ -32,7 +32,7 @@ class GroupForm extends React.Component {
 
   render() {
     return (
-      <Content>
+      <Page>
         <PageHeader>
           <Button href={$.url('admin/groups')}>返回列表</Button>
         </PageHeader>
@@ -49,7 +49,7 @@ class GroupForm extends React.Component {
             </Form>
           </Col>
         </Row>
-      </Content>
+      </Page>
     )
   }
 }

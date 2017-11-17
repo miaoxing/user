@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Table, Button} from 'react-bootstrap';
-import {Content, PageHeader, DataTable} from 'components';
+import {Page, PageHeader, DataTable} from 'components';
 
 import asyncForm from 'async-dep-form';
 import jQueryForm from 'jquery-form';
@@ -81,7 +81,7 @@ class GroupIndex extends React.Component {
 
   render() {
     return (
-      <Content>
+      <Page>
         <PageHeader>
           <Button id="sync-from-wechat">
             <i className="fa fa-refresh" /> 从微信同步分组
@@ -90,7 +90,7 @@ class GroupIndex extends React.Component {
           <Button bsStyle="success" href={$.url('admin/groups/new')}>添加用户组</Button>
         </PageHeader>
         <DataTable className="js-group-table" />
-      </Content>
+      </Page>
     )
   }
 }
