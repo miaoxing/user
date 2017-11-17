@@ -36,19 +36,15 @@ class GroupForm extends React.Component {
         <PageHeader>
           <Button href={$.url('admin/groups')}>返回列表</Button>
         </PageHeader>
-        <Row>
-          <Col xs={12}>
-            <Form horizontal className="js-groups-form" method="post">
-              <FormRow label="名称" name="name" required />
+        <Form horizontal className="js-groups-form" method="post">
+          <FormRow label="名称" name="name" required />
 
-              <FormRow label="顺序" name="sort" type="number" />
+          <FormRow label="顺序" name="sort" type="number" />
 
-              <input type="hidden" id="id" name="id" />
+          <input type="hidden" id="id" name="id" />
 
-              <FormAction url={$.url('admin/groups')} />
-            </Form>
-          </Col>
-        </Row>
+          <FormAction url={$.url('admin/groups')} />
+        </Form>
       </Page>
     )
   }
