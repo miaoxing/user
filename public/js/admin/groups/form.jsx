@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {InputGroup, Table, Form, Well, Col, Checkbox, Radio, FormGroup, FormControl, ControlLabel, Button, HelpBlock} from 'react-bootstrap';
+import {InputGroup, Table, Form, Well, Row, Col, Checkbox, Radio, FormGroup, FormControl, ControlLabel, Button, HelpBlock} from 'react-bootstrap';
 
 import jqueryFrom from 'jquery-form';
 import jqueryPopulate from 'jquery-populate';
 import validator from 'validator';
-import {FormRow, FormAction} from 'components';
+import {Content, PageHeader, FormRow, FormAction} from 'components';
+
+const loader = Promise.all([jqueryPopulate, jqueryFrom, validator]);
 
 class GroupForm extends React.Component {
   componentDidMount() {
-    Promise.all([jqueryPopulate, jqueryFrom, validator]).then(() => {
-      $(ReactDOM.findDOMNode(this))
+    loader.then(() => {
+      $('js-groups-form')
         .populate(wei.group)
         .ajaxForm({
           url: $.url('admin/groups/update'),
@@ -32,15 +34,24 @@ class GroupForm extends React.Component {
 
   render() {
     return (
-      <Form horizontal method="post">
-        <FormRow label="名称" name="name" required />
+      <Content>
+        <PageHeader>
+          <Button href={$.url('admin/groups')}>返回列表</Button>
+        </PageHeader>
+        <Row>
+          <Col xs={12}>
+            <Form horizontal className="js-groups-form" method="post">
+              <FormRow label="名称" name="name" required />
 
-        <FormRow label="顺序" name="sort" type="number" />
+              <FormRow label="顺序" name="sort" type="number" />
 
-        <input type="hidden" id="id" name="id"/>
+              <input type="hidden" id="id" name="id"/>
 
-        <FormAction url={$.url('admin/groups')} />
-      </Form>
+              <FormAction url={$.url('admin/groups')} />
+            </Form>
+          </Col>
+        </Row>
+      </Content>
     )
   }
 }

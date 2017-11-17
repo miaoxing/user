@@ -13,8 +13,6 @@ class Groups extends \miaoxing\plugin\BaseController
         'destroy' => '删除',
     ];
 
-    protected $displayPageHeader = true;
-
     public function indexAction($req)
     {
         switch ($req['_format']) {
