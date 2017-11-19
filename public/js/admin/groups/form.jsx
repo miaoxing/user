@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Table, Form, Row, Col, FormGroup, Button} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
+import {Page, PageHeader, FormRow, Form, FormAction} from 'components';
 
-import jqueryFrom from 'jquery-form';
-import jqueryPopulate from 'jquery-populate';
+import jQueryFrom from 'jquery-form';
+import jQueryPopulate from 'jquery-populate';
 import validator from 'validator';
-import {Page, PageHeader, FormRow, FormAction} from 'components';
 
-const loader = Promise.all([jqueryPopulate, jqueryFrom, validator]);
+const loader = Promise.all([jQueryPopulate, jQueryFrom, validator]);
 
 class GroupForm extends React.Component {
   componentDidMount() {

@@ -3,12 +3,10 @@ import ReactDOM from 'react-dom';
 import {Table, Button} from 'react-bootstrap';
 import {Page, PageHeader, DataTable} from 'components';
 
-import asyncForm from 'async-dep-form';
-import jQueryForm from 'jquery-form';
-import jQueryDeparam from 'jquery-deparam';
+import queryUrl from 'query-url';
 import dataTable from 'data-table';
 
-const loader = Promise.all([jQueryDeparam, dataTable]);
+const loader = Promise.all([queryUrl, dataTable]);
 
 class GroupIndex extends React.Component {
   componentDidMount() {
@@ -29,7 +27,7 @@ class GroupIndex extends React.Component {
           {
             title: '状态',
             data: 'wechatId',
-            render: function (data, type, full) {
+            render: function (data) {
               if (data > 0) {
                 return '已同步';
               }
