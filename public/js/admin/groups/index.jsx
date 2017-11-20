@@ -4,16 +4,15 @@ import {Table, Button} from 'react-bootstrap';
 import {Page, PageHeader, DataTable} from 'components';
 
 import queryUrl from 'query-url';
-import dataTable from 'data-table';
 
-const loader = Promise.all([queryUrl, dataTable]);
+const loader = Promise.all([queryUrl]);
 
 class GroupIndex extends React.Component {
   componentDidMount() {
     loader.then(() => {
       var $table = $('.js-group-table').dataTable({
         ajax: {
-          url: $.queryUrl('admin/groups.json')
+          url: $.url('admin/groups.json') // $.queryUrl
         },
         columns: [
           {
@@ -53,7 +52,7 @@ class GroupIndex extends React.Component {
         ]
       });
 
-      $table.deletable();
+      //$table.deletable();
 
       $('#sync-from-wechat').click(function () {
         var icon = $(this).find('.fa-refresh');
