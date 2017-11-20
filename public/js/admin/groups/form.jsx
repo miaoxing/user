@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Button} from 'react-bootstrap';
-import {Page, PageHeader, FormRow, Form, FormAction} from 'components';
+import {Page, PageHeader, FormItem, Form, FormAction} from 'components';
 
 import jQueryFrom from 'jquery-form';
 import jQueryPopulate from 'jquery-populate';
@@ -37,9 +37,9 @@ class GroupForm extends React.Component {
           <Button href={$.url('admin/groups')}>返回列表</Button>
         </PageHeader>
         <Form horizontal className="js-groups-form" method="post">
-          <FormRow label="名称" name="name" required />
+          <FormItem label="名称" name="name" required />
 
-          <FormRow label="顺序" name="sort" type="number" />
+          <FormItem label="顺序" name="sort" type="number" />
 
           <input type="hidden" id="id" name="id" />
 
