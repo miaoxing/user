@@ -11,9 +11,8 @@ class GroupIndex extends React.Component {
   componentDidMount() {
     loader.then(() => {
       var $table = $('.js-group-table').dataTable({
-        ajax: {
-          url: $.url('admin/groups.json') // $.queryUrl
-        },
+        ajax: $.queryUrl('admin/groups.json'),
+        order: [],
         columns: [
           {
             title: '名称',
