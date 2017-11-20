@@ -21,7 +21,8 @@ class GroupIndex extends React.Component {
           },
           {
             title: '顺序',
-            data: 'sort'
+            data: 'sort',
+            sortable: true
           },
           {
             title: '状态',
