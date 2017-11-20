@@ -23,11 +23,12 @@ class Groups extends \miaoxing\plugin\BaseController
                 $groups->limit($req['rows'])->page($req['page']);
 
                 // 排序
-                $groups->desc('sort')->desc('id');
+                $groups->setQueryParams($req)
+                    ->sort();
 
                 $data = $groups->findAll()->toArray();
 
-                return $this->json('读取列表成功', 1, [
+                return $this->suc([
                     'data' => $data,
                     'page' => $req['page'],
                     'rows' => $req['rows'],
