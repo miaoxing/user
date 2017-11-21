@@ -89,12 +89,7 @@ class GroupIndex extends React.Component {
           {' '}
           <Button bsStyle="success" href={$.url('admin/groups/new')}>添加用户组</Button>
         </PageHeader>
-        <DataTable className="js-group-table"
-          columns={{
-
-          }}
-          xx="xx"
-        />
+        <DataTable className="js-group-table" />
       </Page>
     )
   }
