@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Table, Button} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 import {Page, PageHeader, DataTable} from 'components';
 
 import queryUrl from 'query-url';
+import dataTable from 'data-table';
 
-const loader = Promise.all([queryUrl]);
+const loader = Promise.all([queryUrl, dataTable]);
 
 class GroupIndex extends React.Component {
   componentDidMount() {
@@ -88,7 +89,12 @@ class GroupIndex extends React.Component {
           {' '}
           <Button bsStyle="success" href={$.url('admin/groups/new')}>添加用户组</Button>
         </PageHeader>
-        <DataTable className="js-group-table" />
+        <DataTable className="js-group-table"
+          columns={{
+
+          }}
+          xx="xx"
+        />
       </Page>
     )
   }
