@@ -44,7 +44,7 @@ class GroupIndex extends React.Component {
                   编辑
                 </a>
                 {' '}
-                <a className="text-danger delete-record" href="javascript:"
+                <a className="js-delete-record text-danger" href="javascript:"
                   data-href={$.url('admin/groups/%s/destroy', val)}>
                   删除
                 </a>
@@ -54,7 +54,7 @@ class GroupIndex extends React.Component {
         ]
       });
 
-      //$table.deletable();
+      $table.deletable();
 
       $('#sync-from-wechat').click(function () {
         var icon = $(this).find('.fa-refresh');
