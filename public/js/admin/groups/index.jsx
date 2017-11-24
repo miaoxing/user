@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import {Button} from 'react-bootstrap';
 import {Page, PageHeader, DataTable} from 'components';
 
-import queryUrl from 'query-url';
-import dataTable from 'data-table';
-
-const loader = Promise.all([queryUrl, dataTable]);
+const loader = Promise.all([
+  import('query-url'),
+  import('datatables-net')
+]);
 
 class GroupIndex extends React.Component {
   componentDidMount() {

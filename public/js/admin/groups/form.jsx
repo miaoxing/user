@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import {Button} from 'react-bootstrap';
 import {Page, PageHeader, FormItem, Form, FormAction} from 'components';
 
-import jQueryFrom from 'jquery-form';
-import jQueryPopulate from 'jquery-populate';
-import validator from 'validator';
-
-const loader = Promise.all([jQueryPopulate, jQueryFrom, validator]);
+const loader = Promise.all([
+  import('jquery-populate'),
+  import('jquery-form'),
+  import('validator')
+]);
 
 class GroupForm extends React.Component {
   componentDidMount() {
