@@ -24,8 +24,8 @@
         dataType: 'json',
         success: function (ret) {
           $.msg(ret, function () {
-            if (ret.code === 1) {
-              window.history.back();
+            if ($.req('next')) {
+              window.location = $.req('next');
             }
           });
         }
