@@ -6,7 +6,7 @@ import {Page, PageHeader, FormItem, Form, FormAction} from 'components';
 const loader = Promise.all([
   import('jquery-populate'),
   import('jquery-form'),
-  import('validator')
+  import('jquery-validation-mx')
 ]);
 
 class GroupForm extends React.Component {

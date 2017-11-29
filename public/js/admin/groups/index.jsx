@@ -5,7 +5,7 @@ import {Page, PageHeader, DataTable} from 'components';
 
 const loader = Promise.all([
   import('query-url'),
-  import('datatables-net')
+  import('datatables-net-mx')
 ]);
 
 class GroupIndex extends React.Component {
