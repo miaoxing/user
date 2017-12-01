@@ -50,7 +50,4 @@ class GroupForm extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <GroupForm />,
-  document.getElementById('root')
-);
+export default GroupForm;

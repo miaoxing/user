@@ -95,7 +95,4 @@ class GroupIndex extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <GroupIndex />,
-  document.getElementById('root')
-);
+export default GroupIndex;
