@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {Button} from 'react-bootstrap';
 import {Page, PageHeader, FormItem, Form, FormAction} from 'components';
 
