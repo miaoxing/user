@@ -1,5 +1,5 @@
 <?php
 
 $view->layout();
-$wei->page->addActionJs('index');
+$wei->page->addReactJs('index');
 ?>
