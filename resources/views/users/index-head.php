@@ -8,5 +8,5 @@
   </div>
   <?php if (!wei()->ua->isWeChat()) : ?>
     <a href="<?= $url('users/setting') ?>" class="user-setting">设置</a>
-    <?php endif ?>
+  <?php endif ?>
 </div>
