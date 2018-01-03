@@ -39,7 +39,7 @@ class UserPassword extends BaseService
         }
 
         // Step3 邮箱发送验证码
-        $ret = wei()->mail->send(ResetPassword::className(), [
+        $ret = wei()->mail->send(ResetPassword::class, [
             'user' => $user,
         ]);
 

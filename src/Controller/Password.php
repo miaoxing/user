@@ -22,7 +22,7 @@ class Password extends \miaoxing\plugin\BaseController
     {
         parent::__construct($options);
 
-        $this->middleware(LoadAppConfig::className(), [
+        $this->middleware(LoadAppConfig::class, [
             'only' => ['sendVerifyCode'],
         ]);
     }

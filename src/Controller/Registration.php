@@ -22,12 +22,12 @@ class Registration extends BaseController
     {
         parent::__construct($options);
 
-        $this->middleware(CheckNotLogin::className(), [
+        $this->middleware(CheckNotLogin::class, [
             'only' => ['register', 'create', 'forget', 'reset'],
             'redirect' => 'admin',
         ]);
 
-        $this->middleware(CheckVerified::className(), [
+        $this->middleware(CheckVerified::class, [
             'except' => [
                 'editEmail',
                 'updateEmail',
@@ -37,7 +37,7 @@ class Registration extends BaseController
             ],
         ]);
 
-        $this->middleware(CheckNotVerified::className(), [
+        $this->middleware(CheckNotVerified::class, [
             'only' => [
                 'editEmail',
                 'updateEmail',
@@ -145,7 +145,7 @@ class Registration extends BaseController
         }
 
         // 5. 发送确认邮件
-        $sendRet = wei()->mail->send(Register::className(), [
+        $sendRet = wei()->mail->send(Register::class, [
             'user' => $user,
         ]);
         if ($sendRet['code'] !== 1) {
@@ -175,7 +175,7 @@ class Registration extends BaseController
 
     public function resendEmailAction()
     {
-        $ret = wei()->mail->send(Register::className(), [
+        $ret = wei()->mail->send(Register::class, [
             'user' => $this->curUser,
         ]);
 
@@ -215,7 +215,7 @@ class Registration extends BaseController
             'email' => $req['email'],
         ]);
 
-        $ret = wei()->mail->send(Register::className(), [
+        $ret = wei()->mail->send(Register::class, [
             'user' => $this->curUser,
         ]);
 

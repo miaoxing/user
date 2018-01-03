@@ -22,19 +22,19 @@ class Users extends \miaoxing\plugin\BaseController
     {
         parent::__construct($options);
 
-        $this->middleware(CheckRedirectUrl::className(), [
+        $this->middleware(CheckRedirectUrl::class, [
             'only' => ['login', 'logout'],
         ]);
 
-        $this->middleware(CheckNotLogin::className(), [
+        $this->middleware(CheckNotLogin::class, [
             'only' => ['register', 'create'],
         ]);
 
-        $this->middleware(LoadAppConfig::className(), [
+        $this->middleware(LoadAppConfig::class, [
             'only' => ['sendVerifyCode'],
         ]);
 
-        $this->middleware(CheckIfEnableRegister::className(), [
+        $this->middleware(CheckIfEnableRegister::class, [
             'only' => [
                 'register',
                 'create',

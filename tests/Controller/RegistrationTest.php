@@ -50,7 +50,7 @@ class RegistrationTest extends BaseControllerTestCase
         $mail = $this->getServiceMock('mail');
         $mail->expects($this->once())
             ->method('send')
-            ->with(Register::className(), [
+            ->with(Register::class, [
                 'user' => wei()->curUser,
             ])
             ->willReturn([
@@ -94,7 +94,7 @@ class RegistrationTest extends BaseControllerTestCase
         $mail = $this->getServiceMock('mail');
         $mail->expects($this->once())
             ->method('send')
-            ->with(Register::className(), [
+            ->with(Register::class, [
                 'user' => wei()->curUser,
             ])
             ->willReturn([
