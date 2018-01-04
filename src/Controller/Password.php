@@ -5,7 +5,7 @@ namespace Miaoxing\User\Controller;
 use Miaoxing\Plugin\Service\User;
 use Miaoxing\Plugin\Middleware\LoadAppConfig;
 
-class Password extends \miaoxing\plugin\BaseController
+class Password extends \Miaoxing\Plugin\BaseController
 {
     protected $guestPages = [
         'password/reset',

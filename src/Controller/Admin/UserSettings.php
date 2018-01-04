@@ -2,7 +2,7 @@
 
 namespace Miaoxing\User\Controller\Admin;
 
-class UserSettings extends \miaoxing\plugin\BaseController
+class UserSettings extends \Miaoxing\Plugin\BaseController
 {
     protected $controllerName = '用户设置';
 

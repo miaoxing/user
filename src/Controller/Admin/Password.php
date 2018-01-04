@@ -2,7 +2,7 @@
 
 namespace Miaoxing\User\Controller\Admin;
 
-use miaoxing\plugin\BaseController;
+use Miaoxing\Plugin\BaseController;
 
 class Password extends BaseController
 {

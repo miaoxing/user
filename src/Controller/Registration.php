@@ -2,7 +2,7 @@
 
 namespace Miaoxing\User\Controller;
 
-use miaoxing\plugin\BaseController;
+use Miaoxing\Plugin\BaseController;
 use Miaoxing\User\Mailer\Register;
 use Miaoxing\User\Middleware\CheckNotLogin;
 use Miaoxing\User\Middleware\CheckNotVerified;

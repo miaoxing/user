@@ -9,7 +9,7 @@ use Miaoxing\Plugin\Middleware\LoadAppConfig;
 use Miaoxing\User\Middleware\CheckIfEnableRegister;
 use Wei\Request;
 
-class Users extends \miaoxing\plugin\BaseController
+class Users extends \Miaoxing\Plugin\BaseController
 {
     protected $guestPages = [
         'users/login',
