@@ -2,7 +2,7 @@
 
 namespace Miaoxing\User\Service;
 
-use miaoxing\plugin\BaseService;
+use Miaoxing\Plugin\BaseService;
 
 class UserVerify extends BaseService
 {
