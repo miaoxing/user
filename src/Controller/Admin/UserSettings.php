@@ -20,10 +20,11 @@ class UserSettings extends \Miaoxing\Plugin\BaseController
 
     public function updateAction($req)
     {
-        $settings = (array)$req['settings'];
+        $settings = (array) $req['settings'];
         wei()->event->trigger('preImageDataSave', [&$settings, ['user.bgImage']]);
 
         $this->setting->setValues($settings, 'user.');
+
         return $this->suc();
     }
 }
