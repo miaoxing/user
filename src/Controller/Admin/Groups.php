@@ -2,8 +2,12 @@
 
 namespace Miaoxing\User\Controller\Admin;
 
+use Miaoxing\Admin\Action\NewCreateTrait;
+
 class Groups extends \Miaoxing\Plugin\BaseController
 {
+    use NewCreateTrait;
+
     protected $controllerName = '用户分组管理';
 
     protected $actionPermissions = [
@@ -40,11 +44,6 @@ class Groups extends \Miaoxing\Plugin\BaseController
         }
     }
 
-    public function newAction($req)
-    {
-        return $this->editAction($req);
-    }
-
     public function editAction($req)
     {
         $group = wei()->group()->findOrInitById($req['id']);
@@ -52,11 +51,6 @@ class Groups extends \Miaoxing\Plugin\BaseController
         $this->js['group'] = $group;
 
         return get_defined_vars();
-    }
-
-    public function createAction($req)
-    {
-        return $this->updateAction($req);
     }
 
     public function updateAction($req)
