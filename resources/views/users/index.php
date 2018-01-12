@@ -6,7 +6,7 @@
 
 <?php require $view->getFile('@user/users/index-head.php') ?>
 
-<?php $event->trigger('beforeUserMenuRender', [$nav]) ?>
+<?php $event->trigger('beforeUserIndexRenderMenu', [$nav]) ?>
 
 <ul class="list list-indented">
   <?php $view->nav->displayLink($nav) ?>
