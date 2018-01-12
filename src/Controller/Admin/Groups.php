@@ -27,7 +27,7 @@ class Groups extends \Miaoxing\Plugin\BaseController
                 $groups->limit($req['rows'])->page($req['page']);
 
                 // 排序
-                $groups->setQueryParams($req)
+                $groups->setRequest($req)
                     ->sort();
 
                 $data = $groups->findAll()->toArray();
