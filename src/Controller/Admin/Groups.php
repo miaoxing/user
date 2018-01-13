@@ -55,17 +55,11 @@ class Groups extends \Miaoxing\Plugin\BaseController
 
     public function updateAction($req)
     {
-        $validator = wei()->validate([
-            'data' => $req,
-            'rules' => [
-                'name' => [],
-            ],
-            'names' => [
-                'name' => '名称',
-            ],
-        ]);
-        if (!$validator->isValid()) {
-            return $this->err($validator->getFirstMessage());
+        $ret = wei()->v()
+            ->key('name', '名称')
+            ->check($req);
+        if ($ret['code'] !== 1) {
+            return $ret;
         }
 
         $group = wei()->group()->findOrInitById($req['id']);
