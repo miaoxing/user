@@ -119,13 +119,13 @@
             </select>
           </div>
 
-          <?php if ($plugin->isInstalled('coupon')) : ?>
+          <?php if ($wei->plugin->isInstalled('coupon')) : ?>
             <div class="form-group">
               <a id="user-send-coupon" class="btn btn-info pull-right" href="javascript:void(0);">发放优惠券</a>
             </div>
           <?php endif ?>
 
-          <?php if ($plugin->isInstalled('score')) : ?>
+          <?php if ($wei->plugin->isInstalled('score')) : ?>
             <div class="form-group">
               <a id="user-send-score" class="btn btn-info pull-right" href="javascript:void(0);">赠送积分</a>
             </div>
