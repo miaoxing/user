@@ -1,6 +1,6 @@
 <?php $view->layout() ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/user/css/users.css') ?>">
 <?= $block->end() ?>
 
@@ -12,7 +12,7 @@
   </div>
 </form>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['jquery-form', 'comps/jquery.loadJSON/index'], function () {
     $('.js-user-form')

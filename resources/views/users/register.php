@@ -107,7 +107,7 @@
   </div>
 </div>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['jquery-form', 'plugins/verify-code/js/verify-code', 'assets/bsTab'], function () {
     $('.js-register-form').ajaxForm({

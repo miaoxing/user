@@ -91,7 +91,7 @@
     </form>
   </div>
 </div>
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['jquery-form', 'assets/bsTab', 'plugins/verify-code/js/verify-code'], function () {
     // 手机找回

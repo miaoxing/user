@@ -49,7 +49,7 @@ $view->layout('admin:admin/layout.php')
   </div>
 </div>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['form'], function (form) {
     $('.js-email-form').ajaxForm({

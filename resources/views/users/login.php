@@ -1,6 +1,6 @@
 <?php $view->layout() ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/user/css/users.css') ?>">
 <?= $block->end() ?>
 
@@ -45,7 +45,7 @@
   </div>
 </form>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['jquery-form'], function () {
     $('.js-login-form').ajaxForm({

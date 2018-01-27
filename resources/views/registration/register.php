@@ -102,7 +102,7 @@ $view->layout('admin:admin/layout-light.php')
   </div>
 </div>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['form', 'plugins/user/js/users', 'plugins/app/js/validator'], function (form, users) {
     $('.js-register-form')

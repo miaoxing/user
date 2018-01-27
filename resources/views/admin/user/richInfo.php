@@ -2,7 +2,7 @@
 $canShow = $curUser->can('admin/user/show');
 ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/user/css/admin/rich-info.css') ?>">
 <?= $block->end() ?>
 
@@ -48,7 +48,7 @@ $canShow = $curUser->can('admin/user/show');
 
 <?php require $view->getFile('user:admin/user/userPopoverTpl.php') ?>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['comps/bootstrap-popover-async/bootstrap-popover-async'], function () {
     var $body = $('body');

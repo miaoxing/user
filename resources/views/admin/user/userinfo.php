@@ -118,7 +118,7 @@
 </div><!-- /.col -->
 <!-- /.row -->
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['form', 'ueditor', 'comps/jquery-cascading/jquery-cascading'], function () {
     var userInfo = <?= $user->toJSON() ?>;

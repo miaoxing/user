@@ -1,6 +1,6 @@
 <?php $view->layout() ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/admin/css/filter.css') ?>"/>
 <?= $block->end() ?>
 
@@ -50,7 +50,7 @@
 
 <?php require $view->getFile('user:admin/user/richInfo.php') ?>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['assets/dateTimePicker', 'dataTable', 'template', 'jquery-deparam', 'form'], function () {
     var recordTable = $('.js-user-ref-table').dataTable({

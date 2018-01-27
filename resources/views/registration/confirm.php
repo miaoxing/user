@@ -3,7 +3,7 @@
 $view->layout('admin:admin/layout.php')
 ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/plugin/css/ret.css') ?>">
 <?= $block->end() ?>
 
@@ -34,7 +34,7 @@ $view->layout('admin:admin/layout.php')
   </div>
 </div>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
   <script>
     $('.js-resend-email').click(function () {
       $.ajax({

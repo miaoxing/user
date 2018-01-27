@@ -39,7 +39,7 @@
   </div>
 </form>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['jquery-form', 'plugins/verify-code/js/verify-code'], function () {
     var $verifyCodeSend = $('.js-verify-code-send');

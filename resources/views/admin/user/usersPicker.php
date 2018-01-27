@@ -1,4 +1,4 @@
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/user/css/admin/users-picker.css') ?>">
 <?= $block->end() ?>
 

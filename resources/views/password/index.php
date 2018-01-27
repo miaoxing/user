@@ -36,7 +36,7 @@
   </div>
 </form>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['jquery-form'], function () {
     $('#reset-password-form').ajaxForm({

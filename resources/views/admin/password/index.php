@@ -69,7 +69,7 @@
 </div><!-- /.col -->
 <!-- /.row -->
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['form'], function (form) {
     $('.js-password-form')
