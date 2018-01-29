@@ -5,7 +5,8 @@ import {Page, PageHeader, FormItem, Form, FormAction} from 'components';
 const loader = Promise.all([
   import('jquery-populate'),
   import('jquery-form'),
-  import('jquery-validation-mx')
+  import('jquery-validation-mx'),
+  import('bootstrap-maxlength-mx')
 ]);
 
 class GroupForm extends React.Component {
@@ -26,6 +27,8 @@ class GroupForm extends React.Component {
           }
         })
         .validate();
+
+      $('.js-maxlength').maxlength();
     });
   }
 
@@ -36,7 +39,7 @@ class GroupForm extends React.Component {
           <Button href={$.url('admin/groups')}>返回列表</Button>
         </PageHeader>
         <Form horizontal className="js-groups-form" method="post">
-          <FormItem label="名称" name="name" required />
+          <FormItem label="名称" className="js-maxlength" name="name" data-rule-maxlength={10} required />
 
           <FormItem label="顺序" name="sort" type="number" />
 
