@@ -45,7 +45,7 @@ class GroupForm extends React.Component {
           <FormAction url={$.url('admin/groups')} />
         </Form>
       </Page>
-    )
+    );
   }
 }
 
