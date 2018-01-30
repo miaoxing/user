@@ -39,8 +39,8 @@
         <div class="col-lg-4">
           <div class="checkbox">
             <label class="js-tips" title="认证后可以使用手机号码登录">
-              <input type="hidden" name="isMobileVerified" value="0">
-              <input type="checkbox" class="is-mobile-verified" name="isMobileVerified" value="1"> 认证
+              <input type="hidden" name="isMobileVerified" value="0" data-populate-ignore>
+              <input type="checkbox" name="isMobileVerified" value="1"> 认证
             </label>
           </div>
         </div>
@@ -69,8 +69,8 @@
         <div class="col-lg-4">
           <div class="checkbox">
             <label class="js-tips" title="锁定后,不会被同步为外部的地区,如微信的资料">
-              <input type="hidden" name="isRegionLocked" value="0">
-              <input type="checkbox" class="is-region-locked" name="isRegionLocked" value="1"> 锁定
+              <input type="hidden" name="isRegionLocked" value="0" data-populate-ignore>
+              <input type="checkbox" name="isRegionLocked" value="1"> 锁定
             </label>
           </div>
         </div>
@@ -120,7 +120,12 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'ueditor', 'comps/jquery-cascading/jquery-cascading'], function () {
+  require([
+    'form',
+    'ueditor',
+    'comps/jquery-cascading/jquery-cascading',
+    'plugins/app/libs/jquery.populate/jquery.populate'
+  ], function () {
     var userInfo = <?= $user->toJSON() ?>;
     userInfo.isRegionLocked = <?= (int) $isRegionLocked ?>;
     userInfo.isMobileVerified = <?= (int) $isMobileVerified ?>;
@@ -133,7 +138,7 @@
     });
 
     $('.js-user-form')
-      .loadJSON(userInfo)
+      .populate(userInfo)
       .ajaxForm({
         dataType: 'json',
         success: function (ret) {
