@@ -16,16 +16,8 @@
         </label>
 
         <div class="col-lg-4">
-          <div class="input-group">
-            <input type="text" class="js-bg-image form-control" id="bg-image" name="settings[user.bgImage]"
-              value="<?= $e($bgImage) ?>">
-            <span class="input-group-btn">
-                <button id="select-thumb" class="btn btn-white" type="button">
-                  <i class="fa fa-picture-o"></i>
-                  选择图片
-                </button>
-            </span>
-          </div>
+          <input type="text" class="js-bg-image form-control" id="bg-image" name="settings[user.bgImage]"
+            value="<?= $e($bgImage) ?>">
         </div>
 
         <label class="col-lg-6 help-text" for="bg-image">
@@ -49,7 +41,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'ueditor', 'validator'], function () {
+  require(['form', 'ueditor', 'validator', 'plugins/admin/js/image-upload'], function () {
     $('.js-setting-form')
       .ajaxForm({
         dataType: 'json',
@@ -59,7 +51,7 @@
       })
       .validate();
 
-    $('.js-bg-image').imageInput();
+    $('.js-bg-image').imageUpload();
   });
 </script>
 <?= $block->end() ?>
