@@ -47,6 +47,9 @@
         dataType: 'json',
         beforeSubmit: function(arr, $form, options) {
           return $form.valid();
+        },
+        success: function (ret) {
+          $.msg(ret);
         }
       })
       .validate();
