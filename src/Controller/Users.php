@@ -51,7 +51,7 @@ class Users extends \Miaoxing\Plugin\BaseController
             $this->event->trigger('postImageLoad', [&$bgImage]);
         }
 
-        $headerTitle = '个人中心';
+        $this->layout->setHeaderTitle('个人中心');
 
         return get_defined_vars();
     }
@@ -125,7 +125,7 @@ class Users extends \Miaoxing\Plugin\BaseController
         // 如果认证了手机号码,又没启用认证功能,就不显示手机号
         $hideMobile = $isMobileVerified && !$enableMobileVerify;
 
-        $headerTitle = '个人信息';
+        $this->layout->setHeaderTitle('个人信息');
 
         return get_defined_vars();
     }
@@ -168,7 +168,7 @@ class Users extends \Miaoxing\Plugin\BaseController
             if (!$this->setting('user.enableLogin', true)) {
                 return $this->err($this->setting('user.disableLoginTips', '登录功能未启用'));
             }
-            $headerTitle = '登录';
+            $this->layout->setHeaderTitle('登录');
 
             return get_defined_vars();
         }
@@ -196,7 +196,7 @@ class Users extends \Miaoxing\Plugin\BaseController
      */
     public function settingAction()
     {
-        $headerTitle = '账号设置';
+        $this->layout->setHeaderTitle('账号设置');
 
         return get_defined_vars();
     }
