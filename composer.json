@@ -12,6 +12,9 @@
     "miaoxing/mail": "dev-master@dev",
     "miaoxing/nav": "dev-master@dev"
   },
+  "require-dev": {
+    "miaoxing/coding-standards": "^2.0.0"
+  },
   "autoload": {
     "psr-4": {
       "Miaoxing\\User\\": "src"
