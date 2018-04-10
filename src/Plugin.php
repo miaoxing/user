@@ -2,6 +2,8 @@
 
 namespace Miaoxing\User;
 
+use Miaoxing\Plugin\Service\User;
+
 class Plugin extends \Miaoxing\Plugin\BasePlugin
 {
     protected $name = '用户';
@@ -86,5 +88,22 @@ class Plugin extends \Miaoxing\Plugin\BasePlugin
                 'bg-color',
             ],
         ];
+    }
+
+    /**
+     * 创建用户后,将用户移到默认分组
+     *
+     * @param User $user
+     */
+    public function onAsyncUserCreate(User $user)
+    {
+        if ($user['groupId']) {
+            return;
+        }
+
+        $defaultGroupId = wei()->setting('user.defaultGroupId', 0);
+        if ($defaultGroupId) {
+            $user->updateGroup($defaultGroupId);
+        }
     }
 }
