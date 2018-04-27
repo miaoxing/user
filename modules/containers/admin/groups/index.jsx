@@ -83,9 +83,9 @@ class GroupIndex extends React.Component {
     return (
       <Page>
         <PageHeader>
-          <Button id="sync-from-wechat">
+          {wei.hasWechatGroup && <Button id="sync-from-wechat">
             <i className="fa fa-refresh" /> 从微信同步分组
-          </Button>
+          </Button>}
           {' '}
           <Button bsStyle="success" href={$.url('admin/groups/new')}>添加用户组</Button>
         </PageHeader>

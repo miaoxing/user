@@ -40,6 +40,7 @@ class Groups extends \Miaoxing\Plugin\BaseController
                 ]);
 
             default:
+                $this->js['hasWechatGroup'] = $this->plugin->isInstalled('wechat-group');
                 return get_defined_vars();
         }
     }
