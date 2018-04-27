@@ -7,7 +7,9 @@
 <!-- /.page-header -->
 <div class="page-header">
   <div class="pull-right">
-    <a class="btn btn-success" href="<?= $url('admin/user/new') ?>">添加用户</a>
+    <?php if (wei()->setting('user.enableNew')) : ?>
+      <a class="btn btn-success" href="<?= $url('admin/user/new') ?>">添加用户</a>
+    <?php endif ?>
   </div>
   <h1>
     用户管理
@@ -82,11 +84,9 @@
                 查询
               </button>
               &nbsp;
-              <?php if (wei()->setting('user.enableExport')) {
-    ?>
+              <?php if (wei()->setting('user.enableExport')) : ?>
                 <a id="export-csv" class="js-export-csv btn btn-white btn-sm" href="javascript:void(0);">导出</a>
-              <?php 
-} ?>
+              <?php endif ?>
             </div>
           </div>
         </div>
