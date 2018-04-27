@@ -13,7 +13,6 @@ class User extends \Miaoxing\Plugin\BaseController
         'edit,update,moveGroup' => '编辑',
         'destroy' => '删除',
         'show' => '查看',
-        'ref' => '来源统计',
     ];
 
     protected $guestPages = [
@@ -348,100 +347,6 @@ class User extends \Miaoxing\Plugin\BaseController
         $user->save($req);
 
         return $this->suc();
-    }
-
-    /**
-     * 用户来源统计
-     *
-     * @todo 1. 重写代码逻辑 2.移出user模块
-     */
-    public function refAction($req)
-    {
-        switch ($req['_format']) {
-            case 'json':
-            case 'csv':
-                $userRef = wei()->user()->select('count(*) as total,user.source');
-                $userRef->groupBy('user.source');
-                if ($req['startTime']) {
-                    $userRef->andWhere('user.createTime>=?', $req['startTime']);
-                }
-                if ($req['endTime']) {
-                    $userRef->andWhere('user.createTime<=?', $req['endTime']);
-                }
-                $userRef = $userRef->fetchAll();
-
-                $createdByAdmin = [
-                    'id' => 0,
-                    'name' => '后台创建',
-                    'count' => 0,
-                    'user' => null,
-                ];
-
-                $userRefData = [
-                    0 => [
-                        'id' => 0,
-                        'name' => '直接关注',
-                        'count' => 0,
-                        'user' => null,
-                    ],
-                ];
-                foreach ($userRef as $key => $value) {
-                    $weChatQrcode = wei()->weChatQrcode()->where('sceneId=?', $value['source']);
-                    $weChatQrcode = $weChatQrcode->fetch();
-                    if ($weChatQrcode) {
-                        $user = wei()->user()->findById($weChatQrcode['userId']);
-                        $userRefData[] = [
-                            'id' => $value['source'],
-                            'name' => $weChatQrcode['name'],
-                            'count' => $value['total'],
-                            'user' => $user ? $user->toArray() : null,
-                        ];
-                    } elseif ($value['source'] == '-1') {
-                        ++$createdByAdmin['count'];
-                    } else {
-                        $userRefData[0]['count'] += $value['total'];
-                    }
-                }
-
-                $userRefData[] = $createdByAdmin;
-
-                $sort = $req['sort'] ?: 'id';
-                if (isset($userRefData[0][$sort])) {
-                    $order = $req['order'] == 'desc' ? SORT_DESC : SORT_ASC;
-                    $userRefData = wei()->coll->orderBy($userRefData, $sort, $order);
-                }
-
-                if ($req['_format'] == 'json') {
-                    return $this->suc([
-                        'data' => $userRefData,
-                        'page' => (int) $req['page'],
-                        'rows' => (int) $req['rows'],
-                        'records' => count($userRefData),
-                    ]);
-                } else {
-                    return $this->renderRefCsv($userRefData);
-                }
-
-            default:
-                return get_defined_vars();
-        }
-    }
-
-    protected function renderRefCsv($userRefData)
-    {
-        $data = [];
-        $data[0] = ['场景编号', '来源名称', '数量', '所属用户'];
-
-        foreach ($userRefData as $row) {
-            $data[] = [
-                $row['id'] ?: '-',
-                $row['name'],
-                $row['count'],
-                $row['user'] ? ($row['user']['name'] ?: $row['user']['nickName']) : '-',
-            ];
-        }
-
-        return wei()->csvExporter->export('user-ref', $data);
     }
 
     /**

@@ -38,12 +38,6 @@ class Plugin extends \Miaoxing\Plugin\BasePlugin
             'name' => '分组管理',
         ];
 
-        $navs[] = [
-            'parentId' => 'user',
-            'url' => 'admin/user/ref',
-            'name' => '来源统计',
-        ];
-
         $subCategories['user-setting'] = [
             'parentId' => 'user',
             'name' => '设置',
