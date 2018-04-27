@@ -29,6 +29,7 @@ class GroupIndex extends React.Component {
           {
             title: '状态',
             data: 'wechatId',
+            visible: wei.hasWechatGroup,
             render: function (data) {
               if (data > 0) {
                 return '已同步';
