@@ -62,13 +62,13 @@ class Plugin extends \Miaoxing\Plugin\BasePlugin
         $links[] = [
             'typeId' => 'user',
             'name' => '个人中心',
-            'url' => 'users/index',
+            'url' => 'user',
         ];
 
         $links[] = [
             'typeId' => 'user',
             'name' => '个人信息',
-            'url' => 'users/edit',
+            'url' => 'user/edit',
         ];
     }
 
