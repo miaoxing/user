@@ -1,5 +1,7 @@
 <?php
+
 $canShow = $curUser->can('admin/user/show');
+$enableMessage = wei()->setting('user.enableMessage');
 ?>
 
 <?= $block->css() ?>
@@ -16,19 +18,23 @@ $canShow = $curUser->can('admin/user/show');
   } else {
     var displayName = nickName;
   }
+  if (<?= (int) ($canShow && $enableMessage) ?>) {
+    var url = $.url('admin/message/user', {userId: id});
+  } else {
+    var url = 'javascript:;';
+  }
   %>
   <div class="media user-media">
     <span class="media-left <?= $canShow ? 'user-popover' : '' ?> user-popover-<%= guid = $.guid++ %>"
       data-container=".user-popover-<%= guid %>" data-id="<%= id %>">
-      <a href="<?= $canShow ? "<%= $.url('admin/message/user', {userId: id}) %>" : 'javascript:;' ?>" target="_blank">
+      <a href="<%= url %>" target="_blank">
         <img class="media-object" src="<%= headImg || '<?= $asset('assets/images/head/default-light.jpg') ?>' %>">
       </a>
     </span>
 
     <div class="media-body text-left">
       <h4 class="media-heading">
-        <a href="<?= $canShow ? "<%= $.url('admin/message/user', {userId: id}) %>" : 'javascript:;' ?>"
-          title="<%= displayName %>">
+        <a href="<%= url %>" title="<%= displayName %>">
           <%= displayName %>
         </a>
       </h4>
