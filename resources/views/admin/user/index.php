@@ -82,7 +82,9 @@
                 查询
               </button>
               &nbsp;
-              <a id="export-csv" class="js-export-csv btn btn-white btn-sm" href="javascript:void(0);">导出</a>
+              <?php if (wei()->setting('user.enableExport')) { ?>
+                <a id="export-csv" class="js-export-csv btn btn-white btn-sm" href="javascript:void(0);">导出</a>
+              <?php } ?>
             </div>
           </div>
         </div>
