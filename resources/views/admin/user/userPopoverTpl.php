@@ -18,7 +18,7 @@
     <% } %>
   </div>
   <div>
-    地区：<%= country || '-' %> <%= province %> <%= city %>
+    地区：<%= country + province + city || '-' %>
     <% if (isRegionLocked) { %>
     <i class="js-user-tooltip fa fa-lock text-success" title="已锁定,不会被同步为外部的地区,如微信的资料"></i>
     <% } %>
