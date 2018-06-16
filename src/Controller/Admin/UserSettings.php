@@ -15,6 +15,8 @@ class UserSettings extends \Miaoxing\Plugin\BaseController
         $bgImage = &$this->setting('user.bgImage');
         wei()->event->trigger('postImageLoad', [&$bgImage]);
 
+        $defaultHeadImg = $this->setting('user.defaultHeadImg');
+
         return get_defined_vars();
     }
 

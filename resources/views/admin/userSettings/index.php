@@ -21,7 +21,22 @@
         </div>
 
         <label class="col-lg-6 help-text" for="bg-image">
-          推荐尺寸640*240,留空使用默认图片
+          推荐尺寸640*240，留空使用默认图片
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label class="col-lg-2 control-label" for="default-head-img">
+          用户默认头像
+        </label>
+
+        <div class="col-lg-4">
+          <input type="text" class="js-default-head-img form-control" id="bg-image" name="settings[user.defaultHeadImg]"
+            value="<?= $e($defaultHeadImg) ?>">
+        </div>
+
+        <label class="col-lg-6 help-text" for="bg-image">
+          比例1:1，留空使用默认图片
         </label>
       </div>
 
@@ -55,6 +70,7 @@
       .validate();
 
     $('.js-bg-image').imageUpload();
+    $('.js-default-head-img').imageUpload();
   });
 </script>
 <?= $block->end() ?>
