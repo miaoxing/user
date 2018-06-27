@@ -54,12 +54,6 @@
             <i class="fa fa-check bigger-110"></i>
             提交
           </button>
-
-          &nbsp; &nbsp; &nbsp;
-          <a class="btn btn-default" href="<?= $url('admin/user/index') ?>">
-            <i class="fa fa-undo bigger-110"></i>
-            返回列表
-          </a>
         </div>
       </div>
 
