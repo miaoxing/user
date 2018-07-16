@@ -1,23 +1,17 @@
 <?php
 
-namespace plugins\user\docs {
+namespace MiaoxingDoc\User {
 
     /**
-     * @property    \Miaoxing\Plugin\Service\CurUser $curUser 当前用户
+     * @property    \Miaoxing\User\Service\UserModel $userModel UserModel
+     * @method      \Miaoxing\User\Service\UserModel|\Miaoxing\User\Service\UserModel[] userModel()
      *
-     * @property    \Miaoxing\Plugin\Service\User $user
-     * @method      \Miaoxing\Plugin\Service\User|\Miaoxing\Plugin\Service\User[] user() 用户
+     * @property    \Miaoxing\User\Service\UserPassword $userPassword
      *
-     * @property    \Miaoxing\Plugin\Service\User $appUser 产品的用户
-     * @method      \Miaoxing\Plugin\Service\User|\Miaoxing\Plugin\Service\User[] appUser()
+     * @property    \Miaoxing\User\Service\UserProfile $userProfile
+     * @method      \Miaoxing\User\Service\UserProfile|\Miaoxing\User\Service\UserProfile[] userProfile()
      *
-     * @property    \Miaoxing\Plugin\Service\Group $group 分组
-     * @method      \Miaoxing\Plugin\Service\Group|\Miaoxing\Plugin\Service\Group[] group()
-     *
-     * @method      \Miaoxing\User\Service\UserProfile|\Miaoxing\User\Service\UserProfile[] userProfile() 用户详细信息
-     *
-     * @property    \Miaoxing\User\Service\UserVerify $userVerify 用户校验
-     * @property    \Miaoxing\User\Service\UserPassword $userPassword 密码设置
+     * @property    \Miaoxing\User\Service\UserVerify $userVerify
      */
     class AutoComplete
     {
@@ -27,11 +21,24 @@ namespace plugins\user\docs {
 namespace {
 
     /**
-     * @return \plugins\user\docs\AutoComplete
+     * @return MiaoxingDoc\User\AutoComplete
      */
     function wei()
     {
     }
 
-    $curUser = wei()->curUser;
+    /** @var Miaoxing\User\Service\UserModel $userModel */
+    $user = wei()->userModel();
+
+    /** @var Miaoxing\User\Service\UserModel|Miaoxing\User\Service\UserModel[] $userModels */
+    $users = wei()->userModel();
+
+    /** @var Miaoxing\User\Service\UserPassword $userPassword */
+    $userPassword = wei()->userPassword;
+
+    /** @var Miaoxing\User\Service\UserProfile $userProfile */
+    $userProfile = wei()->userProfile;
+
+    /** @var Miaoxing\User\Service\UserVerify $userVerify */
+    $userVerify = wei()->userVerify;
 }
