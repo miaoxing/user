@@ -3,7 +3,10 @@
 namespace MiaoxingDoc\User {
 
     /**
-     * @property    \Miaoxing\User\Service\UserModel $userModel UserModel
+     * @property    \Miaoxing\User\Service\GroupModel $groupModel GroupModel
+     * @method      \Miaoxing\User\Service\GroupModel|\Miaoxing\User\Service\GroupModel[] groupModel()
+     *
+     * @property    \Miaoxing\User\Service\UserModel $userModel
      * @method      \Miaoxing\User\Service\UserModel|\Miaoxing\User\Service\UserModel[] userModel()
      *
      * @property    \Miaoxing\User\Service\UserPassword $userPassword
@@ -26,6 +29,12 @@ namespace {
     function wei()
     {
     }
+
+    /** @var Miaoxing\User\Service\GroupModel $groupModel */
+    $group = wei()->groupModel();
+
+    /** @var Miaoxing\User\Service\GroupModel|Miaoxing\User\Service\GroupModel[] $groupModels */
+    $groups = wei()->groupModel();
 
     /** @var Miaoxing\User\Service\UserModel $userModel */
     $user = wei()->userModel();
