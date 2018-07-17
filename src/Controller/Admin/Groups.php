@@ -8,7 +8,9 @@ class Groups extends \Miaoxing\Plugin\BaseController
 {
     use NewCreateTrait;
 
-    protected $controllerName = '用户分组管理';
+    protected $controllerName = '分组管理';
+
+    protected $controllerPermissionName = '用户分组管理';
 
     protected $actionPermissions = [
         'index' => '列表',
