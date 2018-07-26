@@ -5,6 +5,7 @@ namespace Miaoxing\User\Service;
 use Miaoxing\Plugin\Model\CastTrait;
 use Miaoxing\Plugin\Model\GetSetTrait;
 use Miaoxing\Plugin\Model\QuickQueryTrait;
+use Miaoxing\Plugin\Model\SoftDeleteTrait;
 use Miaoxing\Plugin\Service\Group;
 
 /**
@@ -15,4 +16,9 @@ class GroupModel extends Group
     use CastTrait;
     use QuickQueryTrait;
     use GetSetTrait;
+    use SoftDeleteTrait;
+
+    protected $deletedAtColumn = 'deleteTime';
+
+    protected $deletedByColumn = 'deleteUser';
 }
