@@ -19,6 +19,20 @@ class UserModel extends User
     use GetSetTrait;
     use ChangeTrait;
 
+    protected $auditOnly = [
+        'name',
+        'mobile',
+        'email',
+        'groupId',
+    ];
+
+    protected $columnNames = [
+        'name' => '姓名',
+        'mobile' => '手机',
+        'email' => '邮箱',
+        'groupId' => '组织',
+    ];
+
     public function group()
     {
         return $this->hasOne(wei()->groupModel(), 'id', 'groupId');
