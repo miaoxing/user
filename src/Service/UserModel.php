@@ -2,6 +2,7 @@
 
 namespace Miaoxing\User\Service;
 
+use Miaoxing\Pas\Model\ChangeTrait;
 use Miaoxing\Plugin\Model\CastTrait;
 use Miaoxing\Plugin\Model\GetSetTrait;
 use Miaoxing\Plugin\Model\QuickQueryTrait;
@@ -16,6 +17,7 @@ class UserModel extends User
     use CastTrait;
     use QuickQueryTrait;
     use GetSetTrait;
+    use ChangeTrait;
 
     public function group()
     {
