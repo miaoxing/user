@@ -2,10 +2,10 @@
 
 namespace Miaoxing\User\Model;
 
-use Miaoxing\Plugin\Service\User;
+use Miaoxing\User\Service\UserModel;
 
 /**
- * @property User $user
+ * @property UserModel $user
  */
 trait BelongsToUserModelTrait
 {
