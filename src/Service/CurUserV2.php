@@ -2,11 +2,8 @@
 
 namespace Miaoxing\User\Service;
 
-use Miaoxing\Plugin\Model\GetSetTrait;
 use Miaoxing\Plugin\Service\CurUser;
-use Miaoxing\Plugin\Service\User;
 use Miaoxing\User\Model\UserV2Trait;
-use Wei\Record;
 
 class CurUserV2 extends CurUser
 {
