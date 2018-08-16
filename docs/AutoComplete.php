@@ -3,6 +3,9 @@
 namespace MiaoxingDoc\User {
 
     /**
+     * @property    \Miaoxing\User\Service\CurUserV2 $curUserV2
+     * @method      \Miaoxing\User\Service\CurUserV2|\Miaoxing\User\Service\CurUserV2[] curUserV2()
+     *
      * @property    \Miaoxing\User\Service\GroupModel $groupModel GroupModel
      * @method      \Miaoxing\User\Service\GroupModel|\Miaoxing\User\Service\GroupModel[] groupModel()
      *
@@ -29,6 +32,9 @@ namespace {
     function wei()
     {
     }
+
+    /** @var Miaoxing\User\Service\CurUserV2 $curUserV2 */
+    $curUserV2 = wei()->curUserV2;
 
     /** @var Miaoxing\User\Service\GroupModel $groupModel */
     $group = wei()->groupModel();
