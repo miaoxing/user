@@ -26,10 +26,10 @@ trait UserV2Trait
     public function __construct(array $options = [])
     {
         $this->toArrayV2 = true;
-        $this->hidden = [
+        $this->hidden = array_merge($this->hidden, [
             'salt',
             'password',
-        ];
+        ]);
 
         parent::__construct($options);
     }
