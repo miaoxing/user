@@ -30,4 +30,18 @@ class GroupModel extends Group
     {
         return $this->hasOne(wei()->groupModel(), 'parentId', 'id');
     }
+
+    public function afterSave()
+    {
+        wei()->cache->remove('groups:' . wei()->app->getId());
+
+        parent::beforeSave();
+    }
+
+    public function afterDestroy()
+    {
+        wei()->cache->remove('groups:' . wei()->app->getId());
+
+        parent::beforeSave();
+    }
 }
