@@ -18,6 +18,22 @@ trait UserV2Trait
     use QuickQueryTrait;
     use GetSetTrait;
 
+    protected $defaultCasts = [
+        'department' => 'json',
+        'extAttr' => 'json',
+    ];
+
+    public function __construct(array $options = [])
+    {
+        $this->toArrayV2 = true;
+        $this->hidden = [
+            'salt',
+            'password',
+        ];
+
+        parent::__construct($options);
+    }
+
     public function group()
     {
         return $this->hasOne(wei()->groupModel(), 'id', 'groupId');

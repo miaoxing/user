@@ -30,9 +30,9 @@ namespace Miaoxing\User\Metadata;
  * @property string $signature
  * @property string $headImg
  * @property int $groupId 用户组
- * @property string $department 部门
+ * @property array $department 部门
  * @property string $position 职位
- * @property string $extAttr 额外参数
+ * @property array $extAttr 额外参数
  * @property float $money 账户余额
  * @property float $rechargeMoney 充值账户余额
  * @property int $score 积分
@@ -80,9 +80,9 @@ trait UserTrait
         'signature' => 'string',
         'headImg' => 'string',
         'groupId' => 'int',
-        'department' => 'string',
+        'department' => 'json',
         'position' => 'string',
-        'extAttr' => 'string',
+        'extAttr' => 'json',
         'money' => 'float',
         'rechargeMoney' => 'float',
         'score' => 'int',
