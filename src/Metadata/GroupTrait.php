@@ -6,6 +6,7 @@ namespace Miaoxing\User\Metadata;
  * GroupTrait
  *
  * @property int $id 主键
+ * @property int $parentId
  * @property int $wechatId 微信中的分组ID
  * @property int $wechatParentId 上级wechatId，在企业号为父部门Id
  * @property string $name
@@ -28,6 +29,7 @@ trait GroupTrait
      */
     protected $casts = [
         'id' => 'int',
+        'parentId' => 'int',
         'wechatId' => 'int',
         'wechatParentId' => 'int',
         'name' => 'string',
