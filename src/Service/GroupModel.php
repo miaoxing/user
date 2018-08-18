@@ -28,7 +28,7 @@ class GroupModel extends Group
 
     public function parent()
     {
-        return $this->hasOne(wei()->groupModel(), 'parentId', 'id');
+        return $this->hasOne(wei()->groupModel(), 'id', 'parentId');
     }
 
     public function afterSave()
