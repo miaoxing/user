@@ -44,4 +44,17 @@ class GroupModel extends Group
 
         parent::beforeSave();
     }
+
+    public function getFullName()
+    {
+        $names = [$this->name];
+
+        $group = $this;
+        while ($group->parentId) {
+            $group = $group->parent;
+            $names[] = $group->name;
+        }
+
+        return implode('-', array_reverse($names));
+    }
 }
