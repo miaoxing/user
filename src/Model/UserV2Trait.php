@@ -38,4 +38,19 @@ trait UserV2Trait
     {
         return $this->hasOne(wei()->groupModel(), 'id', 'groupId');
     }
+
+    /**
+     * Record: 设置未加密的密码
+     *
+     * @param string $password
+     * @return $this
+     * @todo password服务和password字段冲突
+     */
+    public function setPlainPassword($password)
+    {
+        $this['salt'] || $this['salt'] = wei()->password->generateSalt();
+        $this['password'] = wei()->password->hash($password, $this['salt']);
+
+        return $this;
+    }
 }
