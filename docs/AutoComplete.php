@@ -17,6 +17,9 @@ namespace MiaoxingDoc\User {
      * @property    \Miaoxing\User\Service\UserProfile $userProfile
      * @method      \Miaoxing\User\Service\UserProfile|\Miaoxing\User\Service\UserProfile[] userProfile()
      *
+     * @property    \Miaoxing\User\Service\UserProfileModel $userProfileModel UserProfileModel
+     * @method      \Miaoxing\User\Service\UserProfileModel|\Miaoxing\User\Service\UserProfileModel[] userProfileModel()
+     *
      * @property    \Miaoxing\User\Service\UserVerify $userVerify
      */
     class AutoComplete
@@ -53,6 +56,12 @@ namespace {
 
     /** @var Miaoxing\User\Service\UserProfile $userProfile */
     $userProfile = wei()->userProfile;
+
+    /** @var Miaoxing\User\Service\UserProfileModel $userProfileModel */
+    $userProfile = wei()->userProfileModel();
+
+    /** @var Miaoxing\User\Service\UserProfileModel|Miaoxing\User\Service\UserProfileModel[] $userProfileModels */
+    $userProfiles = wei()->userProfileModel();
 
     /** @var Miaoxing\User\Service\UserVerify $userVerify */
     $userVerify = wei()->userVerify;

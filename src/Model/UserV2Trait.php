@@ -7,9 +7,11 @@ use Miaoxing\Plugin\Model\GetSetTrait;
 use Miaoxing\Plugin\Model\QuickQueryTrait;
 use Miaoxing\User\Metadata\UserTrait;
 use Miaoxing\User\Service\GroupModel;
+use Miaoxing\User\Service\UserProfileModel;
 
 /**
  * @property GroupModel $group
+ * @property UserProfileModel $profile
  */
 trait UserV2Trait
 {
@@ -37,6 +39,11 @@ trait UserV2Trait
     public function group()
     {
         return $this->hasOne(wei()->groupModel(), 'id', 'groupId');
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(wei()->userProfileModel(), 'id', 'id');
     }
 
     /**
