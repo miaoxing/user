@@ -22,6 +22,11 @@ class GroupModel extends Group
     use GetSetTrait;
     use SoftDeleteTrait;
 
+    /**
+     * @var GroupModel|GroupModel[]
+     */
+    protected $parents;
+
     protected $deletedAtColumn = 'deleteTime';
 
     protected $deletedByColumn = 'deleteUser';
@@ -47,14 +52,32 @@ class GroupModel extends Group
 
     public function getFullName()
     {
-        $names = [$this->name];
+        return implode('-', array_reverse($this->getParents()->getAll('name')));
+    }
 
-        $group = $this;
-        while ($group->parentId) {
-            $group = $group->parent;
-            $names[] = $group->name;
+    /**
+     * 获取分组的所有上级分组
+     *
+     * @return GroupModel|GroupModel[]
+     * @throws \Exception
+     */
+    public function getParents()
+    {
+        if (!$this->parents) {
+            $groups = wei()->group->getGroupsFromCache();
+
+            $parents = wei()->groupModel()->beColl();
+            $parents[] = $this;
+
+            $group = $this;
+            while ($group->parentId) {
+                $group = $groups[$group->parentId];
+                $parents[] = $group;
+            }
+
+            $this->parents = $parents;
         }
 
-        return implode('-', array_reverse($names));
+        return $this->parents;
     }
 }
