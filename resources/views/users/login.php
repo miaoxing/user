@@ -5,9 +5,12 @@
 <?= $block->end() ?>
 
 <div class="clearfix user-nav-actions">
+  <?php if (wei()->setting('user.enableRegister')) { ?>
   <a href="<?= $url->query('users/register') ?>">注册</a>
-  &nbsp;
-  <a href="<?= $url->query('password/reset') ?>">忘记密码?</a>
+  <?php } ?>
+  <?php if (wei()->setting('user.enablePasswordRest')) { ?>
+    &nbsp;<a href="<?= $url->query('password/reset') ?>">忘记密码?</a>
+  <?php } ?>
 </div>
 
 <form class="js-login-form form form-inset" method="post">
