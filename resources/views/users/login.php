@@ -6,7 +6,7 @@
 
 <div class="clearfix user-nav-actions">
   <?php if (wei()->setting('user.enableRegister')) { ?>
-  <a href="<?= $url->query('users/register') ?>">注册</a>
+    <a href="<?= $url->query('users/register') ?>">注册</a>
   <?php } ?>
   <?php if (wei()->setting('user.enablePasswordRest')) { ?>
     &nbsp;<a href="<?= $url->query('password/reset') ?>">忘记密码?</a>
@@ -14,12 +14,16 @@
 </div>
 
 <form class="js-login-form form form-inset" method="post">
+  <?php if ($req['tips']) { ?>
+    <div class="m-y-sm"><?= $e($req['tips']) ?></div>
+  <?php } ?>
   <div class="form-body">
     <div class="form-group">
       <label for="username" class="control-label">账号</label>
 
       <div class="col-control">
-        <input type="text" class="form-control" id="username" name="username" placeholder="手机/用户名/邮箱">
+        <input type="text" class="form-control" id="username" name="username"
+          placeholder="<?= $setting('user.loginUsernamePlaceholder', '手机/用户名/邮箱') ?>">
       </div>
     </div>
     <div class="form-group">
@@ -36,7 +40,7 @@
 
         <div class="input-group">
           <input type="text" class="form-control" id="captcha" name="captcha" placeholder="输入验证码">
-        <span class="input-group-addon p-l-0 p-r-0 p-b-0 login-captcha">
+          <span class="input-group-addon p-l-0 p-r-0 p-b-0 login-captcha">
           <img class="js-captcha" src="<?= $url('captcha') ?>">
         </span>
         </div>
@@ -68,14 +72,14 @@
     });
 
     <?php if (wei()->setting('user.enableLoginCaptcha')) : ?>
-      var $captcha = $('.js-captcha');
-      $captcha.click(changeCaptcha);
+    var $captcha = $('.js-captcha');
+    $captcha.click(changeCaptcha);
 
-      var src = $captcha.attr('src');
+    var src = $captcha.attr('src');
 
-      function changeCaptcha() {
-        $captcha.attr('src', src + '?t=' + new Date());
-      }
+    function changeCaptcha() {
+      $captcha.attr('src', src + '?t=' + new Date());
+    }
     <?php endif ?>
   });
 </script>
