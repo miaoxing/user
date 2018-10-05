@@ -147,4 +147,12 @@ class CurUserTest extends \Miaoxing\Plugin\Test\BaseTestCase
 
         return $this->user;
     }
+
+    public function testGetId()
+    {
+        $user = $this->getUser();
+        wei()->curUserV2->loginByRecord($user);
+
+        $this->assertInternalType('int', wei()->curUserV2->id);
+    }
 }
