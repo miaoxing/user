@@ -5,7 +5,7 @@
 <?= $block->end() ?>
 
 <form class="js-user-form user-form form" method="post">
-  <?php require $view->getFile('user:users/edit-form-groups.php') ?>
+  <?php require $view->getFile('@user/users/edit-form-groups.php') ?>
 
   <div class="form-footer">
     <button type="submit" class="btn btn-primary btn-block">提 交</button>

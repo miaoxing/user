@@ -52,7 +52,7 @@ $enableMessage = wei()->setting('user.enableMessage');
 </script>
 <?= $block->end() ?>
 
-<?php require $view->getFile('user:admin/user/userPopoverTpl.php') ?>
+<?php require $view->getFile('@user/admin/user/userPopoverTpl.php') ?>
 
 <?= $block->js() ?>
 <script>

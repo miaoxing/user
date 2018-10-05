@@ -144,7 +144,7 @@
 </div>
 <!-- /row -->
 
-<?php require $view->getFile('user:admin/user/richInfo.php') ?>
+<?php require $view->getFile('@user/admin/user/richInfo.php') ?>
 
 <?= $block->js() ?>
 <script>

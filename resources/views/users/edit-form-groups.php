@@ -21,5 +21,5 @@
   </div>
 <?php endif; ?>
 
-<?php require $view->getFile('user:users/edit-form-groups-other.php'); ?>
+<?php require $view->getFile('@user/users/edit-form-groups-other.php'); ?>
 

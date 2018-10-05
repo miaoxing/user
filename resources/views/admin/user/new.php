@@ -1,3 +1,3 @@
 <?php
 
-require $view->getFile('user:admin/user/userinfo.php');
+require $view->getFile('@user/admin/user/userinfo.php');
