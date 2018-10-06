@@ -4,7 +4,7 @@ namespace Miaoxing\User\Service;
 
 use Miaoxing\Plugin\Model\CastTrait;
 use Miaoxing\Plugin\Model\GetSetTrait;
-use Miaoxing\Plugin\Model\QuickQueryTrait;
+use Miaoxing\Plugin\Model\ReqQueryTrait;
 use Miaoxing\Plugin\Model\SoftDeleteTrait;
 use Miaoxing\Plugin\Service\Group;
 use Miaoxing\User\Metadata\GroupTrait;
@@ -18,7 +18,7 @@ class GroupModel extends Group
 {
     use GroupTrait;
     use CastTrait;
-    use QuickQueryTrait;
+    use ReqQueryTrait;
     use GetSetTrait;
     use SoftDeleteTrait;
 

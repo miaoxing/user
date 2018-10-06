@@ -4,7 +4,7 @@ namespace Miaoxing\User\Model;
 
 use Miaoxing\Plugin\Model\CastTrait;
 use Miaoxing\Plugin\Model\GetSetTrait;
-use Miaoxing\Plugin\Model\QuickQueryTrait;
+use Miaoxing\Plugin\Model\ReqQueryTrait;
 use Miaoxing\User\Metadata\UserTrait;
 use Miaoxing\User\Service\GroupModel;
 use Miaoxing\User\Service\UserModel;
@@ -18,7 +18,7 @@ trait UserV2Trait
 {
     use UserTrait;
     use CastTrait;
-    use QuickQueryTrait;
+    use ReqQueryTrait;
     use GetSetTrait;
 
     protected $defaultCasts = [
