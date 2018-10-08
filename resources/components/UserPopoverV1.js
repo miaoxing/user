@@ -2,7 +2,6 @@ import React from 'react';
 import rp from "require-promise";
 import Loadable from 'react-loadable';
 import Loading from "components/Loading";
-import app2 from "app2";
 
 const loader = rp('template');
 
