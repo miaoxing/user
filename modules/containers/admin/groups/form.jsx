@@ -1,6 +1,6 @@
 import React from 'react';
-import {Button} from 'react-bootstrap';
-import {Page, PageHeader, FormItem, Form, FormAction} from 'components';
+import {Button, Form} from 'react-bootstrap';
+import {FormAction, FormItem, Page, PageHeader} from 'components';
 
 const loader = Promise.all([
   import('jquery-populate'),
