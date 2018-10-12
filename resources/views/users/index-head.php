@@ -5,6 +5,7 @@
     <span class="user-head-img" style="background-image:url('<?= $curUser->getHeadImg() ?>')"></span>
     <!-- htmllint attr-bans="$previous" -->
     <p class="user-head-nickname"><?= $curUser->getNickName() ?></p>
+    <?php $wei->event->trigger('userIndexRenderHead') ?>
   </div>
   <?php if (!wei()->ua->isWeChat()) : ?>
     <a href="<?= $url('users/setting') ?>" class="user-setting">设置</a>
