@@ -1,6 +1,6 @@
 <?php
 
-$view->layout('admin:admin/layout.php');
+$view->layout('@admin/admin/layout.php');
 ?>
 
 <?= $block->css() ?>
