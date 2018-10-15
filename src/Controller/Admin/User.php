@@ -93,8 +93,8 @@ class User extends \Miaoxing\Plugin\BaseController
                 if ($req['tagIds']) {
                     $users
                         ->select('DISTINCT user.*')
-                        ->leftJoin('app.user_user_tags', 'user_user_tags.user_id = user.id')
-                        ->andWhere(['user_user_tags.tag_id' => explode(',', $req['tagIds'])])
+                        ->leftJoin('app.user_tags_users', 'user_tags_users.user_id = user.id')
+                        ->andWhere(['user_tags_users.tag_id' => explode(',', $req['tagIds'])])
                         ->groupBy('user.id');
                 }
 
@@ -115,9 +115,9 @@ class User extends \Miaoxing\Plugin\BaseController
                     }
 
                     $tags = [];
-                    $userUserTags = wei()->userUserTagModel()->findAll(['user_id' => $user['id']]);
-                    foreach ($userUserTags as $userTag) {
-                        $tags[] = $userTags[$userTag->tagId];
+                    $relations = wei()->userTagsUserModel()->findAll(['user_id' => $user['id']]);
+                    foreach ($relations as $relation) {
+                        $tags[] = $userTags[$relation->tagId];
                     }
 
                     $data[] = $user->toArray() + [

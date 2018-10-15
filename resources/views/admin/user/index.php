@@ -148,6 +148,16 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
               <a id="user-send-score" class="btn btn-info pull-right" href="javascript:void(0);">赠送积分</a>
             </div>
           <?php endif ?>
+
+          <?php if ($hasUserTag) { ?>
+            <div class="form-group" style="width: 160px">
+              <input type="text" class="js-to-tag-ids form-control" name="toTagIds" id="to-tag-ids"
+                placeholder="选择标签">
+            </div>
+            <div class="form-group">
+              <button type="button" class="js-to-tag btn btn-info">打标签</button>
+            </div>
+          <?php } ?>
         </form>
       </div>
     </div>
@@ -264,6 +274,16 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
       closeOnSelect: false,
       data: <?= json_encode($tags) ?>
     });
+
+    $('.js-to-tag-ids').select2({
+      multiple: true,
+      closeOnSelect: false,
+      data: <?= json_encode($tags) ?>
+    });
+
+    $('.js-to-tag').click(function() {
+
+    })
   });
 </script>
 <?= $block->end() ?>
