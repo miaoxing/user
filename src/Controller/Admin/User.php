@@ -88,6 +88,14 @@ class User extends \Miaoxing\Plugin\BaseController
                     $users->andWhere($req['filter_empty'] . " != ''");
                 }
 
+                if ($req['tagIds']) {
+                    $users
+                        ->select('DISTINCT user.*')
+                        ->leftJoin('app.user_user_tags', 'user_user_tags.user_id = user.id')
+                        ->andWhere(['user_user_tags.tag_id' => explode(',', $req['tagIds'])])
+                        ->groupBy('user.id');
+                }
+
                 // 导出用户限制
                 if ($req['format'] == 'csv' && $users->count() > 10000) {
                     return $this->err('导出用户数超过1W，请联系开发人员后台导出！');
@@ -124,6 +132,12 @@ class User extends \Miaoxing\Plugin\BaseController
 
             default:
                 $groups = wei()->group()->findAll()->withUngroup();
+
+                $tags = [];
+                $userTags = wei()->userTagModel()->desc('sort')->findAll();
+                foreach ($userTags as $userTag) {
+                    $tags[] = ['id' => $userTag->id, 'text' => $userTag->name];
+                }
 
                 // 获取用户相关平台
                 $platforms[] = [

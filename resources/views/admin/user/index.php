@@ -33,14 +33,22 @@
               </select>
             </div>
 
-            <label class="col-md-1 control-label" for="group-id">分组：</label>
+            <?php if (wei()->plugin->isInstalled('user-tag')) { ?>
+              <label class="col-md-1 control-label" for="group-id">分组：</label>
 
-            <div class="col-md-3">
-              <select name="groupId" id="group-id" class="form-control">
-                <option value="">全部分组</option>
-                <option value="0"><?= $setting('user.titleDefaultGroup') ?: '未分组' ?></option>
-              </select>
-            </div>
+              <div class="col-md-3">
+                <select name="groupId" id="group-id" class="form-control">
+                  <option value="">全部分组</option>
+                  <option value="0"><?= $setting('user.titleDefaultGroup') ?: '未分组' ?></option>
+                </select>
+              </div>
+            <?php } else { ?>
+              <label class="col-md-1 control-label" for="tag-ids">标签：</label>
+
+              <div class="col-md-3">
+                <input type="text" class="js-tag-ids form-control input-sm" name="tagIds" id="tag-ids">
+              </div>
+            <?php } ?>
 
             <label class="col-md-1 control-label" for="platform">来源：</label>
 
@@ -230,6 +238,18 @@
     // 更改分组时,刷新列表
     $(document).on('group.changed', function () {
       recordTable.reload();
+    });
+  });
+
+  require([
+    'comps/select2/select2.min',
+    'css!comps/select2/select2',
+    'css!comps/select2-bootstrap-css/select2-bootstrap',
+  ], function () {
+    $('.js-tag-ids').select2({
+      multiple: true,
+      closeOnSelect: false,
+      data: <?= json_encode($tags) ?>
     });
   });
 </script>
