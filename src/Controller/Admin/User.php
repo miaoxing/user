@@ -24,6 +24,8 @@ class User extends \Miaoxing\Plugin\BaseController
      */
     public function indexAction($req)
     {
+        $userTags = wei()->userTagModel()->desc('sort')->indexBy('id')->findAll();
+
         switch ($req['_format']) {
             case 'json':
             case 'csv':
@@ -112,10 +114,17 @@ class User extends \Miaoxing\Plugin\BaseController
                         $source = $weChatQrcode->getUser();
                     }
 
+                    $tags = [];
+                    $userUserTags = wei()->userUserTagModel()->findAll(['user_id' => $user['id']]);
+                    foreach ($userUserTags as $userTag) {
+                        $tags[] = $userTags[$userTag->tagId];
+                    }
+
                     $data[] = $user->toArray() + [
                             'sourceUser' => $source ? $source->toArray() : '',
                             'wechat_qrcode' => $weChatQrcode,
                             'group' => $user->getGroup(),
+                            'tags' => $tags,
                         ];
                 }
 
@@ -134,7 +143,6 @@ class User extends \Miaoxing\Plugin\BaseController
                 $groups = wei()->group()->findAll()->withUngroup();
 
                 $tags = [];
-                $userTags = wei()->userTagModel()->desc('sort')->findAll();
                 foreach ($userTags as $userTag) {
                     $tags[] = ['id' => $userTag->id, 'text' => $userTag->name];
                 }

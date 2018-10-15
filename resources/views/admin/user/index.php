@@ -1,4 +1,8 @@
-<?php $view->layout() ?>
+<?php
+
+$view->layout();
+$hasUserTag = wei()->plugin->isInstalled('user-tag');
+?>
 
 <?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/admin/css/filter.css') ?>"/>
@@ -33,22 +37,14 @@
               </select>
             </div>
 
-            <?php if (wei()->plugin->isInstalled('user-tag')) { ?>
-              <label class="col-md-1 control-label" for="group-id">分组：</label>
+            <label class="col-md-1 control-label" for="group-id">分组：</label>
 
-              <div class="col-md-3">
-                <select name="groupId" id="group-id" class="form-control">
-                  <option value="">全部分组</option>
-                  <option value="0"><?= $setting('user.titleDefaultGroup') ?: '未分组' ?></option>
-                </select>
-              </div>
-            <?php } else { ?>
-              <label class="col-md-1 control-label" for="tag-ids">标签：</label>
-
-              <div class="col-md-3">
-                <input type="text" class="js-tag-ids form-control input-sm" name="tagIds" id="tag-ids">
-              </div>
-            <?php } ?>
+            <div class="col-md-3">
+              <select name="groupId" id="group-id" class="form-control">
+                <option value="">全部分组</option>
+                <option value="0"><?= $setting('user.titleDefaultGroup') ?: '未分组' ?></option>
+              </select>
+            </div>
 
             <label class="col-md-1 control-label" for="platform">来源：</label>
 
@@ -81,6 +77,16 @@
               <input type="text" class="form-control" id="mobile" name="mobile">
             </div>
           </div>
+
+          <?php if ($hasUserTag) { ?>
+            <div class="form-group form-group-sm">
+              <label class="col-md-1 control-label" for="tag-ids">标签：</label>
+
+              <div class="col-md-3">
+                <input type="text" class="js-tag-ids form-control input-sm" name="tagIds" id="tag-ids">
+              </div>
+            </div>
+          <?php } ?>
 
           <div class="form-group form-group-sm">
             <?php $event->trigger('adminUserSearch') ?>
@@ -182,7 +188,14 @@
           data: 'nickName',
           sClass: 'user-media-td',
           render: function (data, type, full) {
+            <?php if ($hasUserTag) { ?>
+            full.tip = '';
+            for (var i in full.tags) {
+              full.tip += full.tags[i].name;
+            }
+            <?php } else { ?>
             full.tip = full.group.name;
+            <?php } ?>
             return template.render('user-info-tpl', full);
           }
         },
@@ -207,7 +220,7 @@
           sClass: 'text-center',
           render: function (data, type, full) {
             if (data !== '') {
-              return template.render('user-info-tpl',data);
+              return template.render('user-info-tpl', data);
             } else if (full.wechat_qrcode) {
               return full.wechat_qrcode.name;
             } else if (full.source == '-1') {
