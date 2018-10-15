@@ -37,14 +37,22 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
               </select>
             </div>
 
-            <label class="col-md-1 control-label" for="group-id">分组：</label>
+            <?php if ($hasUserTag) { ?>
+                <label class="col-md-1 control-label" for="tag-ids">标签：</label>
 
-            <div class="col-md-3">
-              <select name="groupId" id="group-id" class="form-control">
-                <option value="">全部分组</option>
-                <option value="0"><?= $setting('user.titleDefaultGroup') ?: '未分组' ?></option>
-              </select>
-            </div>
+                <div class="col-md-3">
+                  <input type="text" class="js-tag-ids form-control input-sm" name="tagIds" id="tag-ids">
+                </div>
+            <?php } else { ?>
+              <label class="col-md-1 control-label" for="group-id">分组：</label>
+
+              <div class="col-md-3">
+                <select name="groupId" id="group-id" class="form-control">
+                  <option value="">全部分组</option>
+                  <option value="0"><?= $setting('user.titleDefaultGroup') ?: '未分组' ?></option>
+                </select>
+              </div>
+            <?php } ?>
 
             <label class="col-md-1 control-label" for="platform">来源：</label>
 
@@ -77,16 +85,6 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
               <input type="text" class="form-control" id="mobile" name="mobile">
             </div>
           </div>
-
-          <?php if ($hasUserTag) { ?>
-            <div class="form-group form-group-sm">
-              <label class="col-md-1 control-label" for="tag-ids">标签：</label>
-
-              <div class="col-md-3">
-                <input type="text" class="js-tag-ids form-control input-sm" name="tagIds" id="tag-ids">
-              </div>
-            </div>
-          <?php } ?>
 
           <div class="form-group form-group-sm">
             <?php $event->trigger('adminUserSearch') ?>
@@ -130,12 +128,22 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
             <span class="lbl"> 全选 </span>
           </label>
 
-          <div class="form-group">
-            <select id="to-group-id" class="form-control input-sm" disabled>
-              <option>移动到分组</option>
-              <option value="0"><?= $setting('user.titleDefaultGroup') ?: '未分组' ?></option>
-            </select>
-          </div>
+          <?php if ($hasUserTag) { ?>
+            <div class="form-group" style="width: 160px">
+              <input type="text" class="js-to-tag-ids form-control" name="toTagIds" id="to-tag-ids"
+                placeholder="选择标签">
+            </div>
+            <div class="form-group">
+              <button type="button" class="js-to-tag btn btn-info">打标签</button>
+            </div>
+          <?php } else { ?>
+            <div class="form-group">
+              <select id="to-group-id" class="form-control input-sm" disabled>
+                <option>移动到分组</option>
+                <option value="0"><?= $setting('user.titleDefaultGroup') ?: '未分组' ?></option>
+              </select>
+            </div>
+          <?php } ?>
 
           <?php if ($wei->plugin->isInstalled('coupon')) : ?>
             <div class="form-group">
@@ -148,16 +156,6 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
               <a id="user-send-score" class="btn btn-info pull-right" href="javascript:void(0);">赠送积分</a>
             </div>
           <?php endif ?>
-
-          <?php if ($hasUserTag) { ?>
-            <div class="form-group" style="width: 160px">
-              <input type="text" class="js-to-tag-ids form-control" name="toTagIds" id="to-tag-ids"
-                placeholder="选择标签">
-            </div>
-            <div class="form-group">
-              <button type="button" class="js-to-tag btn btn-info">打标签</button>
-            </div>
-          <?php } ?>
         </form>
       </div>
     </div>

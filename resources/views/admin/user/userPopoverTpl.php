@@ -31,6 +31,9 @@
       <?php endforeach ?>
     </select>
   </div>
+  <div>
+    标签：
+  </div>
   <?php $event->trigger('adminUserPopover') ?>
   <div>
     操作：<a href="<%= $.url('admin/user/userinfo', {id: id}) %>" target="_blank">编辑</a>
