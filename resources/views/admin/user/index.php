@@ -172,7 +172,11 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'assets/admin/user', 'dataTable', 'template', 'jquery-deparam'], function (form) {
+  require(['form', 'assets/admin/user', 'dataTable', 'template', 'jquery-deparam',
+    'comps/select2/select2.min',
+    'css!comps/select2/select2',
+    'css!comps/select2-bootstrap-css/select2-bootstrap',
+  ], function (form) {
     form.toOptions($('#group-id'), <?= json_encode(wei()->group()->desc('sort')->fetchAll()) ?>, 'id', 'name');
     form.toOptions($('#to-group-id'), <?= json_encode(wei()->group()->desc('sort')->fetchAll()) ?>, 'id', 'name');
 
@@ -199,10 +203,11 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
           sClass: 'user-media-td',
           render: function (data, type, full) {
             <?php if ($hasUserTag) { ?>
-            full.tip = '';
+            var tips = [];
             for (var i in full.tags) {
-              full.tip += full.tags[i].name;
+              tips.push(full.tags[i].name);
             }
+            full.tip = tips.join(' ');
             <?php } else { ?>
             full.tip = full.group.name;
             <?php } ?>
@@ -262,28 +267,47 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
     $(document).on('group.changed', function () {
       recordTable.reload();
     });
-  });
 
-  require([
-    'comps/select2/select2.min',
-    'css!comps/select2/select2',
-    'css!comps/select2-bootstrap-css/select2-bootstrap',
-  ], function () {
     $('.js-tag-ids').select2({
       multiple: true,
       closeOnSelect: false,
       data: <?= json_encode($tags) ?>
     });
 
-    $('.js-to-tag-ids').select2({
+    var $toTagIds = $('.js-to-tag-ids').select2({
       multiple: true,
       closeOnSelect: false,
       data: <?= json_encode($tags) ?>
     });
 
-    $('.js-to-tag').click(function() {
+    $('.js-to-tag').click(function () {
+      var userIds = $('#record-table input:checkbox:checked').map(function () {
+        return $(this).val();
+      }).get();
+      if (!userIds.length) {
+        return $.err('请选择用户');
+      }
 
-    })
+      var tagIds = $toTagIds.select2('val');
+      if (!tagIds.length) {
+        return $.err('请选择标签');
+      }
+
+      $.ajax({
+        url: $.url('admin/user-tags/update-users-tags'),
+        dataType: 'json',
+        type: 'post',
+        data: {
+          userIds: userIds,
+          tagIds: tagIds,
+        }
+      }).then(function (ret) {
+        $.msg(ret);
+        if (ret.code === 1) {
+          recordTable.reload();
+        }
+      });
+    });
   });
 </script>
 <?= $block->end() ?>
