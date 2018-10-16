@@ -32,11 +32,19 @@ class Plugin extends \Miaoxing\Plugin\BasePlugin
             'sort' => 1000,
         ];
 
-        $navs[] = [
-            'parentId' => 'user',
-            'url' => 'admin/groups',
-            'name' => '分组管理',
-        ];
+        if (wei()->plugin->isInstalled('user-tag')) {
+            $navs[] = [
+                'parentId' => 'user',
+                'url' => 'admin/user-tags',
+                'name' => '标签管理',
+            ];
+        } else {
+            $navs[] = [
+                'parentId' => 'user',
+                'url' => 'admin/groups',
+                'name' => '分组管理',
+            ];
+        }
 
         $subCategories['user-setting'] = [
             'parentId' => 'user',
