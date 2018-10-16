@@ -131,7 +131,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
           <?php if ($hasUserTag) { ?>
             <div class="form-group" style="width: 160px">
               <input type="text" class="js-to-tag-ids form-control" name="toTagIds" id="to-tag-ids"
-                placeholder="选择标签">
+                placeholder="请选择标签">
             </div>
             <div class="form-group">
               <button type="button" class="js-to-tag btn btn-info">打标签</button>

@@ -2,6 +2,12 @@
 
 $canShow = $curUser->can('admin/user/show');
 $enableMessage = wei()->setting('user.enableMessage');
+
+$tags = [];
+$userTags = wei()->userTagModel()->desc('sort')->indexBy('id')->findAll();
+foreach ($userTags as $userTag) {
+  $tags[] = ['id' => $userTag->id, 'text' => $userTag->name];
+}
 ?>
 
 <?= $block->css() ?>
@@ -12,16 +18,16 @@ $enableMessage = wei()->setting('user.enableMessage');
 <script id="user-info-tpl" type="text/html">
   <%
   if (name && nickName && name != nickName) {
-    var displayName = name + '(' + nickName + ')';
+  var displayName = name + '(' + nickName + ')';
   } else if (name) {
-    var displayName = name;
+  var displayName = name;
   } else {
-    var displayName = nickName;
+  var displayName = nickName;
   }
   if (<?= (int) ($canShow && $enableMessage) ?>) {
-    var url = $.url('admin/message/user', {userId: id});
+  var url = $.url('admin/message/user', {userId: id});
   } else {
-    var url = 'javascript:;';
+  var url = 'javascript:;';
   }
   %>
   <div class="media user-media">
@@ -50,13 +56,46 @@ $enableMessage = wei()->setting('user.enableMessage');
     加载中...
   </div>
 </script>
+
+<div class="js-user-tag-modal modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form class="js-user-tag-form form-horizontal" role="form">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+          </button>
+          <h4 class="modal-title">更改标签</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">标签</label>
+            <div class="col-sm-6">
+              <input type="text" class="js-user-tag-tag-ids form-control" name="tagIds" placeholder="请选择标签">
+              <input type="hidden" class="js-user-tag-user-id form-control" name="userId">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">保存</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 <?= $block->end() ?>
 
 <?php require $view->getFile('@user/admin/user/userPopoverTpl.php') ?>
 
 <?= $block->js() ?>
 <script>
-  require(['comps/bootstrap-popover-async/bootstrap-popover-async'], function () {
+  require([
+    'comps/bootstrap-popover-async/bootstrap-popover-async',
+    'comps/select2/select2.min',
+    'css!comps/select2/select2',
+    'css!comps/select2-bootstrap-css/select2-bootstrap',
+    'form'
+  ], function () {
     var $body = $('body');
 
     $body.popoverAsync({
@@ -74,6 +113,16 @@ $enableMessage = wei()->setting('user.enableMessage');
             if (ret.code !== 1) {
               return $.msg(ret);
             }
+
+            var tags = [];
+            var tagIds = [];
+            for (var i in ret.data.tags) {
+              tags.push(ret.data.tags[i].name);
+              tagIds.push(ret.data.tags[i].id);
+            }
+            ret.data.tagName = tags.join(' ');
+            ret.data.tagIds = tagIds.join(',');
+
             $content.html(template.render('user-popover-tpl', ret.data));
             $content.find('.update-group').val(ret.data.groupId);
             callback($content);
@@ -95,6 +144,32 @@ $enableMessage = wei()->setting('user.enableMessage');
     $body.tooltip({
       container: 'body',
       selector: '.js-user-tooltip'
+    });
+
+    var $modal = $('.js-user-tag-modal');
+    $body.on('click', '.js-user-edit-tags', function () {
+      $('.js-user-tag-user-id').val($(this).data('id'));
+      $('.js-user-tag-tag-ids').val($(this).data('tag-ids')).select2({
+        multiple: true,
+        closeOnSelect: false,
+        data: <?= json_encode($tags) ?>
+      });
+      $modal.modal('show');
+    });
+
+    $('.js-user-tag-form').ajaxForm({
+      url: $.url('admin/user-tags/replace-user-tags'),
+      dataType: 'json',
+      type: 'post',
+      success: function (ret) {
+        $.msg(ret, function () {
+          if (ret.code === 1) {
+            $.removePopoverAsyncCache($('.js-user-tag-user-id').val());
+            $modal.modal('hide');
+            $(document).trigger('group.changed');
+          }
+        });
+      }
     });
   });
 </script>

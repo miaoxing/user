@@ -32,7 +32,8 @@
     </select>
   </div>
   <div>
-    标签：
+    标签：<%= tagName ? (tagName + ' ') : '' %><a class="js-user-edit-tags" data-id="<%= id %>"
+      data-tag-ids="<%= tagIds %>">编辑</a>
   </div>
   <?php $event->trigger('adminUserPopover') ?>
   <div>

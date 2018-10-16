@@ -24,7 +24,7 @@ class User extends \Miaoxing\Plugin\BaseController
      */
     public function indexAction($req)
     {
-        $userTags = wei()->userTagModel()->desc('sort')->indexBy('id')->findAll();
+        $userTags = wei()->userTag->getAll();
 
         switch ($req['_format']) {
             case 'json':
@@ -114,17 +114,11 @@ class User extends \Miaoxing\Plugin\BaseController
                         $source = $weChatQrcode->getUser();
                     }
 
-                    $tags = [];
-                    $relations = wei()->userTagsUserModel()->findAll(['user_id' => $user['id']]);
-                    foreach ($relations as $relation) {
-                        $tags[] = $userTags[$relation->tagId];
-                    }
-
                     $data[] = $user->toArray() + [
                             'sourceUser' => $source ? $source->toArray() : '',
                             'wechat_qrcode' => $weChatQrcode,
                             'group' => $user->getGroup(),
-                            'tags' => $tags,
+                            'tags' => $user->getTags(),
                         ];
                 }
 
@@ -206,6 +200,7 @@ class User extends \Miaoxing\Plugin\BaseController
 
         $data['isRegionLocked'] = $user->isStatus(UserService::STATUS_REGION_LOCKED);
         $data['isMobileVerified'] = $user->isStatus(UserService::STATUS_MOBILE_VERIFIED);
+        $data['tags'] = $user->getTags();
 
         return $this->suc([
             'data' => $data,
