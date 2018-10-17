@@ -164,7 +164,7 @@ foreach ($userTags as $userTag) {
       success: function (ret) {
         $.msg(ret, function () {
           if (ret.code === 1) {
-            $.removePopoverAsyncCache($('.js-user-tag-user-id').val());
+            $.clearPopoverAsyncCache();
             $modal.modal('hide');
             $(document).trigger('group.changed');
           }

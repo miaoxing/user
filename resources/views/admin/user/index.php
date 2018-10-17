@@ -302,6 +302,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
       }).then(function (ret) {
         $.msg(ret);
         if (ret.code === 1) {
+          $.clearPopoverAsyncCache();
           recordTable.reload();
         }
       });
