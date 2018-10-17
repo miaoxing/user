@@ -56,7 +56,7 @@
           </div>
 
           <label class="col-lg-6 help-text" for="default-tag-id">
-            用户关注后，系统自动的为用户打上标签
+            用户关注后，无标签时，系统自动的为用户打上的标签
           </label>
         </div>
       <?php } ?>
