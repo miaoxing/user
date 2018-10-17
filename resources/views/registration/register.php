@@ -1,6 +1,6 @@
 <?php
 
-$view->layout('admin:admin/layout-light.php')
+$view->layout('@admin/admin/layout-light.php')
 ?>
 
 <div class="page-header">
