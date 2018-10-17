@@ -40,6 +40,27 @@
         </label>
       </div>
 
+      <?php if (wei()->plugin->isInstalled('user-tag')) { ?>
+        <div class="form-group">
+          <label class="col-lg-2 control-label" for="default-tag-id">
+            默认标签
+          </label>
+
+          <div class="col-lg-4">
+            <select class="js-default-tag-id form-control" id="default-tag-id" name="settings[user.defaultTagId]">
+              <option value="0">无</option>
+              <?php foreach (wei()->userTag->getAll() as $tag) { ?>
+                <option value="<?= $tag->id ?>"><?= $tag->name ?></option>
+              <?php } ?>
+            </select>
+          </div>
+
+          <label class="col-lg-6 help-text" for="default-tag-id">
+            用户关注后，系统自动的为用户打上标签
+          </label>
+        </div>
+      <?php } ?>
+
       <div class="clearfix form-actions form-group">
         <div class="col-lg-offset-2">
           <button class="btn btn-primary" type="submit">
@@ -57,6 +78,8 @@
 <?= $block->js() ?>
 <script>
   require(['form', 'ueditor', 'validator', 'plugins/admin/js/image-upload'], function () {
+    $('.js-default-tag-id').val(<?= $defaultTagId ?>);
+
     $('.js-setting-form')
       .ajaxForm({
         dataType: 'json',
