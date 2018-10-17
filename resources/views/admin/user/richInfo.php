@@ -69,7 +69,7 @@ foreach ($userTags as $userTag) {
         </div>
         <div class="modal-body">
           <div class="form-group">
-            <label class="col-sm-2 control-label">标签</label>
+            <label class="col-sm-3 control-label">标签</label>
             <div class="col-sm-6">
               <input type="text" class="js-user-tag-tag-ids form-control" name="tagIds" placeholder="请选择标签">
               <input type="hidden" class="js-user-tag-user-id form-control" name="userId">
