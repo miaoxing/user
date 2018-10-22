@@ -28,7 +28,7 @@ namespace Miaoxing\User\Metadata;
  * @property string $homePage 用户主页
  * @property string $favorite 用户爱好
  * @property string $personalDesc 用户个人说明
- * @property string $config
+ * @property array $config
  * @property string $createTime 创建时间
  */
 trait UserProfileTrait
@@ -61,7 +61,7 @@ trait UserProfileTrait
         'homePage' => 'string',
         'favorite' => 'string',
         'personalDesc' => 'string',
-        'config' => 'string',
+        'config' => 'json',
         'createTime' => 'datetime',
     ];
 }

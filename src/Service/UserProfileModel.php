@@ -20,6 +20,14 @@ class UserProfileModel extends BaseModel
 
     protected $table = 'userProfile';
 
+    protected $defaultCasts = [
+        'config' => 'json'
+    ];
+
+    protected $data = [
+        'config' => [],
+    ];
+
     protected $providers = [
         'db' => 'db',
     ];
