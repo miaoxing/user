@@ -24,6 +24,8 @@ class User extends \Miaoxing\Plugin\BaseController
      */
     public function indexAction($req)
     {
+        $userTags = wei()->userTag->getAll();
+
         switch ($req['_format']) {
             case 'json':
             case 'csv':
@@ -87,6 +89,14 @@ class User extends \Miaoxing\Plugin\BaseController
                     $users->andWhere($req['filter_empty'] . " != ''");
                 }
 
+                if ($req['tagIds']) {
+                    $users
+                        ->select('DISTINCT user.*')
+                        ->leftJoin('app.user_tags_users', 'user_tags_users.user_id = user.id')
+                        ->andWhere(['user_tags_users.tag_id' => explode(',', $req['tagIds'])])
+                        ->groupBy('user.id');
+                }
+
                 // 导出用户限制
                 if ($req['format'] == 'csv' && $users->count() > 10000) {
                     return $this->err('导出用户数超过1W，请联系开发人员后台导出！');
@@ -107,6 +117,7 @@ class User extends \Miaoxing\Plugin\BaseController
                             'sourceUser' => $source ? $source->toArray() : '',
                             'wechat_qrcode' => $weChatQrcode,
                             'group' => $user->getGroup(),
+                            'tags' => $user->getTags(),
                         ];
                 }
 
@@ -123,6 +134,11 @@ class User extends \Miaoxing\Plugin\BaseController
 
             default:
                 $groups = wei()->group()->findAll()->withUngroup();
+
+                $tags = [];
+                foreach ($userTags as $userTag) {
+                    $tags[] = ['id' => $userTag->id, 'text' => $userTag->name];
+                }
 
                 // 获取用户相关平台
                 $platforms[] = [
@@ -183,6 +199,7 @@ class User extends \Miaoxing\Plugin\BaseController
 
         $data['isRegionLocked'] = $user->isStatus(UserService::STATUS_REGION_LOCKED);
         $data['isMobileVerified'] = $user->isStatus(UserService::STATUS_MOBILE_VERIFIED);
+        $data['tags'] = $user->getTags();
 
         return $this->suc([
             'data' => $data,
