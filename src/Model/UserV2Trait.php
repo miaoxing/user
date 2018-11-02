@@ -79,8 +79,12 @@ trait UserV2Trait
 
             $ret = wei()->verifyCode->check($req['mobile'], $req['verifyCode']);
             if ($ret['code'] !== 1) {
-                return $ret + ['verifyCodeErr' => true];
+                return $ret;
             }
+        }
+
+        if ($this['mobile'] == $req['mobile']) {
+            return $this->suc(['changed' => false]);
         }
 
         $this['mobile'] = $req['mobile'];
@@ -88,7 +92,6 @@ trait UserV2Trait
         if ($save) {
             $this->save();
         }
-
-        return $this->suc();
+        return $this->suc(['changed' => true]);
     }
 }
