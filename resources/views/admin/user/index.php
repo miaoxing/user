@@ -114,8 +114,8 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
           <th class="t-8">地区</th>
           <th class="t-3">积分</th>
           <th class="t-4">来源</th>
-          <th class="t-3">是否关注</th>
-          <th class="t-10">注册时间</th>
+          <th class="t-4">是否关注</th>
+          <th class="t-8">注册时间</th>
         </tr>
         </thead>
         <tbody>
