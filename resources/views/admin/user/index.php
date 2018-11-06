@@ -110,7 +110,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
           <th class="t-3"></th>
           <th>用户</th>
           <th class="t-4">姓名</th>
-          <th class="t-4">手机</th>
+          <th class="t-6">手机</th>
           <th class="t-8">地区</th>
           <th class="t-3">积分</th>
           <th class="t-4">来源</th>
