@@ -79,7 +79,7 @@ trait UserV2Trait
 
             $ret = wei()->verifyCode->check($req['mobile'], $req['verifyCode']);
             if ($ret['code'] !== 1) {
-                return $ret;
+                return $ret + ['verifyCodeErr' => true];
             }
         }
 
