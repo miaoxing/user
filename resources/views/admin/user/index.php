@@ -203,7 +203,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
             <?php if ($hasUserTag) { ?>
             var tips = [];
             for (var i in full.tags) {
-              tips.push(full.tags[i].name);
+              full.tags[i] && tips.push(full.tags[i].name);
             }
             full.tip = tips.join(' ');
             <?php } else { ?>
