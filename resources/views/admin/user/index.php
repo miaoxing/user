@@ -115,7 +115,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
           <th class="t-3">积分</th>
           <th class="t-4">来源</th>
           <th class="t-4">是否关注</th>
-          <th class="t-8">注册时间</th>
+          <th class="t-8">关注时间</th>
         </tr>
         </thead>
         <tbody>
@@ -252,10 +252,10 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
 
         },
         {
-          data: 'createTime',
+          data: 'regTime',
           sClass: 'text-center',
           render: function (data) {
-            return data.substr(0, 16);
+            return data === '0000-00-00 00:00:00' ? '-' : data.substr(0, 16);
           }
         }
       ]
