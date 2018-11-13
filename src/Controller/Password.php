@@ -2,8 +2,8 @@
 
 namespace Miaoxing\User\Controller;
 
-use Miaoxing\Plugin\Service\User;
 use Miaoxing\Plugin\Middleware\LoadAppConfig;
+use Miaoxing\Plugin\Service\User;
 
 class Password extends \Miaoxing\Plugin\BaseController
 {
@@ -29,14 +29,14 @@ class Password extends \Miaoxing\Plugin\BaseController
 
     public function indexAction($req)
     {
-        $headerTitle = '修改密码';
+        $this->page->setTitle('修改密码');
 
         return get_defined_vars();
     }
 
     public function resetAction($req)
     {
-        $headerTitle = '忘记密码';
+        $this->page->setTitle('忘记密码');
 
         return get_defined_vars();
     }
@@ -176,7 +176,7 @@ class Password extends \Miaoxing\Plugin\BaseController
             return wei()->response->redirect(wei()->url->full('registration/reset', $req->getQueries()));
         }
 
-        $headerTitle = '重置密码';
+        $this->page->setTitle('重置密码');
         $userId = $req['userId'];
         $nonce = $req['nonce'];
         $timestamp = $req['timestamp'];

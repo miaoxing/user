@@ -2,11 +2,11 @@
 
 namespace Miaoxing\User\Controller;
 
-use Miaoxing\User\Middleware\CheckNotLogin;
-use Miaoxing\Plugin\Service\User;
 use Miaoxing\Plugin\Middleware\CheckRedirectUrl;
 use Miaoxing\Plugin\Middleware\LoadAppConfig;
+use Miaoxing\Plugin\Service\User;
 use Miaoxing\User\Middleware\CheckIfEnableRegister;
+use Miaoxing\User\Middleware\CheckNotLogin;
 use Wei\Request;
 
 class Users extends \Miaoxing\Plugin\BaseController
@@ -51,7 +51,7 @@ class Users extends \Miaoxing\Plugin\BaseController
             $this->event->trigger('postImageLoad', [&$bgImage]);
         }
 
-        $this->page->setHeaderTitle('个人中心');
+        $this->page->setTitle('个人中心');
 
         return get_defined_vars();
     }
@@ -125,7 +125,7 @@ class Users extends \Miaoxing\Plugin\BaseController
         // 如果认证了手机号码,又没启用认证功能,就不显示手机号
         $hideMobile = $isMobileVerified && !$enableMobileVerify;
 
-        $this->page->setHeaderTitle('个人信息');
+        $this->page->setTitle('个人信息');
 
         return get_defined_vars();
     }
@@ -168,7 +168,7 @@ class Users extends \Miaoxing\Plugin\BaseController
             if (!$this->setting('user.enableLogin', true)) {
                 return $this->err($this->setting('user.disableLoginTips', '登录功能未启用'));
             }
-            $this->page->setHeaderTitle('登录');
+            $this->page->setTitle('登录');
 
             return get_defined_vars();
         }
@@ -196,7 +196,7 @@ class Users extends \Miaoxing\Plugin\BaseController
      */
     public function settingAction()
     {
-        $this->page->setHeaderTitle('账号设置');
+        $this->page->setTitle('账号设置');
 
         return get_defined_vars();
     }

@@ -81,7 +81,7 @@ class Registration extends BaseController
      */
     public function resetAction($req)
     {
-        $headerTitle = '重置密码';
+        $this->page->setTitle('重置密码');
         $ret = wei()->userVerify->verify($req, false);
         if ($ret['code'] < 0) {
             return $this->err($ret['message']);
