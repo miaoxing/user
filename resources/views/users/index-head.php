@@ -1,5 +1,5 @@
 <div class="user-head">
-  <img class="user-head-bg" src="<?= $asset->thumb($bgImage, 750) ?: $asset('plugins/user/images/background.jpg') ?>">
+  <img class="user-head-bg" src="<?= $asset->thumb($bgImage ?: $asset('plugins/user/images/background.jpg'), 750) ?>">
   <div class="user-head-content flex flex-y flex-center">
     <!-- htmllint attr-bans="false" -->
     <span class="user-head-img" style="background-image:url('<?= $curUser->getHeadImg() ?>')"></span>
