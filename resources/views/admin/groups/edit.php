@@ -1,4 +1,4 @@
 <?php
 
-$view->layout();
-$wei->page->addReactJs('form');
+$view->layout('@admin/admin/layout-v3.php');
+$wei->page->addPluginAssets($app->isAdmin() ? 'admin2' : 'app');
