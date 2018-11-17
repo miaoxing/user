@@ -1,13 +1,16 @@
 import React from 'react';
-import {FormAction, Page, PageHeader} from 'components';
 import CListBtn from "components/bs4/CListBtn";
 import app from 'app';
 import Form from "components/Form";
 import FormItem from "components/bs4/FormItem";
+import PageHeader from "components/bs4/PageHeader";
+import FormAction from "components/bs4/FormAction";
 
 export default class GroupForm extends React.Component {
   state = {
-    data: {},
+    data: {
+      sort: 50,
+    },
   };
 
   componentDidMount() {
@@ -18,20 +21,21 @@ export default class GroupForm extends React.Component {
 
   render() {
     return (
-      <Page>
+      <>
         <PageHeader>
-          <CListBtn/>
+          <div className="float-right">
+            <CListBtn/>
+          </div>
+          {wei.page.controllerTitle}
         </PageHeader>
         <Form initialValues={this.state.data} url={app.curFormUrl()}>
-          <FormItem label="名称" name="name" data-rule-maxlength={10} required/>
+          <FormItem label="名称" name="name" required/>
 
           <FormItem label="顺序" name="sort" type="number"/>
 
-          <input type="hidden" id="id" name="id"/>
-
-          <FormAction url={$.url('admin/groups')}/>
+          <FormAction/>
         </Form>
-      </Page>
+      </>
     );
   }
 }
