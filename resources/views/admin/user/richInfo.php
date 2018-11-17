@@ -89,7 +89,7 @@ foreach ($userTags as $userTag) {
 
 <?= $block->js() ?>
 <script>
-  require([
+  window.require && require([
     'comps/bootstrap-popover-async/bootstrap-popover-async',
     'comps/select2/select2.min',
     'css!comps/select2/select2',
