@@ -97,7 +97,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
               </button>
               &nbsp;
               <?php if (wei()->setting('user.enableExport')) : ?>
-                <a id="export-csv" class="js-export-csv btn btn-white btn-sm" href="javascript:void(0);">导出</a>
+                <a id="export-csv" class="js-export-csv btn btn-default btn-sm" href="javascript:void(0);">导出</a>
               <?php endif ?>
             </div>
           </div>
