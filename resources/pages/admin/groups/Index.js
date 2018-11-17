@@ -7,45 +7,29 @@ import CEditLink from "components/CEditLink";
 import CNewBtn from "components/CNewBtn";
 import PageHeader from "components/bs4/PageHeader";
 import {Button} from "react-bootstrap4";
+import app from "app";
 
 export default class extends React.Component {
-  componentDidMount() {
-    $('#sync-from-wechat').click(function () {
-      var icon = $(this).find('.fa-refresh');
-      icon.addClass('fa-spin');
-      $.ajax({
-        url: $.url('admin/wechat-groups/sync-from-wechat'),
-        dataType: 'json',
-        success: function (result) {
-          if (result.code > 0) {
-            $.alert(result.message);
-          } else {
-            $.err(result.message);
-          }
-          $table.reload();
-        },
-        complete: function () {
-          icon.removeClass('fa-spin');
-        }
-      });
-    });
-  }
+  handleClick = (reload) => {
+    app.post(app.url('admin/wechat-groups/sync-from-wechat'))
+      .then(ret => $.msg(ret, () => reload()));
+  };
 
   render() {
     return <>
-      <PageHeader>
-        <div className="float-right">
-          {wei.hasWechatGroup && <Button variant="default" id="sync-from-wechat">
-            <i className="fa fa-refresh"/> 从微信同步分组
-          </Button>}
-          {' '}
-          <CNewBtn/>
-        </div>
-        {wei.page.controllerTitle}
-      </PageHeader>
-
       <TableProvider>
         {({reload}) => <>
+          <PageHeader>
+            <div className="float-right">
+              {wei.hasWechatGroup && <Button variant="default" onClick={this.handleClick.bind(reload)}>
+                从微信同步分组
+              </Button>}
+              {' '}
+              <CNewBtn/>
+            </div>
+            {wei.page.controllerTitle}
+          </PageHeader>
+
           <Table
             bootstrap4
             columns={[
