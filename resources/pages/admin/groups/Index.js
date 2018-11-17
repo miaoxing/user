@@ -1,11 +1,12 @@
 import React from "react";
-import {Button, PageHeader} from "react-bootstrap";
 import TableProvider from "components/TableProvider";
 import Table from "components/Table";
 import Actions from "components/Actions";
 import CDeleteLink from "components/CDeleteLink";
 import CEditLink from "components/CEditLink";
 import CNewBtn from "components/CNewBtn";
+import PageHeader from "components/bs4/PageHeader";
+import {Button} from "react-bootstrap4";
 
 export default class extends React.Component {
   componentDidMount() {
@@ -34,7 +35,7 @@ export default class extends React.Component {
     return <>
       <PageHeader>
         <div className="float-right">
-          {wei.hasWechatGroup && <Button id="sync-from-wechat">
+          {wei.hasWechatGroup && <Button variant="default" id="sync-from-wechat">
             <i className="fa fa-refresh"/> 从微信同步分组
           </Button>}
           {' '}
