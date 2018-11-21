@@ -317,7 +317,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
         alert('请选择用户');
         return;
       }
-      window.location.href = $.url('admin/coupon/index?userlist=' + ids);
+      window.location.href = $.url('admin/coupons?userlist=' + ids);
     });
   });
 </script>
