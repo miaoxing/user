@@ -73,6 +73,11 @@ trait UserV2Trait
         if (!$this->isStatus(UserModel::STATUS_MOBILE_VERIFIED)
             || $this['mobile'] != $req['mobile']
         ) {
+            $ret = $this->checkMobile($req['mobile']);
+            if ($ret['code'] !== 1) {
+                return $ret;
+            }
+
             if (!$req['verifyCode']) {
                 return $this->err('验证码不能为空');
             }
