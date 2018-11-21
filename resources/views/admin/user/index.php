@@ -147,7 +147,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
 
           <?php if ($wei->plugin->isInstalled('coupon')) : ?>
             <div class="form-group">
-              <a id="user-send-coupon" class="btn btn-info pull-right" href="javascript:void(0);">发放优惠券</a>
+              <a class="js-user-send-coupon btn btn-info pull-right" href="javascript:void(0);">发放优惠券</a>
             </div>
           <?php endif ?>
 
@@ -306,6 +306,18 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
           recordTable.reload();
         }
       });
+    });
+
+    // 发放优惠券
+    $('.js-user-send-coupon').click(function () {
+      var ids = $('#record-table input:checkbox:checked').map(function () {
+        return $(this).val();
+      }).get();
+      if (ids == '') {
+        alert('请选择用户');
+        return;
+      }
+      window.location.href = $.url('admin/coupon/index?userlist=' + ids);
     });
   });
 </script>
