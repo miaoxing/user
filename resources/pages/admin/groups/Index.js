@@ -16,6 +16,8 @@ export default class extends React.Component {
   };
 
   render() {
+    window.app = app;
+
     return <>
       <TableProvider>
         {({reload}) => <>
