@@ -5,6 +5,7 @@ import Form from "components/bs4/Form";
 import FormItem from "components/bs4/FormItem";
 import PageHeader from "components/bs4/PageHeader";
 import FormAction from "components/bs4/FormAction";
+import axios from 'axios';
 
 export default class GroupForm extends React.Component {
   state = {
@@ -15,7 +16,7 @@ export default class GroupForm extends React.Component {
 
   componentDidMount() {
     if (app.id) {
-      app.get(app.curShowUrl()).then(ret => this.setState(ret));
+      axios.get(app.curShowUrl()).then(({data}) => this.setState(data));
     }
   }
 
