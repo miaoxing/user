@@ -23,7 +23,7 @@ export default class extends React.Component {
         {({reload}) => <>
           <PageHeader>
             <div className="float-right">
-              {wei.hasWechatGroup && <Button variant="default" onClick={this.handleClick.bind(this, reload)}>
+              {wei.hasWechatGroup && <Button variant="secondary" onClick={this.handleClick.bind(this, reload)}>
                 从微信同步分组
               </Button>}
               {' '}
