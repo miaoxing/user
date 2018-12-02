@@ -1,6 +1,6 @@
 import React from "react";
 import TableProvider from "components/TableProvider";
-import Table from "components/Table";
+import Table from "components/bs4/Table";
 import Actions from "components/Actions";
 import CDeleteLink from "components/CDeleteLink";
 import CEditLink from "components/CEditLink";
@@ -33,7 +33,6 @@ export default class extends React.Component {
           </PageHeader>
 
           <Table
-            bootstrap4
             columns={[
               {
                 text: '名称',
