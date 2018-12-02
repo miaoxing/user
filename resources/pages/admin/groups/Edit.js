@@ -16,7 +16,7 @@ export default class GroupForm extends React.Component {
 
   componentDidMount() {
     if (app.id) {
-      axios.get(app.curShowUrl(), {loading: true}).then(({data}) => this.setState(data));
+      axios(app.curShowUrl(), {loading: true}).then(({data}) => this.setState(data));
     }
   }
 
