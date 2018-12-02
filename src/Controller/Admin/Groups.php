@@ -4,7 +4,7 @@ namespace Miaoxing\User\Controller\Admin;
 
 use Miaoxing\Admin\Action\NewCreateTrait;
 use Miaoxing\Admin\Action\ShowTrait;
-use Miaoxing\Admin\Bs4Layout;
+use Miaoxing\Plugin\Bs4Layout;
 use Miaoxing\Plugin\Service\Request;
 use Miaoxing\User\Service\GroupModel;
 
