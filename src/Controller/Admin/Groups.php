@@ -4,7 +4,7 @@ namespace Miaoxing\User\Controller\Admin;
 
 use Miaoxing\Admin\Action\NewCreateTrait;
 use Miaoxing\Admin\Action\ShowTrait;
-use Miaoxing\Plugin\Bs4Layout;
+use Miaoxing\Plugin\Bs4LayoutTrait;
 use Miaoxing\Plugin\Service\Request;
 use Miaoxing\User\Service\GroupModel;
 
@@ -12,7 +12,7 @@ class Groups extends \Miaoxing\Plugin\BaseController
 {
     use NewCreateTrait;
     use ShowTrait;
-    use Bs4Layout;
+    use Bs4LayoutTrait;
 
     protected $controllerName = '分组管理';
 
