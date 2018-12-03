@@ -11,6 +11,12 @@ import app from "app";
 import axios from 'axios';
 
 export default class extends React.Component {
+  state = {};
+
+  componentDidMount() {
+    axios(app.actionUrl('metadata'), {loading: true}).then(({data}) => this.setState(data));
+  }
+
   handleClick = (api) => {
     axios.post(app.url('admin/wechat-groups/sync-from-wechat'), {}, {loading: true})
       .then(({data}) => app.ret(data, api.reload));
@@ -22,7 +28,7 @@ export default class extends React.Component {
         {api => <>
           <PageHeader>
             <div className="float-right">
-              {wei.hasWechatGroup && <Button variant="secondary" onClick={this.handleClick.bind(this, api)}>
+              {this.state.hasWechatGroup && <Button variant="secondary" onClick={this.handleClick.bind(this, api)}>
                 从微信同步分组
               </Button>}
               {' '}
@@ -45,7 +51,7 @@ export default class extends React.Component {
               {
                 text: '状态',
                 dataField: 'wechatId',
-                hidden: wei.hasWechatGroup,
+                hidden: !this.state.hasWechatGroup,
                 formatter: (cell) => cell > 0 ? '已同步' : '未同步',
               },
               {

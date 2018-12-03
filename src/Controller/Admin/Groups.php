@@ -2,6 +2,7 @@
 
 namespace Miaoxing\User\Controller\Admin;
 
+use Miaoxing\Admin\Action\IndexTrait;
 use Miaoxing\Admin\Action\NewCreateTrait;
 use Miaoxing\Admin\Action\ShowTrait;
 use Miaoxing\Plugin\Bs4LayoutTrait;
@@ -10,6 +11,7 @@ use Miaoxing\User\Service\GroupModel;
 
 class Groups extends \Miaoxing\Plugin\BaseController
 {
+    use IndexTrait;
     use NewCreateTrait;
     use ShowTrait;
     use Bs4LayoutTrait;
@@ -19,38 +21,17 @@ class Groups extends \Miaoxing\Plugin\BaseController
     protected $controllerPermissionName = '用户分组管理';
 
     protected $actionPermissions = [
-        'index' => '列表',
+        'index,metadata' => '列表',
         'new,create' => '添加',
         'edit,update' => '编辑',
         'destroy' => '删除',
     ];
 
-    public function indexAction($req)
+    public function metadataAction()
     {
-        switch ($req['_format']) {
-            case 'json':
-                $groups = wei()->group();
-
-                // 分页
-                $groups->limit($req['rows'])->page($req['page']);
-
-                // 排序
-                $groups->setRequest($req)
-                    ->sort();
-
-                $data = $groups->findAll()->toArray();
-
-                return $this->suc([
-                    'data' => $data,
-                    'page' => $req['page'],
-                    'rows' => $req['rows'],
-                    'records' => $groups->count(),
-                ]);
-
-            default:
-                $this->js['hasWechatGroup'] = $this->plugin->isInstalled('wechat-group');
-                return get_defined_vars();
-        }
+        return $this->suc([
+            'hasWechatGroup' => $this->plugin->isInstalled('wechat-group'),
+        ]);
     }
 
     public function editAction($req)
@@ -100,6 +81,24 @@ class Groups extends \Miaoxing\Plugin\BaseController
         wei()->user()->where(['groupId' => $req['id']])->update('groupId = 0');
 
         return $this->suc();
+    }
+
+    protected function beforeIndexFind(Request $req, GroupModel $models)
+    {
+    }
+
+    protected function afterIndexFind(Request $req, GroupModel $models)
+    {
+    }
+
+    protected function buildIndexData(GroupModel $model)
+    {
+        return [];
+    }
+
+    protected function buildIndexRet($ret, Request $req, GroupModel $models)
+    {
+        return $ret;
     }
 
     protected function beforeShowFind(Request $req, GroupModel $model)
