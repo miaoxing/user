@@ -8,22 +8,21 @@ import CNewBtn from "components/CNewBtn";
 import PageHeader from "components/bs4/PageHeader";
 import {Button} from "react-bootstrap4";
 import app from "app";
+import axios from 'axios';
 
 export default class extends React.Component {
-  handleClick = (reload) => {
-    app.post(app.url('admin/wechat-groups/sync-from-wechat'))
-      .then(ret => $.msg(ret, () => reload()));
+  handleClick = (api) => {
+    axios.post(app.url('admin/wechat-groups/sync-from-wechat'), {}, {loading: true})
+      .then(({data}) => app.ret(data, api.reload));
   };
 
   render() {
-    window.app = app;
-
     return <>
       <TableProvider>
-        {({reload}) => <>
+        {api => <>
           <PageHeader>
             <div className="float-right">
-              {wei.hasWechatGroup && <Button variant="secondary" onClick={this.handleClick.bind(this, reload)}>
+              {wei.hasWechatGroup && <Button variant="secondary" onClick={this.handleClick.bind(this, api)}>
                 从微信同步分组
               </Button>}
               {' '}
