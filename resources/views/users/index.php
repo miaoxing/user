@@ -13,6 +13,4 @@
 
 <?php $event->trigger('beforeUserIndexRenderMenu', [$nav]) ?>
 
-<ul class="list list-indented">
-  <?php $view->nav->displayLink($nav) ?>
-</ul>
+<?php $view->nav->displayLink($nav) ?>
