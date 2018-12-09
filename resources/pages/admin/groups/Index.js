@@ -1,3 +1,4 @@
+import 'vendor/miaoxing/admin/resources/pages/bs4';
 import React from "react";
 import TableProvider from "components/TableProvider";
 import Table from "components/bs4/Table";
