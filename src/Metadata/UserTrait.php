@@ -22,7 +22,7 @@ namespace Miaoxing\User\Metadata;
  * @property string $phone 手机号码
  * @property string $salt
  * @property string $password
- * @property bool $gender
+ * @property int $gender
  * @property string $country
  * @property string $province
  * @property string $city
