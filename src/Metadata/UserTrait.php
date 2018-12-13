@@ -72,7 +72,7 @@ trait UserTrait
         'phone' => 'string',
         'salt' => 'string',
         'password' => 'string',
-        'gender' => 'bool',
+        'gender' => 'int',
         'country' => 'string',
         'province' => 'string',
         'city' => 'string',

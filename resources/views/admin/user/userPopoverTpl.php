@@ -4,7 +4,7 @@
     <strong><%= nickName || '(用户' + id + ')' %></strong>
     <% if (gender == 1) { %>
     <i class="fa fa-male text-primary"></i>
-    <% } else { %>
+    <% } else if (gender === '2') { %>
     <i class="fa fa-female text-warning"></i>
     <% } %>
   </div>
