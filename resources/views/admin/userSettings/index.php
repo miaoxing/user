@@ -21,7 +21,7 @@
         </div>
 
         <label class="col-lg-6 help-text" for="bg-image">
-          推荐尺寸640*240，留空使用默认图片
+          推荐宽度750像素，高度大于等于280像素，留空使用默认图片
         </label>
       </div>
 
