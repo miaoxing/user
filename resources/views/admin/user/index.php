@@ -104,23 +104,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
         </div>
       </form>
 
-      <table id="record-table" class="record-table table table-bordered table-hover">
-        <thead>
-        <tr>
-          <th class="t-3"></th>
-          <th>用户</th>
-          <th class="t-4">姓名</th>
-          <th class="t-6">手机</th>
-          <th class="t-8">地区</th>
-          <th class="t-3">积分</th>
-          <th class="t-4">来源</th>
-          <th class="t-4">是否关注</th>
-          <th class="t-8">关注时间</th>
-        </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+      <table id="record-table" class="record-table table table-bordered table-hover"></table>
       <div class="well form-well">
         <form class="form-inline" role="form">
           <label>
@@ -173,7 +157,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
   require(['form', 'assets/admin/user', 'dataTable', 'template', 'jquery-deparam',
     'comps/select2/select2.min',
     'css!comps/select2/select2',
-    'css!comps/select2-bootstrap-css/select2-bootstrap',
+    'css!comps/select2-bootstrap-css/select2-bootstrap'
   ], function (form) {
     form.toOptions($('#group-id'), <?= json_encode(wei()->group()->desc('sort')->fetchAll()) ?>, 'id', 'name');
     form.toOptions($('#to-group-id'), <?= json_encode(wei()->group()->desc('sort')->fetchAll()) ?>, 'id', 'name');
@@ -192,11 +176,13 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
       columns: [
         {
           data: 'id',
+          sClass: 't-2',
           render: function (data) {
             return '<label><input type="checkbox" class="ace" value="' + data + '"><span class="lbl"></span></label>'
           }
         },
         {
+          title: '用户',
           data: 'nickName',
           sClass: 'user-media-td',
           render: function (data, type, full) {
@@ -213,24 +199,32 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
           }
         },
         {
+          title: '姓名',
+          sClass: 't-4',
           data: 'name'
         },
         {
+          title: '手机',
+          sClass: 't-6',
           data: 'mobile'
         },
         {
+          title: '地区',
+          sClass: 't-8',
           data: 'country',
           render: function (data, type, full) {
             return full.country + ' ' + full.province + ' ' + full.city;
           }
         },
         {
+          title: '积分',
           data: 'score',
-          sClass: 'text-center'
+          sClass: 't-3 text-center'
         },
         {
+          title: '来源',
           data: 'sourceUser',
-          sClass: 'text-center',
+          sClass: 't-4 text-center',
           render: function (data, type, full) {
             if (data !== '') {
               return template.render('user-info-tpl', data);
@@ -244,20 +238,22 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
           }
         },
         {
+          title: '关注',
           data: 'isValid',
-          sClass: 'text-center',
+          sClass: 't-3 text-center',
           render: function (data, type, full) {
             return data == '1' ? '是' : '否';
           }
-
         },
         {
+          title: '关注时间',
           data: 'regTime',
-          sClass: 'text-center',
+          sClass: 't-8 text-center',
           render: function (data) {
             return data === '0000-00-00 00:00:00' ? '-' : data.substr(0, 16);
           }
-        }
+        },
+        <?php $event->trigger('adminUsersColumns') ?>
       ]
     });
 

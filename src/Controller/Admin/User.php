@@ -102,6 +102,14 @@ class User extends \Miaoxing\Plugin\BaseController
                     return $this->err('导出用户数超过1W，请联系开发人员后台导出！');
                 }
 
+                if ($req['startLastPaidTime']) {
+                    $users->andWhere('lastPaidTime >= ?', $req['startLastPaidTime']);
+                }
+
+                if ($req['endLastPaidTime']) {
+                    $users->andWhere('lastPaidTime <= ?', $req['endLastPaidTime'] . '23:59:59');
+                }
+
                 // 触发查找前事件
                 $this->event->trigger('preAdminUserListFind', [$req, $users]);
 
