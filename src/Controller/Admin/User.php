@@ -93,8 +93,7 @@ class User extends \Miaoxing\Plugin\BaseController
                     $users
                         ->select('DISTINCT user.*')
                         ->leftJoin('app.user_tags_users', 'user_tags_users.user_id = user.id')
-                        ->andWhere(['user_tags_users.tag_id' => explode(',', $req['tagIds'])])
-                        ->groupBy('user.id');
+                        ->andWhere(['user_tags_users.tag_id' => explode(',', $req['tagIds'])]);
                 }
 
                 // 导出用户限制
@@ -136,7 +135,7 @@ class User extends \Miaoxing\Plugin\BaseController
                         'data' => $data,
                         'page' => (int) $req['page'],
                         'rows' => (int) $req['rows'],
-                        'records' => $users->count(),
+                        'records' => $users->count(false, 'DISTINCT user.id'),
                     ]);
                 }
 
