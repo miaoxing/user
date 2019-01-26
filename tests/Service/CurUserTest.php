@@ -168,4 +168,12 @@ class CurUserTest extends \Miaoxing\Plugin\Test\BaseTestCase
         $this->assertNotNull($profile);
         $this->assertEquals(wei()->curUserV2->id, $profile->userId);
     }
+
+    public function testLoadBeforeSet()
+    {
+        $this->initSession();
+
+        wei()->curUserV2->email = 'abc';
+        $this->assertEquals('name', wei()->curUserV2->name);
+    }
 }

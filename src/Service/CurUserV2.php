@@ -16,6 +16,37 @@ class CurUserV2 extends CurUser
     }
 
     /**
+     * NOTE: 暂时只有__set有效
+     *
+     * @param string $name
+     * @param mixed $value
+     * @return mixed
+     */
+    public function __set($name, $value = null)
+    {
+        // __set start
+        // Required services first
+        if (in_array($name, $this->requiredServices)) {
+            return $this->$name = $value;
+        }
+
+        // NOTE: 设置前需主动加载，否则状态变为loaded，不会再去加载
+        $this->loadDbUser();
+
+        $result = $this->set($name, $value, false);
+        if ($result) {
+            return;
+        }
+
+        if ($this->wei->has($name)) {
+            return $this->$name = $value;
+        }
+
+        throw new \InvalidArgumentException('Invalid property: ' . $name);
+        // __set end
+    }
+
+    /**
      * @param string $name
      * @return mixed
      * @see \Miaoxing\Plugin\Model\GetSetTrait::getColumnValue
