@@ -155,4 +155,17 @@ class CurUserTest extends \Miaoxing\Plugin\Test\BaseTestCase
 
         $this->assertInternalType('int', wei()->curUserV2->id);
     }
+
+    public function testGetProfile()
+    {
+        $this->initSession();
+
+        wei()->userProfileModel()->save([
+           'userId' => wei()->curUserV2->id,
+        ]);
+
+        $profile = wei()->curUserV2->profile;
+        $this->assertNotNull($profile);
+        $this->assertEquals(wei()->curUserV2->id, $profile->userId);
+    }
 }

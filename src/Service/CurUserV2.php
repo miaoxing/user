@@ -9,6 +9,12 @@ class CurUserV2 extends CurUser
 {
     use UserV2Trait;
 
+    public function profile()
+    {
+        $this->loadDbUser();
+        return $this->hasOne(wei()->userProfileModel(), 'userId', 'id');
+    }
+
     /**
      * @param string $name
      * @return mixed
