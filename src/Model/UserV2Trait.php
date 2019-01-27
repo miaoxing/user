@@ -22,8 +22,8 @@ trait UserV2Trait
     use GetSetTrait;
 
     protected $defaultCasts = [
-        'department' => 'json',
-        'extAttr' => 'json',
+        'department' => 'array',
+        'extAttr' => 'array',
     ];
 
     public function __construct(array $options = [])
