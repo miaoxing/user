@@ -205,7 +205,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
         },
         {
           title: '手机',
-          sClass: 't-6',
+          sClass: 't-7',
           data: 'mobile'
         },
         {
