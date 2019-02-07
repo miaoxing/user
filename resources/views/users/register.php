@@ -5,8 +5,12 @@
 </div>
 
 <ul class="js-register-tabs nav tab-underline border-bottom">
-  <li class="active border-primary"><a class="text-active-primary" href="#tabMobile" data-toggle="tab">手机注册</a></li>
-  <li class="border-primary"><a class="text-active-primary" href="#tabEmail" data-toggle="tab">邮箱注册</a></li>
+  <li class="nav-item active border-primary">
+    <a class="nav-link text-active-primary" href="#tabMobile" data-toggle="tab">手机注册</a>
+  </li>
+  <li class="nav-item border-primary">
+    <a class="nav-link text-active-primary" href="#tabEmail" data-toggle="tab">邮箱注册</a>
+  </li>
 </ul>
 
 <div class="tab-content">

@@ -1,8 +1,12 @@
 <?php $view->layout() ?>
 
 <ul id="js-reset-tabs" class="nav tab-underline border-bottom">
-  <li class="active border-primary"><a class="text-active-primary" href="#tab-mobile" data-toggle="tab">手机找回</a></li>
-  <li class="border-primary"><a class="text-active-primary" href="#tab-email" data-toggle="tab">邮箱找回</a></li>
+  <li class="nav-item active border-primary">
+    <a class="nav-link text-active-primary" href="#tab-mobile" data-toggle="tab">手机找回</a>
+  </li>
+  <li class="nav-item border-primary">
+    <a class="nav-link text-active-primary" href="#tab-email" data-toggle="tab">邮箱找回</a>
+  </li>
 </ul>
 
 <div class="tab-content">
