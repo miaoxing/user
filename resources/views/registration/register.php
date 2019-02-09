@@ -87,7 +87,7 @@ $view->layout('@admin/admin/layout-light.php')
   aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header border-bottom">
+      <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
             aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="agreement-modal-label">服务协议</h4>
@@ -95,7 +95,7 @@ $view->layout('@admin/admin/layout-light.php')
       <div class="js-agreement-content modal-body">
 
       </div>
-      <div class="modal-footer border-top">
+      <div class="modal-footer">
         <button type="button" class="btn btn-default hairline" data-dismiss="modal">确认</button>
       </div>
     </div>
