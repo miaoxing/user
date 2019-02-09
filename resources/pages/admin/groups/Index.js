@@ -7,7 +7,7 @@ import CDeleteLink from "components/CDeleteLink";
 import CEditLink from "components/CEditLink";
 import CNewBtn from "components/CNewBtn";
 import PageHeader from "components/bs4/PageHeader";
-import {Button} from "react-bootstrap4";
+import {Button} from "react-bootstrap";
 import app from "app";
 import axios from 'axios';
 
