@@ -40,9 +40,9 @@
 
         <div class="input-group">
           <input type="text" class="form-control" id="captcha" name="captcha" placeholder="输入验证码">
-          <span class="input-group-addon p-l-0 p-r-0 p-b-0 login-captcha">
-          <img class="js-captcha" src="<?= $url('captcha') ?>">
-        </span>
+          <span class="input-group-append login-captcha">
+            <img class="js-captcha" src="<?= $url('captcha') ?>">
+          </span>
         </div>
       </div>
     <?php endif ?>
