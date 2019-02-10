@@ -96,7 +96,7 @@ $view->layout('@admin/admin/layout-light.php')
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default hairline" data-dismiss="modal">确认</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">确认</button>
       </div>
     </div>
   </div>

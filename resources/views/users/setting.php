@@ -30,7 +30,7 @@
 </ul>
 
 <div class="m-a">
-  <a class="btn btn-block btn-md btn-danger hairline" href="<?= $url('users/logout', ['next' => $url->full('')]) ?>">
+  <a class="btn btn-block btn-md btn-danger" href="<?= $url('users/logout', ['next' => $url->full('')]) ?>">
     退出登录
   </a>
 </div>

@@ -22,7 +22,7 @@
     <input type="hidden" name="userId" value="<?= $userId ?>">
   </div>
   <div class="form-footer">
-    <button type="submit" class="btn btn-primary btn-block hairline">重置密码</button>
+    <button type="submit" class="btn btn-primary btn-block">重置密码</button>
   </div>
 </form>
 
