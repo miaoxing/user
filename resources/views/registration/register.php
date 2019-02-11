@@ -44,8 +44,10 @@ $view->layout('@admin/admin/layout-light.php')
         </label>
         <div class="input-group">
           <input type="text" class="form-control" id="captcha" name="captcha" placeholder="请输入验证码" required>
-          <span class="input-group-addon p-a-0">
-            <img class="js-captcha" src="<?= $url('captcha') ?>">
+          <span class="input-group-append">
+            <span class="input-group-text p-0">
+              <img class="js-captcha" src="<?= $url('captcha') ?>">
+            </span>
           </span>
         </div>
         <div class="help-block with-errors"></div>
