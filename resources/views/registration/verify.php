@@ -15,7 +15,7 @@ $view->layout('@admin/admin/layout.php');
 <!-- /.page-header -->
 
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-12">
     <div class="ret ret-success">
       <div class="ret-icon-container">
         <i class="ret-icon ret-icon-success"></i>

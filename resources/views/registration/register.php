@@ -11,7 +11,7 @@ $view->layout('@admin/admin/layout-light.php')
 <!-- /.page-header -->
 
 <div class="page-body row">
-  <div class="col-xs-12">
+  <div class="col-12">
 
     <form class="js-register-form" role="form" method="post" action="<?= $url('registration/create') ?>">
 
