@@ -67,10 +67,10 @@ foreach ($userTags as $userTag) {
     <div class="modal-content">
       <form class="js-user-tag-form form-horizontal" role="form">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+          <h5 class="modal-title">更改标签</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="modal-title">更改标签</h4>
         </div>
         <div class="modal-body">
           <div class="form-group">

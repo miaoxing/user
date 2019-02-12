@@ -90,9 +90,10 @@ $view->layout('@admin/admin/layout-light.php')
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-            aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="agreement-modal-label">服务协议</h4>
+        <h5 class="modal-title" id="agreement-modal-label">服务协议</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="js-agreement-content modal-body">
 
