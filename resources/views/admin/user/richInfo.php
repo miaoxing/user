@@ -12,6 +12,11 @@ foreach ($userTags as $userTag) {
 
 <?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/user/css/admin/rich-info.css') ?>">
+<style>
+  .user-popover-info {
+    font-size: 1rem;
+  }
+</style>
 <?= $block->end() ?>
 
 <?= $block('html') ?>

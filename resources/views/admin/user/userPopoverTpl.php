@@ -26,7 +26,7 @@
   <?php if (wei()->plugin->isInstalled('user-tag')) { ?>
     <div>
       标签：<%= tagName ? (tagName + ' ') : '' %><a class="js-user-edit-tags" data-id="<%= id %>"
-        data-tag-ids="<%= tagIds %>">编辑</a>
+        data-tag-ids="<%= tagIds %>" href="javascript:;">编辑</a>
     </div>
   <?php } else { ?>
     <div>
