@@ -25,7 +25,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
     <!-- PAGE CONTENT BEGINS -->
     <div class="table-responsive">
       <form class="js-user-form form-horizontal filter-form" role="form">
-        <div class="well form-well m-b">
+        <div class="well">
           <div class="form-group form-group-sm">
             <label class="col-md-1 control-label" for="is-valid">状态：</label>
 
@@ -105,7 +105,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
       </form>
 
       <table id="record-table" class="record-table table table-bordered table-hover"></table>
-      <div class="well form-well">
+      <div class="well">
         <form class="form-inline" role="form">
           <label>
             <input class="ace" type="checkbox" id="check-all">
