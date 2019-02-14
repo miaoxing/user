@@ -26,7 +26,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
     <div class="table-responsive">
       <form class="js-user-form form-horizontal filter-form" role="form">
         <div class="well">
-          <div class="form-group form-group-sm">
+          <div class="form-group">
             <label class="col-md-1 control-label" for="is-valid">状态：</label>
 
             <div class="col-md-3">
@@ -66,7 +66,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
             </div>
           </div>
 
-          <div class="form-group form-group-sm">
+          <div class="form-group">
             <label class="col-md-1 control-label" for="nick-name">昵称：</label>
 
             <div class="col-md-3">
@@ -86,11 +86,11 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
             </div>
           </div>
 
-          <div class="form-group form-group-sm">
+          <div class="form-group">
             <?php $event->trigger('adminUserSearch') ?>
           </div>
 
-          <div class="clearfix form-group form-group-sm">
+          <div class="clearfix form-group">
             <div class="offset-md-1 col-md-6">
               <button class="js-user-filter btn btn-primary btn-sm" type="submit">
                 查询
