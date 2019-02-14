@@ -41,7 +41,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
                 <label class="col-md-1 control-label" for="tag-ids">标签：</label>
 
                 <div class="col-md-3">
-                  <input type="text" class="js-tag-ids form-control input-sm" name="tagIds" id="tag-ids">
+                  <input type="text" class="js-tag-ids form-control" name="tagIds" id="tag-ids">
                 </div>
             <?php } else { ?>
               <label class="col-md-1 control-label" for="group-id">分组：</label>
@@ -122,7 +122,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
             </div>
           <?php } else { ?>
             <div class="form-group">
-              <select id="to-group-id" class="form-control input-sm" disabled>
+              <select id="to-group-id" class="form-control" disabled>
                 <option>移动到分组</option>
                 <option value="0"><?= $setting('user.titleDefaultGroup') ?: '未分组' ?></option>
               </select>
