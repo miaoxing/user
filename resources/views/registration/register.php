@@ -27,7 +27,7 @@ $view->layout('@admin/admin/layout-light.php')
           密码
         </label>
         <input type="password" class="form-control" id="password" name="password" required>
-        <div class="help-block with-errors"></div>
+        <div class="form-text with-errors"></div>
       </div>
 
       <div class="form-group">
@@ -50,7 +50,7 @@ $view->layout('@admin/admin/layout-light.php')
             </span>
           </span>
         </div>
-        <div class="help-block with-errors"></div>
+        <div class="form-text with-errors"></div>
       </div>
 
       <?php if ($agreementArticleId) : ?>
