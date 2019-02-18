@@ -36,11 +36,12 @@
           <input type="text" class="form-control" name="mobile" id="mobile">
         </div>
 
-        <div class="col-lg-4">
-          <div class="checkbox">
-            <label class="js-tips" title="认证后可以使用手机号码登录">
-              <input type="hidden" name="isMobileVerified" value="0" data-populate-ignore>
-              <input type="checkbox" name="isMobileVerified" value="1"> 认证
+        <div class="col-lg-4 col-form-label">
+          <div class="form-check">
+            <input type="hidden" name="isMobileVerified" value="0" data-populate-ignore>
+            <input class="form-check-input" type="checkbox" name="isMobileVerified" value="1" id="isMobileVerified">
+            <label class="js-tips form-check-label" for="isMobileVerified" title="认证后可以使用手机号码登录">
+              认证
             </label>
           </div>
         </div>
@@ -68,11 +69,12 @@
           </div>
         </div>
 
-        <div class="col-lg-4">
-          <div class="checkbox">
-            <label class="js-tips" title="锁定后,不会被同步为外部的地区,如微信的资料">
-              <input type="hidden" name="isRegionLocked" value="0" data-populate-ignore>
-              <input type="checkbox" name="isRegionLocked" value="1"> 锁定
+        <div class="col-lg-4 col-form-label">
+          <div class="form-check">
+            <input type="hidden" name="isRegionLocked" value="0" data-populate-ignore>
+            <input class="form-check-input" type="checkbox" name="isRegionLocked" value="1" id="isRegionLocked">
+            <label class="js-tips form-check-label" for="isRegionLocked" title="锁定后,不会被同步为外部的地区,如微信的资料">
+              锁定
             </label>
           </div>
         </div>
