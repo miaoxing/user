@@ -51,18 +51,20 @@
           地区
         </label>
 
-        <div class="col-lg-4 p-l-0">
-          <div class="col-lg-4 p-r-0">
-            <select class="js-cascading-item form-control" id="country" name="country">
-            </select>
-          </div>
-          <div class="col-lg-4 p-r-0">
-            <select class="js-cascading-item form-control" id="province" name="province">
-            </select>
-          </div>
-          <div class="col-lg-4 p-r-0">
-            <select class="js-cascading-item form-control" id="city" name="city">
-            </select>
+        <div class="col-lg-4">
+          <div class="form-row">
+            <div class="col">
+              <select class="js-cascading-item form-control" id="country" name="country">
+              </select>
+            </div>
+            <div class="col">
+              <select class="js-cascading-item form-control" id="province" name="province">
+              </select>
+            </div>
+            <div class="col">
+              <select class="js-cascading-item form-control" id="city" name="city">
+              </select>
+            </div>
           </div>
         </div>
 
