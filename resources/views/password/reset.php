@@ -10,7 +10,7 @@
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane fade in active" id="tab-mobile">
+  <div class="tab-pane fade show active" id="tab-mobile">
     <form class="form" method="post" id="reset-password-form-by-mobile">
       <div class="form-group">
         <label for="username" class="control-label">
@@ -77,7 +77,7 @@
     </form>
   </div>
 
-  <div class="tab-pane fade in" id="tab-email">
+  <div class="tab-pane fade show" id="tab-email">
     <form class="form" method="post" id="reset-password-form-by-email">
       <div class="form-group">
         <label for="email" class="control-label">

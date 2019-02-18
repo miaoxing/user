@@ -14,7 +14,7 @@
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane fade in active" id="tabMobile">
+  <div class="tab-pane fade show active" id="tabMobile">
     <form class="js-register-form form" method="post" action="<?= $url->query('users/create') ?>">
       <div class="form-group">
         <label for="mobile" class="control-label">
@@ -73,7 +73,7 @@
     </form>
   </div>
 
-  <div class="tab-pane fade in" id="tabEmail">
+  <div class="tab-pane fade show" id="tabEmail">
     <form class="js-register-form form" method="post" action="<?= $url->query('users/create') ?>">
       <div class="form-group">
         <label for="email" class="control-label">
