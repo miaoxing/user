@@ -7,7 +7,7 @@
   <li class="list-group-item">
     <%== template.render("user-info-tpl", user) %>
     <div class="media-actions">
-      <a href="javascript:;" title="删除" class="light-grey remove-user">
+      <a href="javascript:;" title="删除" class="text-muted remove-user">
         <i class="fa fa-times-circle-o"></i>
       </a>
     </div>
