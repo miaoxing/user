@@ -1,12 +1,12 @@
 import React from "react";
 import TableProvider from "components/TableProvider";
-import Table from "components/bs4/Table";
+import Table from "components/Table";
 import Actions from "components/Actions";
 import CDeleteLink from "components/CDeleteLink";
 import CEditLink from "components/CEditLink";
 import CNewBtn from "components/CNewBtn";
-import PageHeader from "components/bs4/PageHeader";
-import {Button} from "react-bootstrap4";
+import PageHeader from "components/PageHeader";
+import {Button} from "react-bootstrap";
 import app from "app";
 import axios from 'axios';
 

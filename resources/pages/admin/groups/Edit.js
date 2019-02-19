@@ -1,10 +1,10 @@
 import React from 'react';
-import CListBtn from "components/bs4/CListBtn";
+import CListBtn from "components/CListBtn";
 import app from 'app';
-import Form from "components/bs4/Form";
-import FormItem from "components/bs4/FormItem";
-import PageHeader from "components/bs4/PageHeader";
-import FormAction from "components/bs4/FormAction";
+import Form from "components/Form";
+import FormItem from "components/FormItem";
+import PageHeader from "components/PageHeader";
+import FormAction from "components/FormAction";
 import axios from 'axios';
 
 export default class GroupForm extends React.Component {
