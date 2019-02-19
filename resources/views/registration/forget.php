@@ -38,14 +38,14 @@ $view->layout('@admin/admin/layout-light.php')
         </div>
       </div>
 
-      <div class="clearfix form-group m-t-md">
+      <div class="clearfix form-group mt-4">
         <button class="btn btn-primary btn-block btn-lg" type="submit">
           发送验证到邮箱
         </button>
       </div>
     </form>
     <hr>
-    <div class="m-t text-center">
+    <div class="mt-3 text-center">
       已有账号，点击<a href="<?= $url('admin/login') ?>">登录</a>
     </div>
   </div>

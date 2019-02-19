@@ -29,7 +29,7 @@
   </li>
 </ul>
 
-<div class="m-a">
+<div class="m-3">
   <a class="btn btn-block btn-md btn-danger" href="<?= $url('users/logout', ['next' => $url->full('')]) ?>">
     退出登录
   </a>

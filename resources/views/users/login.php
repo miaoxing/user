@@ -15,7 +15,7 @@
 
 <form class="js-login-form form form-inset" method="post">
   <?php if ($req['tips']) { ?>
-    <div class="m-y-sm"><?= $e($req['tips']) ?></div>
+    <div class="my-2"><?= $e($req['tips']) ?></div>
   <?php } ?>
   <div class="form-body">
     <div class="form-group">

@@ -27,7 +27,7 @@ $view->layout('@admin/admin/layout.php')
       </p>
       <div>
         <a class="js-resend-email btn btn-default" href="javascript:;">重新发送邮件</a>
-        <a class="m-l btn btn-default" href="<?= $url('registration/edit-email') ?>">修改邮箱</a>
+        <a class="ml-3 btn btn-default" href="<?= $url('registration/edit-email') ?>">修改邮箱</a>
       </div>
 
     </div>

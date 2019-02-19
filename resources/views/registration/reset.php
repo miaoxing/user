@@ -26,7 +26,7 @@ $view->layout('@admin/admin/layout-light.php')
         <input type="text" class="form-control" id="password-confirm" name="passwordConfirm">
       </div>
 
-      <div class="clearfix form-group m-t-md">
+      <div class="clearfix form-group mt-4">
         <input type="hidden" name="userId" value="<?= $userId ?>">
         <button class="btn btn-primary btn-block btn-lg" type="submit">
           提交
