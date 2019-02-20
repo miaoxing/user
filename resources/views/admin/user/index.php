@@ -154,7 +154,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'assets/admin/user', 'plugins/admin/js/data-table', 'template', 'jquery-deparam',
+  require(['form', 'assets/admin/user', 'plugins/admin/js/data-table', 'template', 'jquery-unparam',
     'comps/select2/select2.min',
     'css!comps/select2/select2',
     'css!comps/select2-bootstrap-css/select2-bootstrap'
