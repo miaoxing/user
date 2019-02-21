@@ -114,7 +114,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['jquery-form', 'plugins/verify-code/js/verify-code', 'assets/bsTab'], function () {
+  require(['jquery-form', 'plugins/verify-code/js/verify-code', 'plugins/app/js/bootstrap-tab'], function () {
     $('.js-register-form').ajaxForm({
       loading: true,
       dataType: 'json',

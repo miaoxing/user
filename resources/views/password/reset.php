@@ -98,7 +98,7 @@
 </div>
 <?= $block->js() ?>
 <script>
-  require(['jquery-form', 'assets/bsTab', 'plugins/verify-code/js/verify-code'], function () {
+  require(['jquery-form', 'plugins/app/js/bootstrap-tab', 'plugins/verify-code/js/verify-code'], function () {
     // 手机找回
     $('#reset-password-form-by-mobile').ajaxForm({
       url: $.url('password/create-reset-by-mobile'),
