@@ -14,7 +14,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['jquery-form', 'comps/jquery.loadJSON/index'], function () {
+  require(['plugins/app/libs/jquery-form/jquery.form', 'comps/jquery.loadJSON/index'], function () {
     $('.js-user-form')
       .loadJSON(<?= $curUser->toJson(['name', 'mobile', 'address']) ?>)
       .ajaxForm({

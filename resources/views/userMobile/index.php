@@ -42,7 +42,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['jquery-form', 'plugins/verify-code/js/verify-code'], function () {
+  require(['plugins/app/libs/jquery-form/jquery.form', 'plugins/verify-code/js/verify-code'], function () {
     var $verifyCodeSend = $('.js-verify-code-send');
 
     // 检查手机号能否绑定

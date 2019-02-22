@@ -28,7 +28,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['jquery-form'], function () {
+  require(['plugins/app/libs/jquery-form/jquery.form'], function () {
     var param = 'nonce=<?= $nonce ?>&timestamp=<?= $timestamp ?>&userId=<?= $userId ?>&sign=<?= $sign ?>';
     $('#reset-password-form').ajaxForm({
       url: $.url('password/reset-update?' + param),

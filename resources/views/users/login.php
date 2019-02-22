@@ -54,7 +54,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['jquery-form'], function () {
+  require(['plugins/app/libs/jquery-form/jquery.form'], function () {
     $('.js-login-form').ajaxForm({
       dataType: 'json',
       loading: true,

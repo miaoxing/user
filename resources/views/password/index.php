@@ -38,7 +38,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['jquery-form'], function () {
+  require(['plugins/app/libs/jquery-form/jquery.form'], function () {
     $('#reset-password-form').ajaxForm({
       url: $.url('password/update'),
       dataType: 'json',
