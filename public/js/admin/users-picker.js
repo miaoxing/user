@@ -4,7 +4,6 @@ define([
   'css!comps/typeahead.js-bootstrap3.less/typeahead',
   'comps/typeahead.js/dist/typeahead.bundle.min'
 ], function (template) {
-  template.helper('$', $);
 
   var UsersPicker = function () {
     // do nothing.
