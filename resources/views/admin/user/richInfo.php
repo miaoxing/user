@@ -99,7 +99,7 @@ foreach ($userTags as $userTag) {
     'comps/select2/select2.min',
     'css!comps/select2/select2',
     'css!comps/select2-bootstrap-css/select2-bootstrap',
-    'form'
+    'plugins/admin/js/form'
   ], function () {
     var $body = $('body');
 

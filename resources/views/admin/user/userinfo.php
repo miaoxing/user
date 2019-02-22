@@ -125,7 +125,7 @@
 <?= $block->js() ?>
 <script>
   require([
-    'form',
+    'plugins/admin/js/form',
     'ueditor',
     'comps/jquery-cascading/jquery-cascading',
     'plugins/app/libs/jquery.populate/jquery.populate'

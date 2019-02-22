@@ -110,7 +110,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form'], function (form) {
+  require(['plugins/admin/js/form'], function (form) {
     form.toOptions($('#group-id'), <?= json_encode(wei()->group()->desc('sort')->fetchAll()) ?>, 'id', 'name');
 
     $('#record-form')
