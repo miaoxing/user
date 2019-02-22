@@ -3,7 +3,7 @@ import rp from "require-promise";
 import Loadable from 'react-loadable';
 import Loading from "components/Loading";
 
-const loader = rp(plugins/app/libs/artTemplate/template.min);
+const loader = rp('plugins/app/libs/artTemplate/template.min');
 
 const UserPopoverV1 = ({data}) => {
   const UserPopover = () => <div dangerouslySetInnerHTML={{__html: template.render('user-info-tpl', data)}}/>;

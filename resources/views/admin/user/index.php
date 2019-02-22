@@ -154,7 +154,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'plugins/user/js/admin/users', 'plugins/admin/js/data-table', plugins/app/libs/artTemplate/template.min,
+  require(['form', 'plugins/user/js/admin/users', 'plugins/admin/js/data-table', 'plugins/app/libs/artTemplate/template.min',
     'comps/select2/select2.min',
     'css!comps/select2/select2',
     'css!comps/select2-bootstrap-css/select2-bootstrap'

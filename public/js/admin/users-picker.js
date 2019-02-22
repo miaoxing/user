@@ -1,6 +1,6 @@
 /* global Bloodhound */
 define([
-  plugins/app/libs/artTemplate/template.min,
+  'plugins/app/libs/artTemplate/template.min',
   'css!comps/typeahead.js-bootstrap3.less/typeahead',
   'comps/typeahead.js/dist/typeahead.bundle.min'
 ], function (template) {
