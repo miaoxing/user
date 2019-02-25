@@ -8,7 +8,7 @@
     <i class="fa fa-female text-warning"></i>
     <% } %>
   </div>
-  <div class="truncate" title="<%= name %>">
+  <div class="text-truncate" title="<%= name %>">
     姓名：<%= name || '-'  %>
   </div>
   <div>
