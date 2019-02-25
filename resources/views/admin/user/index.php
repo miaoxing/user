@@ -10,7 +10,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
 
 <!-- /.page-header -->
 <div class="page-header">
-  <div class="pull-right">
+  <div class="float-right">
     <?php if (wei()->setting('user.enableNew')) : ?>
       <a class="btn btn-success" href="<?= $url('admin/user/new') ?>">添加用户</a>
     <?php endif ?>
@@ -131,13 +131,13 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
 
           <?php if ($wei->plugin->isInstalled('coupon')) : ?>
             <div class="form-group">
-              <a class="js-user-send-coupon btn btn-info pull-right" href="javascript:void(0);">发放优惠券</a>
+              <a class="js-user-send-coupon btn btn-info float-right" href="javascript:void(0);">发放优惠券</a>
             </div>
           <?php endif ?>
 
           <?php if ($wei->plugin->isInstalled('score')) : ?>
             <div class="form-group">
-              <a id="user-send-score" class="btn btn-info pull-right" href="javascript:void(0);">赠送积分</a>
+              <a id="user-send-score" class="btn btn-info float-right" href="javascript:void(0);">赠送积分</a>
             </div>
           <?php endif ?>
         </form>

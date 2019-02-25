@@ -1,7 +1,7 @@
 <?php $view->layout() ?>
 
 <div class="form-legend clearfix">
-  <a class="pull-right" href="<?= $url->query('users/login') ?>">登录</a>
+  <a class="float-right" href="<?= $url->query('users/login') ?>">登录</a>
 </div>
 
 <ul class="js-register-tabs nav tab-underline border-bottom">
