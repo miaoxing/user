@@ -36,7 +36,7 @@ foreach ($userTags as $userTag) {
   }
   %>
   <div class="media user-media">
-    <span class="media-left <?= $canShow ? 'user-popover' : '' ?> user-popover-<%= guid = $.guid++ %>"
+    <span class="mr-2 <?= $canShow ? 'user-popover' : '' ?> user-popover-<%= guid = $.guid++ %>"
       data-container=".user-popover-<%= guid %>" data-id="<%= id %>">
       <a href="<%= url %>" target="_blank">
         <img class="media-object" src="<%= headImg %>">

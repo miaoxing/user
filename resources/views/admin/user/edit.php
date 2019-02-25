@@ -29,7 +29,7 @@
           <?php if ($user->isNew()) : ?>
             <input type="text" class="form-control" name="username">
           <?php else : ?>
-            <p class="form-control-static" id="username"></p>
+            <p class="form-control-plaintext" id="username"></p>
           <?php endif; ?>
         </div>
       </div>
