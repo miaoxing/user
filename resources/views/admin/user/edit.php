@@ -1,7 +1,7 @@
 <?php $view->layout() ?>
 
 <div class="page-header">
-  <a class="btn btn-default float-right" href="<?= $url('admin/user/index') ?>">返回列表</a>
+  <a class="btn btn-secondary float-right" href="<?= $url('admin/user/index') ?>">返回列表</a>
 
   <h1>
     用户管理
@@ -95,7 +95,7 @@
           </button>
 
           &nbsp; &nbsp; &nbsp;
-          <a class="btn btn-default" href="<?= $url('admin/user/index') ?>">
+          <a class="btn btn-secondary" href="<?= $url('admin/user/index') ?>">
             <i class="fa fa-undo bigger-110"></i>
             返回列表
           </a>
