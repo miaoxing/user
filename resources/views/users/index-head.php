@@ -1,6 +1,6 @@
 <div class="user-head">
   <img class="user-head-bg" src="<?= $asset->thumb($bgImage ?: $asset('plugins/user/images/background.jpg'), 750) ?>">
-  <div class="user-head-content flex flex-y flex-center">
+  <div class="user-head-content d-flex flex-column flex-center">
     <!-- htmllint attr-bans="false" -->
     <span class="user-head-img" style="background-image:url('<?= $curUser->getHeadImg() ?>')"></span>
     <!-- htmllint attr-bans="$previous" -->
