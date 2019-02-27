@@ -8,7 +8,7 @@
       </h4>
     </a>
   </li>
-  <li class="list-divider list-item">
+  <li class="  list-item list-item-divider">
     <h3 class="list-heading">
 
     </h3>
