@@ -3,7 +3,7 @@
 <?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/user/css/users.css') ?>">
 <style>
-  .list-indented > . list-item list-item-divider + li {
+  .list-indented > . list-item list-divider + li {
     padding-right: 0;
   }
 </style>
