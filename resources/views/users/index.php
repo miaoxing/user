@@ -2,11 +2,6 @@
 
 <?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/user/css/users.css') ?>">
-<style>
-  .list-indented > . list-item list-divider + li {
-    padding-right: 0;
-  }
-</style>
 <?= $block->end() ?>
 
 <?php require $view->getFile('@user/users/index-head.php') ?>
