@@ -5,11 +5,11 @@
 </div>
 
 <ul class="js-register-tabs header-tab nav tab-underline">
-  <li class="nav-item border-primary">
-    <a class="nav-link active text-active-primary" href="#tabMobile" data-toggle="tab">手机注册</a>
+  <li class="nav-item">
+    <a class="nav-link active text-active-primary border-active-primary" href="#tabMobile" data-toggle="tab">手机注册</a>
   </li>
   <li class="nav-item border-primary">
-    <a class="nav-link text-active-primary" href="#tabEmail" data-toggle="tab">邮箱注册</a>
+    <a class="nav-link text-active-primary border-active-primary" href="#tabEmail" data-toggle="tab">邮箱注册</a>
   </li>
 </ul>
 
