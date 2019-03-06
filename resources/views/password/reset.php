@@ -1,6 +1,6 @@
 <?php $view->layout() ?>
 
-<ul id="js-reset-tabs" class="header-tab nav tab-underline">
+<ul id="js-reset-tabs" class="header-nav nav nav-underline">
   <li class="nav-item active">
     <a class="nav-link text-active-primary border-active-primary" href="#tab-mobile" data-toggle="tab">手机找回</a>
   </li>

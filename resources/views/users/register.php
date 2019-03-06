@@ -4,7 +4,7 @@
   <a href="<?= $url->query('users/login') ?>">登录</a>
 </div>
 
-<ul class="js-register-tabs header-tab nav tab-underline">
+<ul class="js-register-tabs header-nav nav nav-underline">
   <li class="nav-item">
     <a class="nav-link active text-active-primary border-active-primary" href="#tabMobile" data-toggle="tab">手机注册</a>
   </li>
