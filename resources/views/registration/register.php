@@ -99,7 +99,7 @@ $view->layout('@admin/admin/layout-light.php')
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">确认</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">确定</button>
       </div>
     </div>
   </div>
