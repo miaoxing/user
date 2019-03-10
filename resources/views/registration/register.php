@@ -107,7 +107,7 @@ $view->layout('@admin/admin/layout-light.php')
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'plugins/user/js/users', 'plugins/app/js/validator'], function (form, users) {
+  require(['plugins/admin/js/form', 'plugins/user/js/users', 'plugins/app/js/validator'], function (form, users) {
     $('.js-register-form')
       .ajaxForm({
         loading: true,

@@ -65,7 +65,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form'], function (form) {
+  require(['plugins/admin/js/form'], function (form) {
     $('.js-password-form')
       .ajaxForm({
         dataType: 'json',

@@ -51,7 +51,7 @@ $view->layout('@admin/admin/layout.php')
 
 <?= $block->js() ?>
 <script>
-  require(['form'], function (form) {
+  require(['plugins/admin/js/form'], function (form) {
     $('.js-email-form').ajaxForm({
       loading: true,
       dataType: 'json',

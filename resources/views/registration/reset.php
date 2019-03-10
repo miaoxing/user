@@ -38,7 +38,7 @@ $view->layout('@admin/admin/layout-light.php')
 
 <?= $block->js() ?>
 <script>
-  require(['form'], function (form) {
+  require(['plugins/admin/js/form'], function (form) {
     var param = 'nonce=<?= $nonce ?>&timestamp=<?= $timestamp ?>&userId=<?= $userId ?>&sign=<?= $sign ?>';
     $('.js-forget-form').ajaxForm({
       url: $.url('registration/reset-update?' + param),
