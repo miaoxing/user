@@ -107,14 +107,14 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
       <table id="record-table" class="record-table table table-bordered table-hover"></table>
       <div class="well">
         <form class="form-inline" role="form">
-          <label>
+          <label class="mr-2">
             <input class="ace" type="checkbox" id="check-all">
             <span class="lbl"> 全选 </span>
           </label>
 
           <?php if ($hasUserTag) { ?>
             <div class="form-group" style="width: 160px">
-              <input type="text" class="js-to-tag-ids form-control" name="toTagIds" id="to-tag-ids"
+              <input type="text" class="js-to-tag-ids form-control w-100" name="toTagIds" id="to-tag-ids"
                 placeholder="请选择标签">
             </div>
             <div class="form-group">
