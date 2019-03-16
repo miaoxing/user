@@ -23,6 +23,9 @@
     <i class="js-user-tooltip fa fa-lock text-success" title="已锁定,不会被同步为外部的地区,如微信的资料"></i>
     <% } %>
   </div>
+  <div>
+    微信OpenID：<%= wechatOpenId || '-' %>
+  </div>
   <?php if (wei()->plugin->isInstalled('user-tag')) { ?>
     <div>
       标签：<%= tagName ? (tagName + ' ') : '' %><a class="js-user-edit-tags" data-id="<%= id %>"
