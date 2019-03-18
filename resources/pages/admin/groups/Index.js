@@ -34,7 +34,6 @@ export default class extends React.Component {
               {' '}
               <CNewBtn/>
             </div>
-            {wei.page.controllerTitle}
           </PageHeader>
 
           <Table
