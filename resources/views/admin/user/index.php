@@ -27,7 +27,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
       <form class="js-user-form form-horizontal filter-form" role="form">
         <div class="well">
           <div class="form-group">
-            <label class="col-md-1 control-label" for="is-valid">状态：</label>
+            <label class="col-md-1 control-label" for="is-valid">状态</label>
 
             <div class="col-md-3">
               <select name="isValid" id="is-valid" class="form-control">
@@ -38,13 +38,13 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
             </div>
 
             <?php if ($hasUserTag) { ?>
-                <label class="col-md-1 control-label" for="tag-ids">标签：</label>
+                <label class="col-md-1 control-label" for="tag-ids">标签</label>
 
                 <div class="col-md-3">
                   <input type="text" class="js-tag-ids form-control" name="tagIds" id="tag-ids">
                 </div>
             <?php } else { ?>
-              <label class="col-md-1 control-label" for="group-id">分组：</label>
+              <label class="col-md-1 control-label" for="group-id">分组</label>
 
               <div class="col-md-3">
                 <select name="groupId" id="group-id" class="form-control">
@@ -54,7 +54,7 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
               </div>
             <?php } ?>
 
-            <label class="col-md-1 control-label" for="platform">来源：</label>
+            <label class="col-md-1 control-label" for="platform">来源</label>
 
             <div class="col-md-3">
               <select name="platform" id="platform" class="form-control">
@@ -67,19 +67,19 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
           </div>
 
           <div class="form-group">
-            <label class="col-md-1 control-label" for="nick-name">昵称：</label>
+            <label class="col-md-1 control-label" for="nick-name">昵称</label>
 
             <div class="col-md-3">
               <input type="text" class="form-control" id="nick-name" name="nickName">
             </div>
 
-            <label class="col-md-1 control-label" for="name">姓名：</label>
+            <label class="col-md-1 control-label" for="name">姓名</label>
 
             <div class="col-md-3">
               <input type="text" class="form-control" id="name" name="name">
             </div>
 
-            <label class="col-md-1 control-label" for="mobile">手机号：</label>
+            <label class="col-md-1 control-label" for="mobile">手机号</label>
 
             <div class="col-md-3">
               <input type="text" class="form-control" id="mobile" name="mobile">
