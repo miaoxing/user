@@ -92,12 +92,12 @@ $hasUserTag = wei()->plugin->isInstalled('user-tag');
 
           <div class="clearfix form-group">
             <div class="offset-md-1 col-md-6">
-              <button class="js-user-filter btn btn-primary btn-sm" type="submit">
+              <button class="js-user-filter btn btn-primary" type="submit">
                 查询
               </button>
               &nbsp;
               <?php if (wei()->setting('user.enableExport')) : ?>
-                <a id="export-csv" class="js-export-csv btn btn-secondary btn-sm" href="javascript:void(0);">导出</a>
+                <a id="export-csv" class="js-export-csv btn btn-secondary" href="javascript:void(0);">导出</a>
               <?php endif ?>
             </div>
           </div>
