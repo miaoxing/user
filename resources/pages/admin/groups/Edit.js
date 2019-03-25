@@ -27,7 +27,6 @@ export default class GroupForm extends React.Component {
           <div className="float-right">
             <CListBtn/>
           </div>
-          {wei.page.controllerTitle}
         </PageHeader>
         <Form initialValues={this.state.data} url={app.curFormUrl()}>
           <FormItem label="名称" name="name" required/>
