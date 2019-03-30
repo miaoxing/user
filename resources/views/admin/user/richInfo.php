@@ -13,8 +13,14 @@ foreach ($userTags as $userTag) {
 <?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/user/css/admin/rich-info.css') ?>">
 <style>
+  .user-popover .popover {
+    max-width: 100%;
+  }
   .user-popover-info {
     font-size: 1rem;
+    line-height: 1.8;
+    width: auto;
+    min-width: 200px;
   }
 </style>
 <?= $block->end() ?>
