@@ -27,13 +27,11 @@ export default class extends React.Component {
       <TableProvider>
         {api => <>
           <PageHeader>
-            <div className="float-right">
-              {this.state.hasWechatGroup && <Button variant="secondary" onClick={this.handleClick.bind(this, api)}>
-                从微信同步分组
-              </Button>}
-              {' '}
-              <CNewBtn/>
-            </div>
+            {this.state.hasWechatGroup && <Button variant="secondary" onClick={this.handleClick.bind(this, api)}>
+              从微信同步分组
+            </Button>}
+            {' '}
+            <CNewBtn/>
           </PageHeader>
 
           <Table
