@@ -28,7 +28,7 @@ export default class GroupForm extends React.Component {
             <CListBtn/>
           </div>
         </PageHeader>
-        <Form initialValues={this.state.data} url={app.curFormUrl()}>
+        <Form initialValues={this.state.data}>
           <FormItem label="名称" name="name" required/>
 
           <FormItem label="顺序" name="sort" type="number"/>
