@@ -139,7 +139,7 @@ class Password extends \Miaoxing\Plugin\BaseController
             return $this->err('请输入手机号码');
         }
 
-        $user = wei()->user()->withStatus(User::STATUS_MOBILE_VERIFIED)->find(['mobile' => $req['mobile']]);
+        $user = wei()->user()->mobileVerified()->find(['mobile' => $req['mobile']]);
         if (!$user) {
             return $this->err('不存在该手机号码，请重新输入');
         }

@@ -61,7 +61,7 @@ trait UserProfileTrait
         'homePage' => 'string',
         'favorite' => 'string',
         'personalDesc' => 'string',
-        'config' => 'json',
+        'config' => 'array',
         'createTime' => 'datetime',
     ];
 }

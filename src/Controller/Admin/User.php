@@ -205,7 +205,7 @@ class User extends \Miaoxing\Plugin\BaseController
         $this->event->trigger('adminUserShow', [$user, &$data]);
 
         $data['isRegionLocked'] = $user->isStatus(UserService::STATUS_REGION_LOCKED);
-        $data['isMobileVerified'] = $user->isStatus(UserService::STATUS_MOBILE_VERIFIED);
+        $data['isMobileVerified'] = $user->isMobileVerified();
         $data['tags'] = $user->getTags();
 
         return $this->suc([
@@ -316,7 +316,7 @@ class User extends \Miaoxing\Plugin\BaseController
     {
         $user = wei()->user()->findId($req['id']);
 
-        $isMobileVerified = $user->isStatus(UserService::STATUS_MOBILE_VERIFIED);
+        $isMobileVerified = $user->isMobileVerified();
         $isRegionLocked = $user->isStatus(UserService::STATUS_REGION_LOCKED);
 
         return get_defined_vars();
@@ -359,7 +359,7 @@ class User extends \Miaoxing\Plugin\BaseController
         }
 
         if (isset($req['isMobileVerified'])) {
-            $user->setStatus(UserService::STATUS_MOBILE_VERIFIED, $req['isMobileVerified']);
+            $user->setMobileVerified($req['isMobileVerified']);
         }
 
         // TODO 待和来源功能一起升级

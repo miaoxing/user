@@ -11,7 +11,7 @@ namespace Miaoxing\User\Metadata;
  * @property string $wechatOpenId 微信的OpenID
  * @property string $wechatUnionId
  * @property string $wechatUserId 微信UserId
- * @property int $status 二进制状态位,表示手机等是否已验证
+ * @property int $status 二进制状态位，废弃
  * @property bool $admin
  * @property string $nickName
  * @property string $remarkName
@@ -22,10 +22,11 @@ namespace Miaoxing\User\Metadata;
  * @property string $phone 手机号码
  * @property string $salt
  * @property string $password
- * @property int $gender
+ * @property bool $gender
  * @property string $country
  * @property string $province
  * @property string $city
+ * @property string $area
  * @property string $address
  * @property string $signature
  * @property string $headImg
@@ -43,6 +44,8 @@ namespace Miaoxing\User\Metadata;
  * @property bool $enable 是否启用
  * @property int $shopId 所属门店
  * @property string $source 用户来源
+ * @property string $lastPaidTime
+ * @property string $mobileVerifiedAt 手机校验时间
  * @property int $createUser
  * @property string $createTime 用户创建时间
  * @property int $updateUser
@@ -76,13 +79,14 @@ trait UserTrait
         'country' => 'string',
         'province' => 'string',
         'city' => 'string',
+        'area' => 'string',
         'address' => 'string',
         'signature' => 'string',
         'headImg' => 'string',
         'groupId' => 'int',
-        'department' => 'json',
+        'department' => 'array',
         'position' => 'string',
-        'extAttr' => 'json',
+        'extAttr' => 'array',
         'money' => 'float',
         'rechargeMoney' => 'float',
         'score' => 'int',
@@ -93,6 +97,8 @@ trait UserTrait
         'enable' => 'bool',
         'shopId' => 'int',
         'source' => 'string',
+        'lastPaidTime' => 'datetime',
+        'mobileVerifiedAt' => 'datetime',
         'createUser' => 'int',
         'createTime' => 'datetime',
         'updateUser' => 'int',

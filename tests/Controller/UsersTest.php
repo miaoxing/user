@@ -206,7 +206,7 @@ class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
             $this->assertNotNull($user);
             $this->assertEquals('15989130452', $user['mobile']);
             $this->assertTrue(wei()->password->verify('admina', $user['password']));
-            $this->assertTrue($user->isStatus(User::STATUS_MOBILE_VERIFIED));
+            $this->assertTrue($user->isMobileVerified());
         }
     }
 

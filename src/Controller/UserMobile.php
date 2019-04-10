@@ -37,7 +37,7 @@ class UserMobile extends \Miaoxing\Plugin\BaseController
      */
     protected function checkBind()
     {
-        if ($this->curUser->isStatus(User::STATUS_MOBILE_VERIFIED)) {
+        if ($this->curUser->isMobileVerified()) {
             return $this->err('您已经绑定过手机号码', -1);
         }
 

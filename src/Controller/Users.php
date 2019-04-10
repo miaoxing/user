@@ -73,11 +73,11 @@ class Users extends \Miaoxing\Plugin\BaseController
             return $this->err('请输入手机号码');
         }
 
-        if ($this->curUser['mobile'] == $req['mobile'] && $this->curUser->isStatus(User::STATUS_MOBILE_VERIFIED)) {
+        if ($this->curUser['mobile'] == $req['mobile'] && $this->curUser->isMobileVerified()) {
             return $this->err('您已绑定了该手机号码');
         }
 
-        $user = wei()->user()->withStatus(User::STATUS_MOBILE_VERIFIED)->find(['mobile' => $req['mobile']]);
+        $user = wei()->user()->mobileVerified()->find(['mobile' => $req['mobile']]);
         if ($user) {
             return $this->err('该手机号码已经注册，请重新输入');
         }
@@ -120,7 +120,7 @@ class Users extends \Miaoxing\Plugin\BaseController
         $user = $this->curUser;
 
         $enableMobileVerify = $this->setting('user.enableMobileVerify', false);
-        $isMobileVerified = $user->isStatus(User::STATUS_MOBILE_VERIFIED);
+        $isMobileVerified = $user->isMobileVerified();
 
         // 如果认证了手机号码,又没启用认证功能,就不显示手机号
         $hideMobile = $isMobileVerified && !$enableMobileVerify;

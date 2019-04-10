@@ -13,6 +13,7 @@ use Miaoxing\User\Service\UserProfileModel;
 /**
  * @property GroupModel $group
  * @property UserProfileModel $profile
+ * @property bool $isMobileVerified
  */
 trait UserV2Trait
 {
@@ -29,9 +30,14 @@ trait UserV2Trait
     public function __construct(array $options = [])
     {
         $this->toArrayV2 = true;
+
         $this->hidden = array_merge($this->hidden, [
             'salt',
             'password',
+        ]);
+
+        $this->virtual = array_merge($this->virtual, [
+            'isMobileVerified',
         ]);
 
         parent::__construct($options);
@@ -70,7 +76,7 @@ trait UserV2Trait
         $req || $req = $this->request;
 
         // 未校验,或者是输入了新手机,需要校验
-        if (!$this->isStatus(UserModel::STATUS_MOBILE_VERIFIED)
+        if (!$this->isMobileVerified()
             || $this['mobile'] != $req['mobile']
         ) {
             $ret = $this->checkMobile($req['mobile']);
@@ -93,10 +99,21 @@ trait UserV2Trait
         }
 
         $this['mobile'] = $req['mobile'];
-        $this->setStatus(UserModel::STATUS_MOBILE_VERIFIED, true);
+        $this->setMobileVerified();
         if ($save) {
             $this->save();
         }
         return $this->suc(['changed' => true]);
+    }
+
+
+    public function getIsMobileVerifiedAttribute()
+    {
+        return (bool) $this->mobileVerifiedAt;
+    }
+
+    public function setIsMobileVerifiedAttribute()
+    {
+        // do nothing
     }
 }
