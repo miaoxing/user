@@ -24,8 +24,6 @@ class User extends \Miaoxing\Plugin\BaseController
      */
     public function indexAction($req)
     {
-        $userTags = wei()->userTag->getAll();
-
         switch ($req['_format']) {
             case 'json':
             case 'csv':
@@ -141,11 +139,6 @@ class User extends \Miaoxing\Plugin\BaseController
 
             default:
                 $groups = wei()->group()->findAll()->withUngroup();
-
-                $tags = [];
-                foreach ($userTags as $userTag) {
-                    $tags[] = ['id' => $userTag->id, 'text' => $userTag->name];
-                }
 
                 // 获取用户相关平台
                 $platforms[] = [

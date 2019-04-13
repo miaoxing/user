@@ -2,6 +2,7 @@
 
 $view->layout();
 $hasUserTag = wei()->plugin->isInstalled('user-tag');
+$tags = wei()->userTag->getSelects();
 ?>
 
 <?= $block->css() ?>

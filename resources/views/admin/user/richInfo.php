@@ -2,12 +2,7 @@
 
 $canShow = $curUser->can('admin/user/show');
 $enableMessage = wei()->setting('user.enableMessage');
-
-$tags = [];
-$userTags = wei()->userTagModel()->desc('sort')->indexBy('id')->findAll();
-foreach ($userTags as $userTag) {
-  $tags[] = ['id' => $userTag->id, 'text' => $userTag->name];
-}
+$tags = wei()->userTag->getSelects();
 ?>
 
 <?= $block->css() ?>
