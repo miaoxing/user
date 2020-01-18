@@ -1,5 +1,6 @@
 {
   "name": "miaoxing/user",
+  "type": "miaoxing-plugin",
   "description": "Miaoxing User Plugin",
   "keywords": [
     "miaoxing", "user"
