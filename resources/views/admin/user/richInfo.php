@@ -2,7 +2,7 @@
 
 $canShow = $curUser->can('admin/user/show');
 $enableMessage = wei()->setting('user.enableMessage');
-$tags = wei()->userTag->getSelects();
+$tags = wei()->has('userTag') ? wei()->userTag->getSelects() : [];
 ?>
 
 <?= $block->css() ?>
