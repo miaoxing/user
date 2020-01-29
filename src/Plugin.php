@@ -19,13 +19,7 @@ class Plugin extends \Miaoxing\Plugin\BasePlugin
             'sort' => 600,
         ];
 
-        $subCategories['user'] = [
-            'parentId' => 'user',
-            'name' => '用户',
-            'icon' => 'fa fa-user',
-        ];
-
-        $navs[] = [
+        $subCategories[] = [
             'parentId' => 'user',
             'url' => 'admin/user',
             'name' => '用户管理',
@@ -33,28 +27,21 @@ class Plugin extends \Miaoxing\Plugin\BasePlugin
         ];
 
         if (wei()->plugin->isInstalled('user-tag')) {
-            $navs[] = [
+            $subCategories[] = [
                 'parentId' => 'user',
                 'url' => 'admin/user-tags',
                 'name' => '标签管理',
             ];
         } else {
-            $navs[] = [
+            $subCategories[] = [
                 'parentId' => 'user',
                 'url' => 'admin/groups',
                 'name' => '分组管理',
             ];
         }
 
-        $subCategories['user-setting'] = [
+        $subCategories[] = [
             'parentId' => 'user',
-            'name' => '设置',
-            'icon' => 'fa fa-gear',
-            'sort' => 0,
-        ];
-
-        $navs[] = [
-            'parentId' => 'user-setting',
             'url' => 'admin/user-settings',
             'name' => '功能设置',
         ];
