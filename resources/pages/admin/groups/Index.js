@@ -1,7 +1,6 @@
 import React from "react";
 import TableProvider from "components/TableProvider";
 import Table from "components/Table";
-import Actions from "components/Actions";
 import CDeleteLink from "components/CDeleteLink";
 import CEditLink from "components/CEditLink";
 import CNewBtn from "components/CNewBtn";
@@ -10,6 +9,7 @@ import app from "app";
 import axios from 'axios';
 import PageActions from "components/PageActions";
 import Page from "components/Page";
+import TdActions from "components/TdActions";
 
 export default class extends React.Component {
   state = {};
@@ -54,10 +54,10 @@ export default class extends React.Component {
               },
               {
                 text: '操作',
-                formatter: (cell, row) => <Actions>
+                formatter: (cell, row) => <TdActions>
                   <CEditLink id={row.id}/>
                   <CDeleteLink id={row.id}/>
-                </Actions>
+                </TdActions>
               },
             ]}
           />
