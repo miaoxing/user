@@ -2,16 +2,17 @@ import React from 'react';
 import CListBtn from "components/CListBtn";
 import Form from "components/Form";
 import FormItem from "components/FormItem";
-import PageHeader from "components/PageHeader";
 import FormAction from "components/FormAction";
+import Page from "components/Page";
+import PageActions from "components/PageActions";
 
 export default class extends React.Component {
   render() {
     return (
-      <>
-        <PageHeader>
+      <Page>
+        <PageActions>
           <CListBtn/>
-        </PageHeader>
+        </PageActions>
 
         <Form>
           <FormItem label="名称" name="name" required/>
@@ -20,7 +21,7 @@ export default class extends React.Component {
 
           <FormAction/>
         </Form>
-      </>
+      </Page>
     );
   }
 }

@@ -5,10 +5,11 @@ import Actions from "components/Actions";
 import CDeleteLink from "components/CDeleteLink";
 import CEditLink from "components/CEditLink";
 import CNewBtn from "components/CNewBtn";
-import PageHeader from "components/PageHeader";
 import {Button} from "react-bootstrap";
 import app from "app";
 import axios from 'axios';
+import PageActions from "components/PageActions";
+import Page from "components/Page";
 
 export default class extends React.Component {
   state = {};
@@ -23,16 +24,16 @@ export default class extends React.Component {
   };
 
   render() {
-    return <>
+    return <Page>
       <TableProvider>
         {api => <>
-          <PageHeader>
+          <PageActions>
             {this.state.hasWechatGroup && <Button variant="secondary" onClick={this.handleClick.bind(this, api)}>
               从微信同步分组
             </Button>}
             {' '}
             <CNewBtn/>
-          </PageHeader>
+          </PageActions>
 
           <Table
             columns={[
@@ -62,6 +63,6 @@ export default class extends React.Component {
           />
         </>}
       </TableProvider>
-    </>;
+    </Page>;
   }
 }
