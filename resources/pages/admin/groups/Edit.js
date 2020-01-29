@@ -5,6 +5,7 @@ import FormItem from "components/FormItem";
 import FormAction from "components/FormAction";
 import Page from "components/Page";
 import PageActions from "components/PageActions";
+import app from 'app';
 
 export default class extends React.Component {
   render() {
@@ -14,7 +15,11 @@ export default class extends React.Component {
           <CListBtn/>
         </PageActions>
 
-        <Form>
+        <Form
+          url={app.curApiFormUrl()}
+          valuesUrl={app.curApiUrl()}
+          redirectUrl={app.curIndexUrl()}
+        >
           <FormItem label="名称" name="name" required/>
 
           <FormItem label="顺序" name="sort" type="number"/>

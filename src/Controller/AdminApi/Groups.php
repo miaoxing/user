@@ -1,6 +1,6 @@
 <?php
 
-namespace Miaoxing\User\Controller\Admin;
+namespace Miaoxing\User\Controller\AdminApi;
 
 use Miaoxing\Admin\Action\CrudTrait;
 use Miaoxing\Plugin\BaseController;

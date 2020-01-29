@@ -15,7 +15,7 @@ export default class extends React.Component {
   state = {};
 
   componentDidMount() {
-    axios(app.actionUrl('metadata'), {loading: true}).then(({data}) => this.setState(data));
+    axios(app.url('admin-api/groups/metadata'), {loading: true}).then(({data}) => this.setState(data));
   }
 
   handleClick = (api) => {
@@ -31,11 +31,11 @@ export default class extends React.Component {
             {this.state.hasWechatGroup && <Button variant="secondary" onClick={this.handleClick.bind(this, api)}>
               从微信同步分组
             </Button>}
-            {' '}
             <CNewBtn/>
           </PageActions>
 
           <Table
+            url={app.curApiIndexUrl()}
             columns={[
               {
                 text: '名称',
