@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React from "react";
 import TableProvider from "components/TableProvider";
 import CDeleteLink from "components/CDeleteLink";
 import CEditLink from "components/CEditLink";
@@ -40,6 +40,7 @@ export default class extends React.Component {
           </PageActions>
 
           <AntTable
+            search={true}
             url={app.curApiIndexUrl()}
             columns={[
               {
