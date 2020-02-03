@@ -1,6 +1,5 @@
-import React from "react";
+import React, {useRef} from "react";
 import TableProvider from "components/TableProvider";
-import Table from "components/Table";
 import CDeleteLink from "components/CDeleteLink";
 import CEditLink from "components/CEditLink";
 import CNewBtn from "components/CNewBtn";
@@ -10,9 +9,15 @@ import axios from 'axios';
 import PageActions from "components/PageActions";
 import Page from "components/Page";
 import TdActions from "components/TdActions";
+import AntTable from 'components/AntTable';
 
 export default class extends React.Component {
   state = {};
+
+  constructor(props) {
+    super(props);
+    this.ref = React.createRef();
+  }
 
   componentDidMount() {
     axios(app.url('admin-api/groups/metadata'), {loading: true}).then(({data}) => this.setState(data));
@@ -34,30 +39,33 @@ export default class extends React.Component {
             <CNewBtn/>
           </PageActions>
 
-          <Table
+          <AntTable
             url={app.curApiIndexUrl()}
             columns={[
               {
-                text: '名称',
-                dataField: 'name'
+                title: '名称',
+                dataIndex: 'name'
               },
               {
-                text: '顺序',
-                dataField: 'sort',
-                sort: true
+                title: '顺序',
+                dataIndex: 'sort',
+                sorter: true,
               },
               {
-                text: '状态',
-                dataField: 'wechatId',
-                hidden: !this.state.hasWechatGroup,
-                formatter: (cell) => cell > 0 ? '已同步' : '未同步',
+                title: '状态',
+                dataIndex: 'wechatId',
+                hideInTable: !this.state.hasWechatGroup,
+                render: text => text > 0 ? '已同步' : '未同步',
               },
               {
-                text: '操作',
-                formatter: (cell, row) => <TdActions>
-                  <CEditLink id={row.id}/>
-                  <CDeleteLink id={row.id}/>
-                </TdActions>
+                title: '操作',
+                dataIndex: 'id',
+                render: (id) => (
+                  <TdActions>
+                    <CEditLink id={id}/>
+                    <CDeleteLink id={id}/>
+                  </TdActions>
+                )
               },
             ]}
           />
