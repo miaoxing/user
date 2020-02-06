@@ -9,7 +9,7 @@ import axios from 'axios';
 import PageActions from "components/PageActions";
 import Page from "components/Page";
 import TdActions from "components/TdActions";
-import AntTable from 'components/AntTable';
+import Table from "antdx-table";
 
 export default class extends React.Component {
   state = {};
@@ -39,7 +39,7 @@ export default class extends React.Component {
             <CNewBtn/>
           </PageActions>
 
-          <AntTable
+          <Table
             search={true}
             url={app.curApiIndexUrl()}
             columns={[
