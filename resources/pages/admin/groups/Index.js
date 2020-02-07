@@ -6,8 +6,7 @@ import CNewBtn from "components/CNewBtn";
 import {Button} from "react-bootstrap";
 import app from "app";
 import axios from 'axios';
-import PageActions from "components/PageActions";
-import Page from "components/Page";
+import {Page, PageActions} from "@miaoxing/page";
 import TdActions from "components/TdActions";
 import Table from "antdx-table";
 
