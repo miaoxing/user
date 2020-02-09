@@ -1,8 +1,6 @@
 import React from 'react';
 import CListBtn from "components/CListBtn";
-import Form from "components/Form";
-import FormItem from "components/FormItem";
-import FormAction from "components/FormAction";
+import {Form, FormItem, FormAction} from "@miaoxing/form";
 import {Page, PageActions} from "@miaoxing/page";
 import app from 'app';
 
