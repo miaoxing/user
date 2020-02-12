@@ -1,5 +1,5 @@
 import React from "react";
-import TableProvider from "components/TableProvider";
+import {TableProvider} from "@miaoxing/table";
 import CDeleteLink from "components/CDeleteLink";
 import CEditLink from "components/CEditLink";
 import CNewBtn from "components/CNewBtn";
