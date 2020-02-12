@@ -7,7 +7,7 @@ import {Button} from "react-bootstrap";
 import app from "app";
 import axios from 'axios';
 import {Page, PageActions} from "@miaoxing/page";
-import TdActions from "components/TdActions";
+import {LinkActions} from "@miaoxing/actions";
 import Table from "antdx-table";
 
 export default class extends React.Component {
@@ -61,10 +61,10 @@ export default class extends React.Component {
                 title: '操作',
                 dataIndex: 'id',
                 render: (id) => (
-                  <TdActions>
+                  <LinkActions>
                     <CEditLink id={id}/>
                     <CDeleteLink id={id}/>
-                  </TdActions>
+                  </LinkActions>
                 )
               },
             ]}
