@@ -5,7 +5,7 @@ import CEditLink from "components/CEditLink";
 import CNewBtn from "components/CNewBtn";
 import {Button} from "react-bootstrap";
 import app from "app";
-import axios from 'axios';
+import axios from '@miaoxing/axios';
 import {Page, PageActions} from "@miaoxing/page";
 import {LinkActions} from "@miaoxing/actions";
 import Table from "antdx-table";
