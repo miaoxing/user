@@ -9,6 +9,7 @@ import axios from '@miaoxing/axios';
 import {Page, PageActions} from "@miaoxing/page";
 import {LinkActions} from "@miaoxing/actions";
 import Table from "antdx-table";
+import $ from '@miaoxing/app';
 
 export default class extends React.Component {
   state = {};
@@ -24,7 +25,7 @@ export default class extends React.Component {
 
   handleClick = (api) => {
     axios.post(app.url('admin/wechat-groups/sync-from-wechat'), {}, {loading: true})
-      .then(({data}) => app.ret(data, api.reload));
+      .then(({data}) => $.ret(data, api.reload));
   };
 
   render() {
