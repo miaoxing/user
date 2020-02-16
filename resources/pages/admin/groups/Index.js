@@ -5,7 +5,6 @@ import CEditLink from "components/CEditLink";
 import CNewBtn from "components/CNewBtn";
 import {Button} from "react-bootstrap";
 import app from "app";
-import axios from '@miaoxing/axios';
 import {Page, PageActions} from "@miaoxing/page";
 import {LinkActions} from "@miaoxing/actions";
 import Table from "antdx-table";
@@ -20,12 +19,12 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    axios(app.url('admin-api/groups/metadata'), {loading: true}).then(({data}) => this.setState(data));
+    $.get(app.url('admin-api/groups/metadata'), {loading: true}).then(ret => this.setState(ret));
   }
 
   handleClick = (api) => {
-    axios.post(app.url('admin/wechat-groups/sync-from-wechat'), {}, {loading: true})
-      .then(({data}) => $.ret(data, api.reload));
+    $.post(app.url('admin/wechat-groups/sync-from-wechat'), {loading: true})
+      .then(ret => $.ret(ret, api.reload));
   };
 
   render() {
