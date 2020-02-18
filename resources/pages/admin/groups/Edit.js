@@ -1,8 +1,8 @@
 import React from 'react';
-import CListBtn from "components/CListBtn";
+import CListBtn from "plugins/app/resources/components/CListBtn";
 import {Form, FormItem, FormAction} from "@miaoxing/form";
 import {Page, PageActions} from "@miaoxing/page";
-import app from 'app';
+import app from 'plugins/app/resources/modules/app';
 
 export default class extends React.Component {
   render() {

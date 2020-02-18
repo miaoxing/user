@@ -1,10 +1,10 @@
 import React from "react";
 import {TableProvider} from "@miaoxing/table";
-import CDeleteLink from "components/CDeleteLink";
-import CEditLink from "components/CEditLink";
-import CNewBtn from "components/CNewBtn";
+import CDeleteLink from "plugins/app/resources/components/CDeleteLink";
+import CEditLink from "plugins/app/resources/components/CEditLink";
+import CNewBtn from "plugins/app/resources/components/CNewBtn";
 import {Button} from "react-bootstrap";
-import app from "app";
+import app from 'plugins/app/resources/modules/app';
 import {Page, PageActions} from "@miaoxing/page";
 import {LinkActions} from "@miaoxing/actions";
 import Table from "antdx-table";
