@@ -2,7 +2,7 @@
 
 namespace Miaoxing\User\Controller\AdminApi;
 
-use Miaoxing\Admin\Action\CrudTrait;
+use Miaoxing\Crud\CrudTrait;
 use Miaoxing\Plugin\BaseController;
 use Miaoxing\Plugin\Service\Request;
 use Miaoxing\User\Service\GroupModel;
