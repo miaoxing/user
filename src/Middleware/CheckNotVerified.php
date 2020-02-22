@@ -2,9 +2,9 @@
 
 namespace Miaoxing\User\Middleware;
 
-use Miaoxing\Plugin\Middleware\Base;
+use Miaoxing\Services\Middleware\BaseMiddleware;
 
-class CheckNotVerified extends Base
+class CheckNotVerified extends BaseMiddleware
 {
     /**
      * {@inheritdoc}

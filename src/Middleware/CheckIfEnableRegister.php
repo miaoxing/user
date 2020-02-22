@@ -2,10 +2,10 @@
 
 namespace Miaoxing\User\Middleware;
 
-use Miaoxing\Plugin\Middleware\Base;
+use Miaoxing\Services\Middleware\BaseMiddleware;
 use Wei\RetTrait;
 
-class CheckIfEnableRegister extends Base
+class CheckIfEnableRegister extends BaseMiddleware
 {
     use RetTrait;
 

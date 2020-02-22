@@ -2,13 +2,13 @@
 
 namespace Miaoxing\User\Middleware;
 
-use Miaoxing\Plugin\Middleware\Base;
+use Miaoxing\Services\Middleware\BaseMiddleware;
 use Wei\RetTrait;
 
 /**
  * 如果用户已登录,跳转到指定地址
  */
-class CheckNotLogin extends Base
+class CheckNotLogin extends BaseMiddleware
 {
     use RetTrait;
 
