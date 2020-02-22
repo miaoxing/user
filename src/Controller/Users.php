@@ -2,7 +2,7 @@
 
 namespace Miaoxing\User\Controller;
 
-use Miaoxing\Plugin\Middleware\CheckRedirectUrl;
+use Miaoxing\Services\Middleware\CheckRedirectUrl;
 use Miaoxing\Plugin\Middleware\LoadAppConfig;
 use Miaoxing\Plugin\Service\User;
 use Miaoxing\User\Middleware\CheckIfEnableRegister;
