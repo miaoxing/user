@@ -12,7 +12,7 @@ $tags = wei()->userTag->getSelects();
 <!-- /.page-header -->
 <div class="page-header">
   <div class="float-right">
-    <?php if (wei()->setting('user.enableNew')) : ?>
+    <?php if (wei()->user->enableCreate) : ?>
       <a class="btn btn-success" href="<?= $url('admin/user/new') ?>">添加用户</a>
     <?php endif ?>
   </div>
@@ -50,7 +50,7 @@ $tags = wei()->userTag->getSelects();
               <div class="col-md-3">
                 <select name="groupId" id="group-id" class="form-control">
                   <option value="">全部分组</option>
-                  <option value="0"><?= $setting('user.titleDefaultGroup') ?: '未分组' ?></option>
+                  <option value="0"><?= wei()->group->defaultName ?></option>
                 </select>
               </div>
             <?php } ?>
@@ -97,7 +97,7 @@ $tags = wei()->userTag->getSelects();
                 查询
               </button>
               &nbsp;
-              <?php if (wei()->setting('user.enableExport')) : ?>
+              <?php if (wei()->user->enableExport) : ?>
                 <a id="export-csv" class="js-export-csv btn btn-secondary" href="javascript:void(0);">导出</a>
               <?php endif ?>
             </div>
@@ -125,7 +125,7 @@ $tags = wei()->userTag->getSelects();
             <div class="form-group">
               <select id="to-group-id" class="form-control" disabled>
                 <option>移动到分组</option>
-                <option value="0"><?= $setting('user.titleDefaultGroup') ?: '未分组' ?></option>
+                <option value="0"><?= wei()->group->defaultName ?></option>
               </select>
             </div>
           <?php } ?>

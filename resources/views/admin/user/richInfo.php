@@ -1,7 +1,6 @@
 <?php
 
 $canShow = $curUser->can('admin/user/show');
-$enableMessage = wei()->setting('user.enableMessage');
 $tags = wei()->has('userTag') ? wei()->userTag->getSelects() : [];
 ?>
 
@@ -30,16 +29,11 @@ $tags = wei()->has('userTag') ? wei()->userTag->getSelects() : [];
   } else {
   var displayName = nickName;
   }
-  if (<?= (int) ($canShow && $enableMessage) ?>) {
-  var url = $.url('admin/message/user', {userId: id});
-  } else {
-  var url = 'javascript:;';
-  }
   %>
   <div class="media user-media">
     <span class="mr-2 <?= $canShow ? 'user-popover' : '' ?> user-popover-<%= guid = $.guid++ %>"
       data-container=".user-popover-<%= guid %>" data-id="<%= id %>">
-      <a href="<%= url %>" target="_blank">
+      <a href="javascript:;" target="_blank">
         <img class="media-object" src="<%= headImg %>">
       </a>
     </span>

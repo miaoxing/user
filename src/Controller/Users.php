@@ -47,7 +47,7 @@ class Users extends \Miaoxing\Plugin\BaseController
     {
         $nav = wei()->nav()->curApp()->enabled()->findOrInit(['type' => 'user']);
 
-        if ($bgImage = $this->setting('user.bgImage')) {
+        if ($bgImage = wei()->user->bgImage) {
             $this->event->trigger('postImageLoad', [&$bgImage]);
         }
 
@@ -119,7 +119,7 @@ class Users extends \Miaoxing\Plugin\BaseController
     {
         $user = $this->curUser;
 
-        $enableMobileVerify = $this->setting('user.enableMobileVerify', false);
+        $enableMobileVerify = wei()->user->enableMobileVerify;
         $isMobileVerified = $user->isMobileVerified();
 
         // 如果认证了手机号码,又没启用认证功能,就不显示手机号
@@ -152,7 +152,7 @@ class Users extends \Miaoxing\Plugin\BaseController
     public function loginAction(Request $req)
     {
         if ($req->isPost()) {
-            if (wei()->setting('user.enableLoginCaptcha')) {
+            if (wei()->user->enableLoginCaptcha) {
                 $ret = wei()->captcha->check($req['captcha']);
                 if ($ret['code'] !== 1) {
                     $ret['captchaErr'] = true;
@@ -165,8 +165,8 @@ class Users extends \Miaoxing\Plugin\BaseController
 
             return $this->ret($ret);
         } else {
-            if (!$this->setting('user.enableLogin', true)) {
-                return $this->err($this->setting('user.disableLoginTips', '登录功能未启用'));
+            if (!wei()->user->enableLogin) {
+                return $this->err(wei()->user->disableLoginTips);
             }
             $this->page->setTitle('登录');
 

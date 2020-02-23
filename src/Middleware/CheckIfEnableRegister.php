@@ -14,8 +14,8 @@ class CheckIfEnableRegister extends BaseMiddleware
      */
     public function __invoke($next)
     {
-        if (!wei()->setting('user.enableRegister', true)) {
-            return $this->err(wei()->setting('user.disableRegisterTips', '注册功能未启用'));
+        if (!wei()->user->enableRegister) {
+            return $this->err(wei()->user->disableRegisterTips);
         }
 
         return $next();

@@ -50,7 +50,7 @@ class Registration extends BaseController
 
     public function registerAction($req)
     {
-        $agreementArticleId = $this->setting('user.agreementArticleId');
+        $agreementArticleId = wei()->user->agreementArticleId;
 
         return get_defined_vars();
     }
@@ -118,7 +118,7 @@ class Registration extends BaseController
                 return $ret;
             }
 
-            if ($this->setting('user.agreementArticleId') && !$req['agreement']) {
+            if (wei()->user->agreementArticleId && !$req['agreement']) {
                 return $this->err('请同意《服务协议》');
             }
         });

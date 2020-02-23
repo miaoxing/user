@@ -39,12 +39,6 @@ class Plugin extends \Miaoxing\Plugin\BasePlugin
                 'name' => '分组管理',
             ];
         }
-
-        $subCategories[] = [
-            'parentId' => 'user',
-            'url' => 'admin/user-settings',
-            'name' => '功能设置',
-        ];
     }
 
     public function onLinkToGetLinks(&$links, &$types)
@@ -90,7 +84,7 @@ class Plugin extends \Miaoxing\Plugin\BasePlugin
             return;
         }
 
-        $defaultGroupId = wei()->setting('user.defaultGroupId', 0);
+        $defaultGroupId = wei()->user->defaultGroupId;
         if ($defaultGroupId) {
             $user->updateGroup($defaultGroupId);
         }

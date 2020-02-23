@@ -31,7 +31,7 @@
   <?php } else { ?>
     <div>
       <span class="text-muted">分组：</span><select class="update-group form-control d-inline-block w-auto" data-id="<%= id %>">
-        <option value="0"><?= $setting('user.titleDefaultGroup') ?: '未分组' ?></option>
+        <option value="0"><?= wei()->group->defaultName ?></option>
         <?php foreach ($wei->group()->findAll() as $group) : ?>
           <option value="<?= $group['id'] ?>"><?= $group['name'] ?></option>
         <?php endforeach ?>

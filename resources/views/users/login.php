@@ -5,10 +5,10 @@
 <?= $block->end() ?>
 
 <div class="clearfix user-nav-actions">
-  <?php if (wei()->setting('user.enableRegister')) { ?>
+  <?php if (wei()->user->enableRegister) { ?>
     <a href="<?= $url->query('users/register') ?>">注册</a>
   <?php } ?>
-  <?php if (wei()->setting('user.enablePasswordRest')) { ?>
+  <?php if (wei()->user->enablePasswordRest) { ?>
     &nbsp;<a href="<?= $url->query('password/reset') ?>">忘记密码?</a>
   <?php } ?>
 </div>
@@ -23,7 +23,7 @@
 
       <div class="col-control">
         <input type="text" class="form-control" id="username" name="username"
-          placeholder="<?= $setting('user.loginUsernamePlaceholder', '手机/用户名/邮箱') ?>">
+          placeholder="手机/用户名/邮箱">
       </div>
     </div>
     <div class="form-group">
@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <?php if (wei()->setting('user.enableLoginCaptcha')) : ?>
+    <?php if (wei()->user->enableLoginCaptcha) : ?>
       <div class="form-group">
         <label for="captcha" class="control-label">验证码</label>
 
@@ -71,7 +71,7 @@
       }
     });
 
-    <?php if (wei()->setting('user.enableLoginCaptcha')) : ?>
+    <?php if (wei()->user->enableLoginCaptcha) : ?>
     var $captcha = $('.js-captcha');
     $captcha.click(changeCaptcha);
 

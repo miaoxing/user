@@ -24,7 +24,7 @@ $view->layout('@admin/admin/layout.php');
         恭喜您完成注册
       </h2>
       <div>
-        <a class="btn btn-secondary" href="<?= $url('admin') ?>"><?= $setting('user.registerSucBtnLabel', '进入页面') ?></a>
+        <a class="btn btn-secondary" href="<?= $url('admin') ?>">进入页面</a>
       </div>
     </div>
   </div>
