@@ -4,7 +4,7 @@ namespace Miaoxing\User\Controller\AdminApi;
 
 use Miaoxing\Crud\CrudTrait;
 use Miaoxing\Plugin\BaseController;
-use Miaoxing\Plugin\Service\Request;
+use Miaoxing\Services\Service\Request;
 use Miaoxing\User\Service\GroupModel;
 
 class Groups extends BaseController
