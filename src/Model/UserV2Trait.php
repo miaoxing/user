@@ -2,9 +2,9 @@
 
 namespace Miaoxing\User\Model;
 
-use Miaoxing\Plugin\Model\CastTrait;
-use Miaoxing\Plugin\Model\GetSetTrait;
-use Miaoxing\Plugin\Model\ReqQueryTrait;
+use Miaoxing\Services\Model\CastTrait;
+use Miaoxing\Services\Model\GetSetTrait;
+use Miaoxing\Services\Model\ReqQueryTrait;
 use Miaoxing\User\Metadata\UserTrait;
 use Miaoxing\User\Service\GroupModel;
 use Miaoxing\User\Service\UserModel;
