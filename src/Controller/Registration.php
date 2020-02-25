@@ -10,12 +10,12 @@ use Miaoxing\User\Middleware\CheckVerified;
 
 class Registration extends BaseController
 {
-    protected $guestPages = [
-        'registration/register',
-        'registration/create',
-        'registration/forget',
-        'registration/reset',
-        'registration/verify',
+    protected $actionAuths = [
+        'register' => false,
+        'create' => false,
+        'forget' => false,
+        'reset' => false,
+        'verify' => false,
     ];
 
     public function __construct(array $options)

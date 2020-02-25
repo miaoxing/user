@@ -15,8 +15,8 @@ class User extends \Miaoxing\Plugin\BaseController
         'show' => '查看',
     ];
 
-    protected $guestPages = [
-        'admin/user/keepLogin',
+    protected $actionAuths = [
+        'keepLogin' => false,
     ];
 
     /**

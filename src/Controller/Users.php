@@ -11,11 +11,11 @@ use Wei\Request;
 
 class Users extends \Miaoxing\Plugin\BaseController
 {
-    protected $guestPages = [
-        'users/login',
-        'users/register',
-        'users/create',
-        'users/sendVerifyCode',
+    protected $actionAuths = [
+        'login' => false,
+        'register' => false,
+        'create' => false,
+        'sendVerifyCode' => false,
     ];
 
     public function __construct(array $options = [])

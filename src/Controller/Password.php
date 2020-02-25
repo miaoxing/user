@@ -7,12 +7,12 @@ use Miaoxing\Plugin\Service\User;
 
 class Password extends \Miaoxing\Plugin\BaseController
 {
-    protected $guestPages = [
-        'password/reset',
-        'password/resetReturn',
-        'password/resetUpdate',
-        'password/createReset',
-        'password/sendVerifyCode',
+    protected $actionAuths = [
+        'reset' => false,
+        'resetReturn' => false,
+        'resetUpdate' => false,
+        'createReset' => false,
+        'sendVerifyCode' => false,
     ];
 
     /**
