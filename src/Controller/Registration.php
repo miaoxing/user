@@ -18,9 +18,9 @@ class Registration extends BaseController
         'verify' => false,
     ];
 
-    public function __construct(array $options)
+    public function init()
     {
-        parent::__construct($options);
+        parent::init();
 
         $this->middleware(CheckNotLogin::class, [
             'only' => ['register', 'create', 'forget', 'reset'],

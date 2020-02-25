@@ -18,9 +18,9 @@ class Password extends \Miaoxing\Plugin\BaseController
     /**
      * {@inheritdoc}
      */
-    public function __construct(array $options = [])
+    public function init()
     {
-        parent::__construct($options);
+        parent::init();
 
         $this->middleware(LoadAppConfig::class, [
             'only' => ['sendVerifyCode'],

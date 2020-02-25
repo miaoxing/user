@@ -18,9 +18,9 @@ class Users extends \Miaoxing\Plugin\BaseController
         'sendVerifyCode' => false,
     ];
 
-    public function __construct(array $options = [])
+    public function init()
     {
-        parent::__construct($options);
+        parent::init();
 
         $this->middleware(CheckRedirectUrl::class, [
             'only' => ['login', 'logout'],
