@@ -4,7 +4,7 @@ namespace Miaoxing\User\Controller\Admin;
 
 use Miaoxing\Plugin\BaseController;
 
-class Password extends BaseController
+class PasswordController extends BaseController
 {
     protected $controllerName = '密码管理';
 

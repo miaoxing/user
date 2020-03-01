@@ -9,7 +9,7 @@ use Miaoxing\User\Middleware\CheckIfEnableRegister;
 use Miaoxing\User\Middleware\CheckNotLogin;
 use Wei\Request;
 
-class Users extends \Miaoxing\Plugin\BaseController
+class UsersController extends \Miaoxing\Plugin\BaseController
 {
     protected $actionAuths = [
         'login' => false,

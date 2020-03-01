@@ -7,7 +7,7 @@ use Miaoxing\Plugin\BaseController;
 use Miaoxing\Services\Service\Request;
 use Miaoxing\User\Service\GroupModel;
 
-class Groups extends BaseController
+class GroupsController extends BaseController
 {
     use CrudTrait;
 

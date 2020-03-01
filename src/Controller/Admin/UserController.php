@@ -4,7 +4,7 @@ namespace Miaoxing\User\Controller\Admin;
 
 use Miaoxing\Plugin\Service\User as UserService;
 
-class User extends \Miaoxing\Plugin\BaseController
+class UserController extends \Miaoxing\Plugin\BaseController
 {
     protected $controllerName = '用户管理';
 

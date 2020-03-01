@@ -4,7 +4,7 @@ namespace Miaoxing\User\Controller;
 
 use Miaoxing\Plugin\Service\User;
 
-class UserMobile extends \Miaoxing\Plugin\BaseController
+class UserMobileController extends \Miaoxing\Plugin\BaseController
 {
     public function indexAction($req)
     {

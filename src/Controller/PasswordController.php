@@ -5,7 +5,7 @@ namespace Miaoxing\User\Controller;
 use Miaoxing\Plugin\Middleware\LoadAppConfig;
 use Miaoxing\Plugin\Service\User;
 
-class Password extends \Miaoxing\Plugin\BaseController
+class PasswordController extends \Miaoxing\Plugin\BaseController
 {
     protected $actionAuths = [
         'reset' => false,

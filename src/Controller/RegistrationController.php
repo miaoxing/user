@@ -8,7 +8,7 @@ use Miaoxing\User\Middleware\CheckNotLogin;
 use Miaoxing\User\Middleware\CheckNotVerified;
 use Miaoxing\User\Middleware\CheckVerified;
 
-class Registration extends BaseController
+class RegistrationController extends BaseController
 {
     protected $actionAuths = [
         'register' => false,
