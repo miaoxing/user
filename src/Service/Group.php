@@ -2,7 +2,7 @@
 
 namespace Miaoxing\User\Service;
 
-use Miaoxing\Config\ConfigTrait;
+use Miaoxing\Services\ConfigTrait;
 use Miaoxing\Services\Model\ReqQueryTrait;
 use Miaoxing\User\Service\GroupModel;
 
