@@ -6,7 +6,7 @@ use Miaoxing\Services\Model\CastTrait;
 use Miaoxing\Services\Model\GetSetTrait;
 use Miaoxing\Services\Model\ReqQueryTrait;
 use Miaoxing\Services\Model\SoftDeleteTrait;
-use Miaoxing\Plugin\Service\Group;
+use Miaoxing\User\Service\Group;
 use Miaoxing\User\Metadata\GroupTrait;
 
 /**
