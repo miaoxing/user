@@ -4,7 +4,7 @@ namespace Miaoxing\User;
 
 use Miaoxing\Plugin\Service\User;
 
-class Plugin extends \Miaoxing\Plugin\BasePlugin
+class UserPlugin extends \Miaoxing\Plugin\BasePlugin
 {
     protected $name = '用户';
 
