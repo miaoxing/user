@@ -55,7 +55,9 @@ class CurUserV2 extends CurUser
     {
         // 未加载数据,已登录,session中存在需要的key
         if (!$this->isLoaded() && isset($this->session['user'][$name])) {
-            return $this->getGetValue($name, $this->session['user'][$name]);
+            // 存储变量，解决 Only variable references should be returned by reference
+            $value = $this->getGetValue($name, $this->session['user'][$name]);
+            return $value;
         }
 
         $this->loadDbUser();
