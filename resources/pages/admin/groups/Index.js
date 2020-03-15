@@ -8,7 +8,7 @@ import app from 'plugins/app/resources/modules/app';
 import {Page, PageActions} from "@miaoxing/page";
 import {LinkActions} from "@miaoxing/actions";
 import Table from "antdx-table";
-import $ from '@miaoxing/app';
+import $ from 'miaoxing';
 
 export default class extends React.Component {
   state = {};
