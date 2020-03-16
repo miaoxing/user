@@ -1,5 +1,5 @@
 import React from 'react';
-import CListBtn from "plugins/app/resources/components/CListBtn";
+import {CListBtn} from "@miaoxing/clink";
 import {Form, FormItem, FormAction} from "@miaoxing/form";
 import {Page, PageActions} from "@miaoxing/page";
 import app from 'plugins/app/resources/modules/app';
