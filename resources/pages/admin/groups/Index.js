@@ -18,7 +18,7 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    $.get(app.url('admin-api/groups/metadata'), {loading: true}).then(ret => this.setState(ret));
+    $.get(curUrl.toApi('metadata'), {loading: true}).then(ret => this.setState(ret));
   }
 
   handleClick = (api) => {
