@@ -7,6 +7,7 @@ import {Page, PageActions} from "@miaoxing/page";
 import {LinkActions} from "@miaoxing/actions";
 import Table from "antdx-table";
 import $ from 'miaoxing';
+import curUrl from "@miaoxing/cur-url";
 
 export default class extends React.Component {
   state = {};
@@ -38,7 +39,7 @@ export default class extends React.Component {
 
           <Table
             search={true}
-            url={app.curApiIndexUrl()}
+            url={curUrl.apiIndex()}
             columns={[
               {
                 title: '名称',

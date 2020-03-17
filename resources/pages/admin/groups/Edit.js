@@ -2,7 +2,7 @@ import React from 'react';
 import {CListBtn} from "@miaoxing/clink";
 import {Form, FormItem, FormAction} from "@miaoxing/form";
 import {Page, PageActions} from "@miaoxing/page";
-import app from 'plugins/app/resources/modules/app';
+import curUrl from "@miaoxing/cur-url";
 
 export default class extends React.Component {
   render() {
@@ -13,9 +13,9 @@ export default class extends React.Component {
         </PageActions>
 
         <Form
-          url={app.curApiFormUrl()}
-          valuesUrl={app.curApiUrl()}
-          redirectUrl={app.curIndexUrl()}
+          url={curUrl.apiForm()}
+          valuesUrl={curUrl.api()}
+          redirectUrl={curUrl.index()}
         >
           <FormItem label="名称" name="name" required/>
 
