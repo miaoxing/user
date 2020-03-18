@@ -18,7 +18,7 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    api.curAction('metadata', {loading: true}).then(ret => this.setState(ret));
+    api.curPath('metadata', {loading: true}).then(ret => this.setState(ret));
   }
 
   handleClick = (tableApi) => {
