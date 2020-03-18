@@ -2,12 +2,12 @@ import React from "react";
 import {TableProvider} from "@miaoxing/table";
 import {CDeleteLink, CEditLink, CNewBtn} from "@miaoxing/clink";
 import {Button} from "react-bootstrap";
-import app from 'plugins/app/resources/modules/app';
 import {Page, PageActions} from "@miaoxing/page";
 import {LinkActions} from "@miaoxing/actions";
 import Table from "antdx-table";
 import $ from 'miaoxing';
 import curUrl from "@miaoxing/cur-url";
+import api from '@miaoxing/api';
 
 export default class extends React.Component {
   state = {};
@@ -18,12 +18,11 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    $.get(curUrl.toApi('metadata'), {loading: true}).then(ret => this.setState(ret));
+    api.curAction('metadata', {loading: true}).then(ret => this.setState(ret));
   }
 
   handleClick = (api) => {
-    $.post(app.url('admin/wechat-groups/sync-from-wechat'), {loading: true})
-      .then(ret => $.ret(ret, api.reload));
+    api.post('wechat-groups/sync-form-wechat', {loading: true}).then(ret => $.ret(ret, api.reload));
   };
 
   render() {
