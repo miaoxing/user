@@ -21,8 +21,8 @@ export default class extends React.Component {
     api.curAction('metadata', {loading: true}).then(ret => this.setState(ret));
   }
 
-  handleClick = (api) => {
-    api.post('wechat-groups/sync-form-wechat', {loading: true}).then(ret => $.ret(ret, api.reload));
+  handleClick = (tableApi) => {
+    api.post('wechat-groups/sync-form-wechat', {loading: true}).then(ret => $.ret(ret, tableApi.reload));
   };
 
   render() {
