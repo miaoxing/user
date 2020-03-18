@@ -29,9 +29,9 @@ export default class extends React.Component {
   render() {
     return <Page>
       <TableProvider>
-        {api => <>
+        {tableApi => <>
           <PageActions>
-            {this.state.hasWechatGroup && <Button variant="secondary" onClick={this.handleClick.bind(this, api)}>
+            {this.state.hasWechatGroup && <Button variant="secondary" onClick={this.handleClick.bind(this, tableApi)}>
               从微信同步分组
             </Button>}
             <CNewBtn/>
