@@ -38,7 +38,7 @@ export default class extends React.Component {
 
           <Table
             search={true}
-            url={curUrl.apiIndex()}
+            url={curUrl.api()}
             columns={[
               {
                 title: '名称',
