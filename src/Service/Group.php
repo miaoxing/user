@@ -3,7 +3,7 @@
 namespace Miaoxing\User\Service;
 
 use Miaoxing\Services\ConfigTrait;
-use Miaoxing\Services\Model\ReqQueryTrait;
+use Miaoxing\Plugin\Model\ReqQueryTrait;
 use Miaoxing\User\Service\GroupModel;
 
 /**

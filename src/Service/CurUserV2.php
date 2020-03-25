@@ -49,7 +49,7 @@ class CurUserV2 extends CurUser
     /**
      * @param string $name
      * @return mixed
-     * @see \Miaoxing\Services\Model\GetSetTrait::getColumnValue
+     * @see \Miaoxing\Plugin\Model\GetSetTrait::getColumnValue
      */
     protected function &getColumnValue($name)
     {

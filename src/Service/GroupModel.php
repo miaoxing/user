@@ -2,10 +2,10 @@
 
 namespace Miaoxing\User\Service;
 
-use Miaoxing\Services\Model\CastTrait;
-use Miaoxing\Services\Model\GetSetTrait;
-use Miaoxing\Services\Model\ReqQueryTrait;
-use Miaoxing\Services\Model\SoftDeleteTrait;
+use Miaoxing\Plugin\Model\CastTrait;
+use Miaoxing\Plugin\Model\GetSetTrait;
+use Miaoxing\Plugin\Model\ReqQueryTrait;
+use Miaoxing\Plugin\Model\SoftDeleteTrait;
 use Miaoxing\User\Service\Group;
 use Miaoxing\User\Metadata\GroupTrait;
 
