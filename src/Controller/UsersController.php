@@ -73,7 +73,7 @@ class UsersController extends \Miaoxing\Plugin\BaseController
             return $this->err('请输入手机号码');
         }
 
-        if ($this->curUser['mobile'] == $req['mobile'] && $this->curUser->isMobileVerified()) {
+        if ($this->curUser['mobile'] == $req['mobile'] && $this->curUser->mobileVerifiedAt) {
             return $this->err('您已绑定了该手机号码');
         }
 
@@ -120,7 +120,7 @@ class UsersController extends \Miaoxing\Plugin\BaseController
         $user = $this->curUser;
 
         $enableMobileVerify = wei()->user->enableMobileVerify;
-        $isMobileVerified = $user->isMobileVerified();
+        $isMobileVerified = $user->mobileVerifiedAt;
 
         // 如果认证了手机号码,又没启用认证功能,就不显示手机号
         $hideMobile = $isMobileVerified && !$enableMobileVerify;
