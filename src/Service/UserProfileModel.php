@@ -16,7 +16,6 @@ class UserProfileModel extends BaseModel
     use UserProfileTrait;
     use CastTrait;
     use ReqQueryTrait;
-    use GetSetTrait;
 
     protected $table = 'userProfile';
 

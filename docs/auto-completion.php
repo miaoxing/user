@@ -2,30 +2,30 @@
 
 /**
  * @property    Miaoxing\User\Service\CurUserV2 $curUserV2
- * @method      \Miaoxing\User\Service\CurUserV2|\Miaoxing\User\Service\CurUserV2[] curUserV2()
+ * @method      Miaoxing\User\Service\CurUserV2|Miaoxing\User\Service\CurUserV2[] curUserV2()
  */
 class CurUserV2Mixin {
 }
 
 /**
  * @property    Miaoxing\User\Service\Group $group 用户分组
- * @method      \Miaoxing\User\Service\Group|\Miaoxing\User\Service\Group[] group()
+ * @method      Miaoxing\User\Service\Group|Miaoxing\User\Service\Group[] group()
  */
 class GroupMixin {
 }
 
 /**
  * @property    Miaoxing\User\Service\GroupModel $groupModel GroupModel
- * @method      \Miaoxing\User\Service\GroupModel|\Miaoxing\User\Service\GroupModel[] groupModel()
+ * @method      Miaoxing\User\Service\GroupModel|Miaoxing\User\Service\GroupModel[] groupModel()
  */
 class GroupModelMixin {
 }
 
 /**
- * @property    Miaoxing\User\Service\UserModel $userModel
- * @method      \Miaoxing\User\Service\UserModel|\Miaoxing\User\Service\UserModel[] userModel()
+ * @property    Miaoxing\User\Service\UserModelOld $userModelOld
+ * @method      Miaoxing\User\Service\UserModelOld|Miaoxing\User\Service\UserModelOld[] userModelOld()
  */
-class UserModelMixin {
+class UserModelOldMixin {
 }
 
 /**
@@ -36,14 +36,14 @@ class UserPasswordMixin {
 
 /**
  * @property    Miaoxing\User\Service\UserProfile $userProfile
- * @method      \Miaoxing\User\Service\UserProfile|\Miaoxing\User\Service\UserProfile[] userProfile()
+ * @method      Miaoxing\User\Service\UserProfile|Miaoxing\User\Service\UserProfile[] userProfile()
  */
 class UserProfileMixin {
 }
 
 /**
  * @property    Miaoxing\User\Service\UserProfileModel $userProfileModel UserProfileModel
- * @method      \Miaoxing\User\Service\UserProfileModel|\Miaoxing\User\Service\UserProfileModel[] userProfileModel()
+ * @method      Miaoxing\User\Service\UserProfileModel|Miaoxing\User\Service\UserProfileModel[] userProfileModel()
  */
 class UserProfileModelMixin {
 }
@@ -58,7 +58,7 @@ class UserVerifyMixin {
  * @mixin CurUserV2Mixin
  * @mixin GroupMixin
  * @mixin GroupModelMixin
- * @mixin UserModelMixin
+ * @mixin UserModelOldMixin
  * @mixin UserPasswordMixin
  * @mixin UserProfileMixin
  * @mixin UserProfileModelMixin
@@ -87,11 +87,8 @@ $group = wei()->groupModel();
 /** @var Miaoxing\User\Service\GroupModel|Miaoxing\User\Service\GroupModel[] $groupModels */
 $groups = wei()->groupModel();
 
-/** @var Miaoxing\User\Service\UserModel $userModel */
-$user = wei()->userModel();
-
-/** @var Miaoxing\User\Service\UserModel|Miaoxing\User\Service\UserModel[] $userModels */
-$users = wei()->userModel();
+/** @var Miaoxing\User\Service\UserModelOld $userModelOld */
+$userModelOld = wei()->userModelOld;
 
 /** @var Miaoxing\User\Service\UserPassword $userPassword */
 $userPassword = wei()->userPassword;

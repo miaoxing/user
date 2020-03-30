@@ -20,7 +20,7 @@ trait UserV2Trait
     use UserTrait;
     use CastTrait;
     use ReqQueryTrait;
-    use GetSetTrait;
+//    use GetSetTrait;
 
     protected $defaultCasts = [
         'department' => 'array',

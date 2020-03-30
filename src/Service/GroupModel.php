@@ -19,7 +19,6 @@ class GroupModel extends Group
     use GroupTrait;
     use CastTrait;
     use ReqQueryTrait;
-    use GetSetTrait;
     use SoftDeleteTrait;
 
     /**
