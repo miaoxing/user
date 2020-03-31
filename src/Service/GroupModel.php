@@ -2,11 +2,8 @@
 
 namespace Miaoxing\User\Service;
 
-use Miaoxing\Plugin\Model\CastTrait;
-use Miaoxing\Plugin\Model\GetSetTrait;
-use Miaoxing\Plugin\Model\ReqQueryTrait;
 use Miaoxing\Plugin\Model\SoftDeleteTrait;
-use Miaoxing\User\Service\Group;
+use Miaoxing\Plugin\Service\Model;
 use Miaoxing\User\Metadata\GroupTrait;
 
 /**
@@ -14,21 +11,19 @@ use Miaoxing\User\Metadata\GroupTrait;
  *
  * @property GroupModel $parent
  */
-class GroupModel extends Group
+class GroupModel extends Model
 {
     use GroupTrait;
-    use CastTrait;
-    use ReqQueryTrait;
     use SoftDeleteTrait;
+
+    protected $data = [
+        'sort' => 50,
+    ];
 
     /**
      * @var GroupModel|GroupModel[]
      */
     protected $parents;
-
-    protected $deletedAtColumn = 'deleteTime';
-
-    protected $deletedByColumn = 'deleteUser';
 
     public function parent()
     {
@@ -38,15 +33,11 @@ class GroupModel extends Group
     public function afterSave()
     {
         wei()->cache->remove('groups:' . wei()->app->getId());
-
-        parent::beforeSave();
     }
 
     public function afterDestroy()
     {
         wei()->cache->remove('groups:' . wei()->app->getId());
-
-        parent::beforeSave();
     }
 
     public function getFullName()

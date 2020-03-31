@@ -2,9 +2,11 @@
 
 namespace Miaoxing\User\Controller\AdminApi;
 
+use Illuminate\Foundation\Auth\User;
+use Miaoxing\Plugin\Service\UserModel;
 use Miaoxing\Services\Crud\CrudTrait;
 use Miaoxing\Plugin\BaseController;
-use Miaoxing\Services\Service\Request;
+use Miaoxing\Services\Service\Laravel;
 use Miaoxing\User\Service\GroupModel;
 
 class GroupsController extends BaseController
@@ -38,10 +40,10 @@ class GroupsController extends BaseController
             return $ret;
         }
 
-        $group = wei()->group()->findOrInitById($req['id']);
-        $group['name'] = $req['name'];
+        $group = GroupModel::findOrInit($req['id']);
+        $group->name = $req['name'];
         if ($req['sort']) {
-            $group['sort'] = $req['sort'];
+            $group->sort = $req['sort'];
         }
 
         $ret = wei()->event->until('groupUpdate', [$group]);
@@ -56,43 +58,16 @@ class GroupsController extends BaseController
 
     public function destroyAction($req)
     {
-        $group = wei()->group()->findOneById($req['id']);
+        $group = GroupModel::findOrFail($req['id']);
         $ret = wei()->event->until('groupDestroy', [$group]);
         if ($ret) {
             return $this->ret($ret);
         }
 
         // 本地删除
-        wei()->group()->destroy($req['id']);
-        wei()->user()->where(['groupId' => $req['id']])->update('groupId = 0');
+        $group->destroy();
+        UserModel::where('groupId', $req['id'])->update('groupId = 0');
 
         return $this->suc();
-    }
-
-    protected function beforeIndexFind(Request $req, GroupModel $models)
-    {
-    }
-
-    protected function afterIndexFind(Request $req, GroupModel $models)
-    {
-    }
-
-    protected function buildIndexData(GroupModel $model)
-    {
-        return [];
-    }
-
-    protected function buildIndexRet($ret, Request $req, GroupModel $models)
-    {
-        return $ret;
-    }
-
-    protected function beforeShowFind(Request $req, GroupModel $model)
-    {
-    }
-
-    protected function buildShowData(GroupModel $model)
-    {
-        return [];
     }
 }
