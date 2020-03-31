@@ -18,7 +18,7 @@ class UserMobileController extends \Miaoxing\Plugin\BaseController
 
     public function createAction($req)
     {
-        $ret = $this->curUser->bindMobile($req);
+        $ret = User::bindMobile($req);
 
         return $ret;
     }
@@ -37,7 +37,7 @@ class UserMobileController extends \Miaoxing\Plugin\BaseController
      */
     protected function checkBind()
     {
-        if ($this->curUser->mobileVerifiedAt) {
+        if (User::cur()->mobileVerifiedAt) {
             return $this->err('您已经绑定过手机号码', -1);
         }
 
@@ -78,6 +78,6 @@ class UserMobileController extends \Miaoxing\Plugin\BaseController
         }
 
         // 3. 手机号是否被其他人绑定
-        return $this->curUser->checkMobile($mobile);
+        return User::checkMobile($mobile);
     }
 }

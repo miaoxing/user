@@ -16,7 +16,7 @@
 <script>
   require(['plugins/app/libs/jquery-form/jquery.form', 'plugins/app/libs/jquery.loadJSON/index'], function () {
     $('.js-user-form')
-      .loadJSON(<?= $curUser->toJson(['name', 'mobile', 'address']) ?>)
+      .loadJSON(<?= \Miaoxing\Plugin\Service\User::cur()->toJson(['name', 'mobile', 'address']) ?>)
       .ajaxForm({
         url: $.url('user/reg'),
         type: 'post',

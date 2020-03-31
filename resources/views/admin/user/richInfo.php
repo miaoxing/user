@@ -1,6 +1,6 @@
 <?php
 
-$canShow = $curUser->can('admin/user/show');
+$canShow = \Miaoxing\Plugin\Service\User::can('admin/user/show');
 $tags = wei()->has('userTag') ? wei()->userTag->getSelects() : [];
 ?>
 

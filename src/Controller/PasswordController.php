@@ -43,7 +43,7 @@ class PasswordController extends \Miaoxing\Plugin\BaseController
 
     public function updateAction($req)
     {
-        $ret = $this->curUser->updatePassword($req);
+        $ret = User::updatePassword($req);
 
         return $ret;
     }

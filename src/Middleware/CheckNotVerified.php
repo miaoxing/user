@@ -4,6 +4,9 @@ namespace Miaoxing\User\Middleware;
 
 use Miaoxing\Services\Middleware\BaseMiddleware;
 
+/**
+ * @mixin \UserMixin
+ */
 class CheckNotVerified extends BaseMiddleware
 {
     /**
@@ -11,7 +14,7 @@ class CheckNotVerified extends BaseMiddleware
      */
     public function __invoke($next)
     {
-        if (wei()->curUser->isLogin() && wei()->curUser['isValid']) {
+        if ($this->user->isLogin() && $this->user->cur()->isSubscribed) {
             return $this->response->redirect(wei()->url('admin'));
         }
 

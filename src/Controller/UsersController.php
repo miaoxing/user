@@ -73,11 +73,12 @@ class UsersController extends \Miaoxing\Plugin\BaseController
             return $this->err('请输入手机号码');
         }
 
-        if ($this->curUser['mobile'] == $req['mobile'] && $this->curUser->mobileVerifiedAt) {
+        $cur = User::cur();
+        if ($cur->mobile === $req['mobile'] && $cur->isMobileVerified) {
             return $this->err('您已绑定了该手机号码');
         }
 
-        $user = wei()->user()->mobileVerified()->find(['mobile' => $req['mobile']]);
+        $user = wei()->userModel()->mobileVerified()->find('mobile', $req['mobile']);
         if ($user) {
             return $this->err('该手机号码已经注册，请重新输入');
         }
@@ -98,16 +99,16 @@ class UsersController extends \Miaoxing\Plugin\BaseController
         $user = wei()->user();
         $ret = $user->register($req);
         if ($ret['code'] !== 1) {
-            return $this->ret($ret);
+            return $ret;
         }
 
         // 2. 登录用户
-        $loginRet = wei()->curUser->loginById($user['id']);
+        $loginRet = User::loginById($user['id']);
         if ($loginRet['code'] !== 1) {
             return $loginRet;
         }
 
-        return $this->ret($ret);
+        return $ret;
     }
 
     /**
@@ -117,7 +118,7 @@ class UsersController extends \Miaoxing\Plugin\BaseController
      */
     public function editAction($req)
     {
-        $user = $this->curUser;
+        $user = User::cur();
 
         $enableMobileVerify = wei()->user->enableMobileVerify;
         $isMobileVerified = $user->mobileVerifiedAt;
@@ -138,7 +139,7 @@ class UsersController extends \Miaoxing\Plugin\BaseController
      */
     public function regAction($req)
     {
-        $ret = $this->curUser->updateData($req);
+        $ret = User::updateData($req);
 
         return $ret;
     }
@@ -161,7 +162,7 @@ class UsersController extends \Miaoxing\Plugin\BaseController
                 }
             }
 
-            $ret = $this->curUser->login($req);
+            $ret = User::login($req);
 
             return $this->ret($ret);
         } else {
@@ -182,7 +183,7 @@ class UsersController extends \Miaoxing\Plugin\BaseController
      */
     public function logoutAction($req)
     {
-        wei()->curUser->logout();
+        User::logout();
 
         $next = $req('next', $this->request->getReferer());
 

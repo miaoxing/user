@@ -2,6 +2,7 @@
 
 namespace Miaoxing\User\Controller\Admin;
 
+use Miaoxing\Plugin\Service\User;
 use Miaoxing\Plugin\Service\User as UserService;
 
 class UserController extends \Miaoxing\Plugin\BaseController
@@ -178,9 +179,9 @@ class UserController extends \Miaoxing\Plugin\BaseController
 
     public function destroyAction($req)
     {
-        $user = wei()->user()->findOneById($req['id']);
+        $user = wei()->userModel()->findOrFail($req['id']);
 
-        if ($user['id'] == $this->curUser['id']) {
+        if ($user->id === User::id()) {
             return $this->err('不能删除自己');
         }
 
@@ -370,7 +371,7 @@ class UserController extends \Miaoxing\Plugin\BaseController
      */
     public function keepLoginAction()
     {
-        if (wei()->curUser->isLogin()) {
+        if (User::isLogin()) {
             return $this->suc();
         } else {
             return $this->err('未登录');

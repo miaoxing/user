@@ -101,7 +101,7 @@ class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
      */
     public function testRegisterByEmail($req, $ret)
     {
-        wei()->curUser->logout();
+        User::logout();
 
         $actualRet = wei()->tester()
             ->controller('users')
@@ -180,7 +180,7 @@ class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
      */
     public function testRegisterByMobile($req, $ret)
     {
-        wei()->curUser->logout();
+        User::logout();
 
         wei()->verifyCode->session['verifyCode'] = [
             'code' => '123456',
@@ -225,7 +225,7 @@ class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
      */
     public function testNotLoginPages($page)
     {
-        wei()->curUser->loginById(1);
+        User::loginById(1);
         wei()->response->setStatusCode(200);
 
         wei()->tester()
@@ -290,7 +290,7 @@ class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
      */
     public function testUserLogin(array $req, array $ret)
     {
-        wei()->curUser->logout();
+        User::logout();
 
         $actualRet = wei()->tester()
             ->controller('users')

@@ -3,6 +3,7 @@
 namespace Miaoxing\User\Controller;
 
 use Miaoxing\Plugin\BaseController;
+use Miaoxing\Plugin\Service\User;
 use Miaoxing\User\Mailer\Register;
 use Miaoxing\User\Middleware\CheckNotLogin;
 use Miaoxing\User\Middleware\CheckNotVerified;
@@ -139,7 +140,7 @@ class RegistrationController extends BaseController
         wei()->event->trigger('postAdminRegister', [$user]);
 
         // 4. 登录用户
-        $loginRet = wei()->curUser->loginById($user['id']);
+        $loginRet = User::loginById($user['id']);
         if ($loginRet['code'] !== 1) {
             return $loginRet;
         }
@@ -176,7 +177,7 @@ class RegistrationController extends BaseController
     public function resendEmailAction()
     {
         $ret = wei()->mail->send(Register::class, [
-            'user' => $this->curUser,
+            'user' => User::cur(),
         ]);
 
         return $ret;
@@ -194,7 +195,7 @@ class RegistrationController extends BaseController
             'rules' => [
                 'email' => [
                     'email' => true,
-                    'notEqualTo' => $this->curUser['email'],
+                    'notEqualTo' => User::cur()->email,
                     'notRecordExists' => ['user', 'email'],
                 ],
             ],
@@ -211,12 +212,12 @@ class RegistrationController extends BaseController
             return $this->err($validator->getFirstMessage());
         }
 
-        $this->curUser->save([
+        User::cur()->save([
             'email' => $req['email'],
         ]);
 
         $ret = wei()->mail->send(Register::class, [
-            'user' => $this->curUser,
+            'user' => User::cur(),
         ]);
 
         return $ret;

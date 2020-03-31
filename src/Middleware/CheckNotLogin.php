@@ -7,6 +7,8 @@ use Wei\RetTrait;
 
 /**
  * 如果用户已登录,跳转到指定地址
+ *
+ * @mixin \UserMixin
  */
 class CheckNotLogin extends BaseMiddleware
 {
@@ -19,7 +21,7 @@ class CheckNotLogin extends BaseMiddleware
      */
     public function __invoke($next)
     {
-        if (!wei()->curUser->isLogin()) {
+        if (!$this->user->isLogin()) {
             return $next();
         }
 

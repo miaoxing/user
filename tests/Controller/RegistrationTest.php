@@ -2,6 +2,7 @@
 
 namespace MiaoxingTest\User\Controller;
 
+use Miaoxing\Plugin\Service\User;
 use Miaoxing\Plugin\Test\BaseControllerTestCase;
 use Miaoxing\User\Mailer\Register;
 
@@ -34,7 +35,7 @@ class RegistrationTest extends BaseControllerTestCase
         ]);
 
         $this->step('登录用户');
-        wei()->curUser->loginByRecord($user);
+        User::loginByRecord($user);
 
         $this->step('访问修改邮箱页面');
         $res = wei()->tester()
@@ -51,7 +52,7 @@ class RegistrationTest extends BaseControllerTestCase
         $mail->expects($this->once())
             ->method('send')
             ->with(Register::class, [
-                'user' => wei()->curUser,
+                'user' => User::cur(),
             ])
             ->willReturn([
                 'code' => 1,
@@ -88,14 +89,14 @@ class RegistrationTest extends BaseControllerTestCase
         ]);
 
         $this->step('登录用户');
-        wei()->curUser->loginByRecord($user);
+        User::loginByRecord($user);
 
         $this->step('预期会发送新邮件');
         $mail = $this->getServiceMock('mail');
         $mail->expects($this->once())
             ->method('send')
             ->with(Register::class, [
-                'user' => wei()->curUser,
+                'user' => User::cur(),
             ])
             ->willReturn([
                 'code' => 1,
@@ -124,7 +125,7 @@ class RegistrationTest extends BaseControllerTestCase
         ]);
 
         $this->step('登录用户');
-        wei()->curUser->loginByRecord($user);
+        User::loginByRecord($user);
 
         $this->step('访问修改邮箱页面');
         $res = wei()->tester()
@@ -161,7 +162,7 @@ class RegistrationTest extends BaseControllerTestCase
         ]);
 
         $this->step('登录用户');
-        wei()->curUser->loginByRecord($user);
+        User::loginByRecord($user);
 
         $this->step('访问重发邮件后台');
         $res = wei()->tester()

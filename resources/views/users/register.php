@@ -24,7 +24,7 @@
 
         <div class="col-control">
           <input type="tel" class="js-mobile form-control" id="mobile" name="mobile" placeholder="请输入手机号码"
-                 value="<?= $curUser['mobile'] ?>">
+            value="<?= \Miaoxing\Plugin\Service\User::cur()->mobile ?>">
         </div>
       </div>
 
@@ -38,11 +38,11 @@
           <div class="input-group">
             <input type="tel" class="form-control" id="verifyCode" name="verifyCode" placeholder="请输入验证码"
               maxlength="6">
-                <span class="input-group-append">
-                    <button type="button" class="js-verify-code-send btn btn-outline-primary"
-                            id="getVerifyCode">获取验证码
-                    </button>
-                </span>
+            <span class="input-group-append">
+              <button type="button" class="js-verify-code-send btn btn-outline-primary"
+                id="getVerifyCode">获取验证码
+              </button>
+            </span>
           </div>
         </div>
       </div>

@@ -1,13 +1,6 @@
 <?php
 
 /**
- * @property    Miaoxing\User\Service\CurUserV2 $curUserV2
- * @method      Miaoxing\User\Service\CurUserV2|Miaoxing\User\Service\CurUserV2[] curUserV2()
- */
-class CurUserV2Mixin {
-}
-
-/**
  * @property    Miaoxing\User\Service\Group $group 用户分组
  * @method      Miaoxing\User\Service\Group|Miaoxing\User\Service\Group[] group()
  */
@@ -16,16 +9,9 @@ class GroupMixin {
 
 /**
  * @property    Miaoxing\User\Service\GroupModel $groupModel GroupModel
- * @method      Miaoxing\User\Service\GroupModel|Miaoxing\User\Service\GroupModel[] groupModel()
+ * @method      Miaoxing\User\Service\GroupModel|Miaoxing\User\Service\GroupModel[] groupModel($table = null)
  */
 class GroupModelMixin {
-}
-
-/**
- * @property    Miaoxing\User\Service\UserModelOld $userModelOld
- * @method      Miaoxing\User\Service\UserModelOld|Miaoxing\User\Service\UserModelOld[] userModelOld()
- */
-class UserModelOldMixin {
 }
 
 /**
@@ -55,10 +41,8 @@ class UserVerifyMixin {
 }
 
 /**
- * @mixin CurUserV2Mixin
  * @mixin GroupMixin
  * @mixin GroupModelMixin
- * @mixin UserModelOldMixin
  * @mixin UserPasswordMixin
  * @mixin UserProfileMixin
  * @mixin UserProfileModelMixin
@@ -75,9 +59,6 @@ function wei()
     return new AutoCompletion;
 }
 
-/** @var Miaoxing\User\Service\CurUserV2 $curUserV2 */
-$curUserV2 = wei()->curUserV2;
-
 /** @var Miaoxing\User\Service\Group $group */
 $group = wei()->group;
 
@@ -86,9 +67,6 @@ $group = wei()->groupModel();
 
 /** @var Miaoxing\User\Service\GroupModel|Miaoxing\User\Service\GroupModel[] $groupModels */
 $groups = wei()->groupModel();
-
-/** @var Miaoxing\User\Service\UserModelOld $userModelOld */
-$userModelOld = wei()->userModelOld;
 
 /** @var Miaoxing\User\Service\UserPassword $userPassword */
 $userPassword = wei()->userPassword;

@@ -22,7 +22,7 @@ $view->layout('@admin/admin/layout.php')
         </label>
 
         <div class="col-sm-4">
-          <p class="form-control-plaintext"><?= $e($curUser['email']) ?: '-' ?></p>
+          <p class="form-control-plaintext"><?= $e(\Miaoxing\Plugin\Service\User::cur()->email) ?: '-' ?></p>
         </div>
       </div>
 

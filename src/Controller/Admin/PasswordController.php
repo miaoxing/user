@@ -3,6 +3,7 @@
 namespace Miaoxing\User\Controller\Admin;
 
 use Miaoxing\Plugin\BaseController;
+use Miaoxing\Plugin\Service\User;
 
 class PasswordController extends BaseController
 {
@@ -19,7 +20,7 @@ class PasswordController extends BaseController
 
     public function updateAction($req)
     {
-        $ret = $this->curUser->updatePassword($req);
+        $ret = User::updatePassword($req);
 
         return $ret;
     }

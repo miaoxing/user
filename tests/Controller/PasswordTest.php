@@ -2,6 +2,8 @@
 
 namespace MiaoxingTest\User\Controller;
 
+use Miaoxing\Plugin\Service\User;
+
 class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
 {
     public static function setupBeforeClass()
@@ -21,7 +23,7 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
      */
     public function testPagesAnyTime()
     {
-        wei()->curUser->loginById(1);
+        User::loginById(1);
         wei()->tester()
             ->controller('password')
             ->action('reset')
@@ -30,7 +32,7 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
 
         $this->assertEquals(200, wei()->response->getStatusCode());
 
-        wei()->curUser->logout();
+        User::logout();
         wei()->tester()
             ->controller('password')
             ->action('reset')
@@ -70,7 +72,7 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
      */
     public function testResetByEmail($req, $ret)
     {
-        wei()->curUser->logout();
+        User::logout();
 
         $actualRet = wei()->tester()
             ->controller('password')
@@ -208,7 +210,7 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
      */
     public function testResetByMobile($req, $ret)
     {
-        wei()->curUser->logout();
+        User::logout();
 
         wei()->verifyCode->session['verifyCode'] = [
             'code' => '123456',
@@ -250,7 +252,7 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
      */
     public function testSendMail($req, $ret)
     {
-        wei()->curUser->logout();
+        User::logout();
         $mock = $this->getServiceMock('mail', ['send']);
         $mock->expects($this->once())
             ->method('send')
@@ -273,10 +275,11 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
 
     public function providerForResetReturn()
     {
-        wei()->curUser->loginById(1);
+        User::loginById(1);
         $timestamp = time();
-        $userId = wei()->curUser['id'];
-        $password = wei()->curUser['password'];
+        $user = User::cur();
+        $userId = $user->id;
+        $password = $user->password;
         $nonce = $this->generateNonceStr();
         $sign = md5($userId . $password . $timestamp . $nonce);
 
@@ -327,7 +330,7 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
      */
     public function testResetReturn($req, $ret)
     {
-        wei()->curUser->logout();
+        User::logout();
 
         $actualRet = wei()->tester()
             ->controller('password')

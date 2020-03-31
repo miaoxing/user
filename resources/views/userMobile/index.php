@@ -9,7 +9,7 @@
       </label>
 
       <div class="col-control">
-        <input type="tel" class="js-mobile form-control" id="mobile" name="mobile" value="<?= $curUser['mobile'] ?>"
+        <input type="tel" class="js-mobile form-control" id="mobile" name="mobile" value="<?= \Miaoxing\Plugin\Service\User::cur()->mobile ?>"
           placeholder="请输入手机号码">
       </div>
     </div>
