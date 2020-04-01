@@ -4,7 +4,7 @@ namespace MiaoxingTest\User\Service;
 
 class UserModelTest extends \Miaoxing\Plugin\Test\BaseTestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         wei()->user()->delete();
@@ -24,23 +24,6 @@ class UserModelTest extends \Miaoxing\Plugin\Test\BaseTestCase
             'username' => 'admin-not-enable',
             'enable' => false,
         ]);
-    }
-
-    public function testStatus()
-    {
-        $user = wei()->user();
-
-        $user->setStatus(1, true);
-        $user->setStatus(2, false);
-        $user->setStatus(3, true);
-        $user->setStatus(4, false);
-        $user->save();
-
-        $user->reload();
-        $this->assertTrue($user->isStatus(1));
-        $this->assertFalse($user->isStatus(2));
-        $this->assertTrue($user->isStatus(3));
-        $this->assertFalse($user->isStatus(4));
     }
 
     public function testUpdateGroup()
