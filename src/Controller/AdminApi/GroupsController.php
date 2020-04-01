@@ -2,11 +2,9 @@
 
 namespace Miaoxing\User\Controller\AdminApi;
 
-use Illuminate\Foundation\Auth\User;
 use Miaoxing\Plugin\Service\UserModel;
 use Miaoxing\Services\Crud\CrudTrait;
 use Miaoxing\Plugin\BaseController;
-use Miaoxing\Services\Service\Laravel;
 use Miaoxing\User\Service\GroupModel;
 
 class GroupsController extends BaseController
