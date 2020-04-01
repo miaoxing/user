@@ -11,7 +11,7 @@ class UserTest extends \Miaoxing\Plugin\Test\BaseTestCase
      */
     protected $user;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->wei->remove('curUser');
@@ -35,12 +35,12 @@ class UserTest extends \Miaoxing\Plugin\Test\BaseTestCase
         $this->assertEquals($sql, $query);
     }
 
-    public function testLoginByRecordAndSave()
+    public function testloginByModelAndSave()
     {
         $user = $this->getUser();
         $curUser = wei()->user;
 
-        $ret = $curUser->loginByRecord($user);
+        $ret = $curUser->loginByModel($user);
         $this->assertRetSuc($ret);
 
         $curUser->save(['nickName' => 'nickName2']);
@@ -70,7 +70,7 @@ class UserTest extends \Miaoxing\Plugin\Test\BaseTestCase
         $curUser->logout();
 
         $user = $this->getUser();
-        $curUser->loginByRecord($user);
+        $curUser->loginByModel($user);
         $this->assertEquals('nickName', $curUser['nickName']);
 
         $user->save(['nickName' => 'nickName2']);
@@ -81,7 +81,7 @@ class UserTest extends \Miaoxing\Plugin\Test\BaseTestCase
     {
         $user = $this->getUser();
         $curUser = wei()->user;
-        $curUser->loginByRecord($user);
+        $curUser->loginByModel($user);
 
         $this->assertEquals($user['id'], $curUser['id']);
 
@@ -151,7 +151,7 @@ class UserTest extends \Miaoxing\Plugin\Test\BaseTestCase
     public function testGetId()
     {
         $user = $this->getUser();
-        wei()->user->loginByRecord($user);
+        wei()->user->loginByModel($user);
 
         $this->assertInternalType('int', wei()->user->id);
     }
