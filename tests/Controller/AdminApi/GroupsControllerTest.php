@@ -17,4 +17,15 @@ class GroupsControllerTest extends BaseControllerTestCase
         $group = GroupModel::desc('id')->first();
         $this->assertSame($name, $group->name);
     }
+
+    public function testDestroyAction()
+    {
+        $group = GroupModel::save();
+
+        $ret = $this->visitCurPage(['id' => $group->id])->login()->json()->response();
+        $this->assertRetSuc($ret);
+
+        $group2 = GroupModel::find($group->id);
+        $this->assertNull($group2);
+    }
 }

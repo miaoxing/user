@@ -38,15 +38,11 @@ class GroupsController extends BaseController
             return $ret;
         }
 
-        $group = GroupModel::findOrInit($req['id']);
-        $group->name = $req['name'];
-        if ($req['sort']) {
-            $group->sort = $req['sort'];
-        }
+        $group = GroupModel::findOrInit($req['id'])->fromArray($req);
 
         $ret = wei()->event->until('groupUpdate', [$group]);
         if ($ret) {
-            return $this->ret($ret);
+            return $ret;
         }
 
         $group->save($req);
@@ -57,14 +53,15 @@ class GroupsController extends BaseController
     public function destroyAction($req)
     {
         $group = GroupModel::findOrFail($req['id']);
+
         $ret = wei()->event->until('groupDestroy', [$group]);
         if ($ret) {
-            return $this->ret($ret);
+            return $ret;
         }
 
         // 本地删除
         $group->destroy();
-        UserModel::where('groupId', $req['id'])->update('groupId = 0');
+        UserModel::where('group_id', $req['id'])->update('group_id = 0');
 
         return $this->suc();
     }
