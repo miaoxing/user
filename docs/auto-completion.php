@@ -15,6 +15,13 @@ class GroupModelMixin {
 }
 
 /**
+ * @property    Miaoxing\User\Service\UserModel $userModel
+ * @method      Miaoxing\User\Service\UserModel|Miaoxing\User\Service\UserModel[] userModel($table = null)
+ */
+class UserModelMixin {
+}
+
+/**
  * @property    Miaoxing\User\Service\UserPassword $userPassword
  */
 class UserPasswordMixin {
@@ -43,6 +50,7 @@ class UserVerifyMixin {
 /**
  * @mixin GroupMixin
  * @mixin GroupModelMixin
+ * @mixin UserModelMixin
  * @mixin UserPasswordMixin
  * @mixin UserProfileMixin
  * @mixin UserProfileModelMixin
@@ -67,6 +75,12 @@ $group = wei()->groupModel();
 
 /** @var Miaoxing\User\Service\GroupModel|Miaoxing\User\Service\GroupModel[] $groupModels */
 $groups = wei()->groupModel();
+
+/** @var Miaoxing\User\Service\UserModel $userModel */
+$user = wei()->userModel();
+
+/** @var Miaoxing\User\Service\UserModel|Miaoxing\User\Service\UserModel[] $userModels */
+$users = wei()->userModel();
 
 /** @var Miaoxing\User\Service\UserPassword $userPassword */
 $userPassword = wei()->userPassword;

@@ -5,22 +5,16 @@ namespace Miaoxing\User\Metadata;
 /**
  * GroupTrait
  *
- * @property int $id 主键
- * @property int $parentId
- * @property int $level
- * @property int $wechatId 微信中的分组ID
- * @property int $wechatParentId 上级wechatId，在企业号为父部门Id
+ * @property int $id
  * @property string $name
- * @property int $wechatCount 微信分组用户数
  * @property int $sort
  * @property int $status
- * @property bool $isCustomerService
- * @property string $createTime
- * @property int $createUser
- * @property string $updateTime
- * @property int $updateUser
- * @property string $deleteTime
- * @property int $deleteUser
+ * @property string $createdAt
+ * @property string $updatedAt
+ * @property int $createdBy
+ * @property int $updatedBy
+ * @property string $deletedAt
+ * @property int $deletedBy
  */
 trait GroupTrait
 {
@@ -30,20 +24,14 @@ trait GroupTrait
      */
     protected $casts = [
         'id' => 'int',
-        'parentId' => 'int',
-        'level' => 'int',
-        'wechatId' => 'int',
-        'wechatParentId' => 'int',
         'name' => 'string',
-        'wechatCount' => 'int',
         'sort' => 'int',
         'status' => 'int',
-        'isCustomerService' => 'bool',
-        'createTime' => 'datetime',
-        'createUser' => 'int',
-        'updateTime' => 'datetime',
-        'updateUser' => 'int',
-        'deleteTime' => 'datetime',
-        'deleteUser' => 'int',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'created_by' => 'int',
+        'updated_by' => 'int',
+        'deleted_at' => 'datetime',
+        'deleted_by' => 'int',
     ];
 }

@@ -5,51 +5,44 @@ namespace Miaoxing\User\Metadata;
 /**
  * UserTrait
  *
- * @property int $id 主键
- * @property string $outId 外部编号
- * @property int $appUserId app应用的用户编号
+ * @property int $id
+ * @property int $appId
+ * @property string $outId
  * @property string $wechatOpenId 微信的OpenID
  * @property string $wechatUnionId
- * @property string $wechatUserId 微信UserId
- * @property int $status 二进制状态位，废弃
  * @property bool $admin
  * @property string $nickName
  * @property string $remarkName
  * @property string $username
- * @property string $name 姓名
+ * @property string $name
  * @property string $email
  * @property string $mobile
- * @property string $phone 手机号码
+ * @property string $mobileVerifiedAt 手机校验时间
+ * @property string $phone
  * @property string $salt
  * @property string $password
- * @property bool $gender
+ * @property int $sex
  * @property string $country
  * @property string $province
  * @property string $city
  * @property string $area
  * @property string $address
  * @property string $signature
- * @property string $headImg
+ * @property string $avatar
  * @property int $groupId 用户组
- * @property array $department 部门
- * @property string $position 职位
- * @property array $extAttr 额外参数
  * @property float $money 账户余额
  * @property float $rechargeMoney 充值账户余额
  * @property int $score 积分
- * @property string $regTime 注册时间
- * @property string $lastLoginTime
- * @property string $unsubscribeTime 取关时间
- * @property bool $isValid
+ * @property string $lastLoginAt
+ * @property string $unsubscribedAt 取关时间
+ * @property bool $isSubscribed
  * @property bool $enable 是否启用
- * @property int $shopId 所属门店
  * @property string $source 用户来源
- * @property string $lastPaidTime
- * @property string $mobileVerifiedAt 手机校验时间
- * @property int $createUser
- * @property string $createTime 用户创建时间
- * @property int $updateUser
- * @property string $updateTime
+ * @property string $createdAt
+ * @property string $updatedAt
+ * @property int $createdBy
+ * @property int $updatedBy
+ * @property  $displayName
  */
 trait UserTrait
 {
@@ -59,49 +52,41 @@ trait UserTrait
      */
     protected $casts = [
         'id' => 'int',
-        'outId' => 'string',
-        'appUserId' => 'int',
-        'wechatOpenId' => 'string',
-        'wechatUnionId' => 'string',
-        'wechatUserId' => 'string',
-        'status' => 'int',
+        'app_id' => 'int',
+        'out_id' => 'string',
+        'wechat_open_id' => 'string',
+        'wechat_union_id' => 'string',
         'admin' => 'bool',
-        'nickName' => 'string',
-        'remarkName' => 'string',
+        'nick_name' => 'string',
+        'remark_name' => 'string',
         'username' => 'string',
         'name' => 'string',
         'email' => 'string',
         'mobile' => 'string',
+        'mobile_verified_at' => 'datetime',
         'phone' => 'string',
         'salt' => 'string',
         'password' => 'string',
-        'gender' => 'int',
+        'sex' => 'int',
         'country' => 'string',
         'province' => 'string',
         'city' => 'string',
         'area' => 'string',
         'address' => 'string',
         'signature' => 'string',
-        'headImg' => 'string',
-        'groupId' => 'int',
-        'department' => 'array',
-        'position' => 'string',
-        'extAttr' => 'array',
+        'avatar' => 'string',
+        'group_id' => 'int',
         'money' => 'float',
-        'rechargeMoney' => 'float',
+        'recharge_money' => 'float',
         'score' => 'int',
-        'regTime' => 'datetime',
-        'lastLoginTime' => 'datetime',
-        'unsubscribeTime' => 'datetime',
-        'isValid' => 'bool',
+        'last_login_at' => 'datetime',
+        'unsubscribed_at' => 'datetime',
+        'is_subscribed' => 'bool',
         'enable' => 'bool',
-        'shopId' => 'int',
         'source' => 'string',
-        'lastPaidTime' => 'datetime',
-        'mobileVerifiedAt' => 'datetime',
-        'createUser' => 'int',
-        'createTime' => 'datetime',
-        'updateUser' => 'int',
-        'updateTime' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'created_by' => 'int',
+        'updated_by' => 'int',
     ];
 }
