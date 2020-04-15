@@ -2,7 +2,7 @@
 
 namespace Miaoxing\User\Controller\AdminApi;
 
-use Miaoxing\Plugin\Service\Event;
+use Wei\Event;
 use Miaoxing\Plugin\Service\UserModel;
 use Miaoxing\Services\Crud\CrudTrait;
 use Miaoxing\Plugin\BaseController;
@@ -41,7 +41,7 @@ class GroupsController extends BaseController
 
         $group = GroupModel::findOrInit($req['id'])->fromArray($req);
 
-        $ret = Event::trigUtil('groupUpdate', [$group]);
+        $ret = Event::until('groupUpdate', [$group]);
         if ($ret) {
             return $ret;
         }
@@ -55,7 +55,7 @@ class GroupsController extends BaseController
     {
         $group = GroupModel::findOrFail($req['id']);
 
-        $ret = Event::trigUtil('groupDestroy', [$group]);
+        $ret = Event::until('groupDestroy', [$group]);
         if ($ret) {
             return $ret;
         }
