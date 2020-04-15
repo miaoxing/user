@@ -273,7 +273,7 @@ class UserModel extends BaseUserModel
      *
      * @param string $mobile
      * @return array
-     * @api
+     * @svc
      */
     protected function checkMobile(string $mobile)
     {
@@ -297,7 +297,7 @@ class UserModel extends BaseUserModel
      *
      * @param array|\ArrayAccess $data
      * @return array
-     * @api
+     * @svc
      */
     protected function bindMobile($data)
     {
@@ -329,7 +329,7 @@ class UserModel extends BaseUserModel
      *
      * @param array|\ArrayAccess $data
      * @return array
-     * @api
+     * @svc
      */
     protected function updateData($data)
     {
@@ -384,7 +384,7 @@ class UserModel extends BaseUserModel
     /**
      * @param array|\ArrayAccess $req
      * @return array
-     * @api
+     * @svc
      */
     protected function updatePassword($req)
     {
