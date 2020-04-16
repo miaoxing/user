@@ -2,6 +2,7 @@
 
 namespace Miaoxing\User\Controller\AdminApi;
 
+use Miaoxing\Services\Service\V;
 use Wei\Event;
 use Miaoxing\Plugin\Service\UserModel;
 use Miaoxing\Services\Crud\CrudTrait;
@@ -32,8 +33,7 @@ class GroupsController extends BaseController
 
     public function updateAction($req)
     {
-        $ret = wei()->v()
-            ->key('name', '名称')
+        $ret = V::key('name', '名称')
             ->check($req);
         if ($ret['code'] !== 1) {
             return $ret;
