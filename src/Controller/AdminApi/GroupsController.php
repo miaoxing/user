@@ -2,6 +2,7 @@
 
 namespace Miaoxing\User\Controller\AdminApi;
 
+use Miaoxing\Plugin\Service\Plugin;
 use Miaoxing\Services\Service\V;
 use Wei\Event;
 use Miaoxing\Plugin\Service\UserModel;
@@ -27,7 +28,7 @@ class GroupsController extends BaseController
     public function metadataAction()
     {
         return $this->suc([
-            'hasWechatGroup' => $this->plugin->isInstalled('wechat-group'),
+            'hasWechatGroup' => Plugin::isInstalled('wechat-group'),
         ]);
     }
 
