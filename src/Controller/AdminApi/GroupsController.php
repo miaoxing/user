@@ -27,7 +27,7 @@ class GroupsController extends BaseController
 
     public function metadataAction()
     {
-        return $this->suc([
+        return suc([
             'hasWechatGroup' => Plugin::isInstalled('wechat-group'),
         ]);
     }
@@ -49,7 +49,7 @@ class GroupsController extends BaseController
 
         $group->save($req);
 
-        return $this->suc();
+        return suc();
     }
 
     public function destroyAction($req)
@@ -65,6 +65,6 @@ class GroupsController extends BaseController
         $group->destroy();
         UserModel::where('groupId', $req['id'])->update('groupId', 0);
 
-        return $this->suc();
+        return suc();
     }
 }
