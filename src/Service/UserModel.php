@@ -47,16 +47,6 @@ class UserModel extends BaseUserModel
         return $this->hasOne(wei()->groupModel(), 'id', 'groupId');
     }
 
-    /**
-     * Record: 判断用户是否为超级管理员
-     *
-     * @return bool
-     */
-    public function isSuperAdmin()
-    {
-        return $this->id === 1;
-    }
-
     public function getBackendDisplayName()
     {
         if ($this['name'] && $this['nickName']) {
