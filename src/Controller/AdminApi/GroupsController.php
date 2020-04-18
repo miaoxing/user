@@ -2,6 +2,8 @@
 
 namespace Miaoxing\User\Controller\AdminApi;
 
+use Miaoxing\Plugin\Ret;
+use Miaoxing\Plugin\RetException;
 use Miaoxing\Plugin\Service\Plugin;
 use Miaoxing\Services\Service\V;
 use Wei\Event;
@@ -32,20 +34,20 @@ class GroupsController extends BaseController
         ]);
     }
 
+    /**
+     * @param $req
+     * @return Ret
+     * @throws RetException
+     */
     public function updateAction($req)
     {
-        $ret = V::key('name', '名称')
-            ->check($req);
-        if ($ret['code'] !== 1) {
-            return $ret;
-        }
+        $ret = V::key('name', '名称')->check($req);
+        $this->tie($ret);
 
         $group = GroupModel::findOrInit($req['id'])->fromArray($req);
 
         $ret = Event::until('groupUpdate', [$group]);
-        if ($ret) {
-            return $ret;
-        }
+        $this->tie($ret);
 
         $group->save($req);
 
