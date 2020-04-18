@@ -2,7 +2,7 @@
 
 namespace Miaoxing\User\Controller\AdminApi;
 
-use Miaoxing\Plugin\Ret;
+use Miaoxing\Plugin\Service\Ret;
 use Miaoxing\Plugin\RetException;
 use Miaoxing\Plugin\Service\Plugin;
 use Miaoxing\Services\Service\V;
