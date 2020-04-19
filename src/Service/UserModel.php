@@ -372,67 +372,6 @@ class UserModel extends BaseUserModel
     }
 
     /**
-     * @param array|\ArrayAccess $req
-     * @return array
-     * @svc
-     */
-    protected function updatePassword($req)
-    {
-        if (wei()->user->enablePinCode) {
-            $rule = [
-                'digit' => true,
-                'length' => 6,
-            ];
-        } else {
-            $rule = [
-                'minLength' => 6,
-            ];
-        }
-
-        // 1. 校验
-        $validator = wei()->validate([
-            'data' => $req,
-            'rules' => [
-                'oldPassword' => [
-                ],
-                'password' => $rule,
-                'passwordConfirm' => [
-                    'equalTo' => $req['password'],
-                ],
-            ],
-            'names' => [
-                'oldPassword' => '旧密码',
-                'password' => '新密码',
-                'passwordConfirm' => '重复密码',
-            ],
-            'messages' => [
-                'passwordConfirm' => [
-                    'equalTo' => '两次输入的密码不相等',
-                ],
-            ],
-        ]);
-        if (!$validator->isValid()) {
-            return $this->err($validator->getFirstMessage());
-        }
-
-        // 2. 验证旧密码
-        if ($this['password'] && $this['salt']) {
-            $isSuc = $this->verifyPassword($req['oldPassword']);
-            if (!$isSuc) {
-                return $this->err('旧密码输入错误！请重新输入');
-            }
-        }
-
-        // 3. 更新新密码
-        $this->setPlainPassword($req['password']);
-        $this->save();
-
-        User::logout();
-
-        return $this->suc();
-    }
-
-    /**
      * QueryBuilder: 查询手机号码验证过
      *
      * @return $this
