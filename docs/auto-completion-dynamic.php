@@ -48,6 +48,15 @@ class GroupModel extends \Miaoxing\Plugin\Service\Model
     public function withDeleted()
     {
     }
+
+    /**
+     * @param array|string $columns
+     * @return $this
+     * @see GroupModel::like
+     */
+    public function like($columns)
+    {
+    }
 }
 
 class UserModel extends \Miaoxing\Plugin\Service\UserModel

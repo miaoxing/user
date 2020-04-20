@@ -2,6 +2,7 @@
 
 namespace Miaoxing\User\Service;
 
+use Miaoxing\Plugin\Model\ReqQueryTrait;
 use Miaoxing\Plugin\Model\SoftDeleteTrait;
 use Miaoxing\Plugin\Service\Model;
 use Miaoxing\User\Metadata\GroupTrait;
@@ -15,6 +16,7 @@ class GroupModel extends Model
 {
     use GroupTrait;
     use SoftDeleteTrait;
+    use ReqQueryTrait;
 
     protected $data = [
         'sort' => 50,
