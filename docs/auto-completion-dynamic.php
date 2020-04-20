@@ -84,15 +84,6 @@ class UserModel extends \Miaoxing\Plugin\Service\UserModel
     public function updateData($data)
     {
     }
-
-    /**
-     * @param array|\ArrayAccess $req
-     * @return array
-     * @see UserModel::updatePassword
-     */
-    public function updatePassword($req)
-    {
-    }
 }
 
 class UserPassword extends \Miaoxing\Plugin\BaseService
