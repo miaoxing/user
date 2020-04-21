@@ -13,7 +13,7 @@ export default class extends React.Component {
         </PageActions>
 
         <AForm>
-          <AFormItem label="名称" name="name"/>
+          <AFormItem label="名称" name="name" rules={[{required: true}]}/>
           <AFormItem label="顺序" name="sort">
             <InputNumber className="w-100"/>
           </AFormItem>
