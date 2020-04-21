@@ -1,7 +1,8 @@
 import React from 'react';
 import {CListBtn} from "@miaoxing/clink";
-import {Form, FormItem, FormAction} from "@miaoxing/form";
 import {Page, PageActions} from "@miaoxing/page";
+import {AForm, AFormItem, AFormAction} from '@miaoxing/form'
+import {InputNumber} from 'antd';
 
 export default class extends React.Component {
   render() {
@@ -11,13 +12,13 @@ export default class extends React.Component {
           <CListBtn/>
         </PageActions>
 
-        <Form>
-          <FormItem label="名称" name="name" required/>
-
-          <FormItem label="顺序" name="sort" type="number"/>
-
-          <FormAction/>
-        </Form>
+        <AForm>
+          <AFormItem label="名称" name="name"/>
+          <AFormItem label="顺序" name="sort">
+            <InputNumber className="w-100"/>
+          </AFormItem>
+          <AFormAction/>
+        </AForm>
       </Page>
     );
   }
