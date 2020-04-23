@@ -4,7 +4,7 @@ import {CDeleteLink, CEditLink, CNewBtn} from "@miaoxing/clink";
 import {Button} from "react-bootstrap";
 import {Page, PageActions} from "@miaoxing/page";
 import {LinkActions} from "@miaoxing/actions";
-import Table from "antdx-table";
+import {Table} from "@miaoxing/table";
 import $ from 'miaoxing';
 import api from '@miaoxing/api';
 
