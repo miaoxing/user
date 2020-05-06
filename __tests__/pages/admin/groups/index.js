@@ -2,20 +2,11 @@ import "core-js/stable";
 import "regenerator-runtime/runtime";
 
 import React from 'react';
-import {mount} from 'enzyme';
 import {MemoryRouter} from 'react-router';
 import $ from 'miaoxing';
 import Index from '../../../../resources/pages/admin/groups/Index';
-import {act} from 'react-dom/test-utils';
 import app from '@miaoxing/app';
-
-// https://github.com/enzymejs/enzyme/issues/2073#issuecomment-565736674
-const waitForComponentToPaint = async (wrapper) => {
-  await act(async () => {
-    await new Promise(resolve => setTimeout(resolve, 0));
-    wrapper.update();
-  });
-};
+import {render, waitForElementToBeRemoved} from '@testing-library/react';
 
 function createPromise() {
   let res, rej;
@@ -63,19 +54,25 @@ describe('admin/groups', () => {
       }))
       .mockImplementationOnce(() => promise3.resolve({
         code: 1,
-        data: []
+        data: [
+          {
+            id: 1,
+            name: '测试'
+          }
+        ]
       }));
 
-    const wrapper = mount(<MemoryRouter>
+    const {container} = render(<MemoryRouter>
       <Index/>
     </MemoryRouter>);
 
-    waitForComponentToPaint(wrapper);
     await Promise.all([promise, promise2, promise3]);
 
-    expect(wrapper.find('a.btn-success').text()).toBe('添加');
+    expect(container.querySelector('.btn-success').innerHTML).toBe('添加');
 
     expect($.get).toHaveBeenCalledTimes(3);
     expect($.get).toMatchSnapshot();
+
+    await waitForElementToBeRemoved(container.querySelector('.ant-empty'));
   });
 });
