@@ -2,13 +2,13 @@ import "core-js/stable";
 import "regenerator-runtime/runtime";
 
 import React from 'react';
-import {MemoryRouter} from 'react-router';
 import $ from 'miaoxing';
 import Form from '../../../../resources/pages/admin/groups/New';
 import app from '@miaoxing/app';
 import {render, screen, fireEvent} from '@testing-library/react';
-import {getByText, waitFor} from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect'
+import {createMemoryHistory} from "history";
+import {Router} from "react-router";
 
 // https://jestjs.io/docs/en/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom
 Object.defineProperty(window, 'matchMedia', {
@@ -80,17 +80,24 @@ describe('admin/groups', () => {
       .mockImplementationOnce(() => promise3.resolve({
         code: 1,
       }));
-    $.ret = jest.fn(function () {
+    $.ret = jest.fn(function (ret) {
       return {
-        suc: () => {
-
+        suc: (fn) => {
+          if (ret.code === 1) {
+            fn();
+          }
         }
       }
     });
 
-    const {container, getByLabelText} = render(<MemoryRouter>
+    const history = createMemoryHistory({
+      initialEntries: [
+        '/admin/groups/new'
+      ]
+    });
+    const {getByLabelText} = render(<Router history={history}>
       <Form/>
-    </MemoryRouter>);
+    </Router>);
 
     await Promise.all([promise, promise2]);
     expect($.get).toHaveBeenCalledTimes(2);
@@ -108,12 +115,9 @@ describe('admin/groups', () => {
     expect($.post).toHaveBeenCalledTimes(1);
     expect($.post).toMatchSnapshot();
 
-    // 返回操作成功
-    // NOTE: 无效
-    // await waitFor(() => {
-    //   expect(screen.getByText('操作成功')).toBeInTheDocument()
-    // });
+    // 操作成功后跳转到列表页
     expect($.ret).toHaveBeenCalledTimes(1);
     expect($.ret).toHaveBeenCalledWith(await promise3);
+    expect(history.location.pathname).toBe('/admin/groups');
   });
 });
