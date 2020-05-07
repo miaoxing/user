@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`admin/groups form 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      "/admin-api/groups/new",
+    ],
+    Array [
+      "/admin-api/admin-page/breadcrumb",
+      Object {
+        "params": Object {
+          "act": "new",
+          "ctrl": "admin/groups",
+        },
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
+  ],
+}
+`;
+
+exports[`admin/groups form 2`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "data": Object {
+          "name": "测试分组",
+          "sort": 50,
+        },
+        "loading": true,
+        "url": "/admin-api/groups/create",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
+  ],
+}
+`;
