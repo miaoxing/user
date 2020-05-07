@@ -80,15 +80,6 @@ describe('admin/groups', () => {
       .mockImplementationOnce(() => promise3.resolve({
         code: 1,
       }));
-    $.ret = jest.fn(function (ret) {
-      return {
-        suc: (fn) => {
-          if (ret.code === 1) {
-            fn();
-          }
-        }
-      }
-    });
 
     const history = createMemoryHistory({
       initialEntries: [
@@ -116,8 +107,6 @@ describe('admin/groups', () => {
     expect($.post).toMatchSnapshot();
 
     // 操作成功后跳转到列表页
-    expect($.ret).toHaveBeenCalledTimes(1);
-    expect($.ret).toHaveBeenCalledWith(await promise3);
     expect(history.location.pathname).toBe('/admin/groups');
   });
 });

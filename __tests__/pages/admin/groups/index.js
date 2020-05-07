@@ -111,15 +111,6 @@ describe('admin/groups', () => {
     $.post = jest.fn().mockImplementationOnce(() => Promise.resolve({
       code: 1,
     }));
-    $.ret = jest.fn(function (ret) {
-      return {
-        suc: (fn) => {
-          if (ret.code === 1) {
-            fn();
-          }
-        }
-      }
-    });
     $.get.mockImplementationOnce(() => Promise.resolve({
       code: 1,
       data: []
@@ -136,6 +127,5 @@ describe('admin/groups', () => {
 
     expect($.get).toMatchSnapshot();
     expect($.post).toMatchSnapshot();
-    expect($.ret).toMatchSnapshot();
   });
 });
