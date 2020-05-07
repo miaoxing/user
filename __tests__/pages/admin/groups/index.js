@@ -6,7 +6,7 @@ import {MemoryRouter} from 'react-router';
 import $ from 'miaoxing';
 import Index from '../../../../resources/pages/admin/groups/Index';
 import app from '@miaoxing/app';
-import {render, waitForElementToBeRemoved} from '@testing-library/react';
+import {render, waitForElementToBeRemoved, fireEvent} from '@testing-library/react';
 
 function createPromise() {
   let res, rej;
@@ -74,5 +74,68 @@ describe('admin/groups', () => {
     expect($.get).toMatchSnapshot();
 
     await waitForElementToBeRemoved(container.querySelector('.ant-empty'));
+  });
+
+  test('delete', async () => {
+    // Arrange
+    $.get = jest.fn()
+      .mockImplementationOnce(() => Promise.resolve({
+        code: 1,
+        data: [],
+      }))
+      .mockImplementationOnce(() => Promise.resolve({
+        code: 1
+      }))
+      .mockImplementationOnce(() => Promise.resolve({
+        code: 1,
+        data: [
+          {
+            id: 1,
+            name: '测试'
+          }
+        ]
+      }));
+
+    // Act 加载页面，可以看到删除按钮
+    const {findByText} = render(<MemoryRouter>
+      <Index/>
+    </MemoryRouter>);
+
+    // Assert
+    const link = await findByText('删除');
+
+    // Arrange
+    $.confirm = jest.fn().mockImplementationOnce((message, fn) => {
+      return fn(true);
+    });
+    $.post = jest.fn().mockImplementationOnce(() => Promise.resolve({
+      code: 1,
+    }));
+    $.ret = jest.fn(function (ret) {
+      return {
+        suc: (fn) => {
+          if (ret.code === 1) {
+            fn();
+          }
+        }
+      }
+    });
+    $.get.mockImplementationOnce(() => Promise.resolve({
+      code: 1,
+      data: []
+    }));
+
+    // Act 点击删除会有弹窗确认
+    fireEvent.click(link);
+
+    // Assert
+    expect($.confirm).toBeCalledTimes(1);
+
+    // Act Assert 等待刷新，记录不见
+    await waitForElementToBeRemoved(link);
+
+    expect($.get).toMatchSnapshot();
+    expect($.post).toMatchSnapshot();
+    expect($.ret).toMatchSnapshot();
   });
 });

@@ -1,5 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`admin/groups delete 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      "/admin-api/admin-page/breadcrumb",
+      Object {
+        "params": Object {
+          "act": "",
+          "ctrl": "admin/groups",
+        },
+      },
+    ],
+    Array [
+      "/admin-api/groups/metadata",
+      Object {
+        "loading": true,
+      },
+    ],
+    Array [
+      "/admin-api/groups/?page=1&rows=10",
+    ],
+    Array [
+      "/admin-api/groups/?page=1&rows=10",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": Promise {},
+    },
+    Object {
+      "type": "return",
+      "value": Promise {},
+    },
+    Object {
+      "type": "return",
+      "value": Promise {},
+    },
+    Object {
+      "type": "return",
+      "value": Promise {},
+    },
+  ],
+}
+`;
+
+exports[`admin/groups delete 2`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "dataType": "json",
+        "loading": true,
+        "url": "/admin-api/groups/1/destroy",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": Promise {},
+    },
+  ],
+}
+`;
+
+exports[`admin/groups delete 3`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "code": 1,
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": Object {
+        "suc": [Function],
+      },
+    },
+  ],
+}
+`;
+
 exports[`admin/groups index 1`] = `
 [MockFunction] {
   "calls": Array [
