@@ -1,12 +1,11 @@
 import React from "react";
-import {Table, TableProvider, TableDeleteLink} from "@miaoxing/table";
+import {Table, TableProvider, CTableDeleteLink} from "@miaoxing/table";
 import {CEditLink, CNewBtn} from "@miaoxing/clink";
 import {Button} from "react-bootstrap";
 import {Page, PageActions} from "@miaoxing/page";
 import {LinkActions} from "@miaoxing/actions";
 import $ from 'miaoxing';
 import api from '@miaoxing/api';
-import curUrl from '@miaoxing/cur-url';
 
 export default class extends React.Component {
   state = {};
@@ -58,7 +57,7 @@ export default class extends React.Component {
                 render: (id) => (
                   <LinkActions>
                     <CEditLink id={id}/>
-                    <TableDeleteLink href={curUrl.apiDestroy(id)}/>
+                    <CTableDeleteLink id={id}/>
                   </LinkActions>
                 )
               },
