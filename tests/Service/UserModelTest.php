@@ -32,7 +32,7 @@ class UserModelTest extends \Miaoxing\Plugin\Test\BaseTestCase
         $user = UserModel::new();
         $this->assertFalse($user->isAdmin());
 
-        $user->admin = true;
+        $user->isAdmin = true;
         $this->assertTrue($user->isAdmin());
     }
 

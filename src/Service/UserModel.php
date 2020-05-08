@@ -525,7 +525,7 @@ class UserModel extends BaseUserModel
      */
     public function isAdmin()
     {
-        return (bool) $this->admin;
+        return (bool) $this->isAdmin;
     }
 
     /**
