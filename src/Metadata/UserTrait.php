@@ -19,7 +19,6 @@ namespace Miaoxing\User\Metadata;
  * @property string $mobile
  * @property string $mobileVerifiedAt 手机校验时间
  * @property string $phone
- * @property string $salt
  * @property string $password
  * @property int $sex
  * @property string $country
@@ -65,7 +64,6 @@ trait UserTrait
         'mobile' => 'string',
         'mobile_verified_at' => 'datetime',
         'phone' => 'string',
-        'salt' => 'string',
         'password' => 'string',
         'sex' => 'int',
         'country' => 'string',
