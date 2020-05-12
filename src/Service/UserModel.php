@@ -2,6 +2,7 @@
 
 namespace Miaoxing\User\Service;
 
+use Miaoxing\Plugin\Model\HasAppIdTrait;
 use Miaoxing\Plugin\Service\UserModel as BaseUserModel;
 
 /**
@@ -9,6 +10,8 @@ use Miaoxing\Plugin\Service\UserModel as BaseUserModel;
  */
 class UserModel extends BaseUserModel
 {
+    use HasAppIdTrait;
+
     /**
      * 省市是否锁定(第三方平台不可更改)
      */
