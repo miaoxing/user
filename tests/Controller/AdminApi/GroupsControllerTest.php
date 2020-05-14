@@ -3,7 +3,7 @@
 namespace MiaoxingTest\User\Controller\AdminApi;
 
 use Miaoxing\Plugin\Test\BaseControllerTestCase;
-use Miaoxing\User\Service\GroupModel;
+use Miaoxing\Admin\Service\GroupModel;
 
 class GroupsControllerTest extends BaseControllerTestCase
 {

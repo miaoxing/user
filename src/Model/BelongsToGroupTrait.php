@@ -2,7 +2,7 @@
 
 namespace Miaoxing\User\Model;
 
-use Miaoxing\User\Service\GroupModel;
+use Miaoxing\Admin\Service\GroupModel;
 
 /**
  * @property GroupModel $group

@@ -2,6 +2,8 @@
 
 namespace Miaoxing\User\Service;
 
+use Miaoxing\Admin\Service\Group;
+use Miaoxing\Admin\Service\GroupModel;
 use Miaoxing\Plugin\Model\HasAppIdTrait;
 use Miaoxing\Plugin\Service\UserModel as BaseUserModel;
 

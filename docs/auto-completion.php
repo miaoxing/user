@@ -1,20 +1,6 @@
 <?php
 
 /**
- * @property    Miaoxing\User\Service\Group $group 用户分组
- * @method      Miaoxing\User\Service\Group|Miaoxing\User\Service\Group[] group()
- */
-class GroupMixin {
-}
-
-/**
- * @property    Miaoxing\User\Service\GroupModel $groupModel GroupModel
- * @method      Miaoxing\User\Service\GroupModel|Miaoxing\User\Service\GroupModel[] groupModel($table = null)
- */
-class GroupModelMixin {
-}
-
-/**
  * @property    Miaoxing\User\Service\UserModel $userModel
  * @method      Miaoxing\User\Service\UserModel|Miaoxing\User\Service\UserModel[] userModel($table = null)
  */
@@ -48,8 +34,6 @@ class UserVerifyMixin {
 }
 
 /**
- * @mixin GroupMixin
- * @mixin GroupModelMixin
  * @mixin UserModelMixin
  * @mixin UserPasswordMixin
  * @mixin UserProfileMixin
@@ -66,15 +50,6 @@ function wei()
 {
     return new AutoCompletion;
 }
-
-/** @var Miaoxing\User\Service\Group $group */
-$group = wei()->group;
-
-/** @var Miaoxing\User\Service\GroupModel $groupModel */
-$group = wei()->groupModel();
-
-/** @var Miaoxing\User\Service\GroupModel|Miaoxing\User\Service\GroupModel[] $groupModels */
-$groups = wei()->groupModel();
 
 /** @var Miaoxing\User\Service\UserModel $userModel */
 $user = wei()->userModel();

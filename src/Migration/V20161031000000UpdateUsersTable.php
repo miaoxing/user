@@ -14,7 +14,6 @@ class V20161031000000UpdateUsersTable extends BaseMigration
     {
         $table = $this->schema->table('users');
         $table
-            ->int('group_id')->comment('用户组')->after('out_id')
             ->char('wechat_open_id', 28)->comment('微信的OpenID')->after('group_id')
             ->char('wechat_union_id', 29)->after('wechat_open_id')
             ->int('score')->comment('积分')
@@ -37,7 +36,6 @@ class V20161031000000UpdateUsersTable extends BaseMigration
     {
         $this->schema->table('users')
             ->dropColumn([
-                'group_id',
                 'wechat_open_id',
                 'wechat_union_id',
                 'score',
