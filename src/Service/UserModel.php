@@ -32,6 +32,10 @@ class UserModel extends BaseUserModel
      */
     protected $group;
 
+    protected $data = [
+        'sex' => 1,
+        'group_id' => 0,
+    ];
 
     /**
      * @var \Miaoxing\User\Service\UserProfile
