@@ -2,7 +2,7 @@
 
 namespace Miaoxing\User\Migration;
 
-use Miaoxing\Services\Migration\BaseMigration;
+use Wei\Migration\BaseMigration;
 
 class V20161031000000UpdateUsersTable extends BaseMigration
 {
