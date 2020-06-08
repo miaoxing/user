@@ -2,7 +2,7 @@
 
 namespace Miaoxing\User\Controller;
 
-use Miaoxing\Plugin\Middleware\LoadAppConfig;
+use Miaoxing\Services\Middleware\LoadAppConfig;
 use Miaoxing\Plugin\Service\User;
 
 class PasswordController extends \Miaoxing\Plugin\BaseController
