@@ -3,7 +3,6 @@
 namespace Miaoxing\User\Migration;
 
 use Miaoxing\Services\Migration\BaseMigration;
-use Miaoxing\Services\Service\Time;
 
 class V20161031000000UpdateUsersTable extends BaseMigration
 {
