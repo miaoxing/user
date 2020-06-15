@@ -4,14 +4,17 @@ namespace MiaoxingTest\User\Service;
 
 use Miaoxing\Plugin\Service\User;
 
-class UserTest extends \Miaoxing\Plugin\Test\BaseTestCase
+/**
+ * @internal
+ */
+final class UserTest extends \Miaoxing\Plugin\Test\BaseTestCase
 {
     /**
      * @var User
      */
     protected $user;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
         $this->wei->remove('curUser');
@@ -128,26 +131,6 @@ class UserTest extends \Miaoxing\Plugin\Test\BaseTestCase
         $this->assertEquals('SELECT * FROM user WHERE id = ? LIMIT 1', $query);
     }
 
-    /**
-     * 模拟curUser未加载数据前的情况
-     */
-    protected function initSession()
-    {
-        $user = $this->getUser();
-        wei()->session['user'] = $user->toArray(['id']);
-    }
-
-    protected function getUser()
-    {
-        $this->user || $this->user = wei()->user()->save([
-            'nickName' => 'nickName',
-            'email' => 'test@example.com',
-            'name' => 'name',
-        ]);
-
-        return $this->user;
-    }
-
     public function testGetId()
     {
         $user = $this->getUser();
@@ -175,5 +158,25 @@ class UserTest extends \Miaoxing\Plugin\Test\BaseTestCase
 
         wei()->user->email = 'abc';
         $this->assertEquals('name', wei()->user->name);
+    }
+
+    /**
+     * 模拟curUser未加载数据前的情况
+     */
+    protected function initSession()
+    {
+        $user = $this->getUser();
+        wei()->session['user'] = $user->toArray(['id']);
+    }
+
+    protected function getUser()
+    {
+        $this->user || $this->user = wei()->user()->save([
+            'nickName' => 'nickName',
+            'email' => 'test@example.com',
+            'name' => 'name',
+        ]);
+
+        return $this->user;
     }
 }

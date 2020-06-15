@@ -12,7 +12,7 @@ use Miaoxing\Plugin\Service\User;
     <p class="user-head-nickname"><?= User::cur()->nickName ?></p>
     <?php $wei->event->trigger('userIndexRenderHead') ?>
   </div>
-  <?php if (!wei()->ua->isWeChat()) : ?>
+  <?php if (!wei()->ua->isWeChat()) { ?>
     <a href="<?= $url('users/setting') ?>" class="user-setting">设置</a>
-  <?php endif ?>
+  <?php } ?>
 </div>

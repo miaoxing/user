@@ -2,10 +2,13 @@
 
 namespace MiaoxingTest\User\Controller\AdminApi;
 
-use Miaoxing\Plugin\Test\BaseControllerTestCase;
 use Miaoxing\Admin\Service\GroupModel;
+use Miaoxing\Plugin\Test\BaseControllerTestCase;
 
-class GroupsControllerTest extends BaseControllerTestCase
+/**
+ * @internal
+ */
+final class GroupsControllerTest extends BaseControllerTestCase
 {
     public function testCreateAction()
     {

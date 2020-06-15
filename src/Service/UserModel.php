@@ -43,7 +43,7 @@ class UserModel extends BaseUserModel
      */
     protected $profile;
 
-    public function __construct(array $options = array())
+    public function __construct(array $options = [])
     {
         parent::__construct($options);
         $this->virtual += [
@@ -88,8 +88,9 @@ class UserModel extends BaseUserModel
 
         $this->isCreated = true;
 
-        /* TODO queue
-        if (wei()->has('queue')) {
+        /*
+            TODO queue
+            if (wei()->has('queue')) {
             wei()->queue->push(UserCreate::class, ['id' => $this['id']]);
         }*/
     }
@@ -174,7 +175,7 @@ class UserModel extends BaseUserModel
             }
 
             $ret = wei()->verifyCode->check($data['mobile'], $data['verifyCode']);
-            if ($ret['code'] !== 1) {
+            if (1 !== $ret['code']) {
                 return $ret + ['verifyCodeErr' => true];
             }
         } else {
@@ -268,119 +269,6 @@ class UserModel extends BaseUserModel
     }
 
     /**
-     * Record: 检查指定的手机号码能否绑定当前用户
-     *
-     * @param string $mobile
-     * @return array
-     * @svc
-     */
-    protected function checkMobile(string $mobile)
-    {
-        // 1. 检查是否已存在认证该手机号码的用户
-        $mobileUser = wei()->userModel()->mobileVerified()->findBy('mobile', $mobile);
-        if ($mobileUser && $mobileUser['id'] != $this['id']) {
-            return $this->err('已存在认证该手机号码的用户');
-        }
-
-        // 2. 提供接口供外部检查手机号
-        $ret = $this->event->until('userCheckMobile', [$this, $mobile]);
-        if ($ret) {
-            return $ret;
-        }
-
-        return $this->suc('手机号码可以绑定');
-    }
-
-    /**
-     * Record: 绑定手机
-     *
-     * @param array|\ArrayAccess $data
-     * @return array
-     * @svc
-     */
-    protected function bindMobile($data)
-    {
-        // 1. 校验数据
-        $ret = $this->checkMobile($data['mobile']);
-        if ($ret['code'] !== 1) {
-            return $ret;
-        }
-
-        // 2. 校验验证码
-        $ret = wei()->verifyCode->check($data['mobile'], $data['verifyCode']);
-        if ($ret['code'] !== 1) {
-            return $ret + ['verifyCodeErr' => true];
-        }
-
-        // 3. 记录手机信息
-        $this['mobile'] = $data['mobile'];
-        $this->setMobileVerified();
-
-        $this->event->trigger('preUserMobileVerify', [$data, $this]);
-
-        $this->save();
-
-        return $this->suc('绑定成功');
-    }
-
-    /**
-     * Record: 更新当前用户资料
-     *
-     * @param array|\ArrayAccess $data
-     * @return array
-     * @svc
-     */
-    protected function updateData($data)
-    {
-        $isMobileVerified = $this->isMobileVerified();
-
-        $validator = wei()->validate([
-            'data' => $data,
-            'rules' => [
-                'mobile' => [
-                    'required' => !$isMobileVerified,
-                    'mobileCn' => true,
-                ],
-                'name' => [
-                    'required' => false,
-                ],
-                'address' => [
-                    'required' => false,
-                    'minLength' => 3,
-                ],
-            ],
-            'names' => [
-                'mobile' => '手机号码',
-                'name' => '姓名',
-                'address' => '详细地址',
-            ],
-        ]);
-        if (!$validator->isValid()) {
-            return $this->err($validator->getFirstMessage());
-        }
-
-        if (!$isMobileVerified) {
-            // 手机号未认证时,检查手机号,根据配置检查是否重复
-            if (wei()->user->checkMobileUnique && $this->isMobileExists($data['mobile'])) {
-                return $this->err('手机号码已存在');
-            }
-            $this['mobile'] = $data['mobile'];
-        }
-
-        $result = $this->event->until('preUserUpdate', [$data, $this]);
-        if ($result) {
-            return $result;
-        }
-
-        $this->save([
-            'name' => $data['name'],
-            'address' => $data['address'],
-        ]);
-
-        return $this->suc();
-    }
-
-    /**
      * QueryBuilder: 查询手机号码验证过
      *
      * @return $this
@@ -409,7 +297,7 @@ class UserModel extends BaseUserModel
             || $this['mobile'] != $req['mobile']
         ) {
             $ret = $this->checkMobile($req['mobile']);
-            if ($ret['code'] !== 1) {
+            if (1 !== $ret['code']) {
                 return $ret;
             }
 
@@ -418,7 +306,7 @@ class UserModel extends BaseUserModel
             }
 
             $ret = wei()->verifyCode->check($req['mobile'], $req['verifyCode']);
-            if ($ret['code'] !== 1) {
+            if (1 !== $ret['code']) {
                 return $ret + ['verifyCodeErr' => true];
             }
         }
@@ -434,7 +322,6 @@ class UserModel extends BaseUserModel
         }
         return $this->suc(['changed' => true]);
     }
-
 
     /**
      * Repo: 记录用户操作日志
@@ -568,5 +455,118 @@ class UserModel extends BaseUserModel
         $this->group || $this->group = wei()->group()->findOrInitById($this['groupId'], ['name' => '未分组']);
 
         return $this->group;
+    }
+
+    /**
+     * Record: 检查指定的手机号码能否绑定当前用户
+     *
+     * @param string $mobile
+     * @return array
+     * @svc
+     */
+    protected function checkMobile(string $mobile)
+    {
+        // 1. 检查是否已存在认证该手机号码的用户
+        $mobileUser = wei()->userModel()->mobileVerified()->findBy('mobile', $mobile);
+        if ($mobileUser && $mobileUser['id'] != $this['id']) {
+            return $this->err('已存在认证该手机号码的用户');
+        }
+
+        // 2. 提供接口供外部检查手机号
+        $ret = $this->event->until('userCheckMobile', [$this, $mobile]);
+        if ($ret) {
+            return $ret;
+        }
+
+        return $this->suc('手机号码可以绑定');
+    }
+
+    /**
+     * Record: 绑定手机
+     *
+     * @param array|\ArrayAccess $data
+     * @return array
+     * @svc
+     */
+    protected function bindMobile($data)
+    {
+        // 1. 校验数据
+        $ret = $this->checkMobile($data['mobile']);
+        if (1 !== $ret['code']) {
+            return $ret;
+        }
+
+        // 2. 校验验证码
+        $ret = wei()->verifyCode->check($data['mobile'], $data['verifyCode']);
+        if (1 !== $ret['code']) {
+            return $ret + ['verifyCodeErr' => true];
+        }
+
+        // 3. 记录手机信息
+        $this['mobile'] = $data['mobile'];
+        $this->setMobileVerified();
+
+        $this->event->trigger('preUserMobileVerify', [$data, $this]);
+
+        $this->save();
+
+        return $this->suc('绑定成功');
+    }
+
+    /**
+     * Record: 更新当前用户资料
+     *
+     * @param array|\ArrayAccess $data
+     * @return array
+     * @svc
+     */
+    protected function updateData($data)
+    {
+        $isMobileVerified = $this->isMobileVerified();
+
+        $validator = wei()->validate([
+            'data' => $data,
+            'rules' => [
+                'mobile' => [
+                    'required' => !$isMobileVerified,
+                    'mobileCn' => true,
+                ],
+                'name' => [
+                    'required' => false,
+                ],
+                'address' => [
+                    'required' => false,
+                    'minLength' => 3,
+                ],
+            ],
+            'names' => [
+                'mobile' => '手机号码',
+                'name' => '姓名',
+                'address' => '详细地址',
+            ],
+        ]);
+        if (!$validator->isValid()) {
+            return $this->err($validator->getFirstMessage());
+        }
+
+        if (!$isMobileVerified) {
+            // 手机号未认证时,检查手机号,根据配置检查是否重复
+            if (wei()->user->checkMobileUnique && $this->isMobileExists($data['mobile'])) {
+                return $this->err('手机号码已存在');
+            }
+            $this['mobile'] = $data['mobile'];
+        }
+
+        $result = $this->event->until('preUserUpdate', [$data, $this]);
+        if ($result) {
+            return $result;
+        }
+
+        $this->save([
+            'name' => $data['name'],
+            'address' => $data['address'],
+        ]);
+
+        return $this->suc();
     }
 }

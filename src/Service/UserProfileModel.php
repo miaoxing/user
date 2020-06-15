@@ -4,7 +4,6 @@ namespace Miaoxing\User\Service;
 
 use Miaoxing\Plugin\BaseModel;
 use Miaoxing\Plugin\Model\CastTrait;
-use Miaoxing\Plugin\Model\GetSetTrait;
 use Miaoxing\Plugin\Model\ReqQueryTrait;
 use Miaoxing\User\Metadata\UserProfileTrait;
 
@@ -20,7 +19,7 @@ class UserProfileModel extends BaseModel
     protected $table = 'userProfile';
 
     protected $defaultCasts = [
-        'config' => 'array'
+        'config' => 'array',
     ];
 
     protected $data = [

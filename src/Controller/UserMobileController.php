@@ -9,7 +9,7 @@ class UserMobileController extends \Miaoxing\Plugin\BaseController
     public function indexAction($req)
     {
         $ret = $this->checkBind();
-        if ($ret['code'] !== 1) {
+        if (1 !== $ret['code']) {
             return $this->ret($ret);
         }
 
@@ -73,7 +73,7 @@ class UserMobileController extends \Miaoxing\Plugin\BaseController
 
         // 2. 用户是否已绑定
         $ret = $this->checkBind();
-        if ($ret['code'] !== 1) {
+        if (1 !== $ret['code']) {
             return $ret;
         }
 

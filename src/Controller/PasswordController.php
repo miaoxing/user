@@ -2,8 +2,8 @@
 
 namespace Miaoxing\User\Controller;
 
-use Miaoxing\Services\Middleware\LoadAppConfig;
 use Miaoxing\Plugin\Service\User;
+use Miaoxing\Services\Middleware\LoadAppConfig;
 
 class PasswordController extends \Miaoxing\Plugin\BaseController
 {
@@ -119,7 +119,7 @@ class PasswordController extends \Miaoxing\Plugin\BaseController
 
         // Step3 检查验证码是否正确
         $ret = wei()->verifyCode->check($req['mobile'], $req['verifyCode']);
-        if ($ret['code'] !== 1) {
+        if (1 !== $ret['code']) {
             return $this->ret($ret + ['verifyCodeErr' => true]);
         }
 
@@ -132,6 +132,7 @@ class PasswordController extends \Miaoxing\Plugin\BaseController
 
     /**
      * 获取验证码
+     * @param mixed $req
      */
     public function sendVerifyCodeAction($req)
     {

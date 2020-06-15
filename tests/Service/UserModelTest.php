@@ -5,7 +5,10 @@ namespace MiaoxingTest\User\Service;
 use Miaoxing\Plugin\Service\User;
 use Miaoxing\Plugin\Service\UserModel;
 
-class UserModelTest extends \Miaoxing\Plugin\Test\BaseTestCase
+/**
+ * @internal
+ */
+final class UserModelTest extends \Miaoxing\Plugin\Test\BaseTestCase
 {
     /**
      * 测试获取昵称

@@ -2,9 +2,9 @@
 
 namespace Miaoxing\User\Controller;
 
+use Miaoxing\Plugin\Service\User;
 use Miaoxing\Services\Middleware\CheckRedirectUrl;
 use Miaoxing\Services\Middleware\LoadAppConfig;
-use Miaoxing\Plugin\Service\User;
 use Miaoxing\User\Middleware\CheckIfEnableRegister;
 use Miaoxing\User\Middleware\CheckNotLogin;
 use Wei\Request;
@@ -58,6 +58,7 @@ class UsersController extends \Miaoxing\Plugin\BaseController
 
     /**
      * 用户注册,相当于users/new
+     * @param mixed $req
      */
     public function registerAction($req)
     {
@@ -66,6 +67,7 @@ class UsersController extends \Miaoxing\Plugin\BaseController
 
     /**
      * 获取验证码
+     * @param mixed $req
      */
     public function sendVerifyCodeAction($req)
     {
@@ -98,13 +100,13 @@ class UsersController extends \Miaoxing\Plugin\BaseController
         // 1. 调用注册接口
         $user = wei()->user();
         $ret = $user->register($req);
-        if ($ret['code'] !== 1) {
+        if (1 !== $ret['code']) {
             return $ret;
         }
 
         // 2. 登录用户
         $loginRet = User::loginById($user['id']);
-        if ($loginRet['code'] !== 1) {
+        if (1 !== $loginRet['code']) {
             return $loginRet;
         }
 
@@ -115,6 +117,7 @@ class UsersController extends \Miaoxing\Plugin\BaseController
      * 个人信息页面
      *
      * @return array
+     * @param mixed $req
      */
     public function editAction($req)
     {
@@ -155,7 +158,7 @@ class UsersController extends \Miaoxing\Plugin\BaseController
         if ($req->isPost()) {
             if (wei()->user->enableLoginCaptcha) {
                 $ret = wei()->captcha->check($req['captcha']);
-                if ($ret['code'] !== 1) {
+                if (1 !== $ret['code']) {
                     $ret['captchaErr'] = true;
 
                     return $this->ret($ret);

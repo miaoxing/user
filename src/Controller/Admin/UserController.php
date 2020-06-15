@@ -22,6 +22,7 @@ class UserController extends \Miaoxing\Plugin\BaseController
 
     /**
      * 展示用户列表
+     * @param mixed $req
      */
     public function indexAction($req)
     {
@@ -42,18 +43,18 @@ class UserController extends \Miaoxing\Plugin\BaseController
 
                 // 根据关注状态显示用户
                 switch (true) {
-                    case $req['isValid'] === '1':
+                    case '1' === $req['isValid']:
                         $users->andWhere(['user.isValid' => true]);
                         break;
 
-                    case $req['isValid'] === '0':
+                    case '0' === $req['isValid']:
                         $users->andWhere(['user.isValid' => false]);
                         break;
                 }
 
                 // 平台筛选
                 // TODO 如何移到插件中
-                if ($req['platform'] == 'self') {
+                if ('self' == $req['platform']) {
                     $users->andWhere([
                         'wechatOpenId' => '',
                     ]);
@@ -84,7 +85,7 @@ class UserController extends \Miaoxing\Plugin\BaseController
                     );
                 }
 
-                if ($req['filter_empty'] && in_array($req['filter_empty'], $users->getFields())) {
+                if ($req['filter_empty'] && in_array($req['filter_empty'], $users->getFields(), true)) {
                     $users->andWhere($req['filter_empty'] . " != ''");
                 }
 
@@ -96,7 +97,7 @@ class UserController extends \Miaoxing\Plugin\BaseController
                 }
 
                 // 导出用户限制
-                if ($req['format'] == 'csv' && $users->count() > 10000) {
+                if ('csv' == $req['format'] && $users->count() > 10000) {
                     return $this->err('导出用户数超过1W，请联系开发人员后台导出！');
                 }
 
@@ -127,7 +128,7 @@ class UserController extends \Miaoxing\Plugin\BaseController
                         ];
                 }
 
-                if ($req['_format'] == 'csv') {
+                if ('csv' == $req['_format']) {
                     return $this->renderCsv($data);
                 } else {
                     return $this->suc([
@@ -138,6 +139,7 @@ class UserController extends \Miaoxing\Plugin\BaseController
                     ]);
                 }
 
+                // no break
             default:
                 $groups = wei()->group()->findAll()->withUngroup();
 
@@ -209,6 +211,7 @@ class UserController extends \Miaoxing\Plugin\BaseController
 
     /**
      * 将用户移动到新分组
+     * @param mixed $req
      */
     public function moveGroupAction($req)
     {
@@ -260,51 +263,9 @@ class UserController extends \Miaoxing\Plugin\BaseController
         return $this->suc();
     }
 
-    protected function renderCsv($users)
-    {
-        $sources = [
-            -1 => '后台创建',
-        ];
-
-        $genders = [
-            0 => '未知',
-            1 => '男',
-            2 => '女',
-        ];
-
-        $data = [];
-        $data[0] = ['姓名', '昵称', '手机', '性别', '国家', '省份', '城市', '来源', '注册时间', '是否关注', '取关时间'];
-
-        foreach ($users as $user) {
-            // TODO #970
-            if ($user['sourceUser']) {
-                $source = $user['sourceUser']['name'] ?: $user['sourceUser']['nickName'];
-            } elseif (isset($sources[$user['source']])) {
-                $source = $sources[$user['source']];
-            } else {
-                $source = '直接注册';
-            }
-
-            $data[] = [
-                $user['name'],
-                $user['nickName'] . ' ', // TODO 和订单等统一处理
-                $user['mobile'],
-                $genders[(int) $user['gender']],
-                $user['country'],
-                $user['province'],
-                $user['city'],
-                $source,
-                $user['createTime'],
-                $user['isValid'] ? '是' : '否',
-                $user['unsubscribeTime'],
-            ];
-        }
-
-        return wei()->csvExporter->export('users', $data);
-    }
-
     /**
      * 展示个人信息
+     * @param mixed $req
      */
     public function userinfoAction($req)
     {
@@ -318,6 +279,7 @@ class UserController extends \Miaoxing\Plugin\BaseController
 
     /**
      * 保存个人数据
+     * @param mixed $req
      */
     public function editUserAction($req)
     {
@@ -342,7 +304,7 @@ class UserController extends \Miaoxing\Plugin\BaseController
         $user = wei()->user()->findId($req['id']);
         if ($req['isMobileVerified']) {
             $ret = $user->checkMobile($req['mobile']);
-            if ($ret['code'] !== 1) {
+            if (1 !== $ret['code']) {
                 return $ret;
             }
         }
@@ -396,5 +358,48 @@ class UserController extends \Miaoxing\Plugin\BaseController
         }
 
         return $this->response->json($data);
+    }
+
+    protected function renderCsv($users)
+    {
+        $sources = [
+            -1 => '后台创建',
+        ];
+
+        $genders = [
+            0 => '未知',
+            1 => '男',
+            2 => '女',
+        ];
+
+        $data = [];
+        $data[0] = ['姓名', '昵称', '手机', '性别', '国家', '省份', '城市', '来源', '注册时间', '是否关注', '取关时间'];
+
+        foreach ($users as $user) {
+            // TODO #970
+            if ($user['sourceUser']) {
+                $source = $user['sourceUser']['name'] ?: $user['sourceUser']['nickName'];
+            } elseif (isset($sources[$user['source']])) {
+                $source = $sources[$user['source']];
+            } else {
+                $source = '直接注册';
+            }
+
+            $data[] = [
+                $user['name'],
+                $user['nickName'] . ' ', // TODO 和订单等统一处理
+                $user['mobile'],
+                $genders[(int) $user['gender']],
+                $user['country'],
+                $user['province'],
+                $user['city'],
+                $source,
+                $user['createTime'],
+                $user['isValid'] ? '是' : '否',
+                $user['unsubscribeTime'],
+            ];
+        }
+
+        return wei()->csvExporter->export('users', $data);
     }
 }

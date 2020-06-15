@@ -5,14 +5,14 @@ namespace Miaoxing\User\Service;
 class UserProfile extends \Miaoxing\Plugin\BaseModel
 {
     protected $data = [
-        'config' => []
+        'config' => [],
     ];
 
     public function afterFind()
     {
         parent::afterFind();
 
-        $this['config'] = (array)json_decode($this['config'], true);
+        $this['config'] = (array) json_decode($this['config'], true);
 
         $this->event->trigger('postImageDataLoad', [&$this, ['config']]);
     }

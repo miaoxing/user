@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <?php if (wei()->user->enableLoginCaptcha) : ?>
+    <?php if (wei()->user->enableLoginCaptcha) { ?>
       <div class="form-group">
         <label for="captcha" class="control-label">验证码</label>
 
@@ -45,7 +45,7 @@
           </span>
         </div>
       </div>
-    <?php endif ?>
+    <?php } ?>
   </div>
   <div class="form-footer">
     <button type="submit" class="btn btn-primary btn-block">登录</button>
@@ -71,7 +71,7 @@
       }
     });
 
-    <?php if (wei()->user->enableLoginCaptcha) : ?>
+    <?php if (wei()->user->enableLoginCaptcha) { ?>
     var $captcha = $('.js-captcha');
     $captcha.click(changeCaptcha);
 
@@ -80,7 +80,7 @@
     function changeCaptcha() {
       $captcha.attr('src', src + '?t=' + new Date());
     }
-    <?php endif ?>
+    <?php } ?>
   });
 </script>
 <?= $block->end() ?>

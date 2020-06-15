@@ -8,8 +8,10 @@ use Miaoxing\User\Mailer\Register;
 
 /**
  * 注册
+ *
+ * @internal
  */
-class RegistrationTest extends BaseControllerTestCase
+final class RegistrationTest extends BaseControllerTestCase
 {
     protected $statusCodes = [
         'register' => 302,

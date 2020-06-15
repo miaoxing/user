@@ -4,7 +4,10 @@ namespace MiaoxingTest\User\Controller;
 
 use Miaoxing\Plugin\Service\User;
 
-class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
+/**
+ * @internal
+ */
+final class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
 {
     protected $statusCodes = [
         'logout' => 302,
@@ -98,6 +101,8 @@ class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
 
     /**
      * @dataProvider providerForRegisterByEmail
+     * @param mixed $req
+     * @param mixed $ret
      */
     public function testRegisterByEmail($req, $ret)
     {
@@ -113,7 +118,7 @@ class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
 
         $this->assertEquals($ret, $actualRet);
 
-        if ($ret['code'] === 1) {
+        if (1 === $ret['code']) {
             // 用户注册成功后,数据表有相应的数据
             $user = wei()->user()->find(['username' => 'test2']);
             $this->assertNotNull($user);
@@ -177,6 +182,8 @@ class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
      * 注册页(手机注册)
      *
      * @dataProvider providerForRegisterByMobile
+     * @param mixed $req
+     * @param mixed $ret
      */
     public function testRegisterByMobile($req, $ret)
     {
@@ -199,7 +206,7 @@ class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
 
         $this->assertEquals($ret, $actualRet);
 
-        if ($ret['code'] === 1) {
+        if (1 === $ret['code']) {
             // 用户注册成功后,数据表有相应的数据
             /** @var User $user */
             $user = wei()->user()->find(['username' => 'miaomiao']);
@@ -222,6 +229,7 @@ class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
      * 只有未登录用户,可以访问注册页面
      *
      * @dataProvider providerForNotLoginPages
+     * @param mixed $page
      */
     public function testNotLoginPages($page)
     {
@@ -303,7 +311,7 @@ class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
 
         $this->assertEquals($ret, $actualRet);
 
-        if ($actualRet['code'] == 1) {
+        if (1 == $actualRet['code']) {
             $this->assertNotEmpty(wei()->session['user']['id']);
         }
     }

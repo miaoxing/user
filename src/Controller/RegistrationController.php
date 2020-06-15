@@ -64,7 +64,7 @@ class RegistrationController extends BaseController
     public function createResetByEmailAction($req)
     {
         $ret = wei()->captcha->check($req['captcha']);
-        if ($ret['code'] !== 1) {
+        if (1 !== $ret['code']) {
             $ret['captchaErr'] = true;
 
             return $this->ret($ret);
@@ -113,7 +113,7 @@ class RegistrationController extends BaseController
         // 1. 增加注册的校验
         $this->event->on('userRegisterValidate', function () use ($req) {
             $ret = wei()->captcha->check($req['captcha']);
-            if ($ret['code'] !== 1) {
+            if (1 !== $ret['code']) {
                 $ret['captchaErr'] = true;
 
                 return $ret;
@@ -127,7 +127,7 @@ class RegistrationController extends BaseController
         // 2. 调用注册接口
         $user = wei()->user();
         $ret = $user->register($req);
-        if ($ret['code'] !== 1) {
+        if (1 !== $ret['code']) {
             return $ret;
         }
 
@@ -141,7 +141,7 @@ class RegistrationController extends BaseController
 
         // 4. 登录用户
         $loginRet = User::loginById($user['id']);
-        if ($loginRet['code'] !== 1) {
+        if (1 !== $loginRet['code']) {
             return $loginRet;
         }
 
@@ -149,7 +149,7 @@ class RegistrationController extends BaseController
         $sendRet = wei()->mail->send(Register::class, [
             'user' => $user,
         ]);
-        if ($sendRet['code'] !== 1) {
+        if (1 !== $sendRet['code']) {
             return $sendRet;
         }
 
@@ -164,7 +164,7 @@ class RegistrationController extends BaseController
     public function verifyAction($req)
     {
         $ret = wei()->userVerify->verify($req);
-        if ($ret['code'] !== 1) {
+        if (1 !== $ret['code']) {
             return $ret;
         }
 

@@ -4,7 +4,10 @@ namespace MiaoxingTest\User\Controller;
 
 use Miaoxing\Plugin\Service\User;
 
-class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
+/**
+ * @internal
+ */
+final class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
 {
     public static function setupBeforeClass()
     {
@@ -69,6 +72,8 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
     /**
      *  测试忘记密码页(邮箱找回)
      * @dataProvider providerForResetByEmail
+     * @param mixed $req
+     * @param mixed $ret
      */
     public function testResetByEmail($req, $ret)
     {
@@ -207,6 +212,8 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
     /**
      *  测试忘记密码页(手机找回)
      * @dataProvider providerForResetByMobile
+     * @param mixed $req
+     * @param mixed $ret
      */
     public function testResetByMobile($req, $ret)
     {
@@ -249,6 +256,8 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
     /**
      *  测试发送邮件功能
      * @dataProvider providerForSendMail
+     * @param mixed $req
+     * @param mixed $ret
      */
     public function testSendMail($req, $ret)
     {
@@ -327,6 +336,8 @@ class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
      * 测试密码重置页面
      *
      * @dataProvider providerForResetReturn
+     * @param mixed $req
+     * @param mixed $ret
      */
     public function testResetReturn($req, $ret)
     {

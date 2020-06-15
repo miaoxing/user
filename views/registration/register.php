@@ -53,7 +53,7 @@ $view->layout('@admin/admin/layout-light.php')
         <div class="form-text with-errors"></div>
       </div>
 
-      <?php if ($agreementArticleId) : ?>
+      <?php if ($agreementArticleId) { ?>
         <div class="form-group">
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="agreement" name="agreement" value="1">
@@ -62,7 +62,7 @@ $view->layout('@admin/admin/layout-light.php')
             </label>
           </div>
         </div>
-      <?php endif ?>
+      <?php } ?>
 
       <div class="form-group">
         <div class="js-ret-message text-center">

@@ -12,9 +12,9 @@ $tags = wei()->userTag->getSelects();
 <!-- /.page-header -->
 <div class="page-header">
   <div class="float-right">
-    <?php if (wei()->user->enableCreate) : ?>
+    <?php if (wei()->user->enableCreate) { ?>
       <a class="btn btn-success" href="<?= $url('admin/user/new') ?>">添加用户</a>
-    <?php endif ?>
+    <?php } ?>
   </div>
   <h1>
     用户管理
@@ -60,9 +60,9 @@ $tags = wei()->userTag->getSelects();
             <div class="col-md-3">
               <select name="platform" id="platform" class="form-control">
                 <option value="">全部来源</option>
-                <?php foreach ($platforms as $platform) : ?>
+                <?php foreach ($platforms as $platform) { ?>
                   <option value="<?= $platform['value'] ?>"><?= $platform['name'] ?></option>
-                <?php endforeach ?>
+                <?php } ?>
               </select>
             </div>
           </div>
@@ -97,9 +97,9 @@ $tags = wei()->userTag->getSelects();
                 查询
               </button>
               &nbsp;
-              <?php if (wei()->user->enableExport) : ?>
+              <?php if (wei()->user->enableExport) { ?>
                 <a id="export-csv" class="js-export-csv btn btn-secondary" href="javascript:void(0);">导出</a>
-              <?php endif ?>
+              <?php } ?>
             </div>
           </div>
         </div>
@@ -130,17 +130,17 @@ $tags = wei()->userTag->getSelects();
             </div>
           <?php } ?>
 
-          <?php if ($wei->plugin->isInstalled('coupon')) : ?>
+          <?php if ($wei->plugin->isInstalled('coupon')) { ?>
             <div class="form-group">
               <a class="js-user-send-coupon btn btn-info float-right" href="javascript:void(0);">发放优惠券</a>
             </div>
-          <?php endif ?>
+          <?php } ?>
 
-          <?php if ($wei->plugin->isInstalled('score')) : ?>
+          <?php if ($wei->plugin->isInstalled('score')) { ?>
             <div class="form-group">
               <a id="user-send-score" class="btn btn-info float-right" href="javascript:void(0);">赠送积分</a>
             </div>
-          <?php endif ?>
+          <?php } ?>
         </form>
       </div>
     </div>

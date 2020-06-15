@@ -26,11 +26,11 @@
         </label>
 
         <div class="col-lg-4">
-          <?php if ($user->isNew()) : ?>
+          <?php if ($user->isNew()) { ?>
             <input type="text" class="form-control" name="username">
-          <?php else : ?>
+          <?php } else { ?>
             <p class="form-control-plaintext" id="username"></p>
-          <?php endif; ?>
+          <?php } ?>
         </div>
       </div>
 
@@ -67,11 +67,11 @@
           <input type="password" class="form-control" name="password" id="password">
         </div>
 
-        <?php if (!$user->isNew()) : ?>
+        <?php if (!$user->isNew()) { ?>
           <label class="col-sm-6 help-text" for="password">
             不修改密码请留空
           </label>
-        <?php endif; ?>
+        <?php } ?>
       </div>
 
       <div class="form-group">
