@@ -14,7 +14,7 @@
     "miaoxing/nav": "dev-master@dev"
   },
   "require-dev": {
-    "miaoxing/coding-standards": "^2.0.0"
+    "miaoxing/coding-standards": "^4.1.1"
   },
   "autoload": {
     "psr-4": {
