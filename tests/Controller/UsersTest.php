@@ -15,7 +15,7 @@ final class UsersTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
         'create' => 302,
     ];
 
-    public static function setupBeforeClass()
+    public static function setupBeforeClass(): void
     {
         // 创建用户供测试用户名和邮箱已存在
         $user = wei()->user()

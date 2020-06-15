@@ -9,7 +9,7 @@ use Miaoxing\Plugin\Service\User;
  */
 final class PasswordTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
 {
-    public static function setupBeforeClass()
+    public static function setupBeforeClass(): void
     {
         // 创建用户供测试用户名和邮箱已存在
         $user = wei()->user()

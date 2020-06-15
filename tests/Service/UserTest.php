@@ -3,6 +3,7 @@
 namespace MiaoxingTest\User\Service;
 
 use Miaoxing\Plugin\Service\User;
+use Miaoxing\User\Service\UserModel;
 
 /**
  * @internal
@@ -33,12 +34,12 @@ final class UserTest extends \Miaoxing\Plugin\Test\BaseTestCase
         $this->assertEquals('nickName2', $curUser['nickName']);
 
         $query = wei()->db->getLastQuery();
-        $sql = 'UPDATE user SET id = ?, nickName = ?, department = ?, extAttr = ?, updateUser = ?, updateTime = ? ';
+        $sql = 'UPDATE users SET id = ?, nick_name = ?, updated_at = ?, updated_by = ? ';
         $sql .= 'WHERE id = ?';
         $this->assertEquals($sql, $query);
     }
 
-    public function testloginByModelAndSave()
+    public function testLoginByModelAndSave()
     {
         $user = $this->getUser();
         $curUser = wei()->user;
@@ -136,20 +137,7 @@ final class UserTest extends \Miaoxing\Plugin\Test\BaseTestCase
         $user = $this->getUser();
         wei()->user->loginByModel($user);
 
-        $this->assertInternalType('int', wei()->user->id);
-    }
-
-    public function testGetProfile()
-    {
-        $this->initSession();
-
-        wei()->userProfileModel()->save([
-            'userId' => wei()->user->id,
-        ]);
-
-        $profile = wei()->user->profile;
-        $this->assertNotNull($profile);
-        $this->assertEquals(wei()->user->id, $profile->userId);
+        $this->assertIsInt(wei()->user->id);
     }
 
     public function testLoadBeforeSet()
@@ -171,7 +159,7 @@ final class UserTest extends \Miaoxing\Plugin\Test\BaseTestCase
 
     protected function getUser()
     {
-        $this->user || $this->user = wei()->user()->save([
+        $this->user || $this->user = UserModel::save([
             'nickName' => 'nickName',
             'email' => 'test@example.com',
             'name' => 'name',
