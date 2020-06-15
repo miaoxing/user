@@ -23,6 +23,8 @@ class UserController extends \Miaoxing\Plugin\BaseController
     /**
      * 展示用户列表
      * @param mixed $req
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @todo refactor
      */
     public function indexAction($req)
     {
