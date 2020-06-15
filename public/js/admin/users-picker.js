@@ -1,3 +1,4 @@
+/* eslint-disable */
 /* global Bloodhound */
 define([
   'plugins/app/libs/artTemplate/template.min',

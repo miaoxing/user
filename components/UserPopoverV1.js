@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import rp from "require-promise";
 import Loadable from 'react-loadable';

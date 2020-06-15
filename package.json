@@ -23,6 +23,7 @@
     "@testing-library/react": "^10.0.4",
     "babel-jest": "^25.4.0",
     "jest": "^25.4.0",
+    "miaoxing-coding-standards": "^5.0.0-beta.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-test-renderer": "^16.13.1"

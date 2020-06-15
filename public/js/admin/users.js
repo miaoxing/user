@@ -1,3 +1,4 @@
+/* eslint-disable */
 define([], function () {
   $('#export-csv').click(function () {
     var dt = $('#record-table').dataTable();
