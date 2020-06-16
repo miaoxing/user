@@ -52,7 +52,7 @@ final class UserTest extends \Miaoxing\Plugin\Test\BaseTestCase
         $this->assertEquals('nickName2', $curUser['nickName']);
 
         $query = wei()->db->getLastQuery();
-        $sql = 'UPDATE user SET nickName = ?, updateTime = ?, updateUser = ?, id = ? WHERE id = ?';
+        $sql = 'UPDATE users SET id = ?, nick_name = ?, updated_at = ?, updated_by = ? WHERE id = ?';
         $this->assertEquals($sql, $query);
     }
 
@@ -129,7 +129,7 @@ final class UserTest extends \Miaoxing\Plugin\Test\BaseTestCase
         $this->assertEquals('test@example.com', $curUser['email']);
 
         $query = wei()->db->getLastQuery();
-        $this->assertEquals('SELECT * FROM user WHERE id = ? LIMIT 1', $query);
+        $this->assertEquals('SELECT * FROM `users` WHERE `id` = ? AND `users`.`app_id` = ? LIMIT 1', $query);
     }
 
     public function testGetId()
