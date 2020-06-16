@@ -6,6 +6,7 @@ use Miaoxing\Admin\Service\Group;
 use Miaoxing\Admin\Service\GroupModel;
 use Miaoxing\Plugin\Model\HasAppIdTrait;
 use Miaoxing\Plugin\Service\UserModel as BaseUserModel;
+use Wei\Time;
 
 /**
  * @property GroupModel $group
@@ -116,7 +117,7 @@ class UserModel extends BaseUserModel
      */
     public function updateGroup($groupId)
     {
-        $group = wei()->group()->findOrInitById($groupId);
+        $group = wei()->groupModel()->findOrInit($groupId);
         $ret = wei()->event->until('groupMove', [[$this['id']], $group]);
         if ($ret) {
             return $ret;
@@ -284,7 +285,7 @@ class UserModel extends BaseUserModel
      */
     public function setMobileVerified($verified = true)
     {
-        $this->mobileVerifiedAt = $verified ? Time::now() : '0000-00-00 00:00:00';
+        $this->mobileVerifiedAt = $verified ? Time::now() : null;
         return $this;
     }
 

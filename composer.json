@@ -33,11 +33,13 @@
       "dev-master": "2.0.x-dev"
     },
     "installer-types": [
+      "library",
       "miaoxing-plugin"
     ],
     "installer-paths": {
       "plugins/{$name}/": [
-        "type:miaoxing-plugin"
+        "type:miaoxing-plugin",
+        "miaoxing/admin"
       ]
     }
   }
