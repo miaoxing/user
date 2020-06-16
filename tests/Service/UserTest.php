@@ -18,7 +18,7 @@ final class UserTest extends \Miaoxing\Plugin\Test\BaseTestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->wei->remove('curUser');
+        $this->wei->remove('user');
         $this->wei->session->clear();
     }
 
