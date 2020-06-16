@@ -89,11 +89,10 @@ class UserModel extends BaseUserModel
 
         $this->isCreated = true;
 
-        /*
-            TODO queue
-            if (wei()->has('queue')) {
-            wei()->queue->push(UserCreate::class, ['id' => $this['id']]);
-        }*/
+//        TODO queue
+//        if (wei()->has('queue')) {
+//            wei()->queue->push(UserCreate::class, ['id' => $this['id']]);
+//        }
     }
 
     public function afterSave()

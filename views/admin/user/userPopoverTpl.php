@@ -25,12 +25,14 @@
   </div>
   <?php if (wei()->plugin->isInstalled('user-tag')) { ?>
     <div>
-      <span class="text-muted">标签：</span><%= tagName ? (tagName + ' ') : '' %><a class="js-user-edit-tags" data-id="<%= id %>"
-        data-tag-ids="<%= tagIds %>" href="javascript:;">编辑</a>
+      <span class="text-muted">标签：</span>
+      <%= tagName ? (tagName + ' ') : '' %>
+      <a class="js-user-edit-tags" data-id="<%= id %>" data-tag-ids="<%= tagIds %>" href="javascript:;">编辑</a>
     </div>
   <?php } else { ?>
     <div>
-      <span class="text-muted">分组：</span><select class="update-group form-control d-inline-block w-auto" data-id="<%= id %>">
+      <span class="text-muted">分组：</span>
+      <select class="update-group form-control d-inline-block w-auto" data-id="<%= id %>">
         <option value="0"><?= wei()->group->defaultName ?></option>
         <?php foreach ($wei->group()->findAll() as $group) { ?>
           <option value="<?= $group['id'] ?>"><?= $group['name'] ?></option>

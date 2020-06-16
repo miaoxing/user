@@ -1,4 +1,9 @@
-<?php $view->layout() ?>
+<?php
+
+use Miaoxing\Plugin\Service\User;
+
+$view->layout()
+?>
 
 <form class="js-mobile-form form form-inset mt-3" method="post" action="<?= $url->query('user-mobile/create') ?>">
   <div class="form-body">
@@ -9,7 +14,7 @@
       </label>
 
       <div class="col-control">
-        <input type="tel" class="js-mobile form-control" id="mobile" name="mobile" value="<?= \Miaoxing\Plugin\Service\User::cur()->mobile ?>"
+        <input type="tel" class="js-mobile form-control" id="mobile" name="mobile" value="<?= User::cur()->mobile ?>"
           placeholder="请输入手机号码">
       </div>
     </div>

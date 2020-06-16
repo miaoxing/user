@@ -155,7 +155,11 @@ $tags = wei()->userTag->getSelects();
 
 <?= $block->js() ?>
 <script>
-  require(['plugins/admin/js/form', 'plugins/user/js/admin/users', 'plugins/admin/js/data-table', 'plugins/app/libs/artTemplate/template.min',
+  require([
+    'plugins/admin/js/form',
+    'plugins/user/js/admin/users',
+    'plugins/admin/js/data-table',
+    'plugins/app/libs/artTemplate/template.min',
     'comps/select2/select2.min',
     'css!comps/select2/select2',
     'css!comps/select2-bootstrap-css/select2-bootstrap'
