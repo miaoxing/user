@@ -11,10 +11,10 @@
     "miaoxing/verify-code": "dev-master@dev",
     "miaoxing/admin": "dev-master@dev",
     "miaoxing/mail": "dev-master@dev",
-    "miaoxing/nav": "dev-master@dev",
-    "miaoxing/coding-standards": "^5.0.0-beta.6"
+    "miaoxing/nav": "dev-master@dev"
   },
   "require-dev": {
+    "miaoxing/coding-standards": "^5.0.0@beta"
   },
   "autoload": {
     "psr-4": {
@@ -29,9 +29,6 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {
-    "branch-alias": {
-      "dev-master": "2.0.x-dev"
-    },
     "installer-types": [
       "library",
       "miaoxing-plugin"
