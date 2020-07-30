@@ -3,7 +3,8 @@
   "type": "miaoxing-plugin",
   "description": "Miaoxing User Plugin",
   "keywords": [
-    "miaoxing", "user"
+    "miaoxing",
+    "user"
   ],
   "license": "MIT",
   "require": {
