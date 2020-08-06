@@ -290,7 +290,7 @@ class UserModel extends BaseUserModel
 
     public function updateMobileIfVerified($save = true, $req = null)
     {
-        $req || $req = $this->request;
+        $req || $req = $this->req;
 
         // 未校验,或者是输入了新手机,需要校验
         if (!$this->isMobileVerified()

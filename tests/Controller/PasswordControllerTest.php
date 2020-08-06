@@ -88,7 +88,7 @@ final class PasswordControllerTest extends \Miaoxing\Plugin\Test\BaseControllerT
             ->controller('password')
             ->action('createResetByEmail')
             ->method('post')
-            ->request($req)
+            ->req($req)
             ->json()
             ->exec()
             ->response();
@@ -234,7 +234,7 @@ final class PasswordControllerTest extends \Miaoxing\Plugin\Test\BaseControllerT
             ->controller('password')
             ->action('createResetByMobile')
             ->method('post')
-            ->request($req)
+            ->req($req)
             ->json()
             ->exec()
             ->response();
@@ -279,7 +279,7 @@ final class PasswordControllerTest extends \Miaoxing\Plugin\Test\BaseControllerT
             ->controller('password')
             ->action('createResetByEmail')
             ->method('post')
-            ->request($req)
+            ->req($req)
             ->json()
             ->exec()
             ->response();
@@ -352,7 +352,7 @@ final class PasswordControllerTest extends \Miaoxing\Plugin\Test\BaseControllerT
             ->controller('password')
             ->action('resetReturn')
             ->method('post')
-            ->request($req)
+            ->req($req)
             ->json()
             ->exec()
             ->response();
@@ -363,7 +363,7 @@ final class PasswordControllerTest extends \Miaoxing\Plugin\Test\BaseControllerT
             ->controller('password')
             ->action('resetUpdate')
             ->method('post')
-            ->request($req)
+            ->req($req)
             ->json()
             ->exec()
             ->response();

@@ -7,7 +7,7 @@ use Miaoxing\Services\Middleware\CheckRedirectUrl;
 use Miaoxing\Services\Middleware\LoadAppConfig;
 use Miaoxing\User\Middleware\CheckIfEnableRegister;
 use Miaoxing\User\Middleware\CheckNotLogin;
-use Wei\Request;
+use Wei\Req;
 
 class UsersController extends \Miaoxing\Plugin\BaseController
 {
@@ -150,10 +150,10 @@ class UsersController extends \Miaoxing\Plugin\BaseController
     /**
      * 用户登录
      *
-     * @param Request $req
+     * @param Req $req
      * @return array|\Wei\Response
      */
-    public function loginAction(Request $req)
+    public function loginAction(Req $req)
     {
         if ($req->isPost()) {
             if (wei()->user->enableLoginCaptcha) {
@@ -188,7 +188,7 @@ class UsersController extends \Miaoxing\Plugin\BaseController
     {
         User::logout();
 
-        $next = $req('next', $this->request->getReferer());
+        $next = $req('next', $this->req->getReferer());
 
         return $this->response->redirect($next);
     }

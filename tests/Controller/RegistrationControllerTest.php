@@ -71,7 +71,7 @@ final class RegistrationControllerTest extends BaseControllerTestCase
         $ret = wei()->tester()
             ->controller('registration')
             ->action('updateEmail')
-            ->request([
+            ->req([
                 'email' => 'test2@test.com',
             ])
             ->json()

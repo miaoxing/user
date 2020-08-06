@@ -116,7 +116,7 @@ final class UsersControllerTest extends \Miaoxing\Plugin\Test\BaseControllerTest
         $actualRet = wei()->tester()
             ->controller('users')
             ->action('create')
-            ->request($req)
+            ->req($req)
             ->json()
             ->exec()
             ->response();
@@ -204,7 +204,7 @@ final class UsersControllerTest extends \Miaoxing\Plugin\Test\BaseControllerTest
             ->controller('users')
             ->action('create')
             ->method('post')
-            ->request($req)
+            ->req($req)
             ->json()
             ->exec()
             ->response();
@@ -309,7 +309,7 @@ final class UsersControllerTest extends \Miaoxing\Plugin\Test\BaseControllerTest
             ->controller('users')
             ->action('login')
             ->method('post')
-            ->request($req)
+            ->req($req)
             ->json()
             ->exec()
             ->response();
