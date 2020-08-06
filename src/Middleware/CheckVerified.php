@@ -15,7 +15,7 @@ class CheckVerified extends BaseMiddleware
     public function __invoke($next)
     {
         if ($this->user->isLogin() && !$this->user->cur()->isSubscribed) {
-            return $this->response->redirect(wei()->url('registration/confirm'));
+            return $this->res->redirect(wei()->url('registration/confirm'));
         }
 
         return $next();

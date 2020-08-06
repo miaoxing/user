@@ -38,7 +38,7 @@ final class PasswordControllerTest extends \Miaoxing\Plugin\Test\BaseControllerT
             ->exec()
             ->response();
 
-        $this->assertEquals(200, wei()->response->getStatusCode());
+        $this->assertEquals(200, wei()->res->getStatusCode());
 
         User::logout();
         wei()->tester()
@@ -47,7 +47,7 @@ final class PasswordControllerTest extends \Miaoxing\Plugin\Test\BaseControllerT
             ->exec()
             ->response();
 
-        $this->assertEquals(200, wei()->response->getStatusCode());
+        $this->assertEquals(200, wei()->res->getStatusCode());
     }
 
     public function providerForResetByEmail()

@@ -239,14 +239,14 @@ final class UsersControllerTest extends \Miaoxing\Plugin\Test\BaseControllerTest
     public function testNotLoginPages($page)
     {
         User::loginById(1);
-        wei()->response->setStatusCode(200);
+        wei()->res->setStatusCode(200);
 
         wei()->tester()
             ->controller('users')
             ->action($page)
             ->exec();
 
-        $this->assertEquals(302, wei()->response->getStatusCode());
+        $this->assertEquals(302, wei()->res->getStatusCode());
     }
 
     public function providerForUserLogin()

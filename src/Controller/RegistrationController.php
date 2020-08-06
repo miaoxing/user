@@ -99,7 +99,7 @@ class RegistrationController extends BaseController
     /**
      * 重置密码更新数据库
      * @param $req
-     * @return \Wei\Response
+     * @return \Wei\Res
      */
     public function resetUpdateAction($req)
     {

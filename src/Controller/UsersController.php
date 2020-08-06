@@ -93,7 +93,7 @@ class UsersController extends \Miaoxing\Plugin\BaseController
      * 用户注册
      *
      * @param $req
-     * @return \Wei\Response
+     * @return \Wei\Res
      */
     public function createAction($req)
     {
@@ -151,7 +151,7 @@ class UsersController extends \Miaoxing\Plugin\BaseController
      * 用户登录
      *
      * @param Req $req
-     * @return array|\Wei\Response
+     * @return array|\Wei\Res
      */
     public function loginAction(Req $req)
     {
@@ -182,7 +182,7 @@ class UsersController extends \Miaoxing\Plugin\BaseController
      * 用户退出登录
      *
      * @param $req
-     * @return \Wei\Response
+     * @return \Wei\Res
      */
     public function logoutAction($req)
     {
@@ -190,7 +190,7 @@ class UsersController extends \Miaoxing\Plugin\BaseController
 
         $next = $req('next', $this->req->getReferer());
 
-        return $this->response->redirect($next);
+        return $this->res->redirect($next);
     }
 
     /**

@@ -143,7 +143,7 @@ final class RegistrationControllerTest extends BaseControllerTestCase
 
         $this->step('跳转到后台');
         $this->assertContains('Redirecting to /admin', $res);
-        $this->assertEquals(302, wei()->response->getStatusCode());
+        $this->assertEquals(302, wei()->res->getStatusCode());
 
         $this->step('访问修改邮箱后台');
         $res = wei()->tester()
@@ -154,7 +154,7 @@ final class RegistrationControllerTest extends BaseControllerTestCase
 
         $this->step('跳转到后台');
         $this->assertContains('Redirecting to /admin', $res);
-        $this->assertEquals(302, wei()->response->getStatusCode());
+        $this->assertEquals(302, wei()->res->getStatusCode());
     }
 
     /**
@@ -180,6 +180,6 @@ final class RegistrationControllerTest extends BaseControllerTestCase
 
         $this->step('跳转到后台');
         $this->assertContains('Redirecting to /admin', $res);
-        $this->assertEquals(302, wei()->response->getStatusCode());
+        $this->assertEquals(302, wei()->res->getStatusCode());
     }
 }

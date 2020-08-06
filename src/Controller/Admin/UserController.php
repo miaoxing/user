@@ -359,7 +359,7 @@ class UserController extends \Miaoxing\Plugin\BaseController
             ];
         }
 
-        return $this->response->json($data);
+        return $this->res->json($data);
     }
 
     protected function renderCsv($users)

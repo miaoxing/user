@@ -15,7 +15,7 @@ class CheckNotVerified extends BaseMiddleware
     public function __invoke($next)
     {
         if ($this->user->isLogin() && $this->user->cur()->isSubscribed) {
-            return $this->response->redirect(wei()->url('admin'));
+            return $this->res->redirect(wei()->url('admin'));
         }
 
         return $next();

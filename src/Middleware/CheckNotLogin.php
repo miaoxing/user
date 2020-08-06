@@ -28,7 +28,7 @@ class CheckNotLogin extends BaseMiddleware
         if ($this->req->isAjax()) {
             return $this->err('您已经登录,不能访问该页面');
         } else {
-            return $this->response->redirect(wei()->url($this->redirect));
+            return $this->res->redirect(wei()->url($this->redirect));
         }
     }
 }

@@ -51,7 +51,7 @@ class PasswordController extends \Miaoxing\Plugin\BaseController
     /**
      * 验证手机跟用户名并修改密码
      * @param $req
-     * @return \Wei\Response
+     * @return \Wei\Res
      */
     public function createResetByMobileAction($req)
     {
@@ -152,7 +152,7 @@ class PasswordController extends \Miaoxing\Plugin\BaseController
     /**
      * 验证邮箱跟用户名并发送验证到邮箱
      * @param $req
-     * @return \Wei\Response
+     * @return \Wei\Res
      */
     public function createResetByEmailAction($req)
     {
@@ -174,7 +174,7 @@ class PasswordController extends \Miaoxing\Plugin\BaseController
         }
 
         if (!wei()->ua->isWeChat()) {
-            return wei()->response->redirect(wei()->url->full('registration/reset', $req->getQueries()));
+            return wei()->res->redirect(wei()->url->full('registration/reset', $req->getQueries()));
         }
 
         $this->page->setTitle('重置密码');
@@ -189,7 +189,7 @@ class PasswordController extends \Miaoxing\Plugin\BaseController
     /**
      * 重置密码更新数据库
      * @param $req
-     * @return \Wei\Response
+     * @return \Wei\Res
      */
     public function resetUpdateAction($req)
     {
