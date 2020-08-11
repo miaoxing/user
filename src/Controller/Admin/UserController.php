@@ -7,6 +7,8 @@ use Miaoxing\Plugin\Service\User as UserService;
 
 class UserController extends \Miaoxing\Plugin\BaseController
 {
+    CONST MAX_EXPORT_NUMBER = 10000;
+
     protected $controllerName = '用户管理';
 
     protected $actionPermissions = [
@@ -99,7 +101,7 @@ class UserController extends \Miaoxing\Plugin\BaseController
                 }
 
                 // 导出用户限制
-                if ('csv' == $req['format'] && $users->count() > 10000) {
+                if ('csv' == $req['format'] && $users->count() > static::MAX_EXPORT_NUMBER) {
                     return $this->err('导出用户数超过1W，请联系开发人员后台导出！');
                 }
 
