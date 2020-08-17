@@ -8,14 +8,14 @@
   ],
   "license": "MIT",
   "require": {
-    "miaoxing/app": "^0.1.6",
+    "miaoxing/app": "^0.1.7",
     "miaoxing/verify-code": "dev-master@dev",
-    "miaoxing/admin": "^0.1.6",
+    "miaoxing/admin": "^0.1.7",
     "miaoxing/mail": "dev-master@dev",
     "miaoxing/nav": "dev-master@dev"
   },
   "require-dev": {
-    "miaoxing/dev": "^6.1.0"
+    "miaoxing/dev": "^6.1.1"
   },
   "autoload": {
     "psr-4": {
