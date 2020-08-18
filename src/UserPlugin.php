@@ -10,6 +10,8 @@ class UserPlugin extends \Miaoxing\Plugin\BasePlugin
 
     protected $description = '';
 
+    protected $code = 204;
+
     protected $adminNavId = 'user';
 
     public function onAdminNavGetNavs(&$navs, &$categories, &$subCategories)
