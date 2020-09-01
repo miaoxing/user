@@ -9,10 +9,10 @@
   "license": "MIT",
   "require": {
     "miaoxing/app": "^0.2.0",
-    "miaoxing/verify-code": "dev-master@dev",
+    "miaoxing/verify-code": "^0.1.0",
     "miaoxing/admin": "^0.2.0",
-    "miaoxing/mail": "dev-master@dev",
-    "miaoxing/nav": "dev-master@dev"
+    "miaoxing/mail": "^0.1.0",
+    "miaoxing/nav": "^0.1.0"
   },
   "require-dev": {
     "miaoxing/dev": "^6.1.1"
