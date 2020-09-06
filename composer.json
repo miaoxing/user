@@ -8,11 +8,11 @@
   ],
   "license": "MIT",
   "require": {
-    "miaoxing/app": "^0.2.1",
-    "miaoxing/verify-code": "^0.1.1",
-    "miaoxing/admin": "^0.2.1",
-    "miaoxing/mail": "^0.1.1",
-    "miaoxing/nav": "^0.1.1"
+    "miaoxing/app": "^0.2.2",
+    "miaoxing/verify-code": "^0.1.2",
+    "miaoxing/admin": "^0.2.2",
+    "miaoxing/mail": "^0.1.2",
+    "miaoxing/nav": "^0.1.2"
   },
   "require-dev": {
     "miaoxing/dev": "^6.1.1"

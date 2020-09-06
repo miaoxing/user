@@ -1,3 +1,17 @@
+## [0.1.11](https://github.com/miaoxing/user/compare/v0.1.10...v0.1.11) (2020-09-06)
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/app:** upgrade from 0.2.1 to 0.2.2
+* **@miaoxing/verify-code:** upgrade from 0.1.1 to 0.1.2
+* **@miaoxing/admin:** upgrade from 0.2.1 to 0.2.2
+* **@miaoxing/mail:** upgrade from 0.1.1 to 0.1.2
+* **@miaoxing/nav:** upgrade from 0.1.1 to 0.1.2
+
 ## [0.1.10](https://github.com/miaoxing/user/compare/v0.1.9...v0.1.10) (2020-09-01)
 
 
