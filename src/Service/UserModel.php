@@ -378,7 +378,8 @@ class UserModel extends BaseUserModel
 
     public function getAvatarAttribute()
     {
-        return $this->data['avatar'] ?? $this->user->defaultAvatar;
+        return (isset($this->data['avatar']) && $this->data['avatar']) ?
+            $this->data['avatar'] : $this->user->defaultAvatar;
     }
 
     /**
