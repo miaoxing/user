@@ -5,6 +5,7 @@ namespace Miaoxing\User\Service;
 use Miaoxing\Admin\Service\Group;
 use Miaoxing\Admin\Service\GroupModel;
 use Miaoxing\Plugin\Model\HasAppIdTrait;
+use Miaoxing\Plugin\Service\Ret;
 use Miaoxing\Plugin\Service\UserModel as BaseUserModel;
 use Wei\Time;
 
@@ -462,15 +463,19 @@ class UserModel extends BaseUserModel
      * Record: 检查指定的手机号码能否绑定当前用户
      *
      * @param string $mobile
-     * @return array
+     * @return Ret
      * @svc
      */
     protected function checkMobile(string $mobile)
     {
+        if (!$mobile) {
+            return err('手机不能为空');
+        }
+
         // 1. 检查是否已存在认证该手机号码的用户
         $mobileUser = wei()->userModel()->mobileVerified()->findBy('mobile', $mobile);
         if ($mobileUser && $mobileUser['id'] != $this['id']) {
-            return $this->err('已存在认证该手机号码的用户');
+            return err('已存在认证该手机号码的用户');
         }
 
         // 2. 提供接口供外部检查手机号
@@ -479,7 +484,7 @@ class UserModel extends BaseUserModel
             return $ret;
         }
 
-        return $this->suc('手机号码可以绑定');
+        return suc('手机号码可以绑定');
     }
 
     /**
