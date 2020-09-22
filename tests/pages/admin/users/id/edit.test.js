@@ -34,7 +34,7 @@ describe('admin/users', () => {
           id: 1,
           name: '姓名2',
           mobile: '13800138000',
-          mobileVerifiedAt: '2020-01-01 00:00:00',
+          isMobileVerified: true,
         },
       }))
       // 提交
