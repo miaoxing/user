@@ -81,4 +81,11 @@ final class UserModelTest extends \Miaoxing\Plugin\Test\BaseTestCase
         $ret = $testUser->checkMobile($mobile);
         $this->assertRetErr($ret, -1, '已存在认证该手机号码的用户');
     }
+
+    public function testToArrayHasVirtualColumn()
+    {
+        $user = UserModel::toArray();
+
+        $this->assertArrayHasKey('isMobileVerified', $user);
+    }
 }

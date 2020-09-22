@@ -47,9 +47,9 @@ class UserModel extends BaseUserModel
     public function __construct(array $options = [])
     {
         parent::__construct($options);
-        $this->virtual += [
-            'is_mobile_verified',
-        ];
+        $this->virtual = array_merge($this->virtual, [
+            'is_mobile_verified'
+        ]);
     }
 
     public function group()
