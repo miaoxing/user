@@ -6,6 +6,7 @@ import {LinkActions} from '@mxjs/actions';
 import {SearchForm, SearchItem, Select} from '@mxjs/a-form';
 import RegionCascader from '@mxjs/a-region-cascader';
 import DateRangePicker from '@mxjs/a-date-range-picker';
+import UserPopover from '../../../components/UserPopover';
 
 export default () => {
   const [table] = useTable();
@@ -37,17 +38,13 @@ export default () => {
           tableApi={table}
           columns={[
             {
-              title: '头像',
-              dataIndex: 'avatar',
-              render: avatar => <img src={avatar} width={48} height={48}/>,
+              title: '用户',
+              dataIndex: 'id',
+              render: (id, row) => <UserPopover user={row}/>,
             },
             {
               title: '姓名',
               dataIndex: 'name',
-            },
-            {
-              title: '昵称',
-              dataIndex: 'nickName',
             },
             {
               title: '性别',
