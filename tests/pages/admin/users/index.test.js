@@ -24,16 +24,22 @@ describe('admin/users', () => {
 
   test('index', async () => {
     const promise = createPromise();
+    const promise2 = createPromise();
 
     $.http = jest.fn()
-      // 读取列表数据
+      // 读取地区
       .mockImplementationOnce(() => promise.resolve({
+        code: 1,
+        data: [],
+      }))
+      // 读取列表数据
+      .mockImplementationOnce(() => promise2.resolve({
         code: 1,
         data: [
           {
             id: 1,
-            name: '姓名',
-            nickName: '昵称',
+            name: '姓名1',
+            nickName: '昵称2',
             sex: 1,
             mobile: '138001380000',
             country: '中国',
@@ -47,14 +53,14 @@ describe('admin/users', () => {
       <Index/>
     </MemoryRouter>);
 
-    await findByText('姓名');
-    await findByText('昵称');
+    await findByText('姓名1');
+    await findByText('昵称2');
     await findByText('男');
     await findByText('138001380000');
     await findByText('中国 广东 深圳');
 
-    await Promise.all([promise]);
-    expect($.http).toHaveBeenCalledTimes(1);
+    await Promise.all([promise, promise2]);
+    expect($.http).toHaveBeenCalledTimes(2);
     expect($.http).toMatchSnapshot();
   });
 });

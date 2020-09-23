@@ -6,11 +6,24 @@ exports[`admin/users index 1`] = `
     Array [
       Object {
         "method": "get",
+        "url": "/api/regions",
+      },
+    ],
+    Array [
+      Object {
+        "method": "get",
         "url": "/admin-api/users?page=1&rows=20",
       },
     ],
   ],
   "results": Array [
+    Object {
+      "type": "return",
+      "value": Promise {
+        "reject": [Function],
+        "resolve": [Function],
+      },
+    },
     Object {
       "type": "return",
       "value": Promise {

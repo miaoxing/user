@@ -3,6 +3,9 @@ import {Table, TableProvider, useTable} from '@mxjs/a-table';
 import {CEditLink} from '@mxjs/a-clink';
 import {Page} from '@mxjs/a-page';
 import {LinkActions} from '@mxjs/actions';
+import {SearchForm, SearchItem, Select} from '@mxjs/a-form';
+import RegionCascader from '@mxjs/a-region-cascader';
+import DateRangePicker from '@mxjs/a-date-range-picker';
 
 export default () => {
   const [table] = useTable();
@@ -10,6 +13,26 @@ export default () => {
   return (
     <Page>
       <TableProvider>
+        <SearchForm>
+          <SearchItem label="姓名" name="name$ct"/>
+
+          <SearchItem label="昵称" name="nickName$ct"/>
+
+          <SearchItem label="性别" name="groupId" initialValue="">
+            <Select options={{1: '男', 2: '女'}} all/>
+          </SearchItem>
+
+          <SearchItem label="手机" name="mobile$ct"/>
+
+          <SearchItem label="地区" name="_region">
+            <RegionCascader/>
+          </SearchItem>
+
+          <SearchItem label="加入时间" name="_createdAt">
+            <DateRangePicker/>
+          </SearchItem>
+        </SearchForm>
+
         <Table
           tableApi={table}
           columns={[
