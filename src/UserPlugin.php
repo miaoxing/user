@@ -23,7 +23,7 @@ class UserPlugin extends \Miaoxing\Plugin\BasePlugin
 
         $subCategories[] = [
             'parentId' => 'user',
-            'url' => 'admin/user',
+            'url' => 'admin/users',
             'name' => '用户管理',
             'sort' => 1000,
         ];
