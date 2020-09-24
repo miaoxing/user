@@ -24,7 +24,7 @@ export default class extends React.Component {
       <Media>
         <Popover
           placement="rightTop"
-          trigger="click"
+          trigger="hover"
           content={<>
             <Media>
               <Image src={user.avatar} width={96} height={96} mr={3}/>
