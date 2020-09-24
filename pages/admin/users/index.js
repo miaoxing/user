@@ -7,6 +7,8 @@ import {SearchForm, SearchItem, Select} from '@mxjs/a-form';
 import RegionCascader from '@mxjs/a-region-cascader';
 import DateRangePicker from '@mxjs/a-date-range-picker';
 import UserPopover from '../../../components/UserPopover';
+import {CheckCircleTwoTone} from '@ant-design/icons';
+import {Box} from 'rebass';
 
 export default () => {
   const [table] = useTable();
@@ -54,6 +56,12 @@ export default () => {
             {
               title: '手机',
               dataIndex: 'mobile',
+              render: (mobile, row) => (
+                <>
+                  {mobile}
+                  {row.isMobileVerified ? <Box ml={1} as="span"><CheckCircleTwoTone twoToneColor="#52c41a"/></Box> : ''}
+                </>
+              )
             },
             {
               title: '地区',

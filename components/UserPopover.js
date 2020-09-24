@@ -1,8 +1,8 @@
 import React from "react";
 import {Popover, Descriptions} from 'antd';
-import {Image} from 'rebass';
+import {Image, Box} from 'rebass';
 import {Media} from "@mxjs/bootstrap";
-import {ManOutlined, WomanOutlined} from '@ant-design/icons';
+import {ManOutlined, WomanOutlined, CheckCircleTwoTone} from '@ant-design/icons';
 
 export default class extends React.Component {
   renderSex() {
@@ -24,7 +24,7 @@ export default class extends React.Component {
       <Media>
         <Popover
           placement="rightTop"
-          trigger="hover"
+          trigger="click"
           content={<>
             <Media>
               <Image src={user.avatar} width={96} height={96} mr={3}/>
@@ -37,7 +37,11 @@ export default class extends React.Component {
                   </>
                 } column={1}>
                   <Descriptions.Item label="姓名">{user.name}</Descriptions.Item>
-                  <Descriptions.Item label="手机">{user.mobile || '-'}</Descriptions.Item>
+                  <Descriptions.Item label="手机">
+                    {user.mobile || '-'}
+                    {' '}
+                    {user.isMobileVerified ? <Box ml={1}><CheckCircleTwoTone twoToneColor="#52c41a"/></Box> : ''}
+                  </Descriptions.Item>
                   <Descriptions.Item label="地区">
                     {[user.country, user.province, user.city].filter(el => el).join(' ') || '-'}
                   </Descriptions.Item>
