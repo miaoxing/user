@@ -1,3 +1,34 @@
+## [0.1.12](https://github.com/miaoxing/user/compare/v0.1.11...v0.1.12) (2020-09-25)
+
+
+### Bug Fixes
+
+* toArray 缺少 isMobileVerified 字段 ([dcb70d9](https://github.com/miaoxing/user/commit/dcb70d9498f2d6309251d0c7a4df47f87afc169b))
+* 从数据库读取头像为空字符串时，未转换成默认头像 ([4e3d44a](https://github.com/miaoxing/user/commit/4e3d44af6546c350a03b880c983a716ec964e968))
+
+
+### Features
+
+* 增加后台用户列表 ([195f1c4](https://github.com/miaoxing/user/commit/195f1c49288e0129d8ba701865b1e45ca9adb990))
+* 增加后台编辑用户功能 ([5876cd1](https://github.com/miaoxing/user/commit/5876cd19efc7dbd44228129a3978eeb4f9a8d25a))
+* 增加查询用户列表功能 ([166cdbf](https://github.com/miaoxing/user/commit/166cdbff9f2306e60d591d3baf953bf08b827dac))
+* 增加用户卡片，鼠标移到用户头像上，显示用户详细信息 ([856802b](https://github.com/miaoxing/user/commit/856802b22915e2081bb1ff32b91cafd9dd2923fe))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/bootstrap:** upgrade from 0.1.0 to 0.1.1
+* **@miaoxing/dev:** upgrade from 6.1.1 to 6.1.2
+* **@miaoxing/app:** upgrade from 0.2.2 to 0.2.3
+* **@miaoxing/verify-code:** upgrade from 0.1.2 to 0.1.3
+* **@miaoxing/admin:** upgrade from 0.2.2 to 0.2.3
+* **@miaoxing/mail:** upgrade from 0.1.2 to 0.1.3
+* **@miaoxing/nav:** upgrade from 0.1.2 to 0.1.3
+* **@miaoxing/region:** upgrade to 0.1.0
+
 ## [0.1.11](https://github.com/miaoxing/user/compare/v0.1.10...v0.1.11) (2020-09-06)
 
 
