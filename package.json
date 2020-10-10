@@ -9,7 +9,8 @@
     "preset": "jest-preset-miaoxing"
   },
   "dependencies": {
-    "@mxjs/bootstrap": "^0.1.1"
+    "@mxjs/bootstrap": "^0.1.1",
+    "@mxjs/upload": "^0.2.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.5.0",

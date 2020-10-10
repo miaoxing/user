@@ -32,7 +32,7 @@ export default () => {
           </SearchItem>
 
           <SearchItem label="加入时间" name="_createdAt">
-            <DateRangePicker/>
+            <DateRangePicker names={['createdAt$ge', 'createdAt$le']}/>
           </SearchItem>
         </SearchForm>
 
