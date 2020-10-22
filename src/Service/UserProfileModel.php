@@ -18,10 +18,6 @@ class UserProfileModel extends BaseModel
 
     protected $table = 'userProfile';
 
-    protected $defaultCasts = [
-        'config' => 'array',
-    ];
-
     protected $data = [
         'config' => [],
     ];
@@ -29,4 +25,11 @@ class UserProfileModel extends BaseModel
     protected $providers = [
         'db' => 'db',
     ];
+
+    public function getCasts(): array
+    {
+        return array_merge(parent::getCasts(), [
+            'config' => 'json',
+        ]);
+    }
 }
