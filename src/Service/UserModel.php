@@ -419,7 +419,7 @@ class UserModel extends BaseUserModel
      * Record: 指定用户是否为管理员
      *
      * @return bool
-     * @deprecated 使用 $this->admin
+     * @deprecated 使用 $this->isAdmin
      */
     public function isAdmin()
     {
