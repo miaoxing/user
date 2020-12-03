@@ -36,7 +36,7 @@ class UserModel extends BaseUserModel
 
     protected $data = [
         'sex' => 1,
-        'group_id' => 0,
+        'groupId' => 0,
     ];
 
     /**
@@ -49,7 +49,7 @@ class UserModel extends BaseUserModel
     {
         parent::__construct($options);
         $this->virtual = array_merge($this->virtual, [
-            'is_mobile_verified'
+            'isMobileVerified',
         ]);
     }
 
