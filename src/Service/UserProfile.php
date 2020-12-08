@@ -2,7 +2,7 @@
 
 namespace Miaoxing\User\Service;
 
-class UserProfile extends \Miaoxing\Plugin\BaseModel
+class UserProfile extends \Miaoxing\Plugin\BaseService
 {
     protected $data = [
         'config' => [],
