@@ -20,7 +20,7 @@ class UserProfileModel extends BaseModel
 
     protected $table = 'userProfile';
 
-    protected $data = [
+    protected $attributes = [
         'config' => [],
     ];
 

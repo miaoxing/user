@@ -34,7 +34,7 @@ class UserModel extends BaseUserModel
      */
     protected $group;
 
-    protected $data = [
+    protected $attributes = [
         'sex' => 1,
         'groupId' => 0,
     ];
@@ -379,8 +379,8 @@ class UserModel extends BaseUserModel
 
     public function getAvatarAttribute()
     {
-        return (isset($this->data['avatar']) && $this->data['avatar']) ?
-            $this->data['avatar'] : $this->user->defaultAvatar;
+        return (isset($this->attributes['avatar']) && $this->attributes['avatar']) ?
+            $this->attributes['avatar'] : $this->user->defaultAvatar;
     }
 
     /**
