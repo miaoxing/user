@@ -2,8 +2,6 @@
 
 namespace Miaoxing\User\Metadata;
 
-use Miaoxing\Plugin\Model\ModelTrait;
-
 /**
  * @property int $id
  * @property int $appId
@@ -48,49 +46,4 @@ use Miaoxing\Plugin\Model\ModelTrait;
  */
 trait UserTrait
 {
-    use ModelTrait;
-
-    /**
-     * @var array
-     * @see CastTrait::$casts
-     */
-    protected $casts = [
-        'id' => 'int',
-        'appId' => 'int',
-        'outId' => 'string',
-        'groupId' => 'int',
-        'wechatOpenId' => 'string',
-        'wechatUnionId' => 'string',
-        'isAdmin' => 'bool',
-        'nickName' => 'string',
-        'remarkName' => 'string',
-        'username' => 'string',
-        'name' => 'string',
-        'email' => 'string',
-        'mobile' => 'string',
-        'mobileVerifiedAt' => 'datetime',
-        'phone' => 'string',
-        'password' => 'string',
-        'sex' => 'int',
-        'country' => 'string',
-        'province' => 'string',
-        'city' => 'string',
-        'area' => 'string',
-        'address' => 'string',
-        'signature' => 'string',
-        'isEnabled' => 'bool',
-        'avatar' => 'string',
-        'lastLoginAt' => 'datetime',
-        'createdAt' => 'datetime',
-        'updatedAt' => 'datetime',
-        'createdBy' => 'int',
-        'updatedBy' => 'int',
-        'score' => 'int',
-        'money' => 'float',
-        'rechargeMoney' => 'float',
-        'isSubscribed' => 'bool',
-        'subscribedAt' => 'datetime',
-        'unsubscribedAt' => 'datetime',
-        'source' => 'string',
-    ];
 }

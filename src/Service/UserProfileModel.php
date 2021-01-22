@@ -24,14 +24,9 @@ class UserProfileModel extends BaseModel
         'config' => [],
     ];
 
-    protected $providers = [
-        'db' => 'db',
+    protected $columns = [
+        'config' => [
+            'cast' => 'json',
+        ]
     ];
-
-    public function getCasts(): array
-    {
-        return array_merge(parent::getCasts(), [
-            'config' => 'json',
-        ]);
-    }
 }

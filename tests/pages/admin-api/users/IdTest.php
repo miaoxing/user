@@ -67,7 +67,7 @@ class IdTest extends BaseTestCase
         $ret = Tester::patchAdminApi('users/' . $user->id, [
             'mobile' => '123',
         ]);
-        $this->assertRetErr($ret, null, '手机必须是11位数字,以13到19开头');
+        $this->assertRetErr($ret, '手机必须是11位数字,以13到19开头');
     }
 
     public function testPatchMobileExists()
@@ -85,7 +85,7 @@ class IdTest extends BaseTestCase
             'mobile' => '13800138001',
             'isMobileVerified' => true,
         ]);
-        $this->assertRetErr($ret, null, '已存在认证该手机号码的用户');
+        $this->assertRetErr($ret, '已存在认证该手机号码的用户');
     }
 
     public function testPatchCancelMobileVerify()

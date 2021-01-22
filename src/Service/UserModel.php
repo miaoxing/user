@@ -4,7 +4,6 @@ namespace Miaoxing\User\Service;
 
 use Miaoxing\Admin\Service\Group;
 use Miaoxing\Admin\Service\GroupModel;
-use Miaoxing\Plugin\Model\HasAppIdTrait;
 use Miaoxing\Plugin\Service\Ret;
 use Miaoxing\Plugin\Service\UserModel as BaseUserModel;
 use Wei\Time;
@@ -14,8 +13,6 @@ use Wei\Time;
  */
 class UserModel extends BaseUserModel
 {
-    use HasAppIdTrait;
-
     /**
      * 省市是否锁定(第三方平台不可更改)
      */
@@ -98,15 +95,14 @@ class UserModel extends BaseUserModel
 
     public function afterSave()
     {
-        parent::afterSave();
         $this->user->refresh($this);
-        $this->clearRecordCache();
+        $this->removeModelCache();
     }
 
     public function afterDestroy()
     {
         parent::afterDestroy();
-        $this->clearRecordCache();
+        $this->removeModelCache();
     }
 
     /**
