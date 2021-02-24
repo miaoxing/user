@@ -3,8 +3,6 @@
 namespace Miaoxing\User\Metadata;
 
 /**
- * UserProfileTrait
- *
  * @property int $id 主键
  * @property int $userId 用户id
  * @property string $name 姓名
@@ -17,7 +15,7 @@ namespace Miaoxing\User\Metadata;
  * @property string $degree 用户学历
  * @property string $province 用户所在省份
  * @property string $city 用户所在城市
- * @property string $area
+ * @property string $district
  * @property string $address 地址
  * @property string $zipcode 邮政编码
  * @property string $email 用户E-mail
@@ -28,40 +26,10 @@ namespace Miaoxing\User\Metadata;
  * @property string $homePage 用户主页
  * @property string $favorite 用户爱好
  * @property string $personalDesc 用户个人说明
- * @property array $config
- * @property string $createTime 创建时间
+ * @property string $config
+ * @property string|null $createTime 创建时间
+ * @internal will change in the future
  */
 trait UserProfileTrait
 {
-    /**
-     * @var array
-     * @see CastTrait::$casts
-     */
-    protected $casts = [
-        'id' => 'int',
-        'userId' => 'int',
-        'name' => 'string',
-        'contact' => 'string',
-        'sex' => 'string',
-        'age' => 'string',
-        'birthday' => 'string',
-        'height' => 'string',
-        'weight' => 'string',
-        'degree' => 'string',
-        'province' => 'string',
-        'city' => 'string',
-        'area' => 'string',
-        'address' => 'string',
-        'zipcode' => 'string',
-        'email' => 'string',
-        'idcard' => 'string',
-        'bloodType' => 'string',
-        'career' => 'string',
-        'college' => 'string',
-        'homePage' => 'string',
-        'favorite' => 'string',
-        'personalDesc' => 'string',
-        'config' => 'array',
-        'createTime' => 'datetime',
-    ];
 }
