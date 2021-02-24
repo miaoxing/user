@@ -17,22 +17,22 @@ export default () => {
     <Page>
       <TableProvider>
         <SearchForm>
-          <SearchItem label="姓名" name="name$ct"/>
+          <SearchItem label="姓名" name={['search', 'name:ct']}/>
 
-          <SearchItem label="昵称" name="nickName$ct"/>
+          <SearchItem label="昵称" name={['search', 'nickName:ct']}/>
 
-          <SearchItem label="性别" name="groupId" initialValue="">
+          <SearchItem label="性别" name={['search', 'sex']} initialValue="">
             <Select options={{1: '男', 2: '女'}} all/>
           </SearchItem>
 
-          <SearchItem label="手机" name="mobile$ct"/>
+          <SearchItem label="手机" name={['search', 'mobile:ct']}/>
 
           <SearchItem label="地区" name="_region">
             <RegionCascader/>
           </SearchItem>
 
           <SearchItem label="加入时间" name="_createdAt">
-            <DateRangePicker names={['createdAt$ge', 'createdAt$le']}/>
+            <DateRangePicker names={[['search', 'createdAt:ge'], ['search', 'createdAt:le']]}/>
           </SearchItem>
         </SearchForm>
 
