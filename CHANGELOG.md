@@ -1,9 +1,9 @@
 # [0.2.0](https://github.com/miaoxing/user/compare/v0.1.13...v0.2.0) (2021-03-05)
 
+### Code Refactoring
 
-* refactor!: 用户表移除微信相关字段 ([61f5bea](https://github.com/miaoxing/user/commit/61f5bea8adbefef6bf0c8edaede6ea55e9872faa))
-* refactor(Model)!: Model 列名都改为驼峰格式，与数据库交互转换为下划线格式 ([a39ff97](https://github.com/miaoxing/user/commit/a39ff9700bea94eb37c07f55640d88b314b404d6))
-
+* **Model:** Model 列名都改为驼峰格式，与数据库交互转换为下划线格式 ([a39ff97](https://github.com/miaoxing/user/commit/a39ff9700bea94eb37c07f55640d88b314b404d6))
+* 用户表移除微信相关字段 ([61f5bea](https://github.com/miaoxing/user/commit/61f5bea8adbefef6bf0c8edaede6ea55e9872faa))
 
 ### BREAKING CHANGES
 
