@@ -1,6 +1,6 @@
 {
   "name": "@miaoxing/user",
-  "version": "0.1.13",
+  "version": "0.2.0",
   "private": true,
   "main": "index.js",
   "author": "twinh",
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@mxjs/bootstrap": "^0.1.1",
-    "@mxjs/upload": "^0.2.0"
+    "@mxjs/upload": "^0.3.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.5.0",
