@@ -1,3 +1,17 @@
+## [0.2.7](https://github.com/miaoxing/user/compare/v0.2.6...v0.2.7) (2021-03-10)
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-form:** upgrade from `0.2.6` to `0.2.7`
+* **@mxjs/a-page:** upgrade from `0.2.2` to `0.2.3`
+* **@mxjs/a-table:** upgrade from `0.3.4` to `0.3.5`
+* **@mxjs/upload:** upgrade from `0.3.4` to `0.3.5`
+* **@miaoxing/admin:** upgrade from `0.3.5` to `0.3.6`
+
 ## [0.2.6](https://github.com/miaoxing/user/compare/v0.2.5...v0.2.6) (2021-03-10)
 
 
