@@ -1,3 +1,13 @@
+## [0.2.6](https://github.com/miaoxing/user/compare/v0.2.5...v0.2.6) (2021-03-10)
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-clink:** upgrade from `0.1.1` to `0.1.2`
+
 ## [0.2.5](https://github.com/miaoxing/user/compare/v0.2.4...v0.2.5) (2021-03-10)
 
 
