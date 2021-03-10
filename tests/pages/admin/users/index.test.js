@@ -13,8 +13,8 @@ describe('admin/users', () => {
     setUrl('admin/users');
     app.page = {
       collection: 'admin/users',
-      index: true
-    }
+      index: true,
+    };
   });
 
   afterEach(() => {
@@ -44,8 +44,8 @@ describe('admin/users', () => {
             mobile: '138001380000',
             country: '中国',
             province: '广东',
-            city: '深圳'
-          }
+            city: '深圳',
+          },
         ],
       }));
 

@@ -61,7 +61,7 @@ export default () => {
                   {mobile}
                   {row.isMobileVerified ? <Box ml={1} as="span"><CheckCircleTwoTone twoToneColor="#52c41a"/></Box> : ''}
                 </>
-              )
+              ),
             },
             {
               title: '地区',
