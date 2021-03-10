@@ -39,8 +39,6 @@ foreach (['WERCKER', 'GITHUB_ACTIONS'] as $ci) {
 }
 $wei->setConfig(getConfig($files));
 
-$isCi = true;
-
 // NOTE: 安装需依赖CI环境的配置，暂时放到这里
 if ($isCi) {
     $out = static function ($message) {
