@@ -13,30 +13,30 @@ final class UserModelTest extends \Miaoxing\Plugin\Test\BaseTestCase
     /**
      * 测试获取昵称
      */
-    public function testGetNickName()
+    public function testDisplayName()
     {
         $user = UserModel::new();
-        $this->assertEquals('', $user->getNickName());
+        $this->assertEquals('', $user->displayName);
 
-        $this->assertEquals('', $user->getNickName());
+        $this->assertEquals('', $user->displayName);
 
         $user['name'] = 'name';
-        $this->assertEquals('name', $user->getNickName());
+        $this->assertEquals('name', $user->displayName);
 
         $user['username'] = 'username';
-        $this->assertEquals('username', $user->getNickName());
+        $this->assertEquals('username', $user->displayName);
 
         $user['nickName'] = 'nickName';
-        $this->assertEquals('nickName', $user->getNickName());
+        $this->assertEquals('nickName', $user->displayName);
     }
 
     public function testIsAdmin()
     {
         $user = UserModel::new();
-        $this->assertFalse($user->isAdmin());
+        $this->assertFalse($user->isAdmin);
 
         $user->isAdmin = true;
-        $this->assertTrue($user->isAdmin());
+        $this->assertTrue($user->isAdmin);
     }
 
     public function testUpdateGroup()
