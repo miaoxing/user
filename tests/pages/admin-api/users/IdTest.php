@@ -104,7 +104,6 @@ class IdTest extends BaseTestCase
 
         $user->reload();
         $this->assertSame('13800138001', $user->mobile);
-        // FIXME $user->isMobileVerified Property or object "isMobileVerified" (class "Wei\Validator\MobileVerified") not found
-        $this->assertFalse($user->getIsMobileVerifiedAttribute());
+        $this->assertFalse($user->isMobileVerified);
     }
 }

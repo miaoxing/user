@@ -23,6 +23,6 @@ class UserProfile extends \Miaoxing\Plugin\BaseService
 
         $this->event->trigger('preImageDataSave', [&$this, ['images', 'detail']]);
 
-        $this['config'] = json_encode($this['config'], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        $this['config'] = json_encode($this['config'], \JSON_UNESCAPED_SLASHES | \JSON_UNESCAPED_UNICODE);
     }
 }

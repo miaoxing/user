@@ -13,10 +13,10 @@ use Miaoxing\User\Metadata\UserProfileTrait;
  */
 class UserProfileModel extends BaseModel
 {
-    use ModelTrait;
-    use UserProfileTrait;
     use CastTrait;
+    use ModelTrait;
     use ReqQueryTrait;
+    use UserProfileTrait;
 
     protected $table = 'userProfile';
 
@@ -27,6 +27,6 @@ class UserProfileModel extends BaseModel
     protected $columns = [
         'config' => [
             'cast' => 'json',
-        ]
+        ],
     ];
 }

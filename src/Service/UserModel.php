@@ -333,11 +333,11 @@ class UserModel extends BaseUserModel
         $app = wei()->app;
 
         if (isset($data['param']) && is_array($data['param'])) {
-            $data['param'] = json_encode($data['param'], JSON_UNESCAPED_UNICODE);
+            $data['param'] = json_encode($data['param'], \JSON_UNESCAPED_UNICODE);
         }
 
         if (isset($data['ret']) && is_array($data['ret'])) {
-            $data['ret'] = json_encode($data['ret'], JSON_UNESCAPED_UNICODE);
+            $data['ret'] = json_encode($data['ret'], \JSON_UNESCAPED_UNICODE);
         }
 
         wei()->db->insert('userLogs', $data + [
