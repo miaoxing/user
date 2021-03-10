@@ -13,7 +13,6 @@ use Miaoxing\User\Metadata\UserProfileTrait;
  */
 class UserProfileModel extends BaseModel
 {
-    use CastTrait;
     use ModelTrait;
     use ReqQueryTrait;
     use UserProfileTrait;
