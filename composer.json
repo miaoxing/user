@@ -32,13 +32,11 @@
   "prefer-stable": true,
   "extra": {
     "installer-types": [
-      "library",
       "miaoxing-plugin"
     ],
     "installer-paths": {
       "plugins/{$name}/": [
-        "type:miaoxing-plugin",
-        "miaoxing/admin"
+        "type:miaoxing-plugin"
       ]
     }
   }
