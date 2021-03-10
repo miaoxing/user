@@ -39,22 +39,22 @@ class IndexTest extends BaseTestCase
             'city' => '深圳',
         ]);
 
-        $request = [
-            'name$ct' => $user->name,
-            'nickName$ct' => $user->nickName,
+        $search = [
+            'name:ct' => $user->name,
+            'nickName:ct' => $user->nickName,
             'sex' => $user->sex,
             'country' => $user->country,
             'province' => $user->province,
             'city' => $user->city,
-            'createdAtMin' => (string) Carbon::now()->subMinute(),
-            'createdAtMax' => Time::now(),
+            'createdAt:ge' => (string) Carbon::now()->subMinute(),
+            'createdAt:le' => Time::now(),
         ];
 
-        $ret = Tester::request($request)->getAdminApi('users');
+        $ret = Tester::request(['search' => $search])->getAdminApi('users');
         $this->assertSame($user->name, $ret['data'][0]['name']);
 
-        $request['createdAtMin'] = (string) Carbon::now()->addMinute();
-        $ret = Tester::request($request)->getAdminApi('users');
+        $search['createdAt:ge'] = (string) Carbon::now()->addMinute();
+        $ret = Tester::request(['search' => $search])->getAdminApi('users');
         $this->assertEmpty($ret['data']);
     }
 }
