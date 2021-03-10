@@ -1,3 +1,32 @@
+## [0.2.5](https://github.com/miaoxing/user/compare/v0.2.4...v0.2.5) (2021-03-10)
+
+
+### Bug Fixes
+
+* 增加前端依赖 ([2a00e63](https://github.com/miaoxing/user/commit/2a00e63e62bdd7f6b4b1a0d0c4381a302b5c7bc6))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-clink:** upgrade from 0.1.0 to 0.1.1
+* **@mxjs/a-date-range-picker:** upgrade from 0.2.3 to 0.2.4
+* **@mxjs/a-form:** upgrade from 0.2.5 to 0.2.6
+* **@mxjs/a-page:** upgrade from 0.2.1 to 0.2.2
+* **@mxjs/a-region-cascader:** upgrade from 0.1.3 to 0.1.4
+* **@mxjs/a-table:** upgrade from 0.3.3 to 0.3.4
+* **@mxjs/bootstrap:** upgrade from 0.1.1 to 0.1.2
+* **@mxjs/upload:** upgrade from 0.3.3 to 0.3.4
+* **@miaoxing/dev:** upgrade from 6.3.1 to 6.3.2
+* **@miaoxing/app:** upgrade from 0.2.9 to 0.2.10
+* **@miaoxing/verify-code:** upgrade from 0.1.9 to 0.1.10
+* **@miaoxing/admin:** upgrade from 0.3.4 to 0.3.5
+* **@miaoxing/mail:** upgrade from 0.1.9 to 0.1.10
+* **@miaoxing/nav:** upgrade from 0.1.9 to 0.1.10
+* **@miaoxing/region:** upgrade from 0.1.6 to 0.1.7
+
 ## [0.2.4](https://github.com/miaoxing/user/compare/v0.2.3...v0.2.4) (2021-03-09)
 
 
