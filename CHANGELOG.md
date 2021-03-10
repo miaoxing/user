@@ -1,3 +1,10 @@
+## [0.2.8](https://github.com/miaoxing/user/compare/v0.2.7...v0.2.8) (2021-03-10)
+
+
+### Bug Fixes
+
+* PHP 7.2 重复引入 Trait 出错 ([3da52dc](https://github.com/miaoxing/user/commit/3da52dc4b173de5cafb368a86b63e013af61a588))
+
 ## [0.2.7](https://github.com/miaoxing/user/compare/v0.2.6...v0.2.7) (2021-03-10)
 
 
