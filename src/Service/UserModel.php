@@ -95,7 +95,7 @@ class UserModel extends BaseUserModel
 
     public function afterSave()
     {
-        $this->user->refresh($this);
+        parent::afterSave();
         $this->removeModelCache();
     }
 
