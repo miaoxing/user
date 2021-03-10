@@ -3,7 +3,6 @@
 namespace Miaoxing\User\Service;
 
 use Miaoxing\Plugin\BaseModel;
-use Miaoxing\Plugin\Model\CastTrait;
 use Miaoxing\Plugin\Model\ModelTrait;
 use Miaoxing\Plugin\Model\ReqQueryTrait;
 use Miaoxing\User\Metadata\UserProfileTrait;
