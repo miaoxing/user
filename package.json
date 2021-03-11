@@ -1,6 +1,6 @@
 {
   "name": "@miaoxing/user",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "private": true,
   "main": "index.js",
   "author": "twinh",
@@ -10,20 +10,20 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.5.0",
-    "@mxjs/a-clink": "^0.1.2",
+    "@mxjs/a-clink": "^0.1.3",
     "@mxjs/a-date-range-picker": "^0.2.4",
-    "@mxjs/a-form": "^0.2.8",
+    "@mxjs/a-form": "^0.2.9",
     "@mxjs/a-page": "^0.2.3",
     "@mxjs/a-region-cascader": "^0.1.5",
-    "@mxjs/a-table": "^0.3.5",
+    "@mxjs/a-table": "^0.3.6",
     "@mxjs/bootstrap": "^0.1.2",
-    "@mxjs/upload": "^0.3.6",
+    "@mxjs/upload": "^0.3.7",
     "antd": "^4.13.1",
     "rebass": "^4.0.7"
   },
   "devDependencies": {
     "@miaoxing/dev": "^6.3.2",
-    "@mxjs/test": "^0.1.2",
+    "@mxjs/test": "^0.1.3",
     "@testing-library/jest-dom": "^5.5.0",
     "@testing-library/react": "^10.0.4",
     "react": "^16.13.1",
