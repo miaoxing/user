@@ -10,7 +10,7 @@
   "require": {
     "miaoxing/app": "^0.2.10",
     "miaoxing/verify-code": "^0.1.10",
-    "miaoxing/admin": "^0.3.6",
+    "miaoxing/admin": "^0.3.7",
     "miaoxing/mail": "^0.1.10",
     "miaoxing/nav": "^0.1.10",
     "miaoxing/region": "^0.1.7"

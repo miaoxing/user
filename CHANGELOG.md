@@ -1,3 +1,22 @@
+## [0.2.9](https://github.com/miaoxing/user/compare/v0.2.8...v0.2.9) (2021-03-11)
+
+
+### Bug Fixes
+
+* propTypes 定义错误 ([9050958](https://github.com/miaoxing/user/commit/90509581063d2adaef277282623b60b38cee28b1))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-form:** upgrade from `0.2.7` to `0.2.8`
+* **@mxjs/a-region-cascader:** upgrade from `0.1.4` to `0.1.5`
+* **@mxjs/upload:** upgrade from `0.3.5` to `0.3.6`
+* **@mxjs/test:** upgrade from `0.1.1` to `0.1.2`
+* **@miaoxing/admin:** upgrade from `0.3.6` to `0.3.7`
+
 ## [0.2.8](https://github.com/miaoxing/user/compare/v0.2.7...v0.2.8) (2021-03-10)
 
 
