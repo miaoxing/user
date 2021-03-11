@@ -3,21 +3,21 @@ import {Popover, Descriptions} from 'antd';
 import {Image, Box} from 'rebass';
 import {Media} from '@mxjs/bootstrap';
 import {ManOutlined, WomanOutlined, CheckCircleTwoTone} from '@ant-design/icons';
-import PropType from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default class extends React.Component {
-  propTypes = {
-    user: PropType.objectOf({
-      sex: PropType.number.isRequired,
-      name: PropType.string.isRequired,
-      nickName: PropType.string.isRequired,
-      displayName: PropType.string,
-      avatar: PropType.string.isRequired,
-      mobile: PropType.string,
-      isMobileVerified: PropType.bool,
-      country: PropType.string,
-      province: PropType.string,
-      city: PropType.string,
+  static propTypes = {
+    user: PropTypes.shape({
+      sex: PropTypes.number,
+      name: PropTypes.string,
+      nickName: PropTypes.string,
+      displayName: PropTypes.string,
+      avatar: PropTypes.string,
+      mobile: PropTypes.string,
+      isMobileVerified: PropTypes.bool,
+      country: PropTypes.string,
+      province: PropTypes.string,
+      city: PropTypes.string,
     }).isRequired,
   }
 
