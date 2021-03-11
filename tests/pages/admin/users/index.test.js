@@ -40,6 +40,7 @@ describe('admin/users', () => {
             id: 1,
             name: '姓名1',
             nickName: '昵称2',
+            displayName: '显示名称3',
             sex: 1,
             mobile: '138001380000',
             country: '中国',
@@ -54,7 +55,7 @@ describe('admin/users', () => {
     </MemoryRouter>);
 
     await findByText('姓名1');
-    await findByText('昵称2');
+    await findByText('显示名称3');
     await findByText('男');
     await findByText('138001380000');
     await findByText('中国 广东 深圳');
