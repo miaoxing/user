@@ -1,3 +1,33 @@
+## [0.2.11](https://github.com/miaoxing/user/compare/v0.2.10...v0.2.11) (2021-03-12)
+
+
+### Bug Fixes
+
+* 更新前端包依赖 ([27818b8](https://github.com/miaoxing/user/commit/27818b89be5f234a08a58ccb87dd4725d0ee3e02))
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/dev:** upgrade from `6.3.2` to `6.3.3`
+* **@mxjs/test:** upgrade from `0.1.3` to `0.1.4`
+* **@mxjs/a-clink:** upgrade from `0.1.3` to `0.1.4`
+* **@mxjs/a-date-range-picker:** upgrade from `0.2.4` to `0.2.5`
+* **@mxjs/a-form:** upgrade from `0.2.9` to `0.2.10`
+* **@mxjs/a-page:** upgrade from `0.2.3` to `0.2.4`
+* **@mxjs/a-region-cascader:** upgrade from `0.1.5` to `0.1.6`
+* **@mxjs/a-table:** upgrade from `0.3.6` to `0.3.7`
+* **@mxjs/bootstrap:** upgrade from `0.1.2` to `0.1.3`
+* **@mxjs/upload:** upgrade from `0.3.7` to `0.3.8`
+* **@miaoxing/app:** upgrade from `0.2.10` to `0.2.11`
+* **@miaoxing/verify-code:** upgrade from `0.1.10` to `0.1.11`
+* **@miaoxing/admin:** upgrade from `0.3.8` to `0.3.9`
+* **@miaoxing/mail:** upgrade from `0.1.10` to `0.1.11`
+* **@miaoxing/nav:** upgrade from `0.1.10` to `0.1.11`
+* **@miaoxing/region:** upgrade from `0.1.7` to `0.1.8`
+
 ## [0.2.10](https://github.com/miaoxing/user/compare/v0.2.9...v0.2.10) (2021-03-11)
 
 
