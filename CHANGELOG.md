@@ -1,3 +1,26 @@
+## [0.2.12](https://github.com/miaoxing/user/compare/v0.2.11...v0.2.12) (2021-03-17)
+
+
+### Bug Fixes
+
+* 列表页面地区搜索名称错误 ([c4bc635](https://github.com/miaoxing/user/commit/c4bc63512a0b90ee7f791aa396b09267f65d6570))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-form:** upgrade from `0.2.10` to `0.2.11`
+* **@mxjs/a-region-cascader:** upgrade from `0.1.6` to `0.1.7`
+* **@mxjs/upload:** upgrade from `0.3.8` to `0.3.9`
+* **@miaoxing/app:** upgrade from `0.2.11` to `0.2.12`
+* **@miaoxing/verify-code:** upgrade from `0.1.11` to `0.1.12`
+* **@miaoxing/admin:** upgrade from `0.3.9` to `0.3.10`
+* **@miaoxing/mail:** upgrade from `0.1.11` to `0.1.12`
+* **@miaoxing/nav:** upgrade from `0.1.11` to `0.1.12`
+* **@miaoxing/region:** upgrade from `0.1.8` to `0.1.9`
+
 ## [0.2.11](https://github.com/miaoxing/user/compare/v0.2.10...v0.2.11) (2021-03-12)
 
 
