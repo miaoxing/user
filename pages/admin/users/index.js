@@ -27,8 +27,8 @@ export default () => {
 
           <SearchItem label="手机" name={['search', 'mobile:ct']}/>
 
-          <SearchItem label="地区" name="_region">
-            <RegionCascader/>
+          <SearchItem label="地区" name="regions">
+            <RegionCascader names={[['search', 'country'], ['search', 'province'], ['search', 'city']]}/>
           </SearchItem>
 
           <SearchItem label="加入时间" name="_createdAt">
