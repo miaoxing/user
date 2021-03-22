@@ -1,3 +1,27 @@
+## [0.2.13](https://github.com/miaoxing/user/compare/v0.2.12...v0.2.13) (2021-03-22)
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/dev:** upgrade from `6.3.3` to `6.3.4`
+* **@mxjs/test:** upgrade from `0.1.4` to `0.1.5`
+* **@mxjs/a-clink:** upgrade from `0.1.4` to `0.1.5`
+* **@mxjs/a-date-range-picker:** upgrade from `0.2.5` to `0.2.6`
+* **@mxjs/a-form:** upgrade from `0.2.11` to `0.2.12`
+* **@mxjs/a-page:** upgrade from `0.2.4` to `0.2.5`
+* **@mxjs/a-region-cascader:** upgrade from `0.1.7` to `0.1.8`
+* **@mxjs/a-table:** upgrade from `0.3.7` to `0.3.8`
+* **@mxjs/upload:** upgrade from `0.3.9` to `0.3.10`
+* **@miaoxing/app:** upgrade from `0.2.12` to `0.2.13`
+* **@miaoxing/verify-code:** upgrade from `0.1.12` to `0.1.13`
+* **@miaoxing/admin:** upgrade from `0.3.10` to `0.3.11`
+* **@miaoxing/mail:** upgrade from `0.1.12` to `0.1.13`
+* **@miaoxing/nav:** upgrade from `0.1.12` to `0.1.13`
+* **@miaoxing/region:** upgrade from `0.1.9` to `0.1.10`
+
 ## [0.2.12](https://github.com/miaoxing/user/compare/v0.2.11...v0.2.12) (2021-03-17)
 
 
