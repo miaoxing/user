@@ -8,7 +8,7 @@ import RegionCascader from '@mxjs/a-region-cascader';
 import DateRangePicker from '@mxjs/a-date-range-picker';
 import UserPopover from '../../../components/UserPopover';
 import {CheckCircleTwoTone} from '@ant-design/icons';
-import {Box} from 'rebass';
+import {Box} from '@mxjs/box';
 
 export default () => {
   const [table] = useTable();

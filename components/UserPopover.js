@@ -1,6 +1,6 @@
 import React from 'react';
 import {Popover, Descriptions} from 'antd';
-import {Image, Box} from 'rebass';
+import {Image, Box} from '@mxjs/box';
 import {Media} from '@mxjs/bootstrap';
 import {ManOutlined, WomanOutlined, CheckCircleTwoTone} from '@ant-design/icons';
 import PropTypes from 'prop-types';
@@ -19,7 +19,7 @@ export default class extends React.Component {
       province: PropTypes.string,
       city: PropTypes.string,
     }).isRequired,
-  }
+  };
 
   renderSex() {
     switch (this.props.user.sex) {

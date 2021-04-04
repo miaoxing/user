@@ -26,6 +26,6 @@
     "@mxjs/bootstrap": "^0.1.3",
     "@mxjs/upload": "^0.3.10",
     "antd": "^4.13.1",
-    "rebass": "^4.0.7"
+    "@mxjs/box": "^0.1.0"
   }
 }
