@@ -43,7 +43,7 @@ export default class extends React.Component {
           trigger="hover"
           content={<>
             <Media>
-              <Image src={user.avatar} width={96} height={96} mr={3}/>
+              <Image src={user.avatar} width={24} height={24} mr={3}/>
               <Media.Body css={{width: 320}}>
                 <Descriptions title={
                   <>
@@ -65,7 +65,7 @@ export default class extends React.Component {
               </Media.Body>
             </Media>
           </>}>
-          <Image src={user.avatar} width={48} height={48} mr={3}/>
+          <Image src={user.avatar} width={14} height={14} mr={3}/>
         </Popover>
         <Media.Body>
           {user.displayName}
