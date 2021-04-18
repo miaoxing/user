@@ -48,6 +48,14 @@ jobs:
           key: ${{ steps.cache-env.outputs.key }}
           restore-keys: ${{ steps.cache-env.outputs.key }}
 
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Replace package dependencies
+        run: npx replace-pkg-dep composer.json
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -111,6 +119,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
+      - name: Replace package dependencies
+        run: npx replace-pkg-dep package.json
+
       - name: Install
         run: yarn install
 
@@ -163,6 +174,14 @@ jobs:
           key: ${{ steps.cache-env.outputs.key }}
           restore-keys: ${{ steps.cache-env.outputs.key }}
 
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Replace package dependencies
+        run: npx replace-pkg-dep composer.json
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -213,6 +232,14 @@ jobs:
           path: ${{ steps.cache-env.outputs.dir }}
           key: ${{ steps.cache-env.outputs.key }}
           restore-keys: ${{ steps.cache-env.outputs.key }}
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Replace package dependencies
+        run: npx replace-pkg-dep composer.json
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -265,6 +292,14 @@ jobs:
           key: ${{ steps.cache-env.outputs.key }}
           restore-keys: ${{ steps.cache-env.outputs.key }}
 
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Replace package dependencies
+        run: npx replace-pkg-dep composer.json
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -315,6 +350,14 @@ jobs:
           path: ${{ steps.cache-env.outputs.dir }}
           key: ${{ steps.cache-env.outputs.key }}
           restore-keys: ${{ steps.cache-env.outputs.key }}
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Replace package dependencies
+        run: npx replace-pkg-dep composer.json
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2

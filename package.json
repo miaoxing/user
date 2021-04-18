@@ -27,5 +27,8 @@
     "@mxjs/upload": "^0.3.10",
     "antd": "^4.13.1",
     "@mxjs/box": "^0.1.0"
+  },
+  "ciDependencies": {
+    "@mxjs/box": "miaoxing/mxjs-box"
   }
 }
