@@ -39,6 +39,9 @@
       "plugins/{$name}/": [
         "type:miaoxing-plugin"
       ]
+    },
+    "require-ci": {
+      "miaoxing/dev": "miaoxing/dev as 6.x-dev"
     }
   }
 }
