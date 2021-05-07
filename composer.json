@@ -41,7 +41,8 @@
       ]
     },
     "require-ci": {
-      "miaoxing/dev": "miaoxing/dev as 6.x-dev"
+      "miaoxing/dev": "miaoxing/dev as 6.x-dev",
+      "miaoxing/mail": "miaoxing/mail as 0.1.x-dev"
     }
   }
 }
