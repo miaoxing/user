@@ -33,14 +33,6 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {
-    "installer-types": [
-      "miaoxing-plugin"
-    ],
-    "installer-paths": {
-      "plugins/{$name}/": [
-        "type:miaoxing-plugin"
-      ]
-    },
     "require-ci": {
       "miaoxing/dev": "miaoxing/dev as 6.x-dev",
       "miaoxing/mail": "miaoxing/mail as 0.1.x-dev"
