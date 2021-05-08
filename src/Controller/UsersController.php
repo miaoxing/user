@@ -30,6 +30,7 @@ class UsersController extends \Miaoxing\Plugin\BaseController
             'only' => ['register', 'create'],
         ]);
 
+        // @phpstan-ignore-next-line
         $this->middleware(LoadAppConfig::class, [
             'only' => ['sendVerifyCode'],
         ]);

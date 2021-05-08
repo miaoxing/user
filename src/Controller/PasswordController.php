@@ -22,6 +22,7 @@ class PasswordController extends \Miaoxing\Plugin\BaseController
     {
         parent::init();
 
+        // @phpstan-ignore-next-line
         $this->middleware(LoadAppConfig::class, [
             'only' => ['sendVerifyCode'],
         ]);

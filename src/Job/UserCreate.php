@@ -2,10 +2,9 @@
 
 namespace Miaoxing\User\Job;
 
-use Miaoxing\Queue\Job;
-use Miaoxing\Queue\Service\BaseJob;
+use Miaoxing\Queue\BaseJob;
 
-class UserCreate extends Job
+class UserCreate extends BaseJob
 {
     public function __invoke(BaseJob $job, $data)
     {

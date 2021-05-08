@@ -329,6 +329,7 @@ class UserModel extends BaseUserModel
      */
     public function log($action, array $data)
     {
+        /** @phpstan-ignore-next-line */
         $user = User::cur();
         $app = wei()->app;
 
