@@ -16,7 +16,7 @@ class UserModel extends BaseUserModel
     /**
      * 省市是否锁定(第三方平台不可更改)
      */
-    const STATUS_REGION_LOCKED = 3;
+    public const STATUS_REGION_LOCKED = 3;
 
     /**
      * 当前记录是否为新创建的
@@ -290,7 +290,8 @@ class UserModel extends BaseUserModel
         $req || $req = $this->req;
 
         // 未校验,或者是输入了新手机,需要校验
-        if (!$this->isMobileVerified()
+        if (
+            !$this->isMobileVerified()
             || $this['mobile'] != $req['mobile']
         ) {
             $ret = $this->checkMobile($req['mobile']);

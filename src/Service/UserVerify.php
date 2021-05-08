@@ -6,7 +6,7 @@ use Miaoxing\Plugin\BaseService;
 
 class UserVerify extends BaseService
 {
-    const EXPIRE = 86400;
+    public const EXPIRE = 86400;
 
     public function generate($user)
     {
