@@ -8,16 +8,16 @@
   ],
   "license": "MIT",
   "require": {
-    "miaoxing/app": "^0.3.1",
-    "miaoxing/verify-code": "^0.1.15",
-    "miaoxing/admin": "^0.3.13",
-    "miaoxing/mail": "^0.1.15",
-    "miaoxing/nav": "^0.1.15",
-    "miaoxing/region": "^0.1.12",
-    "miaoxing/queue": "^0.1.23"
+    "miaoxing/app": "^0.3.2",
+    "miaoxing/verify-code": "^0.1.16",
+    "miaoxing/admin": "^0.3.14",
+    "miaoxing/mail": "^0.1.16",
+    "miaoxing/nav": "^0.1.16",
+    "miaoxing/region": "^0.1.13",
+    "miaoxing/queue": "^0.1.24"
   },
   "require-dev": {
-    "miaoxing/dev": "^7.0.0",
+    "miaoxing/dev": "^7.0.1",
     "nesbot/carbon": "^2.46"
   },
   "autoload": {
