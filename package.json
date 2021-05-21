@@ -1,6 +1,6 @@
 {
   "name": "@miaoxing/user",
-  "version": "0.2.16",
+  "version": "0.2.17",
   "private": true,
   "main": "index.js",
   "author": "twinh",
@@ -24,7 +24,7 @@
     "@mxjs/a-region-cascader": "^0.1.11",
     "@mxjs/a-table": "^0.3.11",
     "@mxjs/bootstrap": "^0.1.5",
-    "@mxjs/upload": "^0.4.2",
+    "@mxjs/upload": "^0.4.3",
     "antd": "^4.15.2",
     "@mxjs/box": "^0.2.2"
   },
