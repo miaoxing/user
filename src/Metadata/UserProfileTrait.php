@@ -3,7 +3,7 @@
 namespace Miaoxing\User\Metadata;
 
 /**
- * @property int $id 主键
+ * @property int|null $id 主键
  * @property int $userId 用户id
  * @property string $name 姓名
  * @property string $contact 联系方式

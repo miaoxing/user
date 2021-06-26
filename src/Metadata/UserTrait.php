@@ -3,7 +3,7 @@
 namespace Miaoxing\User\Metadata;
 
 /**
- * @property int $id
+ * @property int|null $id
  * @property int $appId
  * @property string $outId
  * @property int $groupId 用户组
@@ -32,8 +32,8 @@ namespace Miaoxing\User\Metadata;
  * @property int $createdBy
  * @property int $updatedBy
  * @property int $score 积分
- * @property float $money 账户余额
- * @property float $rechargeMoney 充值账户余额
+ * @property string $money 账户余额
+ * @property string $rechargeMoney 充值账户余额
  * @property string $source 用户来源
  * @property mixed $isMobileVerified
  * @property string|null $displayName
