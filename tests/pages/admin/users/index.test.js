@@ -29,25 +29,29 @@ describe('admin/users', () => {
     $.http = jest.fn()
       // 读取地区
       .mockImplementationOnce(() => promise.resolve({
-        code: 1,
-        data: [],
+        ret: {
+          code: 0,
+          data: [],
+        },
       }))
       // 读取列表数据
       .mockImplementationOnce(() => promise2.resolve({
-        code: 1,
-        data: [
-          {
-            id: 1,
-            name: '姓名1',
-            nickName: '昵称2',
-            displayName: '显示名称3',
-            sex: 1,
-            mobile: '138001380000',
-            country: '中国',
-            province: '广东',
-            city: '深圳',
-          },
-        ],
+        ret: {
+          code: 0,
+          data: [
+            {
+              id: 1,
+              name: '姓名1',
+              nickName: '昵称2',
+              displayName: '显示名称3',
+              sex: 1,
+              mobile: '138001380000',
+              country: '中国',
+              province: '广东',
+              city: '深圳',
+            },
+          ],
+        },
       }));
 
     const {findByText} = render(<MemoryRouter>

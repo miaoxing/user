@@ -3,7 +3,7 @@ import {fireEvent, render, screen} from '@testing-library/react';
 import {MemoryRouter} from 'react-router';
 import React from 'react';
 import {app} from '@mxjs/app';
-import $ from 'miaoxing';
+import $, {Ret} from 'miaoxing';
 import {bootstrap, createPromise, setUrl, resetUrl} from '@mxjs/test';
 
 bootstrap();
@@ -29,17 +29,18 @@ describe('admin/users', () => {
     $.http = jest.fn()
       // 读取默认数据
       .mockImplementationOnce(() => promise.resolve({
-        code: 1,
-        data: {
-          id: 1,
-          name: '姓名2',
-          mobile: '13800138000',
-          isMobileVerified: true,
-        },
+        ret: Ret.suc({
+          data: {
+            id: 1,
+            name: '姓名2',
+            mobile: '13800138000',
+            isMobileVerified: true,
+          },
+        }),
       }))
       // 提交
       .mockImplementationOnce(() => promise2.resolve({
-        code: 1,
+        ret: Ret.suc(),
       }));
 
     const {container, getByLabelText, findByDisplayValue} = render(<MemoryRouter>
