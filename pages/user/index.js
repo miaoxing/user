@@ -1,6 +1,6 @@
-import React from 'react';
+import { Component } from 'react';
 
-export default class UserIndex extends React.Component {
+export default class UserIndex extends Component {
   render() {
     return <div>
       个人中心
