@@ -1,4 +1,3 @@
-import React from 'react';
 import {CListBtn} from '@mxjs/a-clink';
 import {Page, PageActions} from '@mxjs/a-page';
 import {Form, FormItem, FormAction} from '@mxjs/a-form';

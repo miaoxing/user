@@ -1,7 +1,6 @@
 import Form from '../../../../../pages/admin/users/[id]/edit';
 import {fireEvent, render, screen} from '@testing-library/react';
 import {MemoryRouter} from 'react-router';
-import React from 'react';
 import {app} from '@mxjs/app';
 import $, {Ret} from 'miaoxing';
 import {bootstrap, createPromise, setUrl, resetUrl} from '@mxjs/test';
