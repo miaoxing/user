@@ -29,6 +29,7 @@
     "@mxjs/box": "^0.2.2"
   },
   "ciDependencies": {
+    "miaoxing": "miaoxing/miaoxing-js",
     "@mxjs/box": "miaoxing/mxjs-box",
     "babel-preset-miaoxing": "miaoxing/babel-preset-miaoxing",
     "@miaoxing/dev": "miaoxing/dev",
