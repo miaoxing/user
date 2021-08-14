@@ -5,7 +5,7 @@ import {LinkActions} from '@mxjs/actions';
 import {SearchForm, SearchItem, Select} from '@mxjs/a-form';
 import RegionCascader from '@mxjs/a-region-cascader';
 import DateRangePicker from '@mxjs/a-date-range-picker';
-import UserPopover from '../../../components/UserPopover';
+import UserMedia from '../../../components/admin/UserMedia';
 import {CheckCircleTwoTone} from '@ant-design/icons';
 import {Box} from '@mxjs/box';
 
@@ -41,7 +41,7 @@ export default () => {
             {
               title: '用户',
               dataIndex: 'id',
-              render: (id, row) => <UserPopover user={row}/>,
+              render: (id, row) => <UserMedia user={row}/>,
             },
             {
               title: '姓名',
