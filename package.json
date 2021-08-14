@@ -6,7 +6,10 @@
   "author": "twinh",
   "license": "MIT",
   "jest": {
-    "preset": "jest-preset-miaoxing"
+    "preset": "jest-preset-miaoxing",
+    "moduleNameMapper": {
+      "@miaoxing/user/(.*)": "<rootDir>/$1"
+    }
   },
   "devDependencies": {
     "@miaoxing/dev": "^7.0.1",

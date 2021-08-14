@@ -5,7 +5,7 @@ import {LinkActions} from '@mxjs/actions';
 import {SearchForm, SearchItem, Select} from '@mxjs/a-form';
 import RegionCascader from '@mxjs/a-region-cascader';
 import DateRangePicker from '@mxjs/a-date-range-picker';
-import UserMedia from '../../../components/admin/UserMedia';
+import {UserMedia} from '@miaoxing/user/admin';
 import {CheckCircleTwoTone} from '@ant-design/icons';
 import {Box} from '@mxjs/box';
 
