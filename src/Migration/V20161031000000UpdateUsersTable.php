@@ -15,7 +15,8 @@ class V20161031000000UpdateUsersTable extends BaseMigration
             ->uInt('score')->comment('积分')
             ->uDecimal('money', 16, 2)->comment('账户余额')
             ->uDecimal('recharge_money', 16, 2)->comment('充值账户余额')
-            ->string('source', 16)->comment('用户来源');
+            ->string('source', 16)->comment('用户来源')
+            ->exec();
     }
 
     /**
