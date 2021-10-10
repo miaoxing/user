@@ -6,7 +6,7 @@ exports[`UserMedia basic 1`] = `
     class="media"
   >
     <img
-      class="chakra-image__placeholder css-1ewqzxf"
+      class="chakra-image css-1ewqzxf"
     />
     <div
       class="media-body"
@@ -21,7 +21,8 @@ exports[`UserMedia user 1`] = `
     class="media"
   >
     <img
-      class="chakra-image__placeholder css-1ewqzxf"
+      class="chakra-image css-1ewqzxf"
+      src="avatar"
     />
     <div
       class="media-body"
@@ -39,6 +40,7 @@ exports[`UserMedia user 2`] = `
   >
     <img
       class="ant-popover-open css-1ewqzxf"
+      src="avatar"
     />
     <div
       class="media-body"
@@ -75,7 +77,8 @@ exports[`UserMedia user 3`] = `
           class="media"
         >
           <img
-            class="chakra-image__placeholder css-115kvau"
+            class="chakra-image css-115kvau"
+            src="avatar"
           />
           <div
             class="css-ddbaxo media-body"
