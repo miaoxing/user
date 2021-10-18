@@ -4,32 +4,37 @@
  * @property    Miaoxing\User\Service\UserModel $userModel
  * @method      Miaoxing\User\Service\UserModel userModel() 返回当前对象
  */
-class UserModelMixin {
+class UserModelMixin
+{
 }
 
 /**
  * @property    Miaoxing\User\Service\UserPassword $userPassword
  */
-class UserPasswordMixin {
+class UserPasswordMixin
+{
 }
 
 /**
  * @property    Miaoxing\User\Service\UserProfile $userProfile
  */
-class UserProfileMixin {
+class UserProfileMixin
+{
 }
 
 /**
  * @property    Miaoxing\User\Service\UserProfileModel $userProfileModel UserProfileModel
  * @method      Miaoxing\User\Service\UserProfileModel userProfileModel() 返回当前对象
  */
-class UserProfileModelMixin {
+class UserProfileModelMixin
+{
 }
 
 /**
  * @property    Miaoxing\User\Service\UserVerify $userVerify
  */
-class UserVerifyMixin {
+class UserVerifyMixin
+{
 }
 
 /**
@@ -39,7 +44,8 @@ class UserVerifyMixin {
  * @mixin UserProfileModelMixin
  * @mixin UserVerifyMixin
  */
-class AutoCompletion {
+class AutoCompletion
+{
 }
 
 /**
@@ -47,7 +53,7 @@ class AutoCompletion {
  */
 function wei()
 {
-    return new AutoCompletion;
+    return new AutoCompletion();
 }
 
 /** @var Miaoxing\User\Service\UserModel $user */
