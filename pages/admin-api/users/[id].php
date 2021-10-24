@@ -7,7 +7,7 @@ use Miaoxing\User\Service\UserModel;
 use Wei\Req;
 use Wei\V;
 
-return new class() extends BaseController {
+return new class () extends BaseController {
     use ItemGetTrait;
 
     public function patch()
