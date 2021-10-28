@@ -1,3 +1,54 @@
+# [0.3.0](https://github.com/miaoxing/user/compare/v0.2.17...v0.3.0) (2021-10-28)
+
+
+### Bug Fixes
+
+* **Cast:** `decimal` 字段转换为 PHP 变量时，由浮点数改为字符串 ([6d21f00](https://github.com/miaoxing/user/commit/6d21f000a2b31ce7f38dfe2478966ae82f4090c1))
+* **user:** migration 缺少调用 `exec` 方法 ([1a711bf](https://github.com/miaoxing/user/commit/1a711bfb80d7e14ac2ec5f789c3ba1bf9981e0de))
+
+
+### Code Refactoring
+
+* 调整错误码为 001 开始 ([45fe1e4](https://github.com/miaoxing/user/commit/45fe1e412a58774be45b770bb0bda1b6d9210594))
+
+
+### Features
+
+* **user:** 允许外部调用 `UserMedia` 组件 ([6a37121](https://github.com/miaoxing/user/commit/6a37121d05ad543a3e2965f189a954dece1c69eb))
+* 更新 `react` 到 17 ([b66c2d6](https://github.com/miaoxing/user/commit/b66c2d661684bef736a458b4ca31bdbd724c708c))
+
+
+### BREAKING CHANGES
+
+* 调整错误码为 001 开始
+* 更新 `react` 到 17
+* **Cast:** `decimal` 字段转换为 PHP 变量时，由浮点数改为字符串
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/dev:** upgrade from `7.0.1` to `8.0.0`
+* **@mxjs/test:** upgrade from `0.1.8` to `0.2.0`
+* **@mxjs/a-clink:** upgrade from `0.1.8` to `0.2.0`
+* **@mxjs/a-date-range-picker:** upgrade from `0.2.9` to `0.3.0`
+* **@mxjs/a-form:** upgrade from `0.2.15` to `0.3.0`
+* **@mxjs/a-page:** upgrade from `0.2.8` to `0.3.0`
+* **@mxjs/a-region-cascader:** upgrade from `0.1.11` to `0.1.12`
+* **@mxjs/a-table:** upgrade from `0.3.11` to `0.4.0`
+* **@mxjs/bootstrap:** upgrade from `0.1.5` to `0.1.6`
+* **@mxjs/upload:** upgrade from `0.4.3` to `0.5.0`
+* **@mxjs/box:** upgrade from `0.2.2` to `0.2.3`
+* **@miaoxing/app:** upgrade from `0.3.3` to `0.4.0`
+* **@miaoxing/verify-code:** upgrade from `0.1.17` to `0.1.18`
+* **@miaoxing/admin:** upgrade from `0.3.15` to `0.4.0`
+* **@miaoxing/mail:** upgrade from `0.1.17` to `0.1.18`
+* **@miaoxing/nav:** upgrade from `0.1.17` to `0.1.18`
+* **@miaoxing/region:** upgrade from `0.1.14` to `0.2.0`
+* **@miaoxing/queue:** upgrade from `0.1.25` to `0.1.26`
+
 ## [0.2.17](https://github.com/miaoxing/user/compare/v0.2.16...v0.2.17) (2021-05-21)
 
 
