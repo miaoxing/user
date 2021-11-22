@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import {Popover, Descriptions} from 'antd';
 import {Image, Box} from '@mxjs/box';
-import {Media} from '@mxjs/bootstrap';
+import Media from '@mxjs/a-media';
 import {ManOutlined, WomanOutlined, CheckCircleTwoTone} from '@ant-design/icons';
 import PropTypes from 'prop-types';
 
