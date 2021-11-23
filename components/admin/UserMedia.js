@@ -43,7 +43,7 @@ export default class extends Component {
           trigger="hover"
           content={<>
             <Media>
-              <Image src={user.avatar} width={24} height={24} mr={3}/>
+              <Image src={user.avatar} w24 h24 mr3/>
               <Media.Body css={{width: 320}}>
                 <Descriptions title={
                   <>
@@ -56,7 +56,7 @@ export default class extends Component {
                   <Descriptions.Item label="手机">
                     {user.mobile || '-'}
                     {' '}
-                    {user.isMobileVerified ? <Box ml={1}><CheckCircleTwoTone twoToneColor="#52c41a"/></Box> : ''}
+                    {user.isMobileVerified ? <Box ml1><CheckCircleTwoTone twoToneColor="#52c41a"/></Box> : ''}
                   </Descriptions.Item>
                   <Descriptions.Item label="地区">
                     {[user.country, user.province, user.city].filter(el => el).join(' ') || '-'}
@@ -65,7 +65,7 @@ export default class extends Component {
               </Media.Body>
             </Media>
           </>}>
-          <Image src={user.avatar} width={14} height={14} mr={3}/>
+          <Image src={user.avatar} w12 h12/>
         </Popover>
         <Media.Body>
           {user.displayName}

@@ -58,7 +58,7 @@ export default () => {
               render: (mobile, row) => (
                 <>
                   {mobile}
-                  {row.isMobileVerified ? <Box ml={1} as="span"><CheckCircleTwoTone twoToneColor="#52c41a"/></Box> : ''}
+                  {row.isMobileVerified ? <Box ml1 inlineBlock><CheckCircleTwoTone twoToneColor="#52c41a"/></Box> : ''}
                 </>
               ),
             },
