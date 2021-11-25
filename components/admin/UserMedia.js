@@ -1,9 +1,10 @@
 import { Component } from 'react';
 import {Popover, Descriptions} from 'antd';
-import {Image, Box} from '@mxjs/box';
+import {Box} from '@mxjs/box';
 import Media from '@mxjs/a-media';
 import {ManOutlined, WomanOutlined, CheckCircleTwoTone} from '@ant-design/icons';
 import PropTypes from 'prop-types';
+import {Avatar} from '@miaoxing/admin';
 
 export default class extends Component {
   static propTypes = {
@@ -43,7 +44,7 @@ export default class extends Component {
           trigger="hover"
           content={<>
             <Media>
-              <Image src={user.avatar} w24 h24 mr3/>
+              <Avatar user={user} shape="square" size={96}/>
               <Media.Body css={{width: 320}}>
                 <Descriptions title={
                   <>
@@ -65,7 +66,7 @@ export default class extends Component {
               </Media.Body>
             </Media>
           </>}>
-          <Image src={user.avatar} w12 h12/>
+          <Avatar user={user} shape="square" size={48}/>
         </Popover>
         <Media.Body>
           {user.displayName}
