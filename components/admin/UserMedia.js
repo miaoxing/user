@@ -45,7 +45,7 @@ export default class extends Component {
           content={<>
             <Media>
               <Avatar user={user} shape="square" size={96}/>
-              <Media.Body css={{width: 320}}>
+              <Media.Body w={320}>
                 <Descriptions title={
                   <>
                     {user.nickName}
