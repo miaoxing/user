@@ -9,6 +9,12 @@ import {UserMedia} from '@miaoxing/user/admin';
 import {CheckCircleTwoTone} from '@ant-design/icons';
 import {Box} from '@mxjs/box';
 
+const sexes = {
+  0: '未知',
+  1: '男',
+  2: '女',
+};
+
 export default () => {
   const [table] = useTable();
 
@@ -21,7 +27,7 @@ export default () => {
           <SearchItem label="昵称" name={['search', 'nickName:ct']}/>
 
           <SearchItem label="性别" name={['search', 'sex']} initialValue="">
-            <Select options={{1: '男', 2: '女'}} all/>
+            <Select options={sexes} all/>
           </SearchItem>
 
           <SearchItem label="手机" name={['search', 'mobile:ct']}/>
@@ -50,7 +56,7 @@ export default () => {
             {
               title: '性别',
               dataIndex: 'sex',
-              render: sex => sex === 1 ? '男' : '女',
+              render: sex => sexes[sex],
             },
             {
               title: '手机',
