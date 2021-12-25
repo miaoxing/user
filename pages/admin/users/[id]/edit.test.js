@@ -1,4 +1,4 @@
-import Form from '../../../../../pages/admin/users/[id]/edit';
+import Form from './edit';
 import {fireEvent, render, screen} from '@testing-library/react';
 import {MemoryRouter} from 'react-router';
 import {app} from '@mxjs/app';

@@ -1,4 +1,4 @@
-import Index from '../../../../pages/admin/users/index';
+import Index from './index';
 import {render} from '@testing-library/react';
 import {MemoryRouter} from 'react-router';
 import $ from 'miaoxing';
