@@ -9,6 +9,10 @@ use Miaoxing\User\Service\UserModel;
  */
 trait BelongsToUserModelTrait
 {
+    /**
+     * @return UserModel
+     * @Relation
+     */
     public function user()
     {
         return $this->belongsTo(wei()->userModel());
