@@ -1,3 +1,48 @@
+# [0.4.0](https://github.com/miaoxing/user/compare/v0.3.0...v0.4.0) (2022-01-12)
+
+
+### Bug Fixes
+
+* **user:** 性别增加 "未知" ([bc0b09b](https://github.com/miaoxing/user/commit/bc0b09bf6cbe06934b088c3336337b53c77978de))
+
+
+### Features
+
+* 更新 `antd` 到 `~4.17.4` ([093dcf9](https://github.com/miaoxing/user/commit/093dcf9d84dda909bb8d8ddf1838270f26406265))
+* **user:** `user()` 关联增加搜索 ([1ebcbac](https://github.com/miaoxing/user/commit/1ebcbac31abb03af6a12083abcdb856a8883e2e5))
+* 更新 typescript 到 `^4.5.2` ([055be5d](https://github.com/miaoxing/user/commit/055be5d668d95cba2fc7ed4583504a5c14ec9840))
+
+
+### BREAKING CHANGES
+
+* 更新 typescript 到 `^4.5.2`
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/dev:** upgrade from `8.0.0` to `8.0.1`
+* **@mxjs/test:** upgrade from `0.2.0` to `0.2.1`
+* **@mxjs/a-clink:** upgrade from `0.2.0` to `0.2.1`
+* **@mxjs/a-date-range-picker:** upgrade from `0.3.0` to `0.3.1`
+* **@mxjs/a-form:** upgrade from `0.3.0` to `0.3.1`
+* **@mxjs/a-media:** upgrade from `0.1.0` to `0.1.1`
+* **@mxjs/a-page:** upgrade from `0.3.0` to `0.3.1`
+* **@mxjs/a-region-cascader:** upgrade from `0.1.12` to `0.1.13`
+* **@mxjs/a-table:** upgrade from `0.4.0` to `0.4.1`
+* **@mxjs/bootstrap:** upgrade from `0.1.6` to `0.1.7`
+* **@mxjs/upload:** upgrade from `0.5.0` to `0.5.1`
+* **@mxjs/box:** upgrade from `0.2.3` to `0.3.0`
+* **@miaoxing/app:** upgrade from `0.4.0` to `0.5.0`
+* **@miaoxing/verify-code:** upgrade from `0.1.18` to `0.1.19`
+* **@miaoxing/admin:** upgrade from `0.4.0` to `0.5.0`
+* **@miaoxing/mail:** upgrade from `0.1.18` to `0.1.19`
+* **@miaoxing/nav:** upgrade from `0.1.18` to `0.1.19`
+* **@miaoxing/region:** upgrade from `0.2.0` to `0.2.1`
+* **@miaoxing/queue:** upgrade from `0.1.26` to `0.1.27`
+
 # [0.3.0](https://github.com/miaoxing/user/compare/v0.2.17...v0.3.0) (2021-10-28)
 
 
