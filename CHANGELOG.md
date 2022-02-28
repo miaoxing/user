@@ -1,3 +1,21 @@
+## [0.4.2](https://github.com/miaoxing/user/compare/v0.4.1...v0.4.2) (2022-02-28)
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-region-cascader:** upgrade from `0.1.14` to `0.1.15`
+* **@mxjs/upload:** upgrade from `0.5.2` to `0.6.0`
+* **@miaoxing/app:** upgrade from `0.5.1` to `0.6.0`
+* **@miaoxing/verify-code:** upgrade from `0.1.20` to `0.1.21`
+* **@miaoxing/admin:** upgrade from `0.5.1` to `0.5.2`
+* **@miaoxing/mail:** upgrade from `0.1.20` to `0.1.21`
+* **@miaoxing/nav:** upgrade from `0.1.20` to `0.1.21`
+* **@miaoxing/region:** upgrade from `0.2.2` to `0.2.3`
+* **@miaoxing/queue:** upgrade from `0.1.28` to `0.1.29`
+
 ## [0.4.1](https://github.com/miaoxing/user/compare/v0.4.0...v0.4.1) (2022-02-05)
 
 
