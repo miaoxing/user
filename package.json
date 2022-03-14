@@ -8,12 +8,6 @@
   "workspaces": [
     "plugins/*"
   ],
-  "jest": {
-    "preset": "jest-preset-miaoxing",
-    "moduleNameMapper": {
-      "@miaoxing/user/(.*)": "<rootDir>/$1"
-    }
-  },
   "devDependencies": {
     "@miaoxing/dev": "^8.1.0",
     "@mxjs/test": "^0.2.3",
