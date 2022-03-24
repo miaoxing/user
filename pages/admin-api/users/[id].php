@@ -12,8 +12,8 @@ return new class () extends BaseController {
 
     public function patch()
     {
-        return UpdateAction
-            ::beforeFind(function (UserModel $user, Req $req) {
+        return UpdateAction::new()
+            ->beforeFind(function (UserModel $user, Req $req) {
                 $ret = V::key('mobile', '手机')->required(false)->mobileCn()->check($req);
                 if ($ret->isErr()) {
                     return $ret;
