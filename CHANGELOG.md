@@ -1,3 +1,22 @@
+## [0.4.5](https://github.com/miaoxing/user/compare/v0.4.4...v0.4.5) (2022-04-30)
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-form:** upgrade from `0.3.4` to `0.3.5`
+* **@mxjs/a-page:** upgrade from `0.3.4` to `0.3.5`
+* **@mxjs/upload:** upgrade from `0.6.2` to `0.6.3`
+* **@miaoxing/app:** upgrade from `0.6.2` to `0.6.3`
+* **@miaoxing/verify-code:** upgrade from `0.1.23` to `0.1.24`
+* **@miaoxing/admin:** upgrade from `0.7.0` to `0.7.1`
+* **@miaoxing/mail:** upgrade from `0.1.23` to `0.1.24`
+* **@miaoxing/nav:** upgrade from `0.1.23` to `0.1.24`
+* **@miaoxing/region:** upgrade from `0.2.5` to `0.2.6`
+* **@miaoxing/queue:** upgrade from `0.1.31` to `0.1.32`
+
 ## [0.4.4](https://github.com/miaoxing/user/compare/v0.4.3...v0.4.4) (2022-03-31)
 
 
