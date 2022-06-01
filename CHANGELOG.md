@@ -1,3 +1,31 @@
+## [0.4.6](https://github.com/miaoxing/user/compare/v0.4.5...v0.4.6) (2022-06-01)
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/dev:** upgrade from `8.1.0` to `8.1.1`
+* **@mxjs/test:** upgrade from `0.2.4` to `0.2.5`
+* **@mxjs/a-clink:** upgrade from `0.2.4` to `0.2.5`
+* **@mxjs/a-date-range-picker:** upgrade from `0.3.2` to `0.3.3`
+* **@mxjs/a-form:** upgrade from `0.3.5` to `0.3.6`
+* **@mxjs/a-media:** upgrade from `0.1.3` to `0.1.4`
+* **@mxjs/a-page:** upgrade from `0.3.5` to `0.3.6`
+* **@mxjs/a-region-cascader:** upgrade from `0.1.15` to `0.1.16`
+* **@mxjs/a-table:** upgrade from `0.4.4` to `0.4.5`
+* **@mxjs/bootstrap:** upgrade from `0.1.8` to `0.1.9`
+* **@mxjs/upload:** upgrade from `0.6.3` to `0.6.4`
+* **@mxjs/box:** upgrade from `0.3.2` to `0.3.3`
+* **@miaoxing/app:** upgrade from `0.6.3` to `0.6.4`
+* **@miaoxing/verify-code:** upgrade from `0.1.24` to `0.1.25`
+* **@miaoxing/admin:** upgrade from `0.7.1` to `0.7.2`
+* **@miaoxing/mail:** upgrade from `0.1.24` to `0.1.25`
+* **@miaoxing/nav:** upgrade from `0.1.24` to `0.1.25`
+* **@miaoxing/region:** upgrade from `0.2.6` to `0.2.7`
+* **@miaoxing/queue:** upgrade from `0.1.32` to `0.1.33`
+
 ## [0.4.5](https://github.com/miaoxing/user/compare/v0.4.4...v0.4.5) (2022-04-30)
 
 
