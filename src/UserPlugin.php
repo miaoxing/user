@@ -2,6 +2,7 @@
 
 namespace Miaoxing\User;
 
+use Miaoxing\Admin\Service\AdminMenu;
 use Miaoxing\Plugin\Service\User;
 
 class UserPlugin extends \Miaoxing\Plugin\BasePlugin
@@ -14,33 +15,12 @@ class UserPlugin extends \Miaoxing\Plugin\BasePlugin
 
     protected $adminNavId = 'user';
 
-    public function onAdminNavGetNavs(&$navs, &$categories, &$subCategories)
+    public function onAdminMenuGetMenus(AdminMenu $menu)
     {
-        $categories['user'] = [
-            'name' => '用户',
-            'sort' => 600,
-        ];
+        $user = $menu->child('user');
 
-        $subCategories[] = [
-            'parentId' => 'user',
-            'url' => 'admin/users',
-            'name' => '用户管理',
-            'sort' => 1000,
-        ];
-
-        if (wei()->plugin->isInstalled('user-tag')) {
-            $subCategories[] = [
-                'parentId' => 'user',
-                'url' => 'admin/user-tags',
-                'name' => '标签管理',
-            ];
-        } else {
-            $subCategories[] = [
-                'parentId' => 'user',
-                'url' => 'admin/groups',
-                'name' => '分组管理',
-            ];
-        }
+        $user->addChild()->setLabel('用户管理')->setUrl('admin/users')->setSort(1000);
+        $user->addChild()->setLabel('分组管理')->setUrl('admin/groups');
     }
 
     public function onLinkToGetLinks(&$links, &$types)
