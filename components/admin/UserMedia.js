@@ -5,7 +5,7 @@ import {ManOutlined, WomanOutlined, CheckCircleTwoTone} from '@ant-design/icons'
 import PropTypes from 'prop-types';
 import {Avatar} from '@miaoxing/admin';
 
-const UserMedia = ({user}) => {
+const UserMedia = ({user, body}) => {
   return (
     <Media>
       <Popover
@@ -40,6 +40,7 @@ const UserMedia = ({user}) => {
       </Popover>
       <Media.Body>
         {user.displayName}
+        {body && <Box gray500>{body}</Box>}
       </Media.Body>
     </Media>
   );
@@ -58,6 +59,7 @@ UserMedia.propTypes = {
     province: PropTypes.string,
     city: PropTypes.string,
   }).isRequired,
+  body: PropTypes.node,
 };
 
 export default UserMedia;
