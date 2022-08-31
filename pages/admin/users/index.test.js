@@ -1,7 +1,7 @@
 import Index from './index';
 import {render} from '@testing-library/react';
 import {MemoryRouter} from 'react-router';
-import $ from 'miaoxing';
+import $, {Ret} from 'miaoxing';
 import {bootstrap, createPromise, setUrl, resetUrl} from '@mxjs/test';
 import {app} from '@mxjs/app';
 
@@ -28,15 +28,13 @@ describe('admin/users', () => {
     $.http = jest.fn()
       // 读取地区
       .mockImplementationOnce(() => promise.resolve({
-        ret: {
-          code: 0,
+        ret: Ret.suc({
           data: [],
-        },
+        }),
       }))
       // 读取列表数据
       .mockImplementationOnce(() => promise2.resolve({
-        ret: {
-          code: 0,
+        ret: Ret.suc({
           data: [
             {
               id: 1,
@@ -50,7 +48,7 @@ describe('admin/users', () => {
               city: '深圳',
             },
           ],
-        },
+        }),
       }));
 
     const {findByText} = render(<MemoryRouter>
