@@ -1,3 +1,28 @@
+## [0.4.11](https://github.com/miaoxing/user/compare/v0.4.10...v0.4.11) (2022-09-03)
+
+
+### Features
+
+* **user:** `UserMedia` 名称下允许显示自定义内容 ([ff22a71](https://github.com/miaoxing/user/commit/ff22a71cf09a4b158eb385b81b6f6c39ab9bb3af))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-date-range-picker:** upgrade from `1.0.1` to `1.0.2`
+* **@mxjs/a-form:** upgrade from `1.0.1` to `1.1.0`
+* **@mxjs/a-table:** upgrade from `1.0.1` to `1.0.2`
+* **@mxjs/upload:** upgrade from `0.6.7` to `0.6.8`
+* **@miaoxing/app:** upgrade from `0.6.7` to `0.6.8`
+* **@miaoxing/verify-code:** upgrade from `0.1.28` to `0.1.29`
+* **@miaoxing/admin:** upgrade from `0.9.0` to `0.9.1`
+* **@miaoxing/mail:** upgrade from `0.1.28` to `0.1.29`
+* **@miaoxing/nav:** upgrade from `0.1.29` to `0.1.30`
+* **@miaoxing/region:** upgrade from `0.2.10` to `0.2.11`
+* **@miaoxing/queue:** upgrade from `0.1.36` to `0.1.37`
+
 ## [0.4.10](https://github.com/miaoxing/user/compare/v0.4.9...v0.4.10) (2022-08-02)
 
 
