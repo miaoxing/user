@@ -14,8 +14,8 @@ return new class () extends BaseController {
     {
         return UpdateAction::new()
             ->beforeFind(function (UserModel $user, Req $req) {
-                $v = V::new();
-                $v->string('mobile', '手机')->required(false)->mobileCn();
+                $v = V::defaultOptional();
+                $v->mobileCn('mobile', '手机')->allowEmpty();
                 $ret = $v->check($req);
                 if ($ret->isErr()) {
                     return $ret;
