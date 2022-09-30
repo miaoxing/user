@@ -1,3 +1,29 @@
+## [0.4.12](https://github.com/miaoxing/user/compare/v0.4.11...v0.4.12) (2022-09-30)
+
+
+### Bug Fixes
+
+* **user:** 编辑用户时，允许手机号为空，也允许不传手机号 ([56c73b6](https://github.com/miaoxing/user/commit/56c73b699614d05da673e1ce2ce127e79f6ab775))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-date-range-picker:** upgrade from `1.0.2` to `1.0.3`
+* **@mxjs/a-form:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/a-page:** upgrade from `1.0.1` to `1.1.0`
+* **@mxjs/a-table:** upgrade from `1.0.2` to `1.1.0`
+* **@mxjs/upload:** upgrade from `0.6.8` to `0.6.9`
+* **@miaoxing/app:** upgrade from `0.6.8` to `0.6.9`
+* **@miaoxing/verify-code:** upgrade from `0.1.29` to `0.1.30`
+* **@miaoxing/admin:** upgrade from `0.9.1` to `0.9.2`
+* **@miaoxing/mail:** upgrade from `0.1.29` to `0.1.30`
+* **@miaoxing/nav:** upgrade from `0.1.30` to `0.1.31`
+* **@miaoxing/region:** upgrade from `0.2.11` to `0.2.12`
+* **@miaoxing/queue:** upgrade from `0.1.37` to `0.1.38`
+
 ## [0.4.11](https://github.com/miaoxing/user/compare/v0.4.10...v0.4.11) (2022-09-03)
 
 
