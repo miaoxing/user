@@ -15,7 +15,7 @@ const sexes = {
   2: '女',
 };
 
-export default () => {
+const Index = () => {
   const [table] = useTable();
 
   return (
@@ -93,3 +93,5 @@ export default () => {
     </Page>
   );
 };
+
+export default Index;

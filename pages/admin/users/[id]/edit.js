@@ -3,7 +3,7 @@ import {Page, PageActions} from '@mxjs/a-page';
 import {Form, FormItem, FormAction} from '@mxjs/a-form';
 import {Checkbox, Form as AntdForm} from 'antd';
 
-export default () => {
+const Edit = () => {
   return (
     <Page>
       <PageActions>
@@ -23,3 +23,5 @@ export default () => {
     </Page>
   );
 };
+
+export default Edit;
