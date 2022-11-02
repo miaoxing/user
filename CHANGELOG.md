@@ -1,3 +1,18 @@
+## [0.4.14](https://github.com/miaoxing/user/compare/v0.4.13...v0.4.14) (2022-11-02)
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-clink:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/a-date-range-picker:** upgrade from `1.0.4` to `1.0.5`
+* **@mxjs/a-form:** upgrade from `1.1.2` to `1.1.3`
+* **@mxjs/a-table:** upgrade from `1.1.1` to `1.1.2`
+* **@mxjs/upload:** upgrade from `0.6.10` to `0.6.11`
+* **@miaoxing/admin:** upgrade from `0.9.3` to `0.9.4`
+
 ## [0.4.13](https://github.com/miaoxing/user/compare/v0.4.12...v0.4.13) (2022-11-01)
 
 
