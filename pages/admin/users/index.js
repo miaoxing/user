@@ -2,21 +2,22 @@ import {Table, TableProvider, useTable} from '@mxjs/a-table';
 import {CEditLink} from '@mxjs/a-clink';
 import {Page} from '@mxjs/a-page';
 import {LinkActions} from '@mxjs/actions';
-import {SearchForm, SearchItem, Select} from '@mxjs/a-form';
+import {SearchForm, SearchItem} from '@mxjs/a-form';
 import RegionCascader from '@mxjs/a-region-cascader';
 import DateRangePicker from '@mxjs/a-date-range-picker';
 import {UserMedia} from '@miaoxing/user/admin';
 import {CheckCircleTwoTone} from '@ant-design/icons';
 import {Box} from '@mxjs/box';
-
-const sexes = {
-  0: '未知',
-  1: '男',
-  2: '女',
-};
+import {Select} from '@miaoxing/admin';
+import {useState} from 'react';
 
 const Index = () => {
   const [table] = useTable();
+
+  const [sexes, setSexes] = useState([]);
+  const handleAfterLoadSexes = ({data}) => {
+    setSexes(data.items);
+  };
 
   return (
     <Page>
@@ -27,7 +28,8 @@ const Index = () => {
           <SearchItem label="昵称" name={['search', 'nickName:ct']}/>
 
           <SearchItem label="性别" name={['search', 'sex']} initialValue="">
-            <Select options={sexes} all/>
+            <Select url="consts/sexConst-sex" all labelKey="name" valueKey="id"
+              afterLoad={handleAfterLoadSexes}/>
           </SearchItem>
 
           <SearchItem label="手机" name={['search', 'mobile:ct']}/>
@@ -56,7 +58,7 @@ const Index = () => {
             {
               title: '性别',
               dataIndex: 'sex',
-              render: sex => sexes[sex],
+              render: sex => sexes[sex]?.name,
             },
             {
               title: '手机',

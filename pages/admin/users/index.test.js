@@ -24,6 +24,7 @@ describe('admin/users', () => {
   test('index', async () => {
     const promise = createPromise();
     const promise2 = createPromise();
+    const promise3 = createPromise();
 
     $.http = jest.fn()
       // 读取地区
@@ -32,8 +33,32 @@ describe('admin/users', () => {
           data: [],
         }),
       }))
-      // 读取列表数据
+      // 读取性别
       .mockImplementationOnce(() => promise2.resolve({
+        ret: Ret.suc({
+          data: {
+            items: [
+              {
+                id: 0,
+                key: 'unknown',
+                name: '未知',
+              },
+              {
+                id: 1,
+                key: 'male',
+                name: '男',
+              },
+              {
+                id: 2,
+                key: 'female',
+                name: '女',
+              },
+            ],
+          },
+        }),
+      }))
+      // 读取列表数据
+      .mockImplementationOnce(() => promise3.resolve({
         ret: Ret.suc({
           data: [
             {
@@ -61,8 +86,8 @@ describe('admin/users', () => {
     await findByText('138001380000');
     await findByText('中国 广东 深圳');
 
-    await Promise.all([promise, promise2]);
-    expect($.http).toHaveBeenCalledTimes(2);
+    await Promise.all([promise, promise2, promise3]);
+    expect($.http).toHaveBeenCalledTimes(3);
     expect($.http).toMatchSnapshot();
   });
 });
