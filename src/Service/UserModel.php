@@ -2,7 +2,6 @@
 
 namespace Miaoxing\User\Service;
 
-use Miaoxing\Admin\Service\Group;
 use Miaoxing\Admin\Service\GroupModel;
 use Miaoxing\Plugin\Service\Ret;
 use Miaoxing\Plugin\Service\UserModel as BaseUserModel;
@@ -13,35 +12,6 @@ use Wei\Time;
  */
 class UserModel extends BaseUserModel
 {
-    /**
-     * 省市是否锁定(第三方平台不可更改)
-     */
-    public const STATUS_REGION_LOCKED = 3;
-
-    /**
-     * 当前记录是否为新创建的
-     *
-     * @var bool
-     */
-    protected $isCreated = false;
-
-    /**
-     * @var Group
-     * @deprecated
-     */
-    protected $group;
-
-    protected $attributes = [
-        'sex' => 1,
-        'groupId' => 0,
-    ];
-
-    /**
-     * @var \Miaoxing\User\Service\UserProfile
-     * @deprecated
-     */
-    protected $profile;
-
     public function __construct(array $options = [])
     {
         parent::__construct($options);
@@ -79,18 +49,6 @@ class UserModel extends BaseUserModel
 
             return $user ? $user->getNickName() : '';
         });
-    }
-
-    public function afterCreate()
-    {
-        parent::afterCreate();
-
-        $this->isCreated = true;
-
-//        TODO queue
-//        if (wei()->has('queue')) {
-//            wei()->queue->push(UserCreate::class, ['id' => $this['id']]);
-//        }
     }
 
     public function afterSave()
@@ -382,49 +340,6 @@ class UserModel extends BaseUserModel
     }
 
     /**
-     * Record: 检查当前记录是否刚创建
-     *
-     * @return bool
-     */
-    public function isCreated()
-    {
-        return $this->isCreated;
-    }
-
-    /**
-     * Record: 获取昵称等可供展示的名称
-     *
-     * @return string
-     * @deprecated use ->displayName
-     */
-    public function getNickName()
-    {
-        return $this->displayName;
-    }
-
-    /**
-     * Record: 获取用户头像,没有设置头像则使用默认头像
-     *
-     * @return string
-     * @deprecated
-     */
-    public function getHeadImg()
-    {
-        return $this['headImg'];
-    }
-
-    /**
-     * Record: 指定用户是否为管理员
-     *
-     * @return bool
-     * @deprecated 使用 $this->isAdmin
-     */
-    public function isAdmin()
-    {
-        return (bool) $this->isAdmin;
-    }
-
-    /**
      * QueryBuilder:
      *
      * @return \Miaoxing\Plugin\Service\UserModel
@@ -432,29 +347,6 @@ class UserModel extends BaseUserModel
     public function valid()
     {
         return $this->where(['isValid' => 1]);
-    }
-
-    /**
-     * @deprecated
-     */
-    public function getProfile()
-    {
-        $this->profile || $this->profile = wei()->userProfile()->findOrInit(['userId' => $this['id']]);
-
-        return $this->profile;
-    }
-
-    /**
-     * Record: 获取用户的分组对象
-     *
-     * @return Group
-     * @deprecated
-     */
-    public function getGroup()
-    {
-        $this->group || $this->group = wei()->group()->findOrInitById($this['groupId'], ['name' => '未分组']);
-
-        return $this->group;
     }
 
     /**
