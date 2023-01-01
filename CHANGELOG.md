@@ -1,3 +1,41 @@
+# [0.5.0](https://github.com/miaoxing/user/compare/v0.4.15...v0.5.0) (2023-01-01)
+
+
+### Code Refactoring
+
+* **user:** `UserModel` 移除废弃，不用的功能，包括 `getGroup`，`getProfile` 等 ([10e0475](https://github.com/miaoxing/user/commit/10e0475b3fa72a2a197d464abbf9d837a6dace1f))
+
+
+### BREAKING CHANGES
+
+* **user:** `UserModel` 移除废弃，不用的功能，包括 `getGroup`，`getProfile` 等
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/dev:** upgrade from `8.1.3` to `8.2.0`
+* **@mxjs/test:** upgrade from `1.0.2` to `1.0.3`
+* **@mxjs/a-clink:** upgrade from `1.1.2` to `1.1.3`
+* **@mxjs/a-date-range-picker:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/a-form:** upgrade from `1.1.4` to `1.1.5`
+* **@mxjs/a-media:** upgrade from `1.0.1` to `1.0.2`
+* **@mxjs/a-page:** upgrade from `1.1.1` to `1.1.2`
+* **@mxjs/a-region-cascader:** upgrade from `1.0.1` to `1.0.2`
+* **@mxjs/a-table:** upgrade from `1.2.0` to `1.2.1`
+* **@mxjs/bootstrap:** upgrade from `0.1.11` to `0.1.12`
+* **@mxjs/upload:** upgrade from `0.6.12` to `0.6.13`
+* **@mxjs/box:** upgrade from `0.3.5` to `0.3.6`
+* **@miaoxing/app:** upgrade from `0.6.11` to `0.6.12`
+* **@miaoxing/verify-code:** upgrade from `0.1.32` to `0.1.33`
+* **@miaoxing/admin:** upgrade from `0.9.5` to `0.9.6`
+* **@miaoxing/mail:** upgrade from `0.1.32` to `0.1.33`
+* **@miaoxing/nav:** upgrade from `0.1.33` to `0.1.34`
+* **@miaoxing/region:** upgrade from `0.2.14` to `0.2.15`
+* **@miaoxing/queue:** upgrade from `0.1.40` to `0.1.41`
+
 ## [0.4.15](https://github.com/miaoxing/user/compare/v0.4.14...v0.4.15) (2022-12-01)
 
 
