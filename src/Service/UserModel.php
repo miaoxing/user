@@ -71,7 +71,7 @@ class UserModel extends BaseUserModel
      */
     public function updateGroup($groupId)
     {
-        $group = wei()->groupModel()->findOrInit($groupId);
+        $group = GroupModel::findOrInit($groupId);
         $ret = wei()->event->until('groupMove', [[$this['id']], $group]);
         if ($ret) {
             return $ret;
@@ -363,7 +363,7 @@ class UserModel extends BaseUserModel
         }
 
         // 1. 检查是否已存在认证该手机号码的用户
-        $mobileUser = wei()->userModel()->mobileVerified()->findBy('mobile', $mobile);
+        $mobileUser = self::new()->mobileVerified()->findBy('mobile', $mobile);
         if ($mobileUser && $mobileUser['id'] != $this['id']) {
             return err('已存在认证该手机号码的用户');
         }
