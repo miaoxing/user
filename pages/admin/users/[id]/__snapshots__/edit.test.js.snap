@@ -5,6 +5,7 @@ exports[`admin/users form 1`] = `
   "calls": Array [
     Array [
       Object {
+        "loading": true,
         "method": "get",
         "url": "/admin-api/users/defaults",
       },
@@ -27,6 +28,7 @@ exports[`admin/users form 2`] = `
   "calls": Array [
     Array [
       Object {
+        "loading": true,
         "method": "get",
         "url": "/admin-api/users/defaults",
       },
