@@ -26,7 +26,7 @@
     "@mxjs/a-table": "^1.2.1",
     "@mxjs/bootstrap": "^0.1.12",
     "@mxjs/upload": "^0.6.13",
-    "antd": "~4.17.4",
+    "antd": "~4.24.7",
     "@mxjs/box": "^0.3.6"
   },
   "ciDependencies": {
