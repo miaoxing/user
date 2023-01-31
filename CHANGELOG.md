@@ -1,3 +1,35 @@
+## [0.5.1](https://github.com/miaoxing/user/compare/v0.5.0...v0.5.1) (2023-01-31)
+
+
+### Bug Fixes
+
+* **user:** `wei()->xxxModel` 改为 `XxxModel::new()` ([eaa12fd](https://github.com/miaoxing/user/commit/eaa12fdf6172aa6f8d256cc57b68cbd4439aca72))
+
+
+### Features
+
+* 更新 `antd` 到 `~4.24.7` ([58549b3](https://github.com/miaoxing/user/commit/58549b3e55110f57a0cd0fa8a9c819d32f3848b5))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-clink:** upgrade from `1.1.3` to `1.1.4`
+* **@mxjs/a-date-range-picker:** upgrade from `1.1.1` to `1.2.0`
+* **@mxjs/a-form:** upgrade from `1.1.5` to `1.2.0`
+* **@mxjs/a-page:** upgrade from `1.1.2` to `1.1.3`
+* **@mxjs/a-table:** upgrade from `1.2.1` to `1.3.0`
+* **@mxjs/upload:** upgrade from `0.6.13` to `0.6.14`
+* **@miaoxing/app:** upgrade from `0.6.12` to `0.6.13`
+* **@miaoxing/verify-code:** upgrade from `0.1.33` to `0.1.34`
+* **@miaoxing/admin:** upgrade from `0.9.6` to `0.9.7`
+* **@miaoxing/mail:** upgrade from `0.1.33` to `0.1.34`
+* **@miaoxing/nav:** upgrade from `0.1.34` to `0.1.35`
+* **@miaoxing/region:** upgrade from `0.2.15` to `0.2.16`
+* **@miaoxing/queue:** upgrade from `0.1.41` to `0.1.42`
+
 # [0.5.0](https://github.com/miaoxing/user/compare/v0.4.15...v0.5.0) (2023-01-01)
 
 
