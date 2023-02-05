@@ -19,8 +19,13 @@ class UserPlugin extends \Miaoxing\Plugin\BasePlugin
     {
         $user = $menu->child('user');
 
-        $user->addChild()->setLabel('用户管理')->setUrl('admin/users')->setSort(1000);
-        $user->addChild()->setLabel('分组管理')->setUrl('admin/groups');
+        $users = $user->addChild()->setLabel('用户管理')->setUrl('admin/users')->setSort(1000)->setApis([
+            'GET admin-api/users',
+        ]);
+        $users->addChild()->setLabel('编辑')->setUrl('admin/users/[id]/edit')->setApis([
+            'GET admin-api/users/[id]',
+            'PATCH admin-api/users/[id]',
+        ]);
     }
 
     public function onLinkToGetLinks(&$links, &$types)
