@@ -3,13 +3,10 @@
 namespace Miaoxing\User\Service;
 
 use Miaoxing\Admin\Service\GroupModel;
+use Miaoxing\App\Service\UserModel as BaseUserModel;
 use Miaoxing\Plugin\Service\Ret;
-use Miaoxing\Plugin\Service\UserModel as BaseUserModel;
 use Wei\Time;
 
-/**
- * @property GroupModel $group
- */
 class UserModel extends BaseUserModel
 {
     public function __construct(array $options = [])
@@ -18,11 +15,6 @@ class UserModel extends BaseUserModel
         $this->virtual = array_merge($this->virtual, [
             'isMobileVerified',
         ]);
-    }
-
-    public function group()
-    {
-        return $this->hasOne(wei()->groupModel(), 'id', 'groupId');
     }
 
     public function getBackendDisplayName()
