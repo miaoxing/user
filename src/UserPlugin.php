@@ -3,6 +3,7 @@
 namespace Miaoxing\User;
 
 use Miaoxing\Admin\Service\AdminMenu;
+use Miaoxing\App\Service\PermissionMap;
 use Miaoxing\Plugin\Service\User;
 
 class UserPlugin extends \Miaoxing\Plugin\BasePlugin
@@ -19,13 +20,18 @@ class UserPlugin extends \Miaoxing\Plugin\BasePlugin
     {
         $user = $menu->child('user');
 
-        $users = $user->addChild()->setLabel('用户管理')->setUrl('admin/users')->setSort(1000)->setApis([
-            'GET admin-api/users',
-        ]);
-        $users->addChild()->setLabel('编辑')->setUrl('admin/users/[id]/edit')->setApis([
-            'GET admin-api/users/[id]',
-            'PATCH admin-api/users/[id]',
-        ]);
+        $users = $user->addChild()->setLabel('用户管理')->setUrl('admin/users')->setSort(1000);
+        $users->addChild()->setLabel('编辑')->setUrl('admin/users/[id]/edit');
+    }
+
+    public function onPermissionGetMap(PermissionMap $map)
+    {
+        $map->prefix('admin/users', function (PermissionMap $map) {
+            $map->addList('', [
+                'GET api/admin/regions',
+            ]);
+            $map->addEdit();
+        });
     }
 
     public function onLinkToGetLinks(&$links, &$types)
