@@ -1,7 +1,6 @@
-import {Table, TableProvider, useTable} from '@mxjs/a-table';
+import {Table, TableActions, TableProvider, useTable} from '@mxjs/a-table';
 import {CEditLink} from '@mxjs/a-clink';
 import {Page} from '@mxjs/a-page';
-import {LinkActions} from '@mxjs/actions';
 import {SearchForm, SearchItem} from '@mxjs/a-form';
 import RegionCascader from '@mxjs/a-region-cascader';
 import DateRangePicker from '@mxjs/a-date-range-picker';
@@ -84,9 +83,9 @@ const Index = () => {
               title: '操作',
               dataIndex: 'id',
               render: (id) => (
-                <LinkActions>
+                <TableActions>
                   <CEditLink id={id}/>
-                </LinkActions>
+                </TableActions>
               ),
             },
           ]}
