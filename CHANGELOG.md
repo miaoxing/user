@@ -1,3 +1,30 @@
+## [0.5.3](https://github.com/miaoxing/user/compare/v0.5.2...v0.5.3) (2023-04-15)
+
+
+### Features
+
+* 菜单增加权限配置 ([d7f4e9a](https://github.com/miaoxing/user/commit/d7f4e9a1b49703465e026ca6c20439ec67ed6d51))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-clink:** upgrade from `1.1.4` to `1.2.0`
+* **@mxjs/a-date-range-picker:** upgrade from `1.2.0` to `1.2.1`
+* **@mxjs/a-form:** upgrade from `1.2.0` to `1.2.1`
+* **@mxjs/a-page:** upgrade from `2.0.0` to `2.1.0`
+* **@mxjs/a-table:** upgrade from `1.3.0` to `1.4.0`
+* **@mxjs/upload:** upgrade from `0.6.14` to `0.6.15`
+* **@miaoxing/app:** upgrade from `0.7.0` to `0.7.1`
+* **@miaoxing/verify-code:** upgrade from `0.1.35` to `0.1.36`
+* **@miaoxing/admin:** upgrade from `0.10.0` to `0.10.1`
+* **@miaoxing/mail:** upgrade from `0.1.35` to `0.1.36`
+* **@miaoxing/nav:** upgrade from `0.1.36` to `0.1.37`
+* **@miaoxing/region:** upgrade from `0.2.17` to `0.2.18`
+* **@miaoxing/queue:** upgrade from `0.1.43` to `0.1.44`
+
 ## [0.5.2](https://github.com/miaoxing/user/compare/v0.5.1...v0.5.2) (2023-03-01)
 
 
