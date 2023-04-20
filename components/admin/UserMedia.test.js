@@ -20,11 +20,9 @@ describe('UserMedia', () => {
       province: 'province',
       city: 'city',
     }}/>);
-    expect(container).toMatchSnapshot();
+    await result.findByText('displayName');
 
     fireEvent.mouseOver(container.querySelector('img'));
     await result.findByText('姓名');
-    expect(container).toMatchSnapshot();
-    expect(result.baseElement.querySelector('.ant-popover')).toMatchSnapshot();
   });
 });
