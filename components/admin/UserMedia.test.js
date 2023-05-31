@@ -1,9 +1,14 @@
 import UserMedia from './UserMedia';
 import {render, fireEvent} from '@testing-library/react';
+import {ConfigProvider} from 'antd';
 
 describe('UserMedia', () => {
   test('basic', () => {
-    const result = render(<UserMedia user={{}}/>);
+    const result = render(
+      <ConfigProvider theme={{hashed: false}}>
+        <UserMedia user={{}}/>
+      </ConfigProvider>
+    );
     expect(result.container).toMatchSnapshot();
   });
 
