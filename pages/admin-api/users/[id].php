@@ -13,8 +13,10 @@ return new class () extends BaseController {
     public function patch()
     {
         return UpdateAction::new()
-            ->beforeFind(function (UserModel $user, Req $req) {
+            ->validate(function (UserModel $user, Req $req) {
                 $v = V::defaultOptional();
+                $v->setModel($user);
+                $v->modelColumn('name', '姓名');
                 $v->mobileCn('mobile', '手机')->allowEmpty();
                 $ret = $v->check($req);
                 if ($ret->isErr()) {
@@ -26,8 +28,13 @@ return new class () extends BaseController {
                 }
 
                 if ($req['isMobileVerified']) {
-                    return $user->checkMobile($req['mobile']);
+                    $checkMobile = $user->checkMobile($req['mobile']);
+                    if ($checkMobile->isErr()) {
+                        return $checkMobile;
+                    }
                 }
+
+                return $ret;
             })
             ->beforeSave(function (UserModel $user, Req $req) {
                 if (isset($req['isMobileVerified'])) {
