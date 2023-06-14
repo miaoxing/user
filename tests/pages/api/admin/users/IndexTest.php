@@ -1,6 +1,6 @@
 <?php
 
-namespace MiaoxingTest\User\Pages\AdminApi\Users;
+namespace MiaoxingTest\User\Pages\Api\Admin\Users;
 
 use Carbon\Carbon;
 use Miaoxing\Plugin\Service\Tester;

@@ -7,7 +7,7 @@ exports[`admin/users form 1`] = `
       Object {
         "loading": true,
         "method": "get",
-        "url": "/admin-api/users/defaults",
+        "url": "/api/admin/users/defaults",
       },
     ],
   ],
@@ -30,7 +30,7 @@ exports[`admin/users form 2`] = `
       Object {
         "loading": true,
         "method": "get",
-        "url": "/admin-api/users/defaults",
+        "url": "/api/admin/users/defaults",
       },
     ],
     Array [
@@ -43,7 +43,7 @@ exports[`admin/users form 2`] = `
         },
         "loading": true,
         "method": "POST",
-        "url": "/admin-api/users",
+        "url": "/api/admin/users",
       },
     ],
   ],

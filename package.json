@@ -39,6 +39,7 @@
     "@mxjs/a-form": "miaoxing/mxjs-a-form",
     "@mxjs/a-media": "miaoxing/mxjs-a-media",
     "@mxjs/a-table": "miaoxing/mxjs-a-table",
-    "@mxjs/a-region-cascader": "miaoxing/mxjs-a-region-cascader"
+    "@mxjs/a-region-cascader": "miaoxing/mxjs-a-region-cascader",
+    "@mxjs/app": "miaoxing/mxjs-app"
   }
 }

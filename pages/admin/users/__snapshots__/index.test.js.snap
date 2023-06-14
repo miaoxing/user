@@ -16,13 +16,13 @@ exports[`admin/users index 1`] = `
         "params": Object {
           "limit": 500,
         },
-        "url": "/admin-api/consts/sexConst-sex",
+        "url": "/api/admin/consts/sexConst-sex",
       },
     ],
     Array [
       Object {
         "method": "get",
-        "url": "/admin-api/users?page=1&limit=20",
+        "url": "/api/admin/users?page=1&limit=20",
       },
     ],
   ],
