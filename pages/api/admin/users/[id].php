@@ -1,13 +1,13 @@
 <?php
 
-use Miaoxing\Plugin\BaseController;
+use Miaoxing\Plugin\BasePage;
 use Miaoxing\Services\Page\ItemGetTrait;
 use Miaoxing\Services\Service\UpdateAction;
 use Miaoxing\User\Service\UserModel;
 use Wei\Req;
 use Wei\V;
 
-return new class () extends BaseController {
+return new class () extends BasePage {
     use ItemGetTrait;
 
     public function patch()
