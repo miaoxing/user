@@ -1,3 +1,36 @@
+## [0.5.8](https://github.com/miaoxing/user/compare/v0.5.7...v0.5.8) (2023-07-31)
+
+
+### Features
+
+* **user:** 废弃 `BelongsToUserModelTrait` ([ec9eb90](https://github.com/miaoxing/user/commit/ec9eb903104d88b7b6402d63f7b0d61819c05389))
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/dev:** upgrade from `8.2.1` to `8.2.2`
+* **@mxjs/test:** upgrade from `1.0.5` to `1.0.6`
+* **@mxjs/a-clink:** upgrade from `2.0.0` to `2.0.1`
+* **@mxjs/a-date-range-picker:** upgrade from `2.0.1` to `2.0.2`
+* **@mxjs/a-form:** upgrade from `1.4.1` to `1.5.0`
+* **@mxjs/a-media:** upgrade from `1.0.3` to `1.0.4`
+* **@mxjs/a-page:** upgrade from `2.1.3` to `2.1.4`
+* **@mxjs/a-region-cascader:** upgrade from `1.0.3` to `1.0.4`
+* **@mxjs/a-table:** upgrade from `1.5.1` to `1.5.2`
+* **@mxjs/bootstrap:** upgrade from `0.1.13` to `0.1.14`
+* **@mxjs/upload:** upgrade from `0.6.19` to `0.6.20`
+* **@mxjs/box:** upgrade from `0.3.7` to `0.3.8`
+* **@miaoxing/app:** upgrade from `0.7.4` to `0.7.5`
+* **@miaoxing/verify-code:** upgrade from `0.1.39` to `0.1.40`
+* **@miaoxing/admin:** upgrade from `0.10.5` to `0.10.6`
+* **@miaoxing/mail:** upgrade from `0.1.39` to `0.1.40`
+* **@miaoxing/nav:** upgrade from `0.1.40` to `0.1.41`
+* **@miaoxing/region:** upgrade from `0.2.21` to `0.2.22`
+* **@miaoxing/queue:** upgrade from `0.1.47` to `0.1.48`
+
 ## [0.5.7](https://github.com/miaoxing/user/compare/v0.5.6...v0.5.7) (2023-06-30)
 
 
