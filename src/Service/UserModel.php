@@ -2,7 +2,7 @@
 
 namespace Miaoxing\User\Service;
 
-use Miaoxing\Admin\Service\GroupModel;
+use Miaoxing\App\Service\GroupModel;
 use Miaoxing\App\Service\UserModel as BaseUserModel;
 use Miaoxing\Plugin\Service\Ret;
 use Wei\Time;
