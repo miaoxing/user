@@ -355,7 +355,7 @@ class UserModel extends BaseUserModel
         }
 
         // 1. 检查是否已存在认证该手机号码的用户
-        $mobileUser = self::new()->mobileVerified()->findBy('mobile', $mobile);
+        $mobileUser = static::new()->mobileVerified()->findBy('mobile', $mobile);
         if ($mobileUser && $mobileUser['id'] != $this['id']) {
             return err('已存在认证该手机号码的用户');
         }
