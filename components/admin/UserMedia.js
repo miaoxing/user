@@ -36,7 +36,7 @@ const UserMedia = ({user, body}) => {
             </Media.Body>
           </Media>
         </>}>
-        <Avatar user={user} shape="square" size={48}/>
+        <Avatar user={user} shape="square" size={54}/>
       </Popover>
       <Media.Body>
         {user.displayName}
