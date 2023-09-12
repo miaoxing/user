@@ -222,7 +222,7 @@ class UserModel extends BaseUserModel
      */
     public function mobileVerified()
     {
-        return $this->where('mobile_verified_at', '!=', '0000-00-00 00:00:00');
+        return $this->whereNotNull('mobileVerifiedAt');
     }
 
     /**
