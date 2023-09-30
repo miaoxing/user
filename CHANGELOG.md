@@ -1,3 +1,33 @@
+## [0.5.10](https://github.com/miaoxing/user/compare/v0.5.9...v0.5.10) (2023-09-30)
+
+
+### Bug Fixes
+
+* **user:** 解决 `mobileVerified` 查询错误 ([5908e46](https://github.com/miaoxing/user/commit/5908e463f3d50fe47fda197f43f2a117ff69f8c8))
+
+
+### Features
+
+* **u:** 图片改为宽高 54，以便和带预览功能的图片宽高一致 ([762e8a9](https://github.com/miaoxing/user/commit/762e8a944d0a1d77ec569687d23ffbdf6ca7b1c1))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-date-range-picker:** upgrade from `2.0.3` to `2.0.4`
+* **@mxjs/a-form:** upgrade from `1.6.0` to `1.7.0`
+* **@mxjs/a-page:** upgrade from `2.1.5` to `2.2.0`
+* **@mxjs/upload:** upgrade from `0.6.21` to `0.6.22`
+* **@miaoxing/app:** upgrade from `0.7.6` to `0.7.7`
+* **@miaoxing/verify-code:** upgrade from `0.1.41` to `0.1.42`
+* **@miaoxing/admin:** upgrade from `0.11.0` to `0.11.1`
+* **@miaoxing/mail:** upgrade from `0.1.41` to `0.1.42`
+* **@miaoxing/nav:** upgrade from `0.1.42` to `0.1.43`
+* **@miaoxing/region:** upgrade from `0.2.23` to `0.2.24`
+* **@miaoxing/queue:** upgrade from `0.1.49` to `0.1.50`
+
 ## [0.5.9](https://github.com/miaoxing/user/compare/v0.5.8...v0.5.9) (2023-09-02)
 
 
