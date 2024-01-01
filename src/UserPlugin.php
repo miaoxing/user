@@ -26,7 +26,7 @@ class UserPlugin extends \Miaoxing\Plugin\BasePlugin
 
     public function onPermissionGetMap(PermissionMap $map)
     {
-        $map->prefix('admin/users', function (PermissionMap $map) {
+        $map->prefix('admin/users', static function (PermissionMap $map) {
             $map->addList('', [
                 'GET api/admin/regions',
             ]);

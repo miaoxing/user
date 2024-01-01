@@ -13,7 +13,7 @@ return new class () extends BasePage {
     public function patch()
     {
         return UpdateAction::new()
-            ->validate(function (UserModel $user, Req $req) {
+            ->validate(static function (UserModel $user, Req $req) {
                 $v = V::defaultOptional();
                 $v->setModel($user);
                 $v->modelColumn('name', '姓名');
@@ -36,7 +36,7 @@ return new class () extends BasePage {
 
                 return $ret;
             })
-            ->beforeSave(function (UserModel $user, Req $req) {
+            ->beforeSave(static function (UserModel $user, Req $req) {
                 if (isset($req['isMobileVerified'])) {
                     $user->setMobileVerified($req['isMobileVerified']);
                 }

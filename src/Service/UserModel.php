@@ -36,7 +36,7 @@ class UserModel extends BaseUserModel
      */
     public function getDisplayNameByIdFromCache($id)
     {
-        return wei()->arrayCache->remember('nickName' . $id, function () use ($id) {
+        return wei()->arrayCache->remember('nickName' . $id, static function () use ($id) {
             $user = wei()->user()->find(['id' => $id]);
 
             return $user ? $user->getNickName() : '';

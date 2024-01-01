@@ -64,7 +64,7 @@ class PasswordController extends \Miaoxing\Plugin\BaseController
                     'length' => [3, 30],
                     'required' => true,
                     'alnum' => true,
-                    'callback' => function ($input) {
+                    'callback' => static function ($input) {
                         return !wei()->isDigit($input[0]);
                     },
                 ],
