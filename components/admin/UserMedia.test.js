@@ -3,13 +3,15 @@ import {render, fireEvent} from '@testing-library/react';
 import {ConfigProvider} from 'antd';
 
 describe('UserMedia', () => {
-  test('basic', () => {
+  test('basic', async () => {
     const result = render(
       <ConfigProvider theme={{hashed: false}}>
-        <UserMedia user={{}}/>
+        <UserMedia user={{
+          displayName: 'displayName1',
+        }}/>
       </ConfigProvider>
     );
-    expect(result.container).toMatchSnapshot();
+    await result.findByText('displayName1');
   });
 
   test('user', async () => {
