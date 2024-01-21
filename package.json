@@ -27,14 +27,14 @@
     "@mxjs/bootstrap": "^0.1.18",
     "@mxjs/upload": "^0.6.26",
     "antd": "~5.1.6",
-    "@mxjs/box": "^0.3.12"
+    "@mxjs/a-box": "^1.0.0"
   },
   "ciDependencies": {
     "miaoxing": "miaoxing/miaoxing-js",
-    "@mxjs/box": "miaoxing/mxjs-box",
     "babel-preset-miaoxing": "miaoxing/babel-preset-miaoxing",
     "@miaoxing/dev": "miaoxing/dev",
     "jest-preset-miaoxing": "miaoxing/jest-preset-miaoxing",
+    "@mxjs/a-box": "miaoxing/mxjs-a-box",
     "@mxjs/a-clink": "miaoxing/mxjs-a-clink",
     "@mxjs/a-form": "miaoxing/mxjs-a-form",
     "@mxjs/a-media": "miaoxing/mxjs-a-media",

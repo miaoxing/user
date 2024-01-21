@@ -1,5 +1,5 @@
 import {Popover, Descriptions} from 'antd';
-import {Box} from '@mxjs/box';
+import {Box} from '@mxjs/a-box';
 import Media from '@mxjs/a-media';
 import {ManOutlined, WomanOutlined, CheckCircleTwoTone} from '@ant-design/icons';
 import PropTypes from 'prop-types';
@@ -27,7 +27,7 @@ const UserMedia = ({user, body}) => {
                 <Descriptions.Item label="手机">
                   {user.mobile || '-'}
                   {' '}
-                  {user.isMobileVerified ? <Box ml1><CheckCircleTwoTone twoToneColor="#52c41a"/></Box> : ''}
+                  {user.isMobileVerified ? <Box as={CheckCircleTwoTone} ml={1} alignSelf="center" twoToneColor="#52c41a"/> : ''}
                 </Descriptions.Item>
                 <Descriptions.Item label="地区">
                   {[user.country, user.province, user.city].filter(el => el).join(' ') || '-'}
@@ -40,7 +40,7 @@ const UserMedia = ({user, body}) => {
       </Popover>
       <Media.Body>
         {user.displayName}
-        {body && <Box gray500>{body}</Box>}
+        {body && <Box color="gray.500">{body}</Box>}
       </Media.Body>
     </Media>
   );
