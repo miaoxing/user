@@ -1,3 +1,34 @@
+## [0.5.15](https://github.com/miaoxing/user/compare/v0.5.14...v0.5.15) (2024-01-31)
+
+
+### Features
+
+* **user:** `UserMedia` 更新 box 组件为 chakra-ui ([2786772](https://github.com/miaoxing/user/commit/27867722844d23eca192fea6d71fa5f198c005f6))
+* 更新 `react` 支持 18 ([a33c1dd](https://github.com/miaoxing/user/commit/a33c1dda379ed0ef7efe77bf370e0f15ffe3b4b0))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-clink:** upgrade from `2.0.5` to `2.1.0`
+* **@mxjs/a-date-range-picker:** upgrade from `2.0.8` to `2.1.0`
+* **@mxjs/a-form:** upgrade from `2.0.3` to `2.1.0`
+* **@mxjs/a-media:** upgrade from `1.0.8` to `2.0.0`
+* **@mxjs/a-page:** upgrade from `2.2.3` to `2.3.0`
+* **@mxjs/a-table:** upgrade from `1.6.3` to `1.7.0`
+* **@mxjs/bootstrap:** upgrade from `0.1.18` to `0.1.19`
+* **@mxjs/upload:** upgrade from `0.6.26` to `0.6.27`
+* **@mxjs/a-box:** upgrade from `1.0.0` to `1.1.0`
+* **@miaoxing/app:** upgrade from `0.7.11` to `0.8.0`
+* **@miaoxing/verify-code:** upgrade from `0.1.46` to `0.1.47`
+* **@miaoxing/admin:** upgrade from `0.11.5` to `0.12.0`
+* **@miaoxing/mail:** upgrade from `0.1.46` to `0.1.47`
+* **@miaoxing/nav:** upgrade from `0.1.47` to `0.1.48`
+* **@miaoxing/region:** upgrade from `0.2.28` to `0.2.29`
+* **@miaoxing/queue:** upgrade from `0.1.54` to `0.1.55`
+
 ## [0.5.14](https://github.com/miaoxing/user/compare/v0.5.13...v0.5.14) (2024-01-08)
 
 
