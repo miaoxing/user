@@ -1,3 +1,30 @@
+## [0.5.16](https://github.com/miaoxing/user/compare/v0.5.15...v0.5.16) (2024-02-20)
+
+
+### Features
+
+* 更新 antd, antd icons 版本 ([bee80ea](https://github.com/miaoxing/user/commit/bee80ea9078ee0a2a91595f0deea982bd3a0e7b6))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/a-clink:** upgrade from `2.1.0` to `2.1.1`
+* **@mxjs/a-date-range-picker:** upgrade from `2.1.0` to `2.2.0`
+* **@mxjs/a-form:** upgrade from `2.1.0` to `2.2.0`
+* **@mxjs/a-page:** upgrade from `2.3.0` to `2.4.0`
+* **@mxjs/a-table:** upgrade from `1.7.0` to `1.8.0`
+* **@mxjs/upload:** upgrade from `0.6.27` to `0.6.28`
+* **@miaoxing/app:** upgrade from `0.8.0` to `0.8.1`
+* **@miaoxing/verify-code:** upgrade from `0.1.47` to `0.1.48`
+* **@miaoxing/admin:** upgrade from `0.12.0` to `0.12.1`
+* **@miaoxing/mail:** upgrade from `0.1.47` to `0.1.48`
+* **@miaoxing/nav:** upgrade from `0.1.48` to `0.1.49`
+* **@miaoxing/region:** upgrade from `0.2.29` to `0.2.30`
+* **@miaoxing/queue:** upgrade from `0.1.55` to `0.1.56`
+
 ## [0.5.15](https://github.com/miaoxing/user/compare/v0.5.14...v0.5.15) (2024-01-31)
 
 
