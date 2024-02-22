@@ -24,7 +24,6 @@
     "@mxjs/a-region-cascader": "^1.0.8",
     "@mxjs/a-table": "^1.8.0",
     "@mxjs/bootstrap": "^0.1.19",
-    "@mxjs/upload": "^0.6.28",
     "antd": "~5.13",
     "@mxjs/a-box": "^1.1.0"
   },
