@@ -1,6 +1,6 @@
 {
   "name": "@miaoxing/user",
-  "version": "0.5.17",
+  "version": "0.5.18",
   "private": true,
   "main": "index.js",
   "author": "twinh",
@@ -9,23 +9,23 @@
     "plugins/*"
   ],
   "devDependencies": {
-    "@miaoxing/dev": "^9.1.0",
-    "@mxjs/test": "^1.0.10",
+    "@miaoxing/dev": "^9.1.1",
+    "@mxjs/test": "^1.0.11",
     "@testing-library/react": "^14",
     "react": ">=16.13.1",
     "react-dom": ">=16.13.1",
     "typescript": "^4.5.2",
     "@ant-design/icons": "^5",
-    "@mxjs/a-clink": "^2.1.1",
-    "@mxjs/a-date-range-picker": "^2.2.0",
-    "@mxjs/a-form": "^2.2.0",
-    "@mxjs/a-media": "^2.0.0",
-    "@mxjs/a-page": "^2.4.1",
-    "@mxjs/a-region-cascader": "^1.0.8",
-    "@mxjs/a-table": "^1.8.0",
+    "@mxjs/a-clink": "^2.1.2",
+    "@mxjs/a-date-range-picker": "^2.2.1",
+    "@mxjs/a-form": "^2.2.1",
+    "@mxjs/a-media": "^2.0.1",
+    "@mxjs/a-page": "^2.5.0",
+    "@mxjs/a-region-cascader": "^1.0.9",
+    "@mxjs/a-table": "^1.8.1",
     "@mxjs/bootstrap": "^0.1.19",
     "antd": "~5.13",
-    "@mxjs/a-box": "^1.1.0"
+    "@mxjs/a-box": "^1.1.1"
   },
   "ciDependencies": {
     "miaoxing": "miaoxing/miaoxing-js",
