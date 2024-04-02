@@ -2,16 +2,30 @@
 
 namespace Miaoxing\User\Job;
 
-use Miaoxing\Queue\BaseJob;
+use Miaoxing\Plugin\Queue\BaseJob;
+use Miaoxing\User\Service\UserModel;
+use Wei\Event;
 
 class UserCreate extends BaseJob
 {
-    public function __invoke(BaseJob $job, $data)
+    protected $id;
+
+    /**
+     * {@inheritdoc}
+     */
+    public function __construct(string $id)
     {
-        $user = wei()->user()->findOneById($data['id']);
+        $this->id = $id;
+        parent::__construct();
+    }
 
-        wei()->event->trigger('asyncUserCreate', [$user]);
+    /**
+     * {@inheritdoc}
+     */
+    public function __invoke(): void
+    {
+        $user = UserModel::findOneById($this->id);
 
-        $job->delete();
+        Event::trigger('asyncUserCreate', [$user]);
     }
 }
