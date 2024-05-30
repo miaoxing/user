@@ -1,3 +1,25 @@
+## [0.5.20](https://github.com/miaoxing/user/compare/v0.5.19...v0.5.20) (2024-05-30)
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/test:** upgrade from `1.1.0` to `2.0.0`
+* **@mxjs/a-clink:** upgrade from `3.0.0` to `3.0.1`
+* **@mxjs/a-date-range-picker:** upgrade from `3.0.0` to `3.0.1`
+* **@mxjs/a-form:** upgrade from `3.0.0` to `3.0.1`
+* **@mxjs/a-page:** upgrade from `3.0.0` to `3.0.1`
+* **@mxjs/a-region-cascader:** upgrade from `1.0.9` to `1.1.0`
+* **@mxjs/a-table:** upgrade from `1.8.2` to `1.8.3`
+* **@miaoxing/app:** upgrade from `0.9.0` to `0.10.0`
+* **@miaoxing/verify-code:** upgrade from `0.1.51` to `0.1.52`
+* **@miaoxing/admin:** upgrade from `0.13.0` to `0.13.1`
+* **@miaoxing/mail:** upgrade from `0.1.51` to `0.1.52`
+* **@miaoxing/nav:** upgrade from `0.1.52` to `0.1.53`
+* **@miaoxing/region:** upgrade from `0.2.33` to `0.2.34`
+
 ## [0.5.19](https://github.com/miaoxing/user/compare/v0.5.18...v0.5.19) (2024-05-01)
 
 
