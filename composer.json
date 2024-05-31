@@ -13,8 +13,7 @@
     "miaoxing/admin": "^0.13.1",
     "miaoxing/mail": "^0.1.52",
     "miaoxing/nav": "^0.1.53",
-    "miaoxing/region": "^0.2.34",
-    "miaoxing/queue": "^0.2.1"
+    "miaoxing/region": "^0.2.34"
   },
   "require-dev": {
     "miaoxing/dev": "^9.1.1",
