@@ -1,1 +1,5 @@
-export UserMedia from './components/admin/UserMedia';
+import UserMedia from './components/admin/UserMedia';
+
+export {
+  UserMedia,
+};
