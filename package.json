@@ -24,15 +24,13 @@
     "@mxjs/a-region-cascader": "^1.1.0",
     "@mxjs/a-table": "^1.9.0",
     "@mxjs/bootstrap": "^0.1.19",
-    "antd": "~5.13",
-    "@mxjs/a-box": "^1.1.1"
+    "antd": "~5.13"
   },
   "ciDependencies": {
     "miaoxing": "miaoxing/miaoxing-js",
     "babel-preset-miaoxing": "miaoxing/babel-preset-miaoxing",
     "@miaoxing/dev": "miaoxing/dev",
     "jest-preset-miaoxing": "miaoxing/jest-preset-miaoxing",
-    "@mxjs/a-box": "miaoxing/mxjs-a-box",
     "@mxjs/a-clink": "miaoxing/mxjs-a-clink",
     "@mxjs/a-form": "miaoxing/mxjs-a-form",
     "@mxjs/a-media": "miaoxing/mxjs-a-media",

@@ -6,7 +6,6 @@ import RegionCascader from '@mxjs/a-region-cascader';
 import DateRangePicker from '@mxjs/a-date-range-picker';
 import {UserMedia} from '@miaoxing/user/admin';
 import {CheckCircleTwoTone} from '@ant-design/icons';
-import { Box } from '@mxjs/a-box';
 import {Select} from '@miaoxing/admin';
 import {useState} from 'react';
 
@@ -65,7 +64,7 @@ const Index = () => {
               render: (mobile, row) => (
                 <>
                   {mobile}
-                  {row.isMobileVerified ? <Box as={CheckCircleTwoTone} ml={1} twoToneColor="#52c41a"/> : ''}
+                  {row.isMobileVerified ? <CheckCircleTwoTone className="ml-1" twoToneColor="#52c41a"/> : ''}
                 </>
               ),
             },
