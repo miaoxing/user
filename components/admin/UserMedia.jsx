@@ -13,7 +13,7 @@ const UserMedia = ({user, body}) => {
         content={<>
           <Media>
             <Avatar user={user} shape="square" size={96}/>
-            <Media.Body w={320}>
+            <Media.Body className="w-80">
               <Descriptions title={
                 <>
                   {user.nickName}
