@@ -22,6 +22,7 @@
     "@mxjs/a-media": "^2.0.1",
     "@mxjs/a-page": "^3.0.1",
     "@mxjs/a-region-cascader": "^1.1.0",
+    "@mxjs/a-section": "^1.0.0",
     "@mxjs/a-table": "^1.9.0",
     "@mxjs/bootstrap": "^0.1.19",
     "antd": "~5.13"
@@ -36,6 +37,7 @@
     "@mxjs/a-media": "miaoxing/mxjs-a-media",
     "@mxjs/a-table": "miaoxing/mxjs-a-table",
     "@mxjs/a-region-cascader": "miaoxing/mxjs-a-region-cascader",
+    "@mxjs/a-section": "miaoxing/mxjs-a-section",
     "@mxjs/app": "miaoxing/mxjs-app"
   }
 }

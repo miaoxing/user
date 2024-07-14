@@ -36,7 +36,6 @@ exports[`admin/users form 2`] = `
     Array [
       Object {
         "data": Object {
-          "id": 1,
           "isMobileVerified": true,
           "mobile": "13800138000",
           "name": "新名称",
