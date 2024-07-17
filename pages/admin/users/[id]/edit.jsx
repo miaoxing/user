@@ -1,6 +1,6 @@
 import { CListBtn } from '@mxjs/a-clink';
 import { Page, PageActions } from '@mxjs/a-page';
-import { Form, FormItem, FormAction } from '@mxjs/a-form';
+import { Form, FormItem, FormActions } from '@mxjs/a-form';
 import { Checkbox } from 'antd';
 import { Section } from '@mxjs/a-section';
 
@@ -21,7 +21,7 @@ const Edit = () => {
           }/>
         </Section>
 
-        <FormAction variant="card"/>
+        <FormActions variant="card"/>
       </Form>
     </Page>
   );
