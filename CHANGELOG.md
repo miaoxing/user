@@ -1,3 +1,39 @@
+## [0.5.22](https://github.com/miaoxing/user/compare/v0.5.21...v0.5.22) (2024-07-31)
+
+
+### Bug Fixes
+
+* `export default from` 改为标准语法 ([2265546](https://github.com/miaoxing/user/commit/22655460fd20b08fe65a3976a7b72421f4f715e8))
+
+
+### Features
+
+* **u:** 调整页面内容为卡片视图 ([59ee1bb](https://github.com/miaoxing/user/commit/59ee1bb95f67df356856a383d2fd5087f83ec8e1))
+* Box 组件改为 tailwind 类名 ([16adcdd](https://github.com/miaoxing/user/commit/16adcdd3ddc67235f5b2df5037a4191546b6e7f1))
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/dev:** upgrade from `9.1.1` to `9.1.2`
+* **@mxjs/test:** upgrade from `2.0.0` to `2.0.1`
+* **@mxjs/a-clink:** upgrade from `3.0.1` to `3.0.2`
+* **@mxjs/a-date-range-picker:** upgrade from `3.0.2` to `3.0.3`
+* **@mxjs/a-form:** upgrade from `3.0.2` to `4.0.0`
+* **@mxjs/a-media:** upgrade from `2.0.1` to `3.0.0`
+* **@mxjs/a-page:** upgrade from `3.0.1` to `4.0.0`
+* **@mxjs/a-region-cascader:** upgrade from `1.1.0` to `1.1.1`
+* **@mxjs/a-section:** upgrade from `1.0.0` to `1.1.0`
+* **@mxjs/a-table:** upgrade from `1.9.0` to `2.0.0`
+* **@miaoxing/app:** upgrade from `0.10.1` to `0.10.2`
+* **@miaoxing/verify-code:** upgrade from `0.1.53` to `0.1.54`
+* **@miaoxing/admin:** upgrade from `0.13.2` to `0.14.0`
+* **@miaoxing/mail:** upgrade from `0.1.53` to `0.1.54`
+* **@miaoxing/nav:** upgrade from `0.1.54` to `0.1.55`
+* **@miaoxing/region:** upgrade from `0.2.35` to `0.2.36`
+
 ## [0.5.21](https://github.com/miaoxing/user/compare/v0.5.20...v0.5.21) (2024-06-30)
 
 
