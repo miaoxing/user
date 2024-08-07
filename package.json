@@ -24,7 +24,6 @@
     "@mxjs/a-region-cascader": "^1.1.2",
     "@mxjs/a-section": "^1.1.1",
     "@mxjs/a-table": "^2.0.2",
-    "@mxjs/bootstrap": "^0.1.19",
     "antd": "~5.13"
   },
   "ciDependencies": {
