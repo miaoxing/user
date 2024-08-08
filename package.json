@@ -24,7 +24,7 @@
     "@mxjs/a-region-cascader": "^1.1.2",
     "@mxjs/a-section": "^1.1.1",
     "@mxjs/a-table": "^2.0.2",
-    "antd": "~5.13"
+    "antd": "~5.19"
   },
   "ciDependencies": {
     "miaoxing": "miaoxing/miaoxing-js",
