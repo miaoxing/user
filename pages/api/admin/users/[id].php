@@ -7,7 +7,7 @@ use Miaoxing\User\Service\UserModel;
 use Wei\Req;
 use Wei\V;
 
-return new class () extends BasePage {
+return new class extends BasePage {
     use ItemGetTrait;
 
     public function patch()
