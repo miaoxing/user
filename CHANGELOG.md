@@ -1,3 +1,34 @@
+## [0.5.25](https://github.com/miaoxing/user/compare/v0.5.24...v0.5.25) (2024-09-01)
+
+
+### Features
+
+* 插件增加 wei 命令行入口 ([9b72a86](https://github.com/miaoxing/user/commit/9b72a86a13bbd391c99c0367420957138a185a67))
+* 更新 `antd` 到 `~5.19` ([a28fcc7](https://github.com/miaoxing/user/commit/a28fcc74ca49a214ebff48b4935b9f1147f0c252))
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/dev:** upgrade from `9.1.3` to `9.2.0`
+* **@mxjs/test:** upgrade from `2.0.3` to `2.0.4`
+* **@mxjs/a-clink:** upgrade from `3.0.4` to `3.0.5`
+* **@mxjs/a-date-range-picker:** upgrade from `3.0.5` to `3.1.0`
+* **@mxjs/a-form:** upgrade from `4.0.2` to `4.1.0`
+* **@mxjs/a-media:** upgrade from `3.0.1` to `3.0.2`
+* **@mxjs/a-page:** upgrade from `4.0.2` to `4.1.0`
+* **@mxjs/a-region-cascader:** upgrade from `1.1.2` to `1.1.3`
+* **@mxjs/a-section:** upgrade from `1.1.1` to `1.2.0`
+* **@mxjs/a-table:** upgrade from `2.0.2` to `2.1.0`
+* **@miaoxing/app:** upgrade from `0.10.3` to `0.10.4`
+* **@miaoxing/verify-code:** upgrade from `0.1.56` to `0.1.57`
+* **@miaoxing/admin:** upgrade from `0.15.1` to `0.15.2`
+* **@miaoxing/mail:** upgrade from `0.1.55` to `0.1.56`
+* **@miaoxing/nav:** upgrade from `0.1.56` to `0.1.57`
+* **@miaoxing/region:** upgrade from `0.2.37` to `0.2.38`
+
 ## [0.5.24](https://github.com/miaoxing/user/compare/v0.5.23...v0.5.24) (2024-08-03)
 
 
