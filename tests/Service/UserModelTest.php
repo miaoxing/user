@@ -51,14 +51,16 @@ final class UserModelTest extends \Miaoxing\Plugin\Test\BaseTestCase
 
     public function testAvatar()
     {
+        $userService = User::instance();
+
         $user = UserModel::new();
-        $this->assertEquals(User::cur()->defaultAvatar, $user->avatar);
+        $this->assertEquals($userService->defaultAvatar, $user->avatar);
 
         $user->avatar = 'test.jpg';
         $this->assertEquals('test.jpg', $user->avatar);
 
         $user->avatar = '';
-        $this->assertEquals(User::cur()->defaultAvatar, $user->avatar);
+        $this->assertEquals($userService->defaultAvatar, $user->avatar);
     }
 
     /**
