@@ -14,7 +14,7 @@ const Index = () => {
 
   const [sexes, setSexes] = useState([]);
   const handleAfterLoadSexes = ({data}) => {
-    setSexes(data.items);
+    setSexes(data);
   };
 
   return (
