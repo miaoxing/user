@@ -1,3 +1,29 @@
+## [0.5.27](https://github.com/miaoxing/user/compare/v0.5.26...v0.5.27) (2024-11-01)
+
+
+### Bug Fixes
+
+* **user:** 更新 `Select` `afterLoad` 的参数 ([ef71e49](https://github.com/miaoxing/user/commit/ef71e4923a20afae53d4080863f6e9927d283105))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/test:** upgrade from `2.0.4` to `2.0.5`
+* **@mxjs/a-clink:** upgrade from `3.0.6` to `3.0.7`
+* **@mxjs/a-date-range-picker:** upgrade from `3.1.1` to `3.1.2`
+* **@mxjs/a-form:** upgrade from `4.1.1` to `5.0.0`
+* **@mxjs/a-page:** upgrade from `4.2.0` to `4.2.1`
+* **@mxjs/a-table:** upgrade from `2.2.0` to `2.2.1`
+* **@miaoxing/app:** upgrade from `0.10.5` to `0.10.6`
+* **@miaoxing/verify-code:** upgrade from `0.1.58` to `0.1.59`
+* **@miaoxing/admin:** upgrade from `0.16.0` to `0.16.1`
+* **@miaoxing/mail:** upgrade from `0.1.57` to `0.1.58`
+* **@miaoxing/nav:** upgrade from `0.1.58` to `0.1.59`
+* **@miaoxing/region:** upgrade from `0.2.39` to `0.2.40`
+
 ## [0.5.26](https://github.com/miaoxing/user/compare/v0.5.25...v0.5.26) (2024-09-30)
 
 
