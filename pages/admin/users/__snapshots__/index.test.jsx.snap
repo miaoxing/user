@@ -5,18 +5,13 @@ exports[`admin/users index 1`] = `
   "calls": Array [
     Array [
       Object {
-        "method": "get",
-        "url": "regions?virtual=0&parentId=0",
+        "url": "consts/sexConst-sex?limit=500",
       },
     ],
     Array [
       Object {
-        "loading": true,
         "method": "get",
-        "params": Object {
-          "limit": 500,
-        },
-        "url": "/api/admin/consts/sexConst-sex",
+        "url": "regions?virtual=0&parentId=0",
       },
     ],
     Array [

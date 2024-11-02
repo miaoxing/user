@@ -27,12 +27,6 @@ describe('admin/users', () => {
     const promise3 = createPromise();
 
     $.http = jest.fn()
-      // 读取地区
-      .mockImplementationOnce(() => promise.resolve({
-        ret: Ret.suc({
-          data: [],
-        }),
-      }))
       // 读取性别
       .mockImplementationOnce(() => promise2.resolve({
         ret: Ret.suc({
@@ -55,6 +49,12 @@ describe('admin/users', () => {
               },
             ],
           },
+        }),
+      }))
+      // 读取地区
+      .mockImplementationOnce(() => promise.resolve({
+        ret: Ret.suc({
+          data: [],
         }),
       }))
       // 读取列表数据
