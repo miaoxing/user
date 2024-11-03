@@ -80,14 +80,14 @@ describe('admin/users', () => {
       <Index/>
     </MemoryRouter>);
 
+    await Promise.all([promise, promise2, promise3]);
+    expect($.http).toHaveBeenCalledTimes(3);
+    expect($.http).toMatchSnapshot();
+
     await findByText('姓名1');
     await findByText('显示名称3');
     await findByText('男');
     await findByText('138001380000');
     await findByText('中国 广东 深圳');
-
-    await Promise.all([promise, promise2, promise3]);
-    expect($.http).toHaveBeenCalledTimes(3);
-    expect($.http).toMatchSnapshot();
   });
 });
