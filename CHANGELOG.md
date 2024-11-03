@@ -1,3 +1,14 @@
+## [0.5.28](https://github.com/miaoxing/user/compare/v0.5.27...v0.5.28) (2024-11-03)
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/verify-code:** upgrade from `0.1.59` to `0.1.60`
+* **@miaoxing/admin:** upgrade from `0.16.1` to `0.16.2`
+
 ## [0.5.27](https://github.com/miaoxing/user/compare/v0.5.26...v0.5.27) (2024-11-01)
 
 
@@ -263,7 +274,7 @@
 
 ### Features
 
-* 更新 antd, antd icons 版本 ([bee80ea](https://github.com/miaoxing/user/commit/bee80ea9078ee0a2a91595f0deea982bd3a0e7b6))
+* 更新 antd, antd icons 版本 ([15ded60](https://github.com/miaoxing/user/commit/15ded605cc51da8fe61644955e29a2d6e95530bd))
 
 
 
