@@ -5,6 +5,7 @@ exports[`admin/users index 1`] = `
   "calls": Array [
     Array [
       Object {
+        "suspense": true,
         "url": "consts/sexConst-sex?limit=500",
       },
     ],
