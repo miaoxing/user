@@ -26,6 +26,9 @@
     "@mxjs/a-table": "^2.3.0",
     "antd": "~5.19"
   },
+  "resolutions": {
+    "nwsapi": "2.2.0"
+  },
   "ciDependencies": {
     "miaoxing": "miaoxing/miaoxing-js",
     "babel-preset-miaoxing": "miaoxing/babel-preset-miaoxing",
