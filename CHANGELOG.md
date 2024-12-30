@@ -1,3 +1,33 @@
+## [0.5.30](https://github.com/miaoxing/user/compare/v0.5.29...v0.5.30) (2024-12-30)
+
+
+### Bug Fixes
+
+* 限制 react 版本低于 19，避免测试失败 ([b6b1ff0](https://github.com/miaoxing/user/commit/b6b1ff019fd4a12c9acaa0f0357d67448fbe8e79))
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/dev:** upgrade from `9.2.0` to `9.3.0`
+* **@mxjs/test:** upgrade from `2.0.5` to `2.0.6`
+* **@mxjs/a-clink:** upgrade from `3.0.7` to `3.0.8`
+* **@mxjs/a-date-range-picker:** upgrade from `3.1.3` to `3.1.4`
+* **@mxjs/a-form:** upgrade from `5.1.0` to `5.2.0`
+* **@mxjs/a-media:** upgrade from `3.0.2` to `3.0.3`
+* **@mxjs/a-page:** upgrade from `4.3.0` to `4.3.1`
+* **@mxjs/a-region-cascader:** upgrade from `1.1.3` to `1.1.4`
+* **@mxjs/a-section:** upgrade from `1.2.0` to `1.2.1`
+* **@mxjs/a-table:** upgrade from `2.3.0` to `2.4.0`
+* **@miaoxing/app:** upgrade from `0.10.7` to `0.10.8`
+* **@miaoxing/verify-code:** upgrade from `0.1.61` to `0.1.62`
+* **@miaoxing/admin:** upgrade from `0.16.3` to `0.17.0`
+* **@miaoxing/mail:** upgrade from `0.1.59` to `0.1.60`
+* **@miaoxing/nav:** upgrade from `0.1.60` to `0.1.61`
+* **@miaoxing/region:** upgrade from `0.2.41` to `0.2.42`
+
 ## [0.5.29](https://github.com/miaoxing/user/compare/v0.5.28...v0.5.29) (2024-11-30)
 
 
