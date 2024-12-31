@@ -18,7 +18,7 @@ exports[`admin/users index 1`] = `
     Array [
       Object {
         "method": "get",
-        "url": "/api/admin/users?page=1&limit=20",
+        "url": "users?page=1&limit=20",
       },
     ],
   ],
