@@ -7,6 +7,43 @@ use Miaoxing\App\Service\UserModel as BaseUserModel;
 use Miaoxing\Plugin\Service\Ret;
 use Wei\Time;
 
+/**
+ * @property int $score 积分
+ * @property string $money 账户余额
+ * @property string $rechargeMoney 充值账户余额
+ * @property string $source 用户来源
+ * @property bool $isMobileVerified
+ * @property string|null $id
+ * @property string $appId
+ * @property string $outId
+ * @property int $adminType 管理员类型
+ * @property string $groupId 用户组
+ * @property bool $isAdmin
+ * @property string $nickName
+ * @property string $remarkName
+ * @property string $username
+ * @property string $name
+ * @property string $email
+ * @property string $mobile
+ * @property string|null $mobileVerifiedAt 手机校验时间
+ * @property string $phone
+ * @property string $password
+ * @property int $sex
+ * @property string $country
+ * @property string $province
+ * @property string $city
+ * @property string $district
+ * @property string $address
+ * @property string $signature
+ * @property bool $isEnabled 是否启用
+ * @property string $avatar
+ * @property string|null $lastLoginAt
+ * @property string|null $createdAt
+ * @property string|null $updatedAt
+ * @property string $createdBy
+ * @property string $updatedBy
+ * @property string|null $displayName
+ */
 class UserModel extends BaseUserModel
 {
     public function __construct(array $options = [])
@@ -325,6 +362,9 @@ class UserModel extends BaseUserModel
         // do nothing
     }
 
+    /**
+     * @return string
+     */
     public function getAvatarAttribute()
     {
         return (isset($this->attributes['avatar']) && $this->attributes['avatar']) ?
