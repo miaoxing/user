@@ -1,3 +1,18 @@
+## [0.5.33](https://github.com/miaoxing/user/compare/v0.5.32...v0.5.33) (2025-05-01)
+
+
+
+
+
+### Dependencies
+
+* **@miaoxing/app:** upgrade from `0.10.10` to `0.10.11`
+* **@miaoxing/verify-code:** upgrade from `0.1.64` to `0.1.65`
+* **@miaoxing/admin:** upgrade from `0.17.2` to `0.17.3`
+* **@miaoxing/mail:** upgrade from `0.1.62` to `0.1.63`
+* **@miaoxing/nav:** upgrade from `0.1.63` to `0.1.64`
+* **@miaoxing/region:** upgrade from `0.2.44` to `0.2.45`
+
 ## [0.5.32](https://github.com/miaoxing/user/compare/v0.5.31...v0.5.32) (2025-02-02)
 
 
